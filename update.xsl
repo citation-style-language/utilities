@@ -107,8 +107,22 @@
     </info>
   </xsl:template>
 
-  <xsl:template match="cs:author|cs:contributor|cs:id|cs:issn|cs:link|cs:published|cs:rights|cs:source|cs:summary|cs:title|cs:updated">
+  <xsl:template match="cs:author|cs:contributor|cs:id|cs:issn|cs:published|cs:rights|cs:source|cs:summary|cs:title|cs:updated">
     <xsl:copy-of select="."/>
+  </xsl:template>
+
+  <xsl:template match="cs:link">
+      <xsl:choose>
+        <xsl:when test="@rel='documentation' or @rel='homepage' or @rel='template'">
+          <link href="{@href}" rel="{@rel}"/>
+        </xsl:when>
+        <xsl:when test="@rel='source'">
+          <link href="{@href}" rel="independent-parent"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <link href="{@href}" rel="self"/>
+        </xsl:otherwise>
+      </xsl:choose>
   </xsl:template>
 
   <xsl:template match="cs:category">
