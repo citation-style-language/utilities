@@ -17,7 +17,7 @@
     </style>
   </xsl:template>
 
-  <xsl:template match="cs:info|cs:locale|cs:sort|cs:names|cs:text|cs:et-al">
+  <xsl:template match="cs:locale|cs:sort|cs:names|cs:text|cs:et-al">
     <xsl:copy-of select="."/>
   </xsl:template>
 
@@ -100,7 +100,28 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
+  <xsl:template match="cs:info">
+    <info>
+      <xsl:apply-templates/>
+    </info>
+  </xsl:template>
+
+  <xsl:template match="cs:author|cs:contributor|cs:id|cs:issn|cs:link|cs:published|cs:rights|cs:source|cs:summary|cs:title|cs:updated">
+    <xsl:copy-of select="."/>
+  </xsl:template>
+
+  <xsl:template match="cs:category">
+    <xsl:choose>
+      <xsl:when test="@term='author-date' or @term='numeric' or @term='label' or @term='note' or @term='in-text'">
+        <category citation-format="{@term}"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <category field="{@term}"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <xsl:template match="cs:if|cs:else-if|cs:else">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
