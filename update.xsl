@@ -113,8 +113,11 @@
 
   <xsl:template match="cs:link">
       <xsl:choose>
-        <xsl:when test="@rel='documentation' or @rel='homepage' or @rel='template'">
-          <link href="{@href}" rel="{@rel}"/>
+        <xsl:when test="@rel='documentation' or @rel='homepage'">
+          <link href="{@href}" rel="documentation"/>
+        </xsl:when>
+        <xsl:when test="@rel='template'">
+          <link href="{@href}" rel="template"/>
         </xsl:when>
         <xsl:when test="@rel='source'">
           <link href="{@href}" rel="independent-parent"/>
