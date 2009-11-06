@@ -17,8 +17,19 @@
     </style>
   </xsl:template>
 
-  <xsl:template match="cs:locale|cs:sort|cs:names|cs:text|cs:et-al">
+  <xsl:template match="cs:locale|cs:sort|cs:names|cs:et-al">
     <xsl:copy-of select="."/>
+  </xsl:template>
+
+  <xsl:template match="cs:text">
+    <xsl:copy>
+      <xsl:copy-of select="@*[not(name()='include-period')]"/>
+      <xsl:choose>
+        <xsl:when test="(@form='short' or @form='verb-short') and not(@include-period='true')">
+          <xsl:attribute name="strip-periods">true</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:copy>
   </xsl:template>
 
   <xsl:template match="cs:citation">
