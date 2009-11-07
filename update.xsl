@@ -5,24 +5,21 @@
   <xsl:strip-space elements="*"/>
 
   <xsl:template match="/cs:style">
-    <xsl:copy>
-      <xsl:copy-of select="@*[not(name()='xml:lang')]"/>
-      <xsl:choose>
-        <xsl:when test="@xml:lang and not(@xml:lang='en' or @xml:lang='en-US' or @xml:lang='en-us')">
-          <xsl:attribute name="default-locale">
-            <xsl:value-of select="@xml:lang"/>
-          </xsl:attribute>
-        </xsl:when>
-      </xsl:choose>
-      <xsl:attribute name="version">1.0</xsl:attribute>
-    <xsl:apply-templates/>
-    </xsl:copy>
+    <style version="1.0" class="{@class}">
+      <xsl:if test="@xml:lang and not(@xml:lang='en' or @xml:lang='en-US' or @xml:lang='en-us')">
+        <xsl:attribute name="default-locale">
+          <xsl:value-of select="@xml:lang"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </style>
   </xsl:template>
 
   <!-- Elements that themselves can be copied verbatim but may have child nodes -->
-  <xsl:template match="cs:choose|cs:if|cs:else-if|cs:else|cs:info|cs:date|cs:names|cs:substitute|cs:macro|cs:group|cs:layout">
+  <xsl:template
+    match="cs:choose|cs:if|cs:else-if|cs:else|cs:info|cs:date|cs:names|cs:substitute|cs:macro|cs:group|cs:layout">
     <xsl:copy>
-      <xsl:copy-of select="@*"/>
+      <xsl:copy-of select="@*[not(name()='class')]"/>
       <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
@@ -33,78 +30,71 @@
   </xsl:template>
 
   <!-- Child elements of cs:info that can be copied verbatim -->
-  <xsl:template match="cs:author|cs:contributor|cs:id|cs:issn|cs:published|cs:rights|cs:source|cs:summary|cs:title|cs:updated">
+  <xsl:template
+    match="cs:author|cs:contributor|cs:id|cs:issn|cs:published|cs:rights|cs:source|cs:summary|cs:title|cs:updated">
     <xsl:copy-of select="."/>
   </xsl:template>
 
   <xsl:template match="cs:link">
-      <xsl:choose>
-        <xsl:when test="@rel='documentation' or @rel='homepage'">
-          <xsl:copy>
-            <xsl:attribute name="href">
-              <xsl:value-of select="@href"/>
-            </xsl:attribute>
-            <xsl:attribute name="rel">documentation</xsl:attribute>
-          </xsl:copy>
-        </xsl:when>
-        <xsl:when test="@rel='template'">
-          <xsl:copy>
-            <xsl:attribute name="href">
-              <xsl:value-of select="@href"/>
-            </xsl:attribute>
-            <xsl:attribute name="rel">template</xsl:attribute>
-          </xsl:copy>
-        </xsl:when>
-        <xsl:when test="@rel='source'">
-          <xsl:copy>
-            <xsl:attribute name="href">
-              <xsl:value-of select="@href"/>
-            </xsl:attribute>
-            <xsl:attribute name="rel">independent-parent</xsl:attribute>
-          </xsl:copy>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:copy>
-            <xsl:attribute name="href">
-              <xsl:value-of select="@href"/>
-            </xsl:attribute>
-            <xsl:attribute name="rel">self</xsl:attribute>
-          </xsl:copy>
-        </xsl:otherwise>
-      </xsl:choose>
-  </xsl:template>
-
-  <xsl:template match="cs:category">
     <xsl:choose>
-      <xsl:when test="@term='in-text'">
-        <xsl:choose>
-          <xsl:when test="/cs:style/cs:citation//cs:text[@variable='citation-number']">
-            <xsl:copy>
-              <xsl:attribute name="citation-format">numeric</xsl:attribute>
-            </xsl:copy>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:copy>
-              <xsl:attribute name="citation-format">author-date</xsl:attribute>
-            </xsl:copy>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:when>
-      <xsl:when test="@term='author-date' or @term='numeric' or @term='label' or @term='note'">
+      <xsl:when test="@rel='documentation' or @rel='homepage'">
         <xsl:copy>
-          <xsl:attribute name="citation-format">
-            <xsl:value-of select="@term"/>
+          <xsl:attribute name="href">
+            <xsl:value-of select="@href"/>
           </xsl:attribute>
+          <xsl:attribute name="rel">documentation</xsl:attribute>
+        </xsl:copy>
+      </xsl:when>
+      <xsl:when test="@rel='template'">
+        <xsl:copy>
+          <xsl:attribute name="href">
+            <xsl:value-of select="@href"/>
+          </xsl:attribute>
+          <xsl:attribute name="rel">template</xsl:attribute>
+        </xsl:copy>
+      </xsl:when>
+      <xsl:when test="@rel='source'">
+        <xsl:copy>
+          <xsl:attribute name="href">
+            <xsl:value-of select="@href"/>
+          </xsl:attribute>
+          <xsl:attribute name="rel">independent-parent</xsl:attribute>
         </xsl:copy>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:attribute name="field">
-          <xsl:value-of select="@term"/>
-        </xsl:attribute>
+        <xsl:copy>
+          <xsl:attribute name="href">
+            <xsl:value-of select="@href"/>
+          </xsl:attribute>
+          <xsl:attribute name="rel">self</xsl:attribute>
+        </xsl:copy>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template match="cs:category[@term='in-text']">
+    <xsl:variable name="value">
+      <xsl:choose>
+        <xsl:when test="/cs:style/cs:citation//cs:text[@variable='citation-number']">
+          <xsl:value-of select="'number'"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="'author-date'"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <category citation-format="{$value}"/>
+  </xsl:template>
+
+  <xsl:template
+    match="cs:category[@term='author-date' or @term='numeric' or @term='label' or @term='note']">
+    <category citation-format="{@term}"/>
+  </xsl:template>
+
+  <xsl:template match="cs:category">
+    <category field="{@term}"/>
+  </xsl:template>
+  
   <xsl:template match="cs:citation">
     <xsl:copy>
       <xsl:for-each select="cs:option">
@@ -149,7 +139,8 @@
     <xsl:copy>
       <xsl:copy-of select="@*[not(name()='include-period')]"/>
       <xsl:choose>
-        <xsl:when test="(@form='short' or @form='verb-short') and not(@include-period='true') and @term">
+        <xsl:when
+          test="(@form='short' or @form='verb-short') and not(@include-period='true') and @term">
           <xsl:attribute name="strip-periods">true</xsl:attribute>
         </xsl:when>
       </xsl:choose>
