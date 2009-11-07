@@ -46,9 +46,16 @@
   <xsl:template match="cs:bibliography">
     <bibliography>
       <xsl:for-each select="cs:option">
-        <xsl:attribute name="{@name}">
-          <xsl:value-of select="@value"/>
-        </xsl:attribute>
+        <xsl:choose>
+          <xsl:when test="@name='second-field-align' and @value='true'">
+            <xsl:attribute name="second-field-align">flush</xsl:attribute>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:attribute name="{@name}">
+              <xsl:value-of select="@value"/>
+            </xsl:attribute>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:for-each>
       <xsl:apply-templates select="cs:layout|cs:sort"/>
     </bibliography>
