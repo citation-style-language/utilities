@@ -148,7 +148,17 @@
 
   <xsl:template match="cs:category">
     <xsl:choose>
-      <xsl:when test="@term='author-date' or @term='numeric' or @term='label' or @term='note' or @term='in-text'">
+      <xsl:when test="@term='in-text'">
+        <xsl:choose>
+          <xsl:when test="/cs:style/cs:citation//cs:text[@variable='citation-number']">
+            <category citation-format="numeric"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <category citation-format="author-date"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:when>
+      <xsl:when test="@term='author-date' or @term='numeric' or @term='label' or @term='note'">
         <category citation-format="{@term}"/>
       </xsl:when>
       <xsl:otherwise>
