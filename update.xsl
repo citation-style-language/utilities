@@ -12,9 +12,18 @@
   </xsl:param>
 
   <xsl:template match="/cs:style">
-    <style version="1.0" class="{@class}">
-      <xsl:apply-templates/>
-    </style>
+    <xsl:copy>
+      <xsl:copy-of select="@*[not(name()='xml:lang')]"/>
+      <xsl:choose>
+        <xsl:when test="@xml:lang and not(@xml:lang='en' or @xml:lang='en-US' or @xml:lang='en-us')">
+          <xsl:attribute name="default-locale">
+            <xsl:value-of select="@xml:lang"/>
+          </xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:attribute name="version">1.0</xsl:attribute>
+    </xsl:copy>
+    <xsl:apply-templates/>
   </xsl:template>
 
   <xsl:template match="cs:locale|cs:sort|cs:names|cs:et-al">
