@@ -199,6 +199,9 @@
           test="(@form='short' or @form='verb-short') and not(@include-period='true') and @term">
           <xsl:attribute name="strip-periods">true</xsl:attribute>
         </xsl:when>
+        <xsl:when test="@term='no date'">
+          <xsl:attribute name="form">short</xsl:attribute>
+        </xsl:when>
       </xsl:choose>
     </xsl:copy>
   </xsl:template>
