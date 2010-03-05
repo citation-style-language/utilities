@@ -12,18 +12,20 @@ CSL08LocalesDirectory='../csl-locales/branches/0.8/'
 saxon='../jing-20081028/bin/saxon.jar'
 
 localeTemplate=${CSL10LocalesDirectory}locales-en-US.xml
-FILELIST="`find $CSL08LocalesDirectory -name locales-*.xml`"
-# echo $FILELIST
-for FILE in ${FILELIST}
-  do
-    languageCode=`echo ${FILE#*locales-}`
-    languageCode=`echo ${languageCode%.xml}`
-    # echo locales-${languageCode}.xml
-    # Create a custom XLST stylesheet for each locale, run each sheet on the en-US template locale file
-    findstring='locales\\locales-nl-NL.xml'
-    sed "s#$findstring#$FILE#g" update-locales.xsl > update-locales-temp.xsl
-    java -jar $saxon -o ${CSL10LocalesDirectory}locales-${languageCode}.xml $localeTemplate update-locales-temp.xsl
-  done
+FILELIST="`find $CSL08LocalesDirectory -name locales-*.xml -not -name locales-en-US.xml`"
+#echo $FILELIST
+ for FILE in ${FILELIST}
+   do
+     languageCode=`echo ${FILE#*locales-}`
+     languageCode=`echo ${languageCode%.xml}`
+     # echo locales-${languageCode}.xml
+     sed 's#<term name="no date">#<term name="no date" form="short">#g' $FILE > locales-xx-XX-temp.xml
+     CORRECTEDFILE='locales-xx-XX-temp.xml'
+     # Create a custom XLST stylesheet for each locale, run each sheet on the en-US template locale file
+     findstring='locales\\locales-nl-NL.xml'
+     sed "s#$findstring#$CORRECTEDFILE#g" update-locales.xsl > update-locales-temp.xsl
+     java -jar $saxon -o ${CSL10LocalesDirectory}locales-${languageCode}.xml $localeTemplate update-locales-temp.xsl
+   done
 
 # Various tips and tricks:
 # http://www.cs.wright.edu/~pmateti/Courses/333/Notes/bash-vars.html
