@@ -21,7 +21,7 @@
 
   <!-- Elements that themselves can be copied verbatim but can have child nodes that should be modified -->
   <xsl:template
-    match="cs:choose|cs:if|cs:else-if|cs:else|cs:info|cs:date|cs:names|cs:substitute|cs:macro|cs:layout">
+    match="cs:choose|cs:if|cs:else-if|cs:else|cs:info|cs:names|cs:substitute|cs:macro|cs:layout">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates/>
@@ -165,6 +165,8 @@
         <xsl:when test="(@form='short' or @form='verb-short') and not(@include-period='true')">
           <xsl:attribute name="strip-periods">true</xsl:attribute>
         </xsl:when>
+      </xsl:choose>
+      <xsl:choose>
         <xsl:when test="@plural='false'">
           <xsl:attribute name="plural">never</xsl:attribute>
         </xsl:when>
@@ -172,6 +174,18 @@
           <xsl:attribute name="plural">always</xsl:attribute>
         </xsl:when>
       </xsl:choose>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template  match="cs:date">
+     <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:choose>
+        <xsl:when test="@variable='event'">
+          <xsl:attribute name="variable">event-date</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
 
@@ -199,6 +213,8 @@
           test="(@form='short' or @form='verb-short') and not(@include-period='true') and @term">
           <xsl:attribute name="strip-periods">true</xsl:attribute>
         </xsl:when>
+      </xsl:choose>
+      <xsl:choose>
         <xsl:when test="@term='no date'">
           <xsl:attribute name="form">short</xsl:attribute>
         </xsl:when>
