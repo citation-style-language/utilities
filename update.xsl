@@ -215,7 +215,7 @@
         </xsl:when>
       </xsl:choose>
       <xsl:choose>
-        <xsl:when test="@term='no date'">
+        <xsl:when test="@term='no date' and not(/cs:style/cs:terms/cs:locale/cs:term/@name='no date')">
           <xsl:attribute name="form">short</xsl:attribute>
         </xsl:when>
       </xsl:choose>
