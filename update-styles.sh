@@ -3,98 +3,339 @@
 # Converts CSL 0.8 styles to the 1.0 format, after
 # performing schema validation.
 
-jing='../jing-20091111/bin/jing.jar'
-saxon='../jing-20091111/bin/saxon.jar'
-trang='../trang-20091111/trang.jar'
-CSLschema='../csl-schema/'
-CSLstyles='../csl/'
-temp='./temp/'
-# Destination for converted styles
-CSLconvertedStyles='../csl10/'
+
+# Die upon error.
+set -e
+
+
+# Trap ctrl-C so we don't get stuck inside case statements
+function quit () {
+  reset -I
+  exit 0
+}
+trap quit SIGINT
+
+
+# Always run from the directory in which the script is located.
+cd $(dirname $0)
+
+
+# Declare a couple of arrays
+declare -a OPT
+declare -a VAL
+
+
+# FUNCTION: usage note
+function usage () {
+  echo
+  echo "Usage: $0 [options] --csl-out=<path/to/output/dir>"
+  echo
+  echo "Options (set with --option=<value>):"
+  echo "  --jing"
+  echo "      Path to the jing validator jar file."
+  echo "  --saxon"
+  echo "      Path to the saxon jar file."
+  echo "  --trang"
+  echo "      Path to the trang jar file."
+  echo "  --schema08"
+  echo "      Path to the CSL 0.8.1 csl.rnc file."
+  echo "  --schema10"
+  echo "      Path to the CSL 1.0 csl.rnc file."
+  echo "  --csl-input"
+  echo "      Path to the input directory containing CSL 0.8.1 style files."
+  echo "  --csl-output"
+  echo "      Path to the output directory for converted CSL 1.0 style files."
+  echo
+  echo "(NB: all paths are relative to $(pwd))"
+  echo
+}
+
+
+# FUNCTION: initialize the option arrays
+function initialize () {
+  COUNT=0
+  for opt in jing saxon trang schema08 schema10 csl-input csl-output; do
+    OPT[$COUNT]="--$opt"
+    VAL[$COUNT]=""
+    echo $((COUNT++)) > /dev/null
+  done
+}
+
+
+# FUNCTION: set default parameter values.
+function defaults () {
+  VAL[0]='../jing-20091111/bin/jing.jar'
+  VAL[1]='../jing-20091111/bin/saxon.jar'
+  VAL[2]='../trang-20091111/trang.jar'
+  VAL[3]='../csl-schema/csl0.8.1.rnc'
+  VAL[4]='../csl-schema/csl.rnc'
+  VAL[5]='../csl/'
+  # User must explicitly set option 6 (the output directory)
+}
+
+
+# FUNCTION: set an option
+function setopt () {
+  for (( x=0; x < ${#OPT[@]}; x++)); do
+    if [ "${OPT[$x]}" == "$1" ]; then
+      VAL[$x]="$2"
+    fi
+  done
+}
+
+
+# FUNCTION: get options supplied by the user.
+function getopts () {
+  while [ "$(echo "$1" | cut -c 1)" == "-" ]; do
+    opt=$(echo $1 | sed -e s/=.*//)
+    val=$(echo $1 | sed -e s/.*=//)
+    case $opt in
+    --jing|--saxon|--trang|--schema08|--schema10|--csl-input|--csl-output)
+      setopt $opt $val
+      shift;
+      ;;
+    *)
+      usage
+      echo "ERROR: invalid option: $1"
+      exit 1
+      ;;
+    esac
+  done
+}
+
+
+# FUNCTION: save option values used for processing
+function saveopts () {
+  OPT_DATA=""
+  for opt in 0 1 2 3 4 5 6; do
+    OPT_DATA=$(echo -n "${OPT_DATA} ${OPT[$opt]}=./${VAL[$opt]}")
+  done
+  echo ${OPT_DATA} > update-styles.cnf
+}
+
+
+# FUNCTION: validate all parameters
+function checkopts () {  
+  if [ "${VAL[6]}" == "" ]; then
+    usage
+    echo "ERROR: use --csl-output to provide an explicit path to the output directory"
+    exit 1
+  fi
+  for opt in 0 1 2 3 4; do
+    if [ ! -f "${VAL[$opt]}" ]; then
+      if [ "$FAIL" != "yes" ]; then
+        FAIL="yes"
+	usage
+      fi        
+      echo "ERROR: file for option ${OPT[$opt]} not found: ${VAL[$opt]}"
+    fi
+  done
+  if [ ! -d "${VAL[5]}" ]; then
+      if [ "$FAIL" != "yes" ]; then
+        FAIL="yes"
+	usage
+      fi        
+      echo "ERROR: directory for option ${OPT[5]} not found: ${VAL[5]}"
+  fi
+  if [ "${FAIL}" == "yes" ]; then
+    exit 1
+  fi
+}
+
+
+#########################
+## Set up the options ###
+#########################
+
+
+# Initialize the option arrays
+initialize
+
+
+# Supply options from a config file if present, otherwise
+# use the defaults.
+defaults
+if [ -f ./update-styles.cnf ]; then
+  getopts $(cat ./update-styles.cnf)
+fi
+
+
+# Overlay defaults and config-file values with stuff
+# provided on the command line.
+getopts $@
+
+
+# Validate the option values.
+checkopts
+
+
+# Create temporary directory, and provide for its deletion
+# on exit.
+TMP_DIR=$(mktemp -d -p "./")
+function finish () {
+  rm -f ${TMP_DIR}/*
+  rmdir ${TMP_DIR}
+  #reset
+  #echo Hello
+}
+trap finish EXIT
+
+
+###########################################################
+### Actual file validation and conversion happens below ###
+###########################################################
 
 echo "Validate input styles? (y/n)"
-read ans
-case $ans in
-Y|y) 
-  if [ ! -d $temp ]
-  then
-    mkdir $temp
-  fi
-  # Be lax when it comes to the contents of the cs:updated element
-  updatedString='info-updated = element cs:updated { xsd:dateTime }'
-  newUpdatedString='info-updated = element cs:updated { text }'
-  sed "s#$updatedString#$newUpdatedString#g" ${CSLschema}csl0.8.1.rnc > ${temp}csl0.8.1-easyOnUpdated.rnc
-
-  # Jing currently ignores embedded Schematron rules.
-  # For this reason, the schema is first converted to
-  # RELAX NG XML, after which the Schematron code is
-  # extracted and tested separately.
-  java -jar $trang ${CSLschema}csl.rnc ${temp}csl.rng
-  java -jar $saxon -o ${temp}csl.sch ${temp}csl.rng RNG2Schtrn.xsl
-  java -jar $jing ${temp}csl.sch ${CSLstyles}/*.csl
-
-  # RELAX NG Compact validation
-  java -jar $jing -c ${temp}csl0.8.1-easyOnUpdated.rnc ${CSLstyles}*.csl
-  java -jar $jing -c ${temp}csl0.8.1-easyOnUpdated.rnc ${CSLstyles}dependent/*.csl
+ans="?"
+while [ "$ans" != "  " ]; do
+  read -n 1 -s ans
+  case $ans in
+  Y|y) 
+    ans="  "
+    echo -n "  processing ... "
+    # Be lax when it comes to the contents of the cs:updated element
+    SCHEMA_10_DIR=$(dirname ${VAL[4]})
+    cp ${SCHEMA_10_DIR}/*.rnc ${TMP_DIR}/
+    updatedString='info-updated = element cs:updated { xsd:dateTime }'
+    newUpdatedString='info-updated = element cs:updated { text }'
+    sed "s#$updatedString#$newUpdatedString#g" ${VAL[3]} > ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc
+  
+    #  VAL[0] jing
+    #  VAL[1] saxon
+    #  VAL[2] trang
+    #  VAL[3] csl 0.8.1
+    #  VAL[4] csl 1.0
+    #  VAL[5] csl-input
+    #  VAL[6] csl-output
+  
+    # Jing currently ignores embedded Schematron rules.
+    # For this reason, the schema is first converted to
+    # RELAX NG XML, after which the Schematron code is
+    # extracted and tested separately.
+    java -jar ${VAL[2]} ${VAL[4]} ${TMP_DIR}/csl.rng
+    java -jar ${VAL[1]} -o ${TMP_DIR}/csl.sch ${TMP_DIR}/csl.rng RNG2Schtrn.xsl
+    java -jar ${VAL[0]} ${TMP_DIR}/csl.sch ${VAL[5]}/*.csl
+    
+    # RELAX NG Compact validation
+    java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/*.csl
+    java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/dependent/*.csl
+    echo "input styles validated ok"
   ;;
-N|n) ;;
-*)
-esac
+  N|n)
+    ans="  "
+  ;;
+  *)
+  ;;
+  esac
+done
+
 
 echo "Convert styles? (y/n)"
-read ans
-case $ans in
-Y|y) 
-  if [ ! -d $CSLconvertedStyles ]
-  then
-    mkdir $CSLconvertedStyles
-  fi
-  if [ ! -d ${CSLconvertedStyles}dependent ]
-  then
-    mkdir ${CSLconvertedStyles}dependent
-  fi
-  java -jar $saxon -o $CSLconvertedStyles $CSLstyles update.xsl
-  java -jar $saxon -o ${CSLconvertedStyles}dependent ${CSLstyles}dependent update.xsl
-  # Remove .xml from output file names
-  for styleDotCSLDotXML in $CSLconvertedStyles*.csl.xml; do
-    styleDotCSL=${styleDotCSLDotXML%.xml}
-    mv "$styleDotCSLDotXML" "$styleDotCSL"
-  done
-  for styleDotCSLDotXML in ${CSLconvertedStyles}dependent/*.csl.xml; do
-    styleDotCSL=${styleDotCSLDotXML%.xml}
-    mv "$styleDotCSLDotXML" "$styleDotCSL"
-  done
-;;
-N|n) ;;
-*)
-esac
+ans="?"
+while [ "$ans" != "  " ]; do
+  read -n 1 -s ans
+  case $ans in
+  Y|y) 
+    ans="  "
+    echo -n "  processing ... "
+  
+    #  VAL[0] jing
+    #  VAL[1] saxon
+    #  VAL[2] trang
+    #  VAL[3] csl 0.8.1
+    #  VAL[4] csl 1.0
+    #  VAL[5] csl-input
+    #  VAL[6] csl-output
+  
+    if [ ! -d ${VAL[6]} ]; then
+      mkdir ${VAL[6]}
+    fi
+    if [ ! -d ${VAL[6]}/dependent ]; then
+      mkdir ${VAL[6]}/dependent
+    fi
+    java -jar ${VAL[1]} -o ${VAL[6]} ${VAL[5]} update.xsl
+    if [ -d ${VAL[5]}/dependent ]; then
+      java -jar ${VAL[1]} -o ${VAL[6]}/dependent ${VAL[5]}/dependent update.xsl
+    fi
+    # Remove .xml from output file names
+    for styleDotCSLDotXML in ${VAL[6]}/*.csl.xml; do
+      styleDotCSL=${styleDotCSLDotXML%.xml}
+      mv "$styleDotCSLDotXML" "$styleDotCSL"
+    done
+    for styleDotCSLDotXML in ${VAL[6]}/dependent/*.csl.xml; do
+      styleDotCSL=${styleDotCSLDotXML%.xml}
+      mv "$styleDotCSLDotXML" "$styleDotCSL"
+    done
+    echo "styles converted ok: ${VAL[6]}"
+  ;;
+  N|n)
+    ans="  "
+  ;;
+  *)
+  ;;
+  esac
+done
 
 echo "Validate output styles? (y/n)"
-read ans
-case $ans in
-Y|y) 
-  if [ ! -d $temp ]
-  then
-    mkdir $temp
-  fi
-  # Be lax when it comes to the contents of the cs:updated element
-  cp ${CSLschema}*.rnc $temp/
-  updatedString='info-updated = element cs:updated { xsd:dateTime }'
-  newUpdatedString='info-updated = element cs:updated { text }'
-  sed "s#$updatedString#$newUpdatedString#g" ${CSLschema}csl.rnc > ${temp}csl-easyOnUpdated.rnc
+ans="?"
+while [ "$ans" != "  " ]; do
+  read -n 1 -s ans
+  case $ans in
+  Y|y) 
+    ans="  "
+    echo -n "  processing ... "
 
-  # Jing currently ignores embedded Schematron rules.
-  # For this reason, the schema is first converted to
-  # RELAX NG XML, after which the Schematron code is
-  # extracted and tested separately.
-  java -jar $trang ${CSLschema}csl.rnc ${temp}csl.rng
-  java -jar $saxon -o ${temp}csl.sch ${temp}csl.rng RNG2Schtrn.xsl
-  java -jar $jing ${temp}csl.sch ${CSLconvertedStyles}/*.csl
-
-  # RELAX NG Compact validation
-  java -jar $jing -c ${temp}csl-easyOnUpdated.rnc ${CSLconvertedStyles}*.csl
-  java -jar $jing -c ${temp}csl-easyOnUpdated.rnc ${CSLconvertedStyles}dependent/*.csl
+# Be lax when it comes to the contents of the cs:updated element
+    SCHEMA_10_DIR=$(dirname ${VAL[4]})
+    cp ${SCHEMA_10_DIR}/*.rnc ${TMP_DIR}/
+    updatedString='info-updated = element cs:updated { xsd:dateTime }'
+    newUpdatedString='info-updated = element cs:updated { text }'
+    sed "s#$updatedString#$newUpdatedString#g" ${VAL[4]} > ${TMP_DIR}/csl-easyOnUpdated.rnc
+  
+    #  VAL[0] jing
+    #  VAL[1] saxon
+    #  VAL[2] trang
+    #  VAL[3] csl 0.8.1
+    #  VAL[4] csl 1.0
+    #  VAL[5] csl-input
+    #  VAL[6] csl-output
+  
+    # Jing currently ignores embedded Schematron rules.
+    # For this reason, the schema is first converted to
+    # RELAX NG XML, after which the Schematron code is
+    # extracted and tested separately.
+    java -jar ${VAL[2]} ${VAL[4]} ${TMP_DIR}/csl.rng
+    java -jar ${VAL[1]} -o ${TMP_DIR}/csl.sch ${TMP_DIR}/csl.rng RNG2Schtrn.xsl
+    java -jar ${VAL[0]} ${TMP_DIR}/csl.sch ${VAL[6]}/*.csl
+  
+    # RELAX NG Compact validation
+    java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[6]}/*.csl
+    java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[6]}/dependent/*.csl
+    echo "output styles validated ok"
   ;;
-N|n) ;;
-*)
-esac
+  N|n)
+    ans="  "
+  ;;
+  *)
+  ;;
+  esac
+done
+
+
+echo "Save options to update-styles.cnf? (y/n)"
+ans="?"
+while [ "$ans" != "  " ]; do
+  read -n 1 -s ans
+  case $ans in
+  Y|y) 
+    ans="  "
+    saveopts
+    echo saved
+  ;;
+  N|n)
+    ans="  "
+  ;;
+  *)
+  ;;
+  esac
+done
