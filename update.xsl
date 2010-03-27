@@ -4,6 +4,10 @@
   <xsl:output indent="yes" method="xml" encoding="utf-8"/>
   <xsl:strip-space elements="*"/>
 
+  <!-- xml:lang is no longer allowed on cs:style to eliminate confusion with the
+       default-locale attribute. If xml:lang was set, its value is transferred
+       to the default-locale attribute.
+       cs:style now indicate CSL version compatible via the version attribute. -->
   <xsl:template match="/cs:style">
     <xsl:copy>
       <xsl:copy-of select="@*[not(name()='xml:lang')]"/>
@@ -19,7 +23,8 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Elements that themselves can be copied verbatim but can have child nodes that should be modified -->
+  <!-- Elements that themselves can be copied verbatim but can have child nodes
+       that should be modified. -->
   <xsl:template
     match="cs:choose|cs:if|cs:else-if|cs:else|cs:info|cs:names|cs:substitute|cs:macro|cs:layout">
     <xsl:copy>
@@ -28,17 +33,20 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Elements that can be copied verbatim together with their child nodes -->
+  <!-- Elements that can be copied verbatim together with their child nodes. -->
   <xsl:template match="cs:sort|cs:number|comment()">
     <xsl:copy-of select="."/>
   </xsl:template>
 
-  <!-- Child elements of cs:info that can be copied verbatim -->
+  <!-- Child elements of cs:info that can be copied verbatim. -->
   <xsl:template
     match="cs:author|cs:contributor|cs:id|cs:issn|cs:published|cs:rights|cs:source|cs:summary|cs:title|cs:updated">
     <xsl:copy-of select="."/>
   </xsl:template>
 
+  <!-- For the rel attribute on cs:link, "documentation" will be used instead of
+       "homepage", and "source" has been renamed to "independent-parent". The
+       URL of a dependent style is now accompanied with a rel value of "self". -->
   <xsl:template match="cs:link">
     <xsl:variable name="rel-value">
       <xsl:choose>
@@ -91,6 +99,8 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- The hierarchy cs:terms/cs:locale/cs:term has been replaced by
+       cs:locale/cs:terms/cs:term. -->
   <xsl:template match="cs:terms/cs:locale">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
@@ -100,6 +110,8 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- Citation-specific CSL options are now set on cs:citation with attributes,
+       instead of via cs:option elements. -->
   <xsl:template match="cs:citation">
     <xsl:copy>
       <xsl:for-each select="cs:option">
@@ -111,6 +123,9 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- Bibliography-specific CSL options are now set on cs:bibliography with
+       attributes, instead of via cs:option elements.
+       second-field-align now uses the value "flush" instead of "true". -->
   <xsl:template match="cs:bibliography">
     <xsl:copy>
       <xsl:for-each select="cs:option">
@@ -129,6 +144,7 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- The class attribute on cs:group has been superseded by the display attribute. -->
   <xsl:template match="cs:group">
     <xsl:copy>
       <xsl:copy-of select="@*[not(name()='class')]"/>
@@ -177,6 +193,8 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- The "event" date variable has been renamed to "event-date" to eliminate
+       the conflict with the 'standard' "event" variable. -->
   <xsl:template  match="cs:date">
      <xsl:copy>
       <xsl:copy-of select="@*"/>
