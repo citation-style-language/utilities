@@ -4,10 +4,11 @@
   <xsl:output indent="yes" method="xml" encoding="utf-8"/>
   <xsl:strip-space elements="*"/>
 
-  <!-- xml:lang is no longer allowed on cs:style to eliminate confusion with the
-       default-locale attribute. If xml:lang was set, its value is transferred
-       to the default-locale attribute.
-       cs:style now indicate CSL version compatible via the version attribute. -->
+  <!-- * xml:lang is no longer allowed on cs:style to eliminate confusion with
+         the default-locale attribute. If xml:lang was set, its value is
+         transferred to the default-locale attribute.
+       * cs:style now indicates CSL version compatibility via the version
+         attribute. -->
   <xsl:template match="/cs:style">
     <xsl:copy>
       <xsl:copy-of select="@*[not(name()='xml:lang')]"/>
@@ -23,8 +24,8 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Elements that themselves can be copied verbatim but can have child nodes
-       that should be modified. -->
+  <!-- Elements that themselves can be copied verbatim but whose child nodes
+       might require modification. -->
   <xsl:template
     match="cs:choose|cs:if|cs:else-if|cs:else|cs:info|cs:names|cs:substitute|cs:macro|cs:layout">
     <xsl:copy>
@@ -33,7 +34,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Elements that can be copied verbatim together with their child nodes. -->
+  <!-- Elements that can be copied verbatim together with any child nodes. -->
   <xsl:template match="cs:sort|cs:number|comment()">
     <xsl:copy-of select="."/>
   </xsl:template>
@@ -66,6 +67,11 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- The citation-format and field attributes have replaced the term attribute
+       on cs:category, and the "in-text" category has been removed. Styles with
+       the "in-text" category are assigned the "numeric" citation-format if the
+       "citation-number" variable is used in citations, and the "author-date"
+       format in all other cases. -->
   <xsl:template match="cs:category">
     <xsl:choose>
       <xsl:when test="@term='in-text'">
@@ -110,7 +116,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Citation-specific CSL options are now set on cs:citation with attributes,
+  <!-- Citation-specific CSL options are now set as attributes on cs:citation,
        instead of via cs:option elements. -->
   <xsl:template match="cs:citation">
     <xsl:copy>
@@ -123,9 +129,9 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Bibliography-specific CSL options are now set on cs:bibliography with
-       attributes, instead of via cs:option elements.
-       second-field-align now uses the value "flush" instead of "true". -->
+  <!-- * Bibliography-specific CSL options are now set as attributes on
+         cs:bibliography, instead of via cs:option elements.
+       * second-field-align now uses the value "flush" instead of "true". -->
   <xsl:template match="cs:bibliography">
     <xsl:copy>
       <xsl:for-each select="cs:option">
@@ -144,7 +150,8 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- The class attribute on cs:group has been superseded by the display attribute. -->
+  <!-- The class attribute on cs:group has been removed in favor of the display
+       attribute. -->
   <xsl:template match="cs:group">
     <xsl:copy>
       <xsl:copy-of select="@*[not(name()='class')]"/>
@@ -152,6 +159,9 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- The text-case attribute can no longer be used on cs:name. In cases
+       where text-case was used on cs:name, the attribute and its value are
+       transferred to the "family" and "given" cs:name-part children. -->
   <xsl:template match="cs:name">
     <xsl:copy>
       <xsl:copy-of select="@*[not(name()='text-case')]"/>
@@ -174,6 +184,12 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- * In CSL 1.0, abbreviated terms are defined with periods, if applicable,
+         and the include-period attribute has replaced the strip-periods
+         attribute. For the conversion, strip-periods is set to "true" for any
+         cs:label element with form="short" or "verb-short", except when
+         include-period was set to "true".
+       * plural on cs:label now uses "always"/"never" instead of "true"/"false". -->
   <xsl:template match="cs:label">
     <xsl:copy>
       <xsl:copy-of select="@*[not(name()='include-period')]"/>
@@ -194,7 +210,7 @@
   </xsl:template>
 
   <!-- The "event" date variable has been renamed to "event-date" to eliminate
-       the conflict with the 'standard' "event" variable. -->
+       the name conflict with the 'standard' "event" variable. -->
   <xsl:template  match="cs:date">
      <xsl:copy>
       <xsl:copy-of select="@*"/>
@@ -207,6 +223,11 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- In CSL 1.0, abbreviated terms are defined with periods, if applicable,
+       and the include-period attribute has replaced the strip-periods
+       attribute. For the conversion, strip-periods is set to "true" for any
+       "month" cs:date-part element with form="short", except when
+       include-period was set to "true". -->
   <xsl:template match="cs:date-part">
     <xsl:choose>
       <xsl:when test="@name='year' or @name='month' or @name='day'">
@@ -214,7 +235,7 @@
           <xsl:copy-of select="@*[not(name()='include-period')]"/>
           <xsl:choose>
             <xsl:when
-              test="(@form='short' or @form='verb-short') and @name='month' and not(@include-period='true')">
+              test="@form='short' and @name='month' and not(@include-period='true')">
               <xsl:attribute name="strip-periods">true</xsl:attribute>
             </xsl:when>
           </xsl:choose>
@@ -223,6 +244,17 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- * In CSL 1.0, abbreviated terms are defined with periods, if applicable,
+         and the include-period attribute has replaced the strip-periods
+         attribute. For the conversion, strip-periods is set to "true" for any
+         cs:text element with form="short" or "verb-short", except when
+         include-period was set to "true".
+       * The CSL 0.8 en-US locale file only included the "long" form of the
+         "no date" term, with a value of "n.d.". In the CSL 1.0 locale file, the
+         value has been changed to "no date", and a "short" form ("n.d.") has
+         been introduced. For the conversion, any cs:text element that called
+         the "long" form of the "no date" term will now call the "short" form,
+         unless the "long" form had been redefined in the style. -->
   <xsl:template match="cs:text">
     <xsl:copy>
       <xsl:copy-of select="@*[not(name()='include-period')]"/>
