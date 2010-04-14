@@ -27,7 +27,7 @@
   <!-- Elements that themselves can be copied verbatim but whose child nodes
        might require modification. -->
   <xsl:template
-    match="cs:choose|cs:if|cs:else-if|cs:else|cs:info|cs:names|cs:substitute|cs:macro|cs:layout">
+    match="cs:choose|cs:else|cs:info|cs:names|cs:substitute|cs:macro|cs:layout">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates/>
@@ -148,6 +148,141 @@
       </xsl:for-each>
       <xsl:apply-templates select="cs:layout|cs:sort"/>
     </xsl:copy>
+  </xsl:template>
+
+  <!-- CSL 1.0 eliminates item type fallback behavior in conditionals
+       ("article", "book" and "chapter" used to be type archetypes, e.g.
+       "article-journal" would be a subtype of "article", see
+       http://docs.google.com/View?id=dg6h9k72_64hzmsmqgb). For the conversion,
+       each archetype is replaced by all subtypes of that archetype (while
+       making sure that "song" is only present once in the attribute string, as
+       "song" is a subtype of both "article" and "book"). If an archetype is
+       replaced by its subtypes, the match attribute is set to "any", unless
+       match was set to "none". This is done as "type='chapter' match='all'" can
+       test true, but "type='chapter paper-conference' match='all' can not (each
+       item is of a single type). cs:if and cs:if-else elements that, in
+       addition to the type conditional, test with match="all" (the default
+       attribute value) and carry additional conditionals are split into a
+       nested conditional (an example of this case is given at
+       http://forums.zotero.org/discussion/11960/item-type-testing-in-csl-10-and-fallbacks/#Comment_58392
+       ). -->
+  <xsl:template match="cs:if|cs:else-if">
+    <xsl:copy>
+      <xsl:choose>
+        <xsl:when test="contains(@type,'book') or (contains(@type,'article') and not(contains(@type,'article-'))) or contains(@type,'chapter')">
+          <xsl:choose>
+            <xsl:when test="(not(@match='any') and not(@match='none')) and (@variable or @is-numeric or @position or @disambiguate)">
+              <xsl:call-template name="fallback-replacement"/>
+              <xsl:attribute name="match">any</xsl:attribute>
+              <xsl:element name="choose">
+                <xsl:element name="if">
+                  <xsl:copy-of select="@*[not(name()='type')]"/>
+                  <xsl:apply-templates/> 
+                </xsl:element>
+              </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:copy-of select="@*"/>
+              <xsl:call-template name="fallback-replacement"/>
+              <xsl:if test="not(@match='none')">
+                <xsl:attribute name="match">any</xsl:attribute>
+              </xsl:if>
+              <xsl:apply-templates/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="@*"/>
+          <xsl:apply-templates/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template name="fallback-replacement">
+    <xsl:choose>
+      <xsl:when test="contains(@type,'book')">
+        <xsl:attribute name="type">
+          <xsl:call-template name="book-sans-space"/>
+          <xsl:call-template name="article"/>
+          <xsl:call-template name="chapter"/>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:when test="contains(@type,'article') and not(contains(@type,'article-'))">
+        <xsl:attribute name="type">
+          <xsl:call-template name="article-sans-space"/>
+          <xsl:call-template name="book"/>
+          <xsl:call-template name="chapter"/>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:when test="contains(@type,'chapter')">
+        <xsl:attribute name="type">
+          <xsl:call-template name="chapter-sans-space"/>
+          <xsl:call-template name="article"/>
+          <xsl:call-template name="book"/>
+        </xsl:attribute>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>      
+
+  <xsl:template name="book-sans-space">
+    <xsl:text>bill book graphic legal_case motion_picture report song</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="article-sans-space">
+    <xsl:choose>
+      <xsl:when test="contains(@type,'article') and not(contains(@type,'article-')) and contains(@type,'book')">article-journal article-magazine article-newspaper broadcast interview manuscript map patent personal_communication speech thesis webpage</xsl:when>
+      <xsl:when test="contains(@type,'article') and not(contains(@type,'article-'))">article-journal article-magazine article-newspaper broadcast interview manuscript map patent personal_communication song speech thesis webpage</xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="chapter-sans-space">
+    <xsl:text>chapter paper-conference</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="book">
+    <xsl:choose>
+      <xsl:when test="contains(@type,'book')"> bill book graphic legal_case motion_picture report song</xsl:when>
+      <xsl:otherwise>
+        <xsl:if test="contains(@type,'bill')"> bill</xsl:if>
+        <xsl:if test="contains(@type,'graphic')"> graphic</xsl:if>
+        <xsl:if test="contains(@type,'legal_case')"> legal_case</xsl:if>
+        <xsl:if test="contains(@type,'motion_picture')"> motion_picture</xsl:if>
+        <xsl:if test="contains(@type,'report')"> report</xsl:if>
+        <xsl:if test="contains(@type,'song')"> song</xsl:if>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="article">
+    <xsl:choose>
+      <xsl:when test="contains(@type,'article') and not(contains(@type,'article-')) and contains(@type,'book')"> article-journal article-magazine article-newspaper broadcast interview manuscript map patent personal_communication speech thesis webpage</xsl:when>
+      <xsl:when test="contains(@type,'article') and not(contains(@type,'article-'))"> article-journal article-magazine article-newspaper broadcast interview manuscript map patent personal_communication song speech thesis webpage</xsl:when>
+      <xsl:otherwise>
+        <xsl:if test="contains(@type,'article-journal')"> article-journal</xsl:if>
+        <xsl:if test="contains(@type,'article-magazine')"> article-magazine</xsl:if>
+        <xsl:if test="contains(@type,'article-newspaper')"> article-newspaper</xsl:if>
+        <xsl:if test="contains(@type,'broadcast')"> broadcast</xsl:if>
+        <xsl:if test="contains(@type,'interview')"> interview</xsl:if>
+        <xsl:if test="contains(@type,'manuscript')"> manuscript</xsl:if>
+        <xsl:if test="contains(@type,'map')"> map</xsl:if>
+        <xsl:if test="contains(@type,'patent')"> patent</xsl:if>
+        <xsl:if test="contains(@type,'personal_communication')"> personal_communication</xsl:if>
+        <xsl:if test="contains(@type,'speech')"> speech</xsl:if>
+        <xsl:if test="contains(@type,'thesis')"> thesis</xsl:if>
+        <xsl:if test="contains(@type,'map')"> map</xsl:if>
+        <xsl:if test="contains(@type,'webpage')"> webpage</xsl:if>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="chapter">
+    <xsl:choose>
+      <xsl:when test="contains(@type,'chapter')"> chapter paper-conference</xsl:when>
+      <xsl:otherwise>
+        <xsl:if test="contains(@type,'paper-conference')"> paper-conference</xsl:if>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- The class attribute on cs:group has been removed in favor of the display
