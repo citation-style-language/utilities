@@ -45,6 +45,11 @@ function usage () {
   echo "      Path to the input directory containing CSL 0.8.1 style files."
   echo "  --csl-output"
   echo "      Path to the output directory for converted CSL 1.0 style files."
+  echo "      (required)"
+  echo "  --config"
+  echo "      Alternative configuration file (default is update-styles.cnf)."
+  echo "  --help"
+  echo "      This message."
   echo
   echo "(NB: all paths are relative to $(pwd))"
   echo
@@ -54,7 +59,7 @@ function usage () {
 # FUNCTION: initialize the option arrays
 function initialize () {
   COUNT=0
-  for opt in jing saxon trang schema08 schema10 csl-input csl-output; do
+  for opt in jing saxon trang schema08 schema10 csl-input config csl-output; do
     OPT[$COUNT]="--$opt"
     VAL[$COUNT]=""
     echo $((COUNT++)) > /dev/null
@@ -70,7 +75,8 @@ function defaults () {
   VAL[3]='../csl-schema/csl0.8.1.rnc'
   VAL[4]='../csl-schema/csl.rnc'
   VAL[5]='../csl/'
-  # User must explicitly set option 6 (the output directory)
+  VAL[6]='./update-styles.cnf'
+  # User must explicitly set option 7 (the output directory)
 }
 
 
@@ -90,7 +96,7 @@ function getopts () {
     opt=$(echo $1 | sed -e s/=.*//)
     val=$(echo $1 | sed -e s/.*=//)
     case $opt in
-    --jing|--saxon|--trang|--schema08|--schema10|--csl-input|--csl-output)
+    --jing|--saxon|--trang|--schema08|--schema10|--csl-input|--config|--csl-output)
       setopt $opt $val
       shift;
       ;;
@@ -107,16 +113,16 @@ function getopts () {
 # FUNCTION: save option values used for processing
 function saveopts () {
   OPT_DATA=""
-  for opt in 0 1 2 3 4 5 6; do
+  for opt in 0 1 2 3 4 5; do
     OPT_DATA=$(echo -n "${OPT_DATA} ${OPT[$opt]}=./${VAL[$opt]}")
   done
-  echo ${OPT_DATA} > update-styles.cnf
+  echo ${OPT_DATA} > ${VAL[6]}
 }
 
 
 # FUNCTION: validate all parameters
 function checkopts () {  
-  if [ "${VAL[6]}" == "" ]; then
+  if [ "${VAL[7]}" == "" ]; then
     usage
     echo "ERROR: use --csl-output to provide an explicit path to the output directory"
     exit 1
@@ -154,14 +160,22 @@ initialize
 
 # Supply options from a config file if present, otherwise
 # use the defaults.
+
+# Set defaults
 defaults
-if [ -f ./update-styles.cnf ]; then
-  getopts $(cat ./update-styles.cnf)
+
+# Read options, to pick up --config option ($VAL[6]), if any.
+getopts $@
+
+echo $@
+echo ${VAL[6]}
+
+if [ -f ${VAL[6]} ]; then
+  getopts $(cat ${VAL[6]})
 fi
 
-
-# Overlay defaults and config-file values with stuff
-# provided on the command line.
+# Read options again, to overlay defaults and config-file 
+# values with stuff provided on the command line.
 getopts $@
 
 
@@ -185,6 +199,11 @@ trap finish EXIT
 ### Actual file validation and conversion happens below ###
 ###########################################################
 
+echo "#"
+echo "# Input from: ${VAL[5]}"
+echo "#"
+echo "# Output to: ${VAL[7]}"
+echo "#"
 echo "Validate input styles? (y/n)"
 ans="?"
 while [ "$ans" != "  " ]; do
@@ -206,7 +225,8 @@ while [ "$ans" != "  " ]; do
     #  VAL[3] csl 0.8.1
     #  VAL[4] csl 1.0
     #  VAL[5] csl-input
-    #  VAL[6] csl-output
+    #  VAL[6] config
+    #  VAL[7] csl-output
   
     # Jing currently ignores embedded Schematron rules.
     # For this reason, the schema is first converted to
@@ -218,11 +238,16 @@ while [ "$ans" != "  " ]; do
     
     # RELAX NG Compact validation
     java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/*.csl
-    java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/dependent/*.csl
+    if [ -d "${VAL[5]}/dependent" -a "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
+      java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/dependent/*.csl
+    fi
     echo "input styles validated ok"
   ;;
   N|n)
     ans="  "
+    echo "No actions performed."
+    echo "Bye"
+    exit 0
   ;;
   *)
   ;;
@@ -245,31 +270,37 @@ while [ "$ans" != "  " ]; do
     #  VAL[3] csl 0.8.1
     #  VAL[4] csl 1.0
     #  VAL[5] csl-input
-    #  VAL[6] csl-output
+    #  VAL[6] config
+    #  VAL[7] csl-output
   
-    if [ ! -d ${VAL[6]} ]; then
-      mkdir ${VAL[6]}
+    if [ ! -d ${VAL[7]} ]; then
+      mkdir ${VAL[7]}
     fi
-    if [ ! -d ${VAL[6]}/dependent ]; then
-      mkdir ${VAL[6]}/dependent
+    if [ ! -d ${VAL[7]}/dependent ]; then
+      mkdir ${VAL[7]}/dependent
     fi
-    java -jar ${VAL[1]} -o ${VAL[6]} ${VAL[5]} update.xsl
-    if [ -d ${VAL[5]}/dependent ]; then
-      java -jar ${VAL[1]} -o ${VAL[6]}/dependent ${VAL[5]}/dependent update.xsl
+    java -jar ${VAL[1]} -o ${VAL[7]} ${VAL[5]} update.xsl
+    if [ -d "${VAL[5]}/dependent" -a "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
+      java -jar ${VAL[1]} -o ${VAL[7]}/dependent ${VAL[5]}/dependent update.xsl
     fi
     # Remove .xml from output file names
-    for styleDotCSLDotXML in ${VAL[6]}/*.csl.xml; do
+    for styleDotCSLDotXML in ${VAL[7]}/*.csl.xml; do
       styleDotCSL=${styleDotCSLDotXML%.xml}
       mv "$styleDotCSLDotXML" "$styleDotCSL"
     done
-    for styleDotCSLDotXML in ${VAL[6]}/dependent/*.csl.xml; do
-      styleDotCSL=${styleDotCSLDotXML%.xml}
-      mv "$styleDotCSLDotXML" "$styleDotCSL"
-    done
-    echo "styles converted ok: ${VAL[6]}"
+    if [ -d "${VAL[5]}/dependent" -a "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
+      for styleDotCSLDotXML in ${VAL[7]}/dependent/*.csl.xml; do
+        styleDotCSL=${styleDotCSLDotXML%.xml}
+        mv "$styleDotCSLDotXML" "$styleDotCSL"
+      done
+    fi
+    echo "styles converted ok: ${VAL[7]}"
   ;;
   N|n)
     ans="  "
+    echo "Not converting styles"
+    echo "Bye"
+    exit 0
   ;;
   *)
   ;;
@@ -298,7 +329,8 @@ while [ "$ans" != "  " ]; do
     #  VAL[3] csl 0.8.1
     #  VAL[4] csl 1.0
     #  VAL[5] csl-input
-    #  VAL[6] csl-output
+    #  VAL[6] config
+    #  VAL[7] csl-output
   
     # Jing currently ignores embedded Schematron rules.
     # For this reason, the schema is first converted to
@@ -306,15 +338,20 @@ while [ "$ans" != "  " ]; do
     # extracted and tested separately.
     java -jar ${VAL[2]} ${VAL[4]} ${TMP_DIR}/csl.rng
     java -jar ${VAL[1]} -o ${TMP_DIR}/csl.sch ${TMP_DIR}/csl.rng RNG2Schtrn.xsl
-    java -jar ${VAL[0]} ${TMP_DIR}/csl.sch ${VAL[6]}/*.csl
+    java -jar ${VAL[0]} ${TMP_DIR}/csl.sch ${VAL[7]}/*.csl
   
     # RELAX NG Compact validation
-    java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[6]}/*.csl
-    java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[6]}/dependent/*.csl
+    java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[7]}/*.csl
+    if [ -d "${VAL[5]}/dependent" -a "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
+      java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[7]}/dependent/*.csl
+    fi
     echo "output styles validated ok"
   ;;
   N|n)
     ans="  "
+    echo "Not validating output styles"
+    echo "Bye"
+    exit 0
   ;;
   *)
   ;;
@@ -322,7 +359,7 @@ while [ "$ans" != "  " ]; do
 done
 
 
-echo "Save options to update-styles.cnf? (y/n)"
+echo "Save options to ${VAL[6]}? (y/n)"
 ans="?"
 while [ "$ans" != "  " ]; do
   read -n 1 -s ans
@@ -330,7 +367,7 @@ while [ "$ans" != "  " ]; do
   Y|y) 
     ans="  "
     saveopts
-    echo saved
+    echo "Saved options to ${VAL[6]}"
   ;;
   N|n)
     ans="  "
