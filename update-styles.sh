@@ -167,9 +167,6 @@ defaults
 # Read options, to pick up --config option ($VAL[6]), if any.
 getopts $@
 
-echo $@
-echo ${VAL[6]}
-
 if [ -f ${VAL[6]} ]; then
   getopts $(cat ${VAL[6]})
 fi
