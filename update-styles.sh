@@ -48,6 +48,7 @@ function usage () {
   echo "      (required)"
   echo "  --config"
   echo "      Alternative configuration file (default is update-styles.cnf)."
+  echo "      (file will be created on save if it does not exist)"
   echo "  --help"
   echo "      This message."
   echo
@@ -149,6 +150,31 @@ function checkopts () {
 }
 
 
+# FUNCTION: offer to save options
+function finalquery () {
+  echo "Save options to ${VAL[6]}? (y/n)"
+  ans="?"
+  while [ "$ans" != "  " ]; do
+    read -n 1 -s ans
+    case $ans in
+    Y|y) 
+      ans="  "
+      saveopts
+      echo "Saved options to ${VAL[6]}"
+    ;;
+    N|n)
+      ans="  "
+      echo "Options not saved"
+    ;;
+    *)
+    ;;
+    esac
+  done
+  echo "Bye"
+  exit 0
+}
+
+
 #########################
 ## Set up the options ###
 #########################
@@ -163,6 +189,11 @@ initialize
 
 # Set defaults
 defaults
+
+# Read options from ./update-styles.cnf if it exists.
+if [ -f "./update-styles.cnf" ]; then
+  getopts $(cat "./update-styles.cnf")
+fi
 
 # Read options, to pick up --config option ($VAL[6]), if any.
 getopts $@
@@ -235,16 +266,16 @@ while [ "$ans" != "  " ]; do
     
     # RELAX NG Compact validation
     java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/*.csl
-    if [ -d "${VAL[5]}/dependent" -a "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
-      java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/dependent/*.csl
+    if [ -d "${VAL[5]}/dependent" ]; then
+      if [ "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
+        java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/dependent/*.csl
+      fi
     fi
     echo "input styles validated ok"
   ;;
   N|n)
-    ans="  "
     echo "No actions performed."
-    echo "Bye"
-    exit 0
+    finalquery
   ;;
   *)
   ;;
@@ -277,27 +308,29 @@ while [ "$ans" != "  " ]; do
       mkdir ${VAL[7]}/dependent
     fi
     java -jar ${VAL[1]} -o ${VAL[7]} ${VAL[5]} update.xsl
-    if [ -d "${VAL[5]}/dependent" -a "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
-      java -jar ${VAL[1]} -o ${VAL[7]}/dependent ${VAL[5]}/dependent update.xsl
+    if [ -d "${VAL[5]}/dependent" ]; then
+      if [ "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
+        java -jar ${VAL[1]} -o ${VAL[7]}/dependent ${VAL[5]}/dependent update.xsl
+      fi
     fi
     # Remove .xml from output file names
     for styleDotCSLDotXML in ${VAL[7]}/*.csl.xml; do
       styleDotCSL=${styleDotCSLDotXML%.xml}
       mv "$styleDotCSLDotXML" "$styleDotCSL"
     done
-    if [ -d "${VAL[5]}/dependent" -a "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
-      for styleDotCSLDotXML in ${VAL[7]}/dependent/*.csl.xml; do
-        styleDotCSL=${styleDotCSLDotXML%.xml}
-        mv "$styleDotCSLDotXML" "$styleDotCSL"
-      done
+    if [ -d "${VAL[5]}/dependent" ]; then
+      if [ "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
+        for styleDotCSLDotXML in ${VAL[7]}/dependent/*.csl.xml; do
+          styleDotCSL=${styleDotCSLDotXML%.xml}
+          mv "$styleDotCSLDotXML" "$styleDotCSL"
+        done
+      fi
     fi
     echo "styles converted ok: ${VAL[7]}"
   ;;
   N|n)
-    ans="  "
     echo "Not converting styles"
-    echo "Bye"
-    exit 0
+    finalquery
   ;;
   *)
   ;;
@@ -339,37 +372,20 @@ while [ "$ans" != "  " ]; do
   
     # RELAX NG Compact validation
     java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[7]}/*.csl
-    if [ -d "${VAL[5]}/dependent" -a "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
-      java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[7]}/dependent/*.csl
+    if [ -d "${VAL[5]}/dependent" ]; then
+      if [ "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
+        java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[7]}/dependent/*.csl
+      fi
     fi
     echo "output styles validated ok"
   ;;
   N|n)
-    ans="  "
     echo "Not validating output styles"
-    echo "Bye"
-    exit 0
+    finalquery
   ;;
   *)
   ;;
   esac
 done
 
-
-echo "Save options to ${VAL[6]}? (y/n)"
-ans="?"
-while [ "$ans" != "  " ]; do
-  read -n 1 -s ans
-  case $ans in
-  Y|y) 
-    ans="  "
-    saveopts
-    echo "Saved options to ${VAL[6]}"
-  ;;
-  N|n)
-    ans="  "
-  ;;
-  *)
-  ;;
-  esac
-done
+finalquery
