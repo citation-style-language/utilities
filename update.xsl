@@ -384,6 +384,11 @@
          attribute. For the conversion, strip-periods is set to "true" for any
          cs:text element with form="short" or "verb-short", except when
          include-period was set to "true".
+       * A special case is the "ibid" term. "ibid" is not defined as a
+         short-form term, but is an abbreviation, and should carry a period
+         ("ibid."). This period, absent in CSL 0.8 locale files, will be
+         included in CSL 1.0 locale files. To prevent double periods, suffix="."
+         will be removed from any cs:text element calling the "ibid" term.
        * The CSL 0.8 en-US locale file only included the "long" form of the
          "no date" term, with a value of "n.d.". In the CSL 1.0 locale file, the
          value has been changed to "no date", and a "short" form ("n.d.") has
@@ -391,20 +396,29 @@
          the "long" form of the "no date" term will now call the "short" form,
          unless the "long" form had been redefined in the style. -->
   <xsl:template match="cs:text">
-    <xsl:copy>
-      <xsl:copy-of select="@*[not(name()='include-period')]"/>
-      <xsl:choose>
-        <xsl:when
-          test="(@form='short' or @form='verb-short') and not(@include-period='true') and @term">
-          <xsl:attribute name="strip-periods">true</xsl:attribute>
-        </xsl:when>
-      </xsl:choose>
-      <xsl:choose>
-        <xsl:when test="@term='no date' and not(/cs:style/cs:terms/cs:locale/cs:term/@name='no date')">
-          <xsl:attribute name="form">short</xsl:attribute>
-        </xsl:when>
-      </xsl:choose>
-    </xsl:copy>
+    <xsl:choose>
+      <xsl:when test="@term='ibid' and @suffix='.'">
+        <xsl:copy>
+          <xsl:copy-of select="@*[not(name()='suffix')]"/>
+        </xsl:copy>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:copy>
+          <xsl:copy-of select="@*[not(name()='include-period')]"/>
+          <xsl:choose>
+            <xsl:when
+              test="(@form='short' or @form='verb-short') and not(@include-period='true') and @term">
+              <xsl:attribute name="strip-periods">true</xsl:attribute>
+            </xsl:when>
+          </xsl:choose>
+          <xsl:choose>
+            <xsl:when test="@term='no date' and not(/cs:style/cs:terms/cs:locale/cs:term/@name='no date')">
+              <xsl:attribute name="form">short</xsl:attribute>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:copy>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
 </xsl:stylesheet>
