@@ -294,12 +294,24 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- The text-case attribute can no longer be used on cs:name. In cases
-       where text-case was used on cs:name, the attribute and its value are
-       transferred to the "family" and "given" cs:name-part children. -->
+  <!-- * The text-case attribute can no longer be used on cs:name. In cases
+         where text-case was used on cs:name, the attribute and its value are
+         transferred to the "family" and "given" cs:name-part children.
+       * The Zotero and Mendeley CSL 0.8.1 processors ignored name-as-sort-order
+         when sort-separator was not set. In CSL 1.0, name-as-sort-order always
+         takes effect, with a default value of ", " for sort-separator. To
+         correct for this change in behavior, the name-as-sort-order attribute
+         is dropped from cs:name when sort-separator was absent. -->
   <xsl:template match="cs:name">
     <xsl:copy>
-      <xsl:copy-of select="@*[not(name()='text-case')]"/>
+      <xsl:choose>
+        <xsl:when test="@name-as-sort-order and not(@sort-separator)">
+          <xsl:copy-of select="@*[not(name()='text-case' or name()='name-as-sort-order')]"/>
+        </xsl:when>
+	<xsl:otherwise>
+          <xsl:copy-of select="@*[not(name()='text-case')]"/>
+	</xsl:otherwise>
+      </xsl:choose>
       <xsl:choose>
         <xsl:when test="@text-case">
           <xsl:element name="name-part">
