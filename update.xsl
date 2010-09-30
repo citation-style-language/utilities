@@ -285,11 +285,22 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- The class attribute on cs:group has been removed in favor of the display
-       attribute. -->
+  <!-- * The class attribute on cs:group has been removed in favor of the
+         display attribute.
+       * The " by " prefix on cs:group is removed if the element encloses a
+         cs:names element calling the container-author variable and including a
+         label. This is done to prevent duplication of "by" as a result of the
+         new verb-short container-author term in CSL 1.0 locale files. -->
   <xsl:template match="cs:group">
     <xsl:copy>
-      <xsl:copy-of select="@*[not(name()='class')]"/>
+      <xsl:choose>
+        <xsl:when test="@prefix=' by ' and cs:names/@variable='container-author' and cs:names/cs:label">
+          <xsl:copy-of select="@*[not(name()='class' or name()='prefix')]"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="@*[not(name()='class')]"/>
+        </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
@@ -358,7 +369,7 @@
 
   <!-- The "event" date variable has been renamed to "event-date" to eliminate
        the name conflict with the 'standard' "event" variable. -->
-  <xsl:template  match="cs:date">
+  <xsl:template match="cs:date">
      <xsl:copy>
       <xsl:copy-of select="@*"/>
       <xsl:choose>
