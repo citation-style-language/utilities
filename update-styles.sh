@@ -73,8 +73,8 @@ function defaults () {
   VAL[0]='../jing-20091111/bin/jing.jar'
   VAL[1]='../jing-20091111/bin/saxon.jar'
   VAL[2]='../trang-20091111/trang.jar'
-  VAL[3]='../csl-schema/csl0.8.1.rnc'
-  VAL[4]='../csl-schema/csl.rnc'
+  VAL[3]='../0.8.1/csl.rnc'
+  VAL[4]='../1.0/csl.rnc'
   VAL[5]='../csl/'
   VAL[6]='./update-styles.cnf'
   # User must explicitly set option 7 (the output directory)
@@ -215,7 +215,7 @@ checkopts
 # on exit.
 TMP_DIR=$(mktemp -d -p "./")
 function finish () {
-  rm -f ${TMP_DIR}/*
+  rm -rf ${TMP_DIR}/*
   rmdir ${TMP_DIR}
   #reset
   #echo Hello
@@ -232,6 +232,15 @@ echo "# Input from: ${VAL[5]}"
 echo "#"
 echo "# Output to: ${VAL[7]}"
 echo "#"
+
+# Place CSL 0.8.1 and 1.0 styles in separate directories
+tempCSL10="${TMP_DIR}/csl10"
+tempCSL081="${TMP_DIR}/csl081"
+mkdir ${tempCSL10} 
+mkdir ${tempCSL081}
+cp ${VAL[5]}/*.csl ${tempCSL081}
+grep -l "<style[^>]*version" ${tempCSL081}/*.csl | xargs -I '{}' mv '{}' ${tempCSL10}
+
 echo "Validate input styles? (y/n)"
 ans="?"
 while [ "$ans" != "  " ]; do
@@ -264,8 +273,9 @@ while [ "$ans" != "  " ]; do
     java -jar ${VAL[1]} -o ${TMP_DIR}/csl.sch ${TMP_DIR}/csl.rng RNG2Schtrn.xsl
     java -jar ${VAL[0]} ${TMP_DIR}/csl.sch ${VAL[5]}/*.csl
     
-    # RELAX NG Compact validation
-    java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/*.csl
+    # RELAX NG Compact validation of CSL 0.8.1 styles
+    java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${tempCSL081}/*.csl
+
     if [ -d "${VAL[5]}/dependent" ]; then
       if [ "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
         java -jar ${VAL[0]} -c ${TMP_DIR}/csl0.8.1-easyOnUpdated.rnc ${VAL[5]}/dependent/*.csl
@@ -307,7 +317,12 @@ while [ "$ans" != "  " ]; do
     if [ ! -d ${VAL[7]}/dependent ]; then
       mkdir ${VAL[7]}/dependent
     fi
-    java -jar ${VAL[1]} -o ${VAL[7]} ${VAL[5]} update.xsl
+    
+    # Copy CSL 1.0 styles to output directory
+    cp ${tempCSL10}/*.csl ${VAL[7]}
+
+    # Convert CSL 0.8.1 styles
+    java -jar ${VAL[1]} -o ${VAL[7]} ${tempCSL081} update.xsl
     if [ -d "${VAL[5]}/dependent" ]; then
       if [ "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
         java -jar ${VAL[1]} -o ${VAL[7]}/dependent ${VAL[5]}/dependent update.xsl
@@ -346,7 +361,7 @@ while [ "$ans" != "  " ]; do
     ans="  "
     echo -n "  processing ... "
 
-# Be lax when it comes to the contents of the cs:updated element
+    # Be lax when it comes to the contents of the cs:updated element
     SCHEMA_10_DIR=$(dirname ${VAL[4]})
     cp ${SCHEMA_10_DIR}/*.rnc ${TMP_DIR}/
     updatedString='info-updated = element cs:updated { xsd:dateTime }'
