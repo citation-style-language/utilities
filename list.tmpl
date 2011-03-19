@@ -1,0 +1,125 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+    
+    <title>Citation Styles</title>
+    <style type="text/css" title="currentStyle">
+      @import "media/css/demo_page.css";
+      @import "media/css/demo_table.css";
+      @import "media/css/demo_table_jui.css";
+      @import "media/css/jquery-ui-1.7.2.custom.css";
+
+      /*
+      * Override styles needed due to the mix of three different CSS sources! For proper examples
+      * please see the themes example in the 'Examples' section of this site
+      */
+      .dataTables_info { padding-top: 0; }
+      .dataTables_paginate { padding-top: 0; }
+      .css_right { float: right; }
+      #example_wrapper .fg-toolbar { font-size: 0.8em }
+      #theme_links span { float: left; padding: 2px 10px; }
+    </style>
+    <script type="text/javascript" language="javascript" src="media/js/jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      /* Formating function for row details */
+      function fnFormatDetails ( oTable, nTr )
+      {
+      var aData = oTable.fnGetData( nTr );
+      var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+	sOut += '<tr><td>Name:</td><td>'+aData[1]+'</td></tr>';
+	sOut += '<tr><td>Link to source:</td><td>Could provide a link here</td></tr>';
+	sOut += '<tr><td>Extra info:</td><td>Preview</td></tr>';
+	sOut += '</table>';
+      
+      return sOut;
+      }
+      
+      $(document).ready(function() {
+      /*
+      * Insert a 'details' column to the table
+      */
+      var nCloneTh = document.createElement( 'th' );
+      var nCloneTd = document.createElement( 'td' );
+      nCloneTd.innerHTML = '<img src="media/images/details_open.png">';
+      nCloneTd.className = "center";
+      
+      $('#example thead tr').each( function () {
+      this.insertBefore( nCloneTh, this.childNodes[0] );
+      } );
+      
+      $('#example tbody tr').each( function () {
+      this.insertBefore(  nCloneTd.cloneNode( true ), this.childNodes[0] );
+      } );
+      
+      /*
+      * Initialse DataTables, with no sorting on the 'details' column
+      */
+      var oTable = $('#example').dataTable( {
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers",
+      "aoColumnDefs": [
+      { "bSortable": false, "aTargets": [ 0 ] }
+      ],
+      "aaSorting": [[1, 'asc']]
+      });
+      
+      /* Add event listener for opening and closing details
+      * Note that the indicator for showing which row is open is not controlled by DataTables,
+      * rather it is done here
+      */
+      $('#example tbody td img').live('click', function () {
+      var nTr = this.parentNode.parentNode;
+      if ( this.src.match('details_close') )
+      {
+      /* This row is already open - close it */
+      this.src = "media/images/details_open.png";
+      oTable.fnClose( nTr );
+      }
+      else
+      {
+      /* Open this row */
+      this.src = "media/images/details_close.png";
+      oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
+      }
+      } );
+      } );
+    </script>
+  </head>
+  <body id="dt_example">
+    <div id="container" class="full_width">
+      <h1>Style List</h1>
+      <h2>Todo</h2>
+      <ol>
+	<li>design (fonts and such) needs to be improved</li>
+	<li>default styles/page needs to be higher (say 50)</li>
+	<li>previewing needs to be hooked up</li>
+	<li>etc.</li>
+      </ol>
+      <div id="demox">
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Type</th>
+	      <th>Field(s)</th>
+	      <th>Updated</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+          % for style in styles:
+	    <tr>
+	      <td>${style['title']}</td>
+	      <td>${style['category']}</td>
+	      <td>XXX</td>
+	      <td>${style['updated']}</td>
+            </tr>
+          % endfor
+	  </tbody>
+	</table>
+      </div>
+
+    </div>
+  </body>
+</html>
