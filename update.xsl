@@ -11,16 +11,23 @@
          attribute. -->
   <xsl:template match="/cs:style">
     <xsl:copy>
-      <xsl:copy-of select="@*[not(name()='xml:lang')]"/>
       <xsl:choose>
-        <xsl:when test="@xml:lang and not(@xml:lang='en' or @xml:lang='en-US' or @xml:lang='en-us')">
-          <xsl:attribute name="default-locale">
-            <xsl:value-of select="@xml:lang"/>
-          </xsl:attribute>
+        <xsl:when test="cs:citation">
+          <xsl:copy-of select="@*[not(name()='xml:lang')]"/>
+          <xsl:choose>
+            <xsl:when test="@xml:lang and not(@xml:lang='en' or @xml:lang='en-US' or @xml:lang='en-us')">
+              <xsl:attribute name="default-locale">
+                <xsl:value-of select="@xml:lang"/>
+              </xsl:attribute>
+            </xsl:when>
+          </xsl:choose>
+          <xsl:attribute name="demote-non-dropping-particle">sort-only</xsl:attribute>
         </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="@xmlns"/>
+        </xsl:otherwise>
       </xsl:choose>
       <xsl:attribute name="version">1.0</xsl:attribute>
-      <xsl:attribute name="demote-non-dropping-particle">sort-only</xsl:attribute>
       <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
