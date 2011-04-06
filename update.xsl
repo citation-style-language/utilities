@@ -21,13 +21,14 @@
               </xsl:attribute>
             </xsl:when>
           </xsl:choose>
+          <xsl:attribute name="version">1.0</xsl:attribute>
           <xsl:attribute name="demote-non-dropping-particle">sort-only</xsl:attribute>
         </xsl:when>
         <xsl:otherwise>
           <xsl:copy-of select="@xmlns"/>
+          <xsl:attribute name="version">1.0</xsl:attribute>
         </xsl:otherwise>
       </xsl:choose>
-      <xsl:attribute name="version">1.0</xsl:attribute>
       <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
