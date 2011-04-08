@@ -4,7 +4,7 @@ require 'rubygems'
 require 'json-schema'
 
 # script takes a pattern of input; for example '/home/json/*.json'
-jsfiles = Dir.glob(ARGV[0])
+jsfiles = Dir.glob(ARGV)
 schema = 'csl-data.json'
 
 jsfiles.each do |jsfile|
