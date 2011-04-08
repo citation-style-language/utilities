@@ -11,6 +11,8 @@ jsfiles.each do |jsfile|
   begin
     JSON::Validator.validate!(schema, jsfile)
   rescue JSON::Schema::ValidationError
+    puts "---"
+    puts "Validation error(s) in: "+jsfile
     puts $!.message
   end
 end
