@@ -386,7 +386,7 @@ while [ "$ans" != "  " ]; do
     java -jar ${VAL[0]} ${TMP_DIR}/csl.sch ${VAL[7]}/*.csl
   
     # RELAX NG Compact validation
-    java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[7]}/*.csl
+    java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[7]}/*.csl || true
     if [ -d "${VAL[5]}/dependent" ]; then
       if [ "$(ls ${VAL[5]}/dependent | wc -l)" != "0" ]; then
         java -jar ${VAL[0]} -c ${TMP_DIR}/csl-easyOnUpdated.rnc ${VAL[7]}/dependent/*.csl
