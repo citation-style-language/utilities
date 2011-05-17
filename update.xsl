@@ -26,6 +26,7 @@
         </xsl:when>
         <xsl:otherwise>
           <xsl:copy-of select="@xmlns"/>
+          <xsl:copy-of select="@class"/>
           <xsl:attribute name="version">1.0</xsl:attribute>
         </xsl:otherwise>
       </xsl:choose>
