@@ -15,6 +15,15 @@
 # - for dependent styles, whether "independent-parent" link (value of "href" on
 #   cs:link with rel="template") points to the Zotero Style Repository style URI
 #   of an independent style.
+# - whether style filenames are unique (dependent styles are stored in their own
+#   subdirectory)
+#
+# Shows
+# - number of dependent styles per independent style
+#
+# To Do:
+# - print error messages grouped by error type
+# - remove duplicate code, reorder things a bit
 
 import os, glob, re
 from lxml import etree
@@ -107,6 +116,7 @@ for dependentStyle in glob.glob( os.path.join(path, "dependent", '*.csl') ):
 
     metadataListDependents.append(metadataDependents)
 
+dependentsCount = {}
 for queryMetadataDict in metadataListDependents:
     match = True
     try:
@@ -115,7 +125,17 @@ for queryMetadataDict in metadataListDependents:
             for metadataDict in metadataList:
                 if(queryMetadataDict["independentParent"] == metadataDict["selfLink"]):
                     match = True
+                    if metadataDict["fileName"] in dependentsCount:
+                        dependentsCount[metadataDict["fileName"]] += 1
+                    else:
+                        dependentsCount[metadataDict["fileName"]] = 1
+                if(queryMetadataDict["fileName"] == metadataDict["fileName"]):
+                    print("Name Conflict Dependent/Independent Style: " + metadataDict["fileName"])
             if(match == False):
                 print("Non-existing Parent Style URI (value 'href' on cs:link[@rel=independent-parent]): (dependent) " + queryMetadataDict["fileName"])
     except:
         pass
+
+dependentsPopularitySort = sorted(dependentsCount, key=dependentsCount.get, reverse=True)
+for style in dependentsPopularitySort:
+    print(style + ": %d" % (dependentsCount[style]))
