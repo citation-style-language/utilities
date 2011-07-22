@@ -29,6 +29,7 @@ import os, glob, re
 from lxml import etree
 
 path = 'C:\Users\Rintze Zelle\Documents\git\styles\\'
+printDependentsCount = True
 
 def parseStyle(stylePath):
     style = etree.parse(stylePath)
@@ -49,93 +50,112 @@ def parseStyle(stylePath):
         pass
     return(metadata)
 
-def checkFileName(fileName):
-    if not(re.match("[a-z0-9](-?[a-z0-9]+)*(.csl)", fileName)):
-        print("Non-conforming filename: " + fileName)
-
 metadataList = []
 metadata = {}
+bad_fileName = {"errorMessage":"Non-conforming Filename (only lowercase roman letters [a-z], digits [0-9] and separating hyphens are allowed):"}
+bad_fileName["styles"] = []
+duplicated_fileName = {"errorMessage":"Duplicate Filename (filename used by both an independent and dependent style):"}
+duplicated_fileName["styles"] = []
+fileName_id_mismatch = {"errorMessage":"Filename/ID Mismatch (filename does not match content cs:id):"}
+fileName_id_mismatch["styles"] = []
+fileName_selfLink_mismatch = {"errorMessage":"Filename/URI Mismatch (filename does not match value 'href' on cs:link[@rel=self]):"}
+fileName_selfLink_mismatch["styles"] = []
+missing_id = {"errorMessage":"Missing ID (content cs:id):"}
+missing_id["styles"] = []
+missing_selfLink = {"errorMessage":"Missing URI (value 'href' on cs:link[@rel=self]):"}
+missing_selfLink["styles"] = []
+missing_independentParent = {"errorMessage":"No Parent Specified (value 'href' on cs:link[@rel=independent-parent]):"}
+missing_independentParent["styles"] = []
+missing_template = {"errorMessage":"Template does not exist (no URI match for value 'href' on cs:link[@rel=template]):"}
+missing_template["styles"] = []
+orphan = {"errorMessage":"Parent does not exist (no URI match for value 'href' on cs:link[@rel=independent-parent]):"}
+orphan["styles"] = []
+
+styleErrors = [bad_fileName, duplicated_fileName, fileName_id_mismatch, fileName_selfLink_mismatch, missing_id, missing_selfLink, missing_independentParent, missing_template, orphan]
 for independentStyle in glob.glob( os.path.join(path, '*.csl') ):
     fileName = os.path.basename(independentStyle)
 
-    checkFileName(fileName)
+    if not(re.match("[a-z0-9](-?[a-z0-9]+)*(.csl)", fileName)):
+        bad_fileName["styles"].append(fileName)
     
     metadata = parseStyle(independentStyle)
     metadata["fileName"] = fileName
 
-    try:
+    if(metadata.has_key("selfLink")):
         if not(("http://www.zotero.org/styles/"+fileName) == (metadata["selfLink"]+".csl")):
-            print("Name Mismatch - Filename & Style URI (value 'href' on cs:link[@rel=self]): " + fileName)
-    except:
-        print("Missing Style URI (value 'href' on cs:link[@rel=self]): " + fileName)
-    try:
+            fileName_selfLink_mismatch["styles"].append(fileName)
+    else:
+        missing_selfLink["styles"].append(fileName)
+    if(metadata.has_key("id")):
         if not(("http://www.zotero.org/styles/"+fileName) == (metadata["id"]+".csl")):
-            print("Name Mismatch - Filename & Style ID (content cs:id): " + fileName)
-    except:
-        print("Missing Style ID (content cs:id): " + fileName)
+            fileName_id_mismatch["styles"].append(fileName)
+    else:
+        missing_id["styles"].append(fileName)
     
     metadataList.append(metadata)
 
 for queryMetadataDict in metadataList:
     match = True
-    try:
-        if(queryMetadataDict["template"]):
-            match = False
-            for metadataDict in metadataList:
-                if(queryMetadataDict["template"] == metadataDict["selfLink"]):
-                    match = True
-            if(match == False):
-                print("Non-existing Style Template URI (value 'href' on cs:link[@rel=template]): " + queryMetadataDict["fileName"])
-    except:
-        pass
+
+    if(queryMetadataDict.has_key("template")):
+        match = False
+        for metadataDict in metadataList:
+            if(metadataDict.has_key("selfLink") and (queryMetadataDict["template"] == metadataDict["selfLink"])):
+                match = True
+        if(match == False):
+            missing_template["styles"].append(queryMetadataDict["fileName"])
 
 metadataListDependents = []
 metadataDependents = {}
 for dependentStyle in glob.glob( os.path.join(path, "dependent", '*.csl') ):
     fileName = os.path.basename(dependentStyle)
     
-    checkFileName(fileName)
+    if not(re.match("[a-z0-9](-?[a-z0-9]+)*(.csl)", fileName)):
+        bad_fileName["styles"].append("dependent" + os.sep + fileName)
 
     metadataDependents = parseStyle(dependentStyle)
     metadataDependents["fileName"] = fileName
     
-    try:
+    if(metadataDependents.has_key("selfLink")):
         if not(("http://www.zotero.org/styles/"+fileName) == (metadataDependents["selfLink"]+".csl")):
-            print("Name Mismatch - Filename & Style URI (value 'href' on cs:link[@rel=self]): (dependent) " + fileName)
-    except:
-        pass
-    try:
+            fileName_selfLink_mismatch["styles"].append("dependent" + os.sep + fileName)
+    if(metadataDependents.has_key("id")):
         if not(("http://www.zotero.org/styles/"+fileName) == (metadataDependents["id"]+".csl")):
-            print("Name Mismatch - Filename & Style ID (content cs:id): (dependent) " + fileName)
-    except:
-        print("Missing Style ID (content cs:id): (dependent) " + fileName)
-    try:
-        metadataDependents["independentParent"]
-    except:
-        print("Missing Parent Style ID value 'href' on cs:link[@rel=independent-parent]): (dependent) " + fileName)
+            fileName_id_mismatch["styles"].append("dependent" + os.sep + fileName)
+    else:
+        missing_id["styles"].append("dependent" + os.sep + fileName)
+    if not(metadataDependents.has_key("independentParent")):
+        missing_independentParent["styles"].append("dependent" + os.sep + fileName)
 
     metadataListDependents.append(metadataDependents)
 
 dependentsCount = {}
 for queryMetadataDict in metadataListDependents:
     match = True
-    try:
-        if(queryMetadataDict["independentParent"]):
-            match = False
-            for metadataDict in metadataList:
-                if(queryMetadataDict["independentParent"] == metadataDict["selfLink"]):
-                    match = True
-                    if metadataDict["fileName"] in dependentsCount:
-                        dependentsCount[metadataDict["fileName"]] += 1
-                    else:
-                        dependentsCount[metadataDict["fileName"]] = 1
-                if(queryMetadataDict["fileName"] == metadataDict["fileName"]):
-                    print("Name Conflict Dependent/Independent Style: " + metadataDict["fileName"])
-            if(match == False):
-                print("Non-existing Parent Style URI (value 'href' on cs:link[@rel=independent-parent]): (dependent) " + queryMetadataDict["fileName"])
-    except:
-        pass
+    
+    if(queryMetadataDict.has_key("independentParent")):
+        match = False
+        for metadataDict in metadataList:
+            if(metadataDict.has_key("selfLink") and (queryMetadataDict["independentParent"] == metadataDict["selfLink"])):
+                match = True
+                if metadataDict["fileName"] in dependentsCount:
+                    dependentsCount[metadataDict["fileName"]] += 1
+                else:
+                    dependentsCount[metadataDict["fileName"]] = 1
+            if(queryMetadataDict["fileName"] == metadataDict["fileName"]):
+                duplicated_fileName["styles"].append(metadataDict["fileName"])
+        if(match == False):
+            orphan["styles"].append("dependent" + os.sep + queryMetadataDict["fileName"])
 
-dependentsPopularitySort = sorted(dependentsCount, key=dependentsCount.get, reverse=True)
-for style in dependentsPopularitySort:
-    print(style + ": %d" % (dependentsCount[style]))
+for styleError in styleErrors:
+    if (len(styleError["styles"]) > 0):
+        print(styleError["errorMessage"])
+        for style in styleError["styles"]:
+            print(style)
+        print("----------")
+
+if printDependentsCount:
+    dependentsPopularitySort = sorted(dependentsCount, key=dependentsCount.get, reverse=True)
+    print("Number of dependent styles per independent style:")
+    for style in dependentsPopularitySort:
+        print(style + ": %d" % (dependentsCount[style]))
