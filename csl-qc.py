@@ -1,6 +1,7 @@
 # Python script for additional style validation
 # Author: Rintze M. Zelle
-# Requires lxml library (http://lxml.de/)
+# Version: 2011-07-28
+# * Requires lxml library (http://lxml.de/)
 # Checks
 # - whether ".csl" files conform to naming scheme [a-z0-9] with optional single
 #   hyphen delimiters
@@ -17,13 +18,12 @@
 #   of an independent style.
 # - whether style filenames are unique (dependent styles are stored in their own
 #   subdirectory)
+# - for independent styles, whether the value of "citation-format" on
+#   cs:category matches that of the independent parent style 
 #
 # Shows
-# - number of dependent styles per independent style
-#
-# To Do:
-# - print error messages grouped by error type
-# - remove duplicate code, reorder things a bit
+# - number of dependent styles per independent style (if printDependentsCount is
+#   set to True)
 
 import os, glob, re
 from lxml import etree
@@ -48,12 +48,18 @@ def parseStyle(stylePath):
         metadata["independentParent"] = styleElement.find(".//{http://purl.org/net/xbiblio/csl}link[@rel='independent-parent']").attrib.get("href")
     except:
         pass
+    try:
+        metadata["citationFormat"] = styleElement.find(".//{http://purl.org/net/xbiblio/csl}category[@citation-format]").attrib.get("citation-format")
+    except:
+        pass
     return(metadata)
 
 metadataList = []
 metadata = {}
 bad_fileName = {"errorMessage":"Non-conforming Filename (only lowercase roman letters [a-z], digits [0-9] and separating hyphens are allowed):"}
 bad_fileName["styles"] = []
+citationFormat_mismatch = {"errorMessage":"Citation format does not match that of independent parent (value 'citation-format' on cs:category[@rel=citation-format]):"}
+citationFormat_mismatch["styles"] = []
 duplicated_fileName = {"errorMessage":"Duplicate Filename (filename used by both an independent and dependent style):"}
 duplicated_fileName["styles"] = []
 fileName_id_mismatch = {"errorMessage":"Filename/ID Mismatch (filename does not match content cs:id):"}
@@ -71,7 +77,7 @@ missing_template["styles"] = []
 orphan = {"errorMessage":"Parent does not exist (no URI match for value 'href' on cs:link[@rel=independent-parent]):"}
 orphan["styles"] = []
 
-styleErrors = [bad_fileName, duplicated_fileName, fileName_id_mismatch, fileName_selfLink_mismatch, missing_id, missing_selfLink, missing_independentParent, missing_template, orphan]
+styleErrors = [bad_fileName, duplicated_fileName, fileName_id_mismatch, fileName_selfLink_mismatch, missing_id, missing_selfLink, missing_independentParent, missing_template, orphan, citationFormat_mismatch]
 for independentStyle in glob.glob( os.path.join(path, '*.csl') ):
     fileName = os.path.basename(independentStyle)
 
@@ -142,6 +148,8 @@ for queryMetadataDict in metadataListDependents:
                     dependentsCount[metadataDict["fileName"]] += 1
                 else:
                     dependentsCount[metadataDict["fileName"]] = 1
+                if(metadataDict.has_key("citationFormat") and queryMetadataDict.has_key("citationFormat") and not(queryMetadataDict["citationFormat"] == metadataDict["citationFormat"])):
+                    citationFormat_mismatch["styles"].append("dependent" + os.sep + queryMetadataDict["fileName"])
             if(queryMetadataDict["fileName"] == metadataDict["fileName"]):
                 duplicated_fileName["styles"].append(metadataDict["fileName"])
         if(match == False):
