@@ -30,8 +30,8 @@
 import os, glob, re
 from lxml import etree
 
-path = 'C:\Users\Rintze Zelle\Documents\git\styles\\'
-printDependentsCount = True
+path = 'C:\Documents and Settings\zelle\My Documents\CSL\styles\\'
+printDependentsCount = False
 
 def parseStyle(stylePath):
     style = etree.parse(stylePath)
