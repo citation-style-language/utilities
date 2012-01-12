@@ -289,9 +289,9 @@ $(function () {
 			position: {
 				target: 'mouse',
 				adjust: {
-					x: 15,
-					viewport: $(window)
+					x: 15
 				},
+				viewport: $(window),
 				show: {
 					delay: 120
 				}
