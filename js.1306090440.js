@@ -95,6 +95,7 @@ function updateSearchResults() {
 	
 	var val = document.getElementById('searchField').value;
 	var valLower = val.toLowerCase();
+	var valLowerHyphenated = valLower.replace(/\s/g,"-");
 	var numDisplayedStyles = 0;
 	var formatCounts = {};
 	var fieldCounts = {};
@@ -115,7 +116,7 @@ function updateSearchResults() {
 		
 		// Hide styles that don't match the search text
 		if (show) {
-			if (name.indexOf(valLower) == -1 && $(this).text().toLowerCase().indexOf(valLower) == -1) {
+			if (name.indexOf(valLowerHyphenated) == -1 && $(this).text().toLowerCase().indexOf(valLower) == -1) {
 				show = false;
 			}
 		}
