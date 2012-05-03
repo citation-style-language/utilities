@@ -9,27 +9,32 @@ import os, glob, re
 from lxml import etree
 
 path = 'C:\Documents and Settings\zelle\My Documents\CSL\styles\\'
+uniqueStrings = {}
+styles = []
 
-verbatims = {}
-for independentStyle in glob.glob( os.path.join(path, '*.csl') ):
-    #print(os.path.basename(independentStyle))
-    style = etree.parse(independentStyle)
-    styleElement = style.getroot()
+for stylepath in glob.glob( os.path.join(path, '*.csl') ):
+    styles.append(os.path.join(stylepath))
+for stylepath in glob.glob( os.path.join(path, 'dependent', '*.csl') ):
+    styles.append(os.path.join(stylepath))
+
+for style in styles:
+    parsedStyle = etree.parse(style)
+    styleElement = parsedStyle.getroot()
     
-    verbatimsStyle = []
+    rightsStrings = []
     try:
-        verbatimsStyle = styleElement.findall(".//{http://purl.org/net/xbiblio/csl}rights")
-        for verbatim in verbatimsStyle:
-            verbatim = verbatim.text
-            if verbatim in verbatims:
-                verbatims[verbatim] += 1
+        rightsStrings = styleElement.findall(".//{http://purl.org/net/xbiblio/csl}rights")
+        for rightsString in rightsStrings:
+            rightsString = rightsString.text
+            if rightsString in uniqueStrings:
+                uniqueStrings[rightsString] += 1
             else:
-                verbatims[verbatim] = 1
+                uniqueStrings[rightsString] = 1
     except:
         pass
 
-verbatimsSorted = sorted(verbatims, key=verbatims.get, reverse=True)
+sortedStrings = sorted(uniqueStrings, key=uniqueStrings.get, reverse=True)
 
 print("Rights:")
-for verbatimSorted in verbatimsSorted:
-    print('"' + verbatimSorted + '"' + ": %d" % (verbatims[verbatimSorted]))
+for string in sortedStrings:
+    print('"' + string + '"' + ": %d" % (uniqueStrings[string]))
