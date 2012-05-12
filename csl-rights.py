@@ -1,9 +1,9 @@
-# Python script for additional style validation
+# Python script to check how styles have been licensed 
 # Author: Rintze M. Zelle
-# Version: 2011-12-17
+# Version: 2012-05-12
 # * Requires lxml library (http://lxml.de/)
 #
-# Add CC by-sa license
+# Prints the text contents of the cs:rights elements
 
 import os, glob, re
 from lxml import etree
