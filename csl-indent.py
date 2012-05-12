@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Python script for additional style validation
 # Author: Rintze M. Zelle
 # Version: 2011-12-17
@@ -20,6 +21,7 @@ for independentStyle in glob.glob( os.path.join(path, '*.csl') ):
         verbatimsStyle = styleElement.find(".//{http://purl.org/net/xbiblio/csl}rights").text
         style = etree.tostring(style, pretty_print=True, xml_declaration=True, encoding="utf-8")
         style = style.replace("'", '"', 4)
+        style = style.replace(" ", "&#160;")
         f = open(independentStyle, 'w')
         f.write ( style )
         f.close()
