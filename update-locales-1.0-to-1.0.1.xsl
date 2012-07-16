@@ -31,12 +31,12 @@
           <xsl:choose>
             <xsl:when test="@form">
               <xsl:choose>
-                <xsl:when test="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]/cs:single and document('locales\locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]/cs:multiple">
+                <xsl:when test="document('locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]/cs:single and document('locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]/cs:multiple">
                   <xsl:element name="single">
-                    <xsl:value-of select="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]/cs:single"/>
+                    <xsl:value-of select="document('locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]/cs:single"/>
                   </xsl:element>
                   <xsl:element name="multiple">
-                    <xsl:value-of select="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]/cs:multiple"/>
+                    <xsl:value-of select="document('locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]/cs:multiple"/>
                   </xsl:element>
                 </xsl:when>
                 <xsl:when test="//cs:term[@name=$name and @form=$form]/cs:single and //cs:term[@name=$name and @form=$form]/cs:multiple">
@@ -54,12 +54,12 @@
             </xsl:when>
             <xsl:otherwise>
               <xsl:choose>
-                <xsl:when test="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]/cs:single and document('locales\locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]/cs:multiple">
+                <xsl:when test="document('locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]/cs:single and document('locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]/cs:multiple">
                   <xsl:element name="single">
-                    <xsl:value-of select="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]/cs:single"/>
+                    <xsl:value-of select="document('locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]/cs:single"/>
                   </xsl:element>
                   <xsl:element name="multiple">
-                    <xsl:value-of select="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]/cs:multiple"/>
+                    <xsl:value-of select="document('locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]/cs:multiple"/>
                   </xsl:element>
                 </xsl:when>
                 <xsl:when test="//cs:term[@name=$name and not(@form)]/cs:single and //cs:term[@name=$name and not(@form)]/cs:multiple">
@@ -81,8 +81,8 @@
           <xsl:choose>
             <xsl:when test="@form">
               <xsl:choose>
-                <xsl:when test="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]">
-                  <xsl:value-of select="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]"/>
+                <xsl:when test="document('locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]">
+                  <xsl:value-of select="document('locales-nl-NL.xml')//cs:term[@name=$name and @form=$form]"/>
                 </xsl:when>
                 <xsl:otherwise>
                   <xsl:value-of select="//cs:term[@name=$name and @form=$form]"/>
@@ -91,8 +91,8 @@
             </xsl:when>
             <xsl:otherwise>
               <xsl:choose>
-                <xsl:when test="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]">
-                  <xsl:value-of select="document('locales\locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]"/>
+                <xsl:when test="document('locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]">
+                  <xsl:value-of select="document('locales-nl-NL.xml')//cs:term[@name=$name and not(@form)]"/>
                 </xsl:when>
                 <xsl:otherwise>
                   <xsl:value-of select="//cs:term[@name=$name and not(@form)]"/>
@@ -105,7 +105,6 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Ugly hack to keep comments on their own lines  -->
   <xsl:template match="comment()">
     <xsl:copy/>
   </xsl:template>
