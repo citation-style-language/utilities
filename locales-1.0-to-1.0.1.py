@@ -26,10 +26,15 @@ if not os.path.exists(os.path.join(localesPath, '1.0.1')):
 for locale in locales:
     with open(localeXSLTPath, 'r') as localeXSLT:
         localeXSLTContent = localeXSLT.read()
-        localeXSLTContent = localeXSLTContent.replace('locales-nl-NL.xml', locale)
-
-    localeXSLTContent = etree.parse(localeXSLTPath)
-    localeTransform = etree.XSLT(localeXSLTContent)
+        
+    localeXSLTContent = localeXSLTContent.replace('locales-nl-NL.xml', locale)
+    print(localeXSLTContent)
+    localizedXSLT = open(os.path.join('C:\Documents and Settings\zelle\My Documents\CSL\utilities\\', 'localizedXSLT.xsl'), 'w')
+    localizedXSLT.write(localeXSLTContent)
+    localizedXSLT.close()
+## need to read modified copy!!!
+    localeXSLT = etree.parse(os.path.join('C:\Documents and Settings\zelle\My Documents\CSL\utilities\\', 'localizedXSLT.xsl'))
+    localeTransform = etree.XSLT(localeXSLT)
 
     parsedLocale = etree.parse(localesPath + 'locales-en-US.xml')
     localeElement = parsedLocale.getroot()
