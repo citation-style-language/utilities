@@ -13,8 +13,24 @@
       <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
+  
+  <xsl:template match="cs:info">
+    <xsl:copy-of select="."/>
+  </xsl:template>
+  
+  <xsl:template match="cs:date[@form='numeric']">
+    <xsl:copy-of select="document('locales-nl-NL.xml')/cs:locale/cs:date[@form='numeric']"/>
+  </xsl:template>
+  
+  <xsl:template match="cs:date[@form='text']">
+    <xsl:copy-of select="document('locales-nl-NL.xml')/cs:locale/cs:date[@form='text']"/>
+  </xsl:template>
 
-  <xsl:template match="cs:style-options|cs:terms|cs:date|cs:date-part">
+  <xsl:template match="cs:style-options">
+    <xsl:copy-of select="document('locales-nl-NL.xml')/cs:locale/cs:style-options"/>
+  </xsl:template>
+  
+  <xsl:template match="cs:terms">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates/>

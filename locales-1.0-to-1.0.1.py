@@ -28,7 +28,7 @@ for locale in locales:
         localeXSLTContent = localeXSLT.read()
         
     localeXSLTContent = localeXSLTContent.replace('locales-nl-NL.xml', locale)
-    print(localeXSLTContent)
+    ## print(localeXSLTContent)
     localizedXSLT = open(os.path.join('C:\Documents and Settings\zelle\My Documents\CSL\utilities\\', 'localizedXSLT.xsl'), 'w')
     localizedXSLT.write(localeXSLTContent)
     localizedXSLT.close()
@@ -36,13 +36,15 @@ for locale in locales:
     localeXSLT = etree.parse(os.path.join('C:\Documents and Settings\zelle\My Documents\CSL\utilities\\', 'localizedXSLT.xsl'))
     localeTransform = etree.XSLT(localeXSLT)
 
-    parsedLocale = etree.parse(localesPath + 'locales-en-US.xml')
+    parsedLocale = etree.parse('C:\Documents and Settings\zelle\My Documents\CSL\utilities\locales-en-US.xml')
+    ## print(etree.tostring(parsedLocale, pretty_print=True, xml_declaration=True, encoding="utf-8"))
     localeElement = parsedLocale.getroot()
 
     updatedLocale = localeTransform(localeElement)
     updatedLocale = etree.tostring(updatedLocale, pretty_print=True, xml_declaration=True, encoding="utf-8")
 
     updatedLocale = updatedLocale.replace("    <!--", "\n    <!--")
+    updatedLocale = updatedLocale.replace("'", '"', 4)
 
     updatedLocaleFile = open(os.path.join(localesPath, '1.0.1', locale), 'w')
     updatedLocaleFile.write ( updatedLocale )
