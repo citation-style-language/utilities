@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Python script to update locale files from CSL 1.0 to 1.0.1
 # Author: Rintze M. Zelle
 # Version: 2012-07-15
@@ -44,6 +45,7 @@ for locale in locales:
     updatedLocale = etree.tostring(updatedLocale, pretty_print=True, xml_declaration=True, encoding="utf-8")
 
     updatedLocale = updatedLocale.replace("    <!--", "\n    <!--")
+    updatedLocale = updatedLocale.replace(" ", "&#160;")
     updatedLocale = updatedLocale.replace("'", '"', 4)
 
     updatedLocaleFile = open(os.path.join(localesPath, '1.0.1', locale), 'w')
