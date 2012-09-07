@@ -82,14 +82,14 @@ File.read(journal_info).split(/\n/).each do |journal_line|
   style_content.gsub!('#FIELD1#', categ1)
   
   if (issn.length == 9)
-    style_content.gsub!('#OPTIONAL_ISSN#', "\n")
+    style_content.gsub!('#OPTIONAL_ISSN#', "")
     style_content.gsub!('#ISSN#', issn)
   else
     style_content.gsub!(/#OPTIONAL_ISSN#.*$\n/, "")
   end
 
   if (categ2.length > 1)
-    style_content.gsub!("#OPTIONAL_CATEGORY#", "\n")
+    style_content.gsub!("#OPTIONAL_CATEGORY#", "")
     style_content.gsub!('#FIELD2#', categ2)
   else
     style_content.gsub!(/#OPTIONAL_CATEGORY#.*$\n/, "")
