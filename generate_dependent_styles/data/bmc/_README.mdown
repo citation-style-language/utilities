@@ -1,0 +1,493 @@
+## 09-14-2012
+
+## Modernization
+
+To streamline the creation of the dependent styles, the script that generates the styles has been modified to handle **all** the publishers at once. See `README.mdown` at the root level, and the script `generate_styles_from_data.rb`. The subdirectory in the `data` folder contains the same data as before, but slightly reformatted to be compatible with the new script. The template has also been modified to take advantage of the CSL 1.0.1 specifications.
+
+The info necessary to generate the styles is now comprised of 3 files:
+
+* file `_journals.tab` tab-delimited list of journals, where the column header use the same name as the placeholders in the template
+* file `skip.txt` contains a list of journals to skip (either the title or the identifier)
+* file `_template.csl` is the template for this group of journals; if a field is empty in the journal list, the corresponding line will be removed in the template, which allows optional fields
+
+
+## 06-29-2012
+
+## Generating CSL files for all BMC journals
+
+### Where did that come from?
+
+I added this morning the style for "Malaria Journal": 
+[https://github.com/citation-style-language/styles/commit/0920e9d41c4247f975341b768583960135acdaa8](https://github.com/citation-style-language/styles/commit/0920e9d41c4247f975341b768583960135acdaa8).
+
+Then I realized all BMC journals seem to be using the same format for references, and all instructions to authors point to the same CSL file, like
+[for the Malaria Journal](http://www.malariajournal.com/authors/instructions/research#formatting-references).
+
+I asked Matthew Cockerill on twiter about it:
+[https://twitter.com/cparnot/status/218772733113282561](https://twitter.com/cparnot/status/218772733113282561)
+
+* *Charles Parnot:*
+
+		@bmcmatt It seems all BMC journals follow the same format for biblio?
+		Is that correct? We could easily generate all CSL files for Papers :-)
+
+* *Matthew Cockerill:*
+
+		@cparnot yes indeed - please do!
+
+* *Charles Parnot:*
+
+		@bmcmatt Also, any way to get a list of the journal + ISSN all at once?
+
+* *Matthew Cockerill:*
+
+		@cparnot yes! Google biomedcentral journal catalog data csv
+
+* *Charles Parnot:*
+
+		@bmcmatt Ah, excellent, got it!
+
+
+### Files
+
+These are the files used to generate the styles
+
+* file `biomedcentraljournallist.csv`, obtained from the BMC website as suggested by Matt on twitter: [BMC journal catalog](http://www.biomedcentral.com/about/catalog). 
+
+* derivative file `bmc_journals.tab`: ths CSV file was openend in Excel and saved back as tab-delimited, to make it easier to parse
+
+* file `bmc_journals_to_skip.txt`: list of journals to skip, based on the list of [archived journals](http://www.biomedcentral.com/journals) on the BMC website
+
+* file `generate_bmc_styles.rb`: script that generate the final CSL styles
+
+* file `bmc_style_template.csl`: template used by the script
+
+* directory `generated_styles`: will contain generated BMC styles
+
+
+#### bmc_journals.tab
+
+	Publisher	Journal name	Abbreviation	ISSN	URL	Start Date
+	BioMed Central Ltd	AIDS Research and Therapy	AIDS Res Ther	1742-6405	http://www.aidsrestherapy.com	2004
+	Springer	AMB Express	AMB Express	2191-0855	http://www.amb-express.com	2011
+	BioMed Central Ltd	Acta Veterinaria Scandinavica	Acta Vet Scand	1751-0147	http://www.actavetscand.com	2006
+	BioMed Central Ltd	Addiction Science & Clinical Practice	Addict Sci Clin Pract	1940-0640	http://www.ascpjournal.org	2011
+	BioMed Central Ltd	Agriculture & Food Security	Agric Food Secur	2048-7010	http://www.agricultureandfoodsecurity.com	2012
+	BioMed Central Ltd	Algorithms for Molecular Biology	Algorithms Mol Biol	1748-7188	http://www.almob.org	2006
+	BioMed Central Ltd	Allergy, Asthma & Clinical Immunology	Allergy Asthma Clin Immunol	1710-1492	http://www.aacijournal.com	2009
+	BioMed Central Ltd	Alzheimer's Research & Therapy	Alzheimers Res Ther	1758-9193	http://alzres.com	2009
+	BioMed Central Ltd	Annals of Clinical Microbiology and Antimicrobials	Ann Clin Microbiol Antimicrob	1476-0711	http://www.ann-clinmicrob.com	2002
+	BioMed Central Ltd	Annals of General Psychiatry	Ann Gen Psychiatry	1744-859X	http://www.annals-general-psychiatry.com	2002
+	Springer	Annals of Intensive Care	Ann Intensive Care	2110-5820	http://www.annalsofintensivecare.com	2011
+	BioMed Central Ltd	Annals of Surgical Innovation and Research	Ann Surg Innov Res	1750-1164	http://www.asir-journal.com	2007
+	BioMed Central Ltd	Antimicrobial Resistance and Infection Control	Antimicrob Resist Infect Control	2047-2994	http://www.aricjournal.com	2011
+	BioMed Central Ltd	Aquatic Biosystems	Aquat Biosyst	2046-9063	http://www.aquaticbiosystems.org	2005
+	BioMed Central Ltd	Archives of Public Health	Arch Public Health	0778-7367	http://www.archpublichealth.com	1997
+	BioMed Central Ltd	Arthritis Research & Therapy	Arthritis Res Ther	1478-6354	http://arthritis-research.com/	1999
+	BioMed Central Ltd	Asia Pacific Family Medicine	Asia Pac Fam Med	1447-056X	http://www.apfmj.com	2002
+	BioMed Central Ltd	Australia and New Zealand Health Policy	Aust N Z Health Policy	1743-8462	http://www.anzhealthpolicy.com	2004
+	BioMed Central Ltd	Automated Experimentation	Autom Exp	1759-4499	http://www.aejournal.net	2009
+	BioMed Central Ltd	BMC Anesthesiology	BMC Anesthesiol	1471-2253	http://www.biomedcentral.com/bmcanesthesiol/	2001
+	BioMed Central Ltd	BMC Biochemistry	BMC Biochem	1471-2091	http://www.biomedcentral.com/bmcbiochem/	2000
+	BioMed Central Ltd	BMC Bioinformatics	BMC Bioinformatics	1471-2105	http://www.biomedcentral.com/bmcbioinformatics/	2000
+	BioMed Central Ltd	BMC Biology	BMC Biol	1741-7007	http://www.biomedcentral.com/bmcbiol/	2003
+	BioMed Central Ltd	BMC Biophysics	BMC Biophys	2046-1682	http://www.biomedcentral.com/bmcbiophys	2011
+	BioMed Central Ltd	BMC Biotechnology	BMC Biotechnol	1472-6750	http://www.biomedcentral.com/bmcbiotechnol/	2001
+	BioMed Central Ltd	BMC Blood Disorders	BMC Blood Disord	1471-2326	http://www.biomedcentral.com/bmcblooddisord/	2001
+	BioMed Central Ltd	BMC Cancer	BMC Cancer	1471-2407	http://www.biomedcentral.com/bmccancer/	2001
+	BioMed Central Ltd	BMC Cardiovascular Disorders	BMC Cardiovasc Disord	1471-2261	http://www.biomedcentral.com/bmccardiovascdisord/	2001
+	BioMed Central Ltd	BMC Cell Biology	BMC Cell Biol	1471-2121	http://www.biomedcentral.com/bmccellbiol/	2000
+	BioMed Central Ltd	BMC Chemical Biology	BMC Chem Biol	1472-6769	http://www.biomedcentral.com/bmcchembiol/	2001
+	BioMed Central Ltd	BMC Clinical Pathology	BMC Clin Pathol	1472-6890	http://www.biomedcentral.com/bmcclinpathol/	2001
+	BioMed Central Ltd	BMC Clinical Pharmacology	BMC Clin Pharmacol	1472-6904	http://www.biomedcentral.com/bmcclinpharmacol/	2001
+	BioMed Central Ltd	BMC Complementary and Alternative Medicine	BMC Complement Altern Med	1472-6882	http://www.biomedcentral.com/bmccomplementalternmed/	2001
+	BioMed Central Ltd	BMC Dermatology	BMC Dermatol	1471-5945	http://www.biomedcentral.com/bmcdermatol/	2001
+	BioMed Central Ltd	BMC Developmental Biology	BMC Dev Biol	1471-213X	http://www.biomedcentral.com/bmcdevbiol/	2001
+	BioMed Central Ltd	BMC Ear, Nose and Throat Disorders	BMC Ear Nose Throat Disord	1472-6815	http://www.biomedcentral.com/bmcearnosethroatdisord/	2001
+	BioMed Central Ltd	BMC Ecology	BMC Ecol	1472-6785	http://www.biomedcentral.com/bmcecol/	2001
+	BioMed Central Ltd	BMC Emergency Medicine	BMC Emerg Med	1471-227X	http://www.biomedcentral.com/bmcemergmed/	2001
+	BioMed Central Ltd	BMC Endocrine Disorders	BMC Endocr Disord	1472-6823	http://www.biomedcentral.com/bmcendocrdisord/	2001
+	BioMed Central Ltd	BMC Evolutionary Biology	BMC Evol Biol	1471-2148	http://www.biomedcentral.com/bmcevolbiol/	2001
+	BioMed Central Ltd	BMC Family Practice	BMC Fam Pract	1471-2296	http://www.biomedcentral.com/bmcfampract/	2000
+	BioMed Central Ltd	BMC Gastroenterology	BMC Gastroenterol	1471-230X	http://www.biomedcentral.com/bmcgastroenterol/	2001
+	BioMed Central Ltd	BMC Genetics	BMC Genet	1471-2156	http://www.biomedcentral.com/bmcgenet/	2000
+	BioMed Central Ltd	BMC Genomics	BMC Genomics	1471-2164	http://www.biomedcentral.com/bmcgenomics/	2000
+	BioMed Central Ltd	BMC Geriatrics	BMC Geriatr	1471-2318	http://www.biomedcentral.com/bmcgeriatr/	2001
+	BioMed Central Ltd	BMC Health Services Research	BMC Health Serv Res	1472-6963	http://www.biomedcentral.com/bmchealthservres/	2001
+	BioMed Central Ltd	BMC Immunology	BMC Immunol	1471-2172	http://www.biomedcentral.com/bmcimmunol/	2000
+	BioMed Central Ltd	BMC Infectious Diseases	BMC Infect Dis	1471-2334	http://www.biomedcentral.com/bmcinfectdis/	2001
+	BioMed Central Ltd	BMC International Health and Human Rights	BMC Int Health Hum Rights	1472-698X	http://www.biomedcentral.com/bmcinthealthhumrights/	2001
+	BioMed Central Ltd	BMC Medical Education	BMC Med Educ	1472-6920	http://www.biomedcentral.com/bmcmededuc/	2001
+	BioMed Central Ltd	BMC Medical Ethics	BMC Med Ethics	1472-6939	http://www.biomedcentral.com/bmcmedethics/	2000
+	BioMed Central Ltd	BMC Medical Genetics	BMC Med Genet	1471-2350	http://www.biomedcentral.com/bmcmedgenet/	2000
+	BioMed Central Ltd	BMC Medical Genomics	BMC Med Genomics	1755-8794	http://www.biomedcentral.com/bmcmedgenomics/	2008
+	BioMed Central Ltd	BMC Medical Imaging	BMC Med Imaging	1471-2342	http://www.biomedcentral.com/bmcmedimaging/	2001
+	BioMed Central Ltd	BMC Medical Informatics and Decision Making	BMC Med Inform Decis Mak	1472-6947	http://www.biomedcentral.com/bmcmedinformdecismak/	2001
+	BioMed Central Ltd	BMC Medical Physics	BMC Med Phys	1756-6649	http://www.biomedcentral.com/bmcmedphys/	2001
+	BioMed Central Ltd	BMC Medical Research Methodology	BMC Med Res Methodol	1471-2288	http://www.biomedcentral.com/bmcmedresmethodol/	2001
+	BioMed Central Ltd	BMC Medicine	BMC Med	1741-7015	http://www.biomedcentral.com/bmcmed/	2003
+	BioMed Central Ltd	BMC Microbiology	BMC Microbiol	1471-2180	http://www.biomedcentral.com/bmcmicrobiol/	2001
+	BioMed Central Ltd	BMC Molecular Biology	BMC Mol Biol	1471-2199	http://www.biomedcentral.com/bmcmolbiol/	2000
+	BioMed Central Ltd	BMC Musculoskeletal Disorders	BMC Musculoskelet Disord	1471-2474	http://www.biomedcentral.com/bmcmusculoskeletdisord/	2000
+	BioMed Central Ltd	BMC Nephrology	BMC Nephrol	1471-2369	http://www.biomedcentral.com/bmcnephrol/	2000
+	BioMed Central Ltd	BMC Neurology	BMC Neurol	1471-2377	http://www.biomedcentral.com/bmcneurol/	2001
+	BioMed Central Ltd	BMC Neuroscience	BMC Neurosci	1471-2202	http://www.biomedcentral.com/bmcneurosci/	2000
+	BioMed Central Ltd	BMC Nursing	BMC Nurs	1472-6955	http://www.biomedcentral.com/bmcnurs/	2002
+	BioMed Central Ltd	BMC Ophthalmology	BMC Ophthalmol	1471-2415	http://www.biomedcentral.com/bmcophthalmol/	2001
+	BioMed Central Ltd	BMC Oral Health	BMC Oral Health	1472-6831	http://www.biomedcentral.com/bmcoralhealth/	2001
+	BioMed Central Ltd	BMC Palliative Care	BMC Palliat Care	1472-684X	http://www.biomedcentral.com/bmcpalliatcare/	2002
+	BioMed Central Ltd	BMC Pediatrics	BMC Pediatr	1471-2431	http://www.biomedcentral.com/bmcpediatr/	2001
+	BioMed Central Ltd	BMC Pharmacology	BMC Pharmacol	1471-2210	http://www.biomedcentral.com/bmcpharmacol/	2001
+	BioMed Central Ltd	BMC Physiology	BMC Physiol	1472-6793	http://www.biomedcentral.com/bmcphysiol/	2001
+	BioMed Central Ltd	BMC Plant Biology	BMC Plant Biol	1471-2229	http://www.biomedcentral.com/bmcplantbiol/	2001
+	BioMed Central Ltd	BMC Pregnancy and Childbirth	BMC Pregnancy Childbirth	1471-2393	http://www.biomedcentral.com/bmcpregnancychildbirth/	2001
+	BioMed Central Ltd	BMC Proceedings	BMC Proc	1753-6561	http://www.biomedcentral.com/bmcproc/	2007
+	BioMed Central Ltd	BMC Psychiatry	BMC Psychiatry	1471-244X	http://www.biomedcentral.com/bmcpsychiatry/	2001
+	BioMed Central Ltd	BMC Public Health	BMC Public Health	1471-2458	http://www.biomedcentral.com/bmcpublichealth/	2001
+	BioMed Central Ltd	BMC Pulmonary Medicine	BMC Pulm Med	1471-2466	http://www.biomedcentral.com/bmcpulmmed/	2001
+	BioMed Central Ltd	BMC Research Notes	BMC Res Notes	1756-0500	http://www.biomedcentral.com/bmcresnotes/	2008
+	BioMed Central Ltd	BMC Structural Biology	BMC Struct Biol	1472-6807	http://www.biomedcentral.com/bmcstructbiol/	2001
+	BioMed Central Ltd	BMC Surgery	BMC Surg	1471-2482	http://www.biomedcentral.com/bmcsurg/	2001
+	BioMed Central Ltd	BMC Systems Biology	BMC Syst Biol	1752-0509	http://www.biomedcentral.com/bmcsystbiol/	2007
+	BioMed Central Ltd	BMC Urology	BMC Urol	1471-2490	http://www.biomedcentral.com/bmcurol/	2001
+	BioMed Central Ltd	BMC Veterinary Research	BMC Vet Res	1746-6148	http://www.biomedcentral.com/bmcvetres/	2005
+	BioMed Central Ltd	BMC Women's Health	BMC Womens Health	1472-6874	http://www.biomedcentral.com/bmcwomenshealth/	2001
+	BioMed Central Ltd	Behavioral and Brain Functions	Behav Brain Funct	1744-9081	http://www.behavioralandbrainfunctions.com	2005
+	Beilstein-Institut	Beilstein Journal of Organic Chemistry	Beilstein J Org Chem	1860-5397	http://archive.biomedcentral.com/1860-5397/	2005
+	BioMed Central Ltd	BioData Mining	BioData Mining	1756-0381	http://www.biodatamining.org/	2008
+	BioMed Central Ltd	BioMagnetic Research and Technology	BioMag Res Technol	1477-044X	http://www.biomagres.com	2003
+	BioMed Central Ltd	BioMedical Engineering OnLine	BioMed Eng OnLine	1475-925X	http://www.biomedical-engineering-online.com	2002
+	BioMed Central Ltd	BioPsychoSocial Medicine	BioPsychoSocial Med	1751-0759	http://www.bpsmedicine.com	2007
+	BioMed Central Ltd	Biological Procedures Online	Biol Proced Online	1480-9222	http://www.biologicalproceduresonline.com	2009
+	BioMed Central Ltd	Biology Direct	Biol Direct	1745-6150	http://www.biology-direct.com	2006
+	BioMed Central Ltd	Biology of Mood & Anxiety Disorders	Biol Mood Anxiety Disord	2045-5380	http://www.biolmoodanxietydisord.com	2011
+	BioMed Central Ltd	Biology of Sex Differences	Biol sex dif	2042-6410	http://www.bsd-journal.com	2010
+	BioMed Central Ltd	Biomedical Digital Libraries	Biomed Digit Libr	1742-5581	http://www.bio-diglib.com	2004
+	BioMed Central Ltd	Biotechnology for Biofuels	Biotechnol Biofuels	1754-6834	http://www.biotechnologyforbiofuels.com	2008
+	BioMed Central Ltd	Breast Cancer Research	Breast Cancer Res	1465-5411	http://breast-cancer-research.com/	1999
+	BioMed Central Ltd	Cancer Cell International	Cancer Cell Int	1475-2867	http://www.cancerci.com	2001
+	BioMed Central Ltd	Carbon Balance and Management	Carbon Balance Manage	1750-0680	http://www.cbmjournal.com	2006
+	BioMed Central Ltd	Cardiovascular Diabetology	Cardiovasc Diabetol	1475-2840	http://www.cardiab.com	2002
+	BioMed Central Ltd	Cardiovascular Ultrasound	Cardiovasc Ultrasound	1476-7120	http://www.cardiovascularultrasound.com	2003
+	BioMed Central Ltd	Cases Journal	Cases J	1757-1626	http://www.casesjournal.com	2008
+	BioMed Central Ltd	Cell & Bioscience	Cell Biosci	2045-3701	http://www.cellandbioscience.com	2010
+	BioMed Central Ltd	Cell & Chromosome	Cell Chromosome	1475-9268	http://www.cellandchromosome.com	2002
+	BioMed Central Ltd	Cell Communication and Signaling	Cell Commun Signal	1478-811X	http://www.biosignaling.com	2003
+	BioMed Central Ltd	Cell Division	Cell Div	1747-1028	http://www.celldiv.com	2006
+	BioMed Central Ltd	Cell Regeneration	Cell Regen	2045-9769	http://www.cellregenerationjournal.com	2012
+	BioMed Central Ltd	Centrosome Research	Centrosome Res	2045-6093	http://www.centrosomeresearch.com	0
+	Chemistry Central Ltd	Chemistry Central Journal	Chemistry Central Journal	1752-153X	http://journal.chemistrycentral.com/	2007
+	BioMed Central Ltd	Child and Adolescent Psychiatry and Mental Health	Child Adolesc Psychiatry Ment Health	1753-2000	http://www.capmh.com	2007
+	BioMed Central Ltd	Chinese Medicine	Chin Med	1749-8546	http://www.cmjournal.org	2006
+	BioMed Central Ltd	Chiropractic & Manual Therapies	Chiropr Man Therap	2045-709X	http://www.chiromt.com	1992
+	BioMed Central Ltd	Cilia	Cilia	2046-2530	http://www.ciliajournal.com	2012
+	BioMed Central Ltd	Clinical Epigenetics	Clin Epigenetics	1868-7083	http://www.clinicalepigeneticsjournal.com	2011
+	BioMed Central Ltd	Clinical Practice and Epidemiology in Mental Health	Clin Pract Epidemiol Ment Health	1745-0179	http://www.cpementalhealth.com	2005
+	BioMed Central Ltd	Clinical Proteomics	Clin Proteomics	1559-0275	http://www.clinicalproteomicsjournal.com	2011
+	BioMed Central Ltd	Clinical Sarcoma Research	Clin Sarcoma Res	2045-3329	http://www.clinicalsarcomaresearch.com	2010
+	BioMed Central Ltd	Clinical and Molecular Allergy	Clin Mol Allergy	1476-7961	http://www.clinicalmolecularallergy.com	2003
+	BioMed Central Ltd	Clinical and Translational Allergy	Clin Transl Allergy	2045-7022	http://www.ctajournal.com	2011
+	Springer	Clinical and Translational Medicine	Clin Transl Med	2001-1326	http://www.clintransmed.com	2012
+	BioMed Central Ltd	Comparative Hepatology	Comp Hepatol	1476-5926	http://www.comparative-hepatology.com	2002
+	BioMed Central Ltd	Conflict and Health	Confl Health	1752-1505	http://www.conflictandhealth.com	2007
+	BioMed Central Ltd	Cost Effectiveness and Resource Allocation	Cost Eff Resour Alloc	1478-7547	http://www.resource-allocation.com	2003
+	BioMed Central Ltd	Cough	Cough	1745-9974	http://www.coughjournal.com	2005
+	BioMed Central Ltd	Critical Care	Crit Care	1364-8535	http://ccforum.com/	1997
+	Springer	Critical Ultrasound Journal	Crit Ultrasound J	2036-7902	http://www.criticalultrasoundjournal.com	2011
+	BioMed Central Ltd	CytoJournal	Cytojournal	1742-6413	http://www.cytojournal.com	2004
+	BioMed Central Ltd	Diabetology & Metabolic Syndrome	Diabetol Metab Syndr	1758-5996	http://www.dmsjournal.com	2009
+	BioMed Central Ltd	Diagnostic Pathology	Diagn Pathol	1746-1596	http://www.diagnosticpathology.org	2006
+	BioMed Central Ltd	Dynamic Medicine	Dyn Med	1476-5918	http://www.dynamic-med.com	2002
+	Springer	EJNMMI Research	EJNMMI Res	2191-219X	http://www.ejnmmires.com	2011
+	BioMed Central Ltd	EPMA Journal	EPMA J	1878-5085	http://www.epmajournal.com	2012
+	Springer	EURASIP Journal on Bioinformatics and Systems Biology	EURASIP J Bioinform Syst Biol	1687-4153	http://bsb.eurasipjournals.com	2011
+	BioMed Central Ltd	Emerging Themes in Epidemiology	Emerg Themes Epidemiol	1742-7622	http://www.ete-online.com	2004
+	BioMed Central Ltd	Environmental Evidence	Environ Evid	2047-2382	http://www.environmentalevidencejournal.org	2011
+	BioMed Central Ltd	Environmental Health	Environ Health	1476-069X	http://www.ehjournal.net	2002
+	Springer	Environmental Sciences Europe	Environ Sci Eur	2190-4715	http://www.enveurope.com	2011
+	BioMed Central Ltd	Epidemiologic Perspectives & Innovations	Epidemiol Perspect Innov	1742-5573	http://www.epi-perspectives.com	2004
+	BioMed Central Ltd	Epigenetics & Chromatin	Epigenetics & Chromatin	1756-8935	http://www.epigeneticsandchromatin.com	2008
+	BioMed Central Ltd	European Journal of Medical Research	Eur J Med Res	2047-783X	http://www.eurjmedres.com	2011
+	BioMed Central Ltd	EvoDevo	EvoDevo	2041-9139	http://www.evodevojournal.com	2010
+	BioMed Central Ltd	Experimental & Translational Stroke Medicine	Exp Transl Stroke Med	2040-7378	http://www.etsmjournal.com	2009
+	BioMed Central Ltd	Experimental Hematology & Oncology	Exp Hematol Oncol	2162-3619	http://www.ehoonline.org	2012
+	BioMed Central Ltd	Fibrogenesis & Tissue Repair	Fibrogenesis Tissue Repair	1755-1536	http://www.fibrogenesis.com	2008
+	BioMed Central Ltd	Filaria Journal	Filaria J	1475-2883	http://www.filariajournal.com	2002
+	BioMed Central Ltd	Flavour	Flavour	2044-7248	http://www.flavourjournal.com	2012
+	BioMed Central Ltd	Fluids and Barriers of the CNS	Fluids Barriers CNS	2045-8118	http://www.fluidsbarrierscns.com	2004
+	BioMed Central Ltd	Frontiers in Zoology	Front Zool	1742-9994	http://www.frontiersinzoology.com	2004
+	BioMed Central Ltd	Genetic Vaccines and Therapy	Genet Vaccines Ther	1479-0556	http://www.gvt-journal.com	2003
+	BioMed Central Ltd	Genetics Selection Evolution	Genet Sel Evol	1297-9686	http://www.gsejournal.org	1969
+	BioMed Central Ltd	Genome Biology	Genome Biol	1465-6906	http://genomebiology.com	2000
+	BioMed Central Ltd	Genome Integrity	Genome Integr	2041-9414	http://www.genomeintegrity.com	2010
+	BioMed Central Ltd	Genome Medicine	Genome Med	1756-994X	http://genomemedicine.com	2009
+	Chemistry Central Ltd	Geochemical Transactions	Geochem Trans	1467-4866	http://www.geochemicaltransactions.com	2000
+	BioMed Central Ltd	Globalization and Health	Global Health	1744-8603	http://www.globalizationandhealth.com	2005
+	BioMed Central Ltd	Gut Pathogens	Gut Pathog	1757-4749	http://www.gutpathogens.com	2009
+	BioMed Central Ltd	Harm Reduction Journal	Harm Reduct J	1477-7517	http://www.harmreductionjournal.com	2004
+	BioMed Central Ltd	Head & Face Medicine	Head Face Med	1746-160X	http://www.head-face-med.com	2005
+	BioMed Central Ltd	Head & Neck Oncology	Head Neck Oncol	1758-3284	http://www.headandneckoncology.org	2009
+	BioMed Central Ltd	Health Research Policy and Systems	Health Res Policy Sys	1478-4505	http://www.health-policy-systems.com	2003
+	BioMed Central Ltd	Health and Quality of Life Outcomes	Health Qual Life Outcomes	1477-7525	http://www.hqlo.com	2003
+	BioMed Central Ltd	Hereditary Cancer in Clinical Practice	Hered Cancer Clin Pract	1897-4287	http://www.hccpjournal.com	2003
+	BioMed Central Ltd	Herpesviridae	Herpesviridae	2042-4280	http://www.herpesviridae.org	2010
+	BioMed Central Ltd	Human Resources for Health	Hum Resour Health	1478-4491	http://www.human-resources-health.com	2003
+	BioMed Central Ltd	Immunity & Ageing	Immun Ageing	1742-4933	http://www.immunityageing.com	2004
+	BioMed Central Ltd	Immunome Research	Immunome Res	1745-7580	http://www.immunome-research.com	2005
+	BioMed Central Ltd	Implementation Science	Implementation Sci	1748-5908	http://www.implementationscience.com	2006
+	BioMed Central Ltd	Infectious Agents and Cancer	Infect Agents Cancer	1750-9378	http://www.infectagentscancer.com	2006
+	Springer	International Aquatic Research	Int Aquat Res	2008-6970	http://www.intaquares.com	2011
+	BioMed Central Ltd	International Archives of Medicine	Int Arch Med	1755-7682	http://www.intarchmed.com	2008
+	BioMed Central Ltd	International Breastfeeding Journal	Int Breastfeed J	1746-4358	http://www.internationalbreastfeedingjournal.com	2006
+	BioMed Central Ltd	International Journal for Equity in Health	Int J Equity Health	1475-9276	http://www.equityhealthj.com	2002
+	BioMed Central Ltd	International Journal of Behavioral Nutrition and Physical Activity	Int J Behav Nutr Phys Act	1479-5868	http://www.ijbnpa.org	2004
+	Springer	International Journal of Emergency Medicine	Int J Emerg Med	1865-1380	http://www.intjem.com	2011
+	BioMed Central Ltd	International Journal of Health Geographics	Int J Health Geogr	1476-072X	http://www.ij-healthgeographics.com	2002
+	BioMed Central Ltd	International Journal of Mental Health Systems	Int J Ment Health Syst	1752-4458	http://www.ijmhs.com	2007
+	BioMed Central Ltd	International Journal of Pediatric Endocrinology	Int J Pediatr Endocrinol	1687-9856	http://www.ijpeonline.com	2011
+	BioMed Central Ltd	International Seminars in Surgical Oncology	Int Semin Surg Oncol	1477-7800	http://www.issoonline.com	2004
+	BioMed Central Ltd	Investigative Genetics	Invest Genet	2041-2223	http://www.investigativegenetics.com	2010
+	BioMed Central Ltd	Irish Veterinary Journal	irvetj	2046-0481	http://www.irishvetjournal.org	2004
+	BioMed Central Ltd	Israel Journal of Health Policy Research	Isr J of Health Policy Res	2045-4015	http://www.ijhpr.org	2012
+	BioMed Central Ltd	Italian Journal of Pediatrics	Ital J Pediatr	1824-7288	http://www.ijponline.net	2008
+	BioMed Central Ltd	Journal of Animal Science and Biotechnology	J Anim Sci Biotechnol	2049-1891	http://www.jasbsci.com	2012
+	BioMed Central Ltd	Journal of Autoimmune Diseases	J Autoimmune Dis	1740-2557	http://www.jautoimdis.com	2004
+	BioMed Central Ltd	Journal of Biological Engineering	J Biol Eng	1754-1611	http://www.jbioleng.org	2007
+	BioMed Central Ltd	Journal of Biology	J Biol	1475-4924	http://jbiol.com/	2002
+	BioMed Central Ltd	Journal of Biomedical Discovery and Collaboration	J Biomed Discov Collaboration	1747-5333	http://www.j-biomed-discovery.com	2006
+	BioMed Central Ltd	Journal of Biomedical Science	J Biomed Sci	1423-0127	http://www.jbiomedsci.com	2009
+	BioMed Central Ltd	Journal of Biomedical Semantics	J Biomed Sem	2041-1480	http://www.jbiomedsem.com	2010
+	BioMed Central Ltd	Journal of Brachial Plexus and Peripheral Nerve Injury	J Brachial Plexus Peripher Nerve Inj	1749-7221	http://www.jbppni.com	2006
+	BioMed Central Ltd	Journal of Carcinogenesis	J Carcinog	1477-3163	http://www.carcinogenesis.com	2002
+	BioMed Central Ltd	Journal of Cardiothoracic Surgery	J Cardiothorac Surg	1749-8090	http://www.cardiothoracicsurgery.org	2006
+	BioMed Central Ltd	Journal of Cardiovascular Magnetic Resonance	J Cardiovasc Magn Reson	1532-429X	http://jcmr-online.com	2008
+	Chemistry Central Ltd	Journal of Cheminformatics	J Cheminf	1758-2946	http://www.jcheminf.com	2009
+	BioMed Central Ltd	Journal of Circadian Rhythms	J Circad Rhythms	1740-3391	http://www.jcircadianrhythms.com	2003
+	BioMed Central Ltd	Journal of Clinical Bioinformatics	J Clin Bioinformatics	2043-9113	http://www.jclinbioinformatics.com	2011
+	BioMed Central Ltd	Journal of Ethnobiology and Ethnomedicine	J Ethnobiology Ethnomedicine	1746-4269	http://www.ethnobiomed.com	2005
+	BioMed Central Ltd	Journal of Experimental & Clinical Assisted Reproduction	J Exp Clin Assist Reprod	1743-1050	http://www.jexpclinassistreprod.com	2004
+	BioMed Central Ltd	Journal of Experimental & Clinical Cancer Research	J Exp Clin Cancer Res	1756-9966	http://www.jeccr.com	2008
+	BioMed Central Ltd	Journal of Foot and Ankle Research	J Foot Ankle Res	1757-1146	http://www.jfootankleres.com	2008
+	BioMed Central Ltd	Journal of Hematology & Oncology	J Hematol Oncol	1756-8722	http://www.jhoonline.org	2008
+	BioMed Central Ltd	Journal of Immune Based Therapies and Vaccines	J Immune Based Ther Vaccines	1476-8518	http://www.jibtherapies.com	2003
+	BioMed Central Ltd	Journal of Inflammation	J Inflamm	1476-9255	http://www.journal-inflammation.com	2004
+	BioMed Central Ltd	Journal of Medical Case Reports	J Med Case Rep	1752-1947	http://www.jmedicalcasereports.com	2007
+	BioMed Central Ltd	Journal of Molecular Signaling	J Mol Signal	1750-2187	http://www.jmolecularsignaling.com	2006
+	BioMed Central Ltd	Journal of Nanobiotechnology	J Nanobiotechnol	1477-3155	http://www.jnanobiotechnology.com	2003
+	BioMed Central Ltd	Journal of Negative Results in BioMedicine	J Negat Results BioMed	1477-5751	http://www.jnrbm.com	2002
+	BioMed Central Ltd	Journal of NeuroEngineering and Rehabilitation	J NeuroEngineering Rehabil	1743-0003	http://www.jneuroengrehab.com	2004
+	BioMed Central Ltd	Journal of Neurodevelopmental Disorders	J Neurodev Disord	1866-1955	http://www.jneurodevdisorders.com	2009
+	BioMed Central Ltd	Journal of Neuroinflammation	J Neuroinflammation	1742-2094	http://www.jneuroinflammation.com	2004
+	BioMed Central Ltd	Journal of Occupational Medicine and Toxicology	J Occup Med Toxicol	1745-6673	http://www.occup-med.com	2006
+	BioMed Central Ltd	Journal of Orthopaedic Surgery and Research	J Orthop Surg Res	1749-799X	http://www.josr-online.com	2006
+	BioMed Central Ltd	Journal of Ovarian Research	J Ovarian Res	1757-2215	http://www.ovarianresearch.com	2008
+	BioMed Central Ltd	Journal of Physiological Anthropology	J Physiol Anthropol	1880-6805	http://www.jphysiolanthropol.com	2012
+	Chemistry Central Ltd	Journal of Systems Chemistry	J Syst Chem	1759-2208	http://www.jsystchem.com	2010
+	BioMed Central Ltd	Journal of Translational Medicine	J Transl Med	1479-5876	http://www.translational-medicine.com	2003
+	BioMed Central Ltd	Journal of Trauma Management & Outcomes	J Trauma Manage Outcomes	1752-2897	http://www.traumamanagement.org	2007
+	BioMed Central Ltd	Journal of the International AIDS Society	J Int AIDS Soc	1758-2652	http://www.jiasociety.org/	2004
+	BioMed Central Ltd	Journal of the International Society of Sports Nutrition	J Int Soc Sports Nutr	1550-2783	http://www.jissn.com	2004
+	BioMed Central Ltd	Kinetoplastid Biology and Disease	Kinetoplastid Biol Dis	1475-9292	http://www.kinetoplastids.com	2002
+	BioMed Central Ltd	Lipids in Health and Disease	Lipids Health Dis	1476-511X	http://www.lipidworld.com	2002
+	BioMed Central Ltd	Malaria Journal	Malar J	1475-2875	http://www.malariajournal.com	2002
+	BioMed Central Ltd	Medical Gas Research	Med Gas Res	2045-9912	http://www.medicalgasresearch.com	2011
+	BioMed Central Ltd	Medical Immunology	Med Immunol	1476-9433	http://www.medimmunol.com	2002
+	BioMed Central Ltd	Microbial Cell Factories	Microb Cell Fact	1475-2859	http://www.microbialcellfactories.com	2002
+	BioMed Central Ltd	Microbial Informatics and Experimentation	Microb Inform Exp	2042-5783	http://www.microbialinformaticsj.com	2011
+	BioMed Central Ltd	Mobile DNA	Mobile DNA	1759-8753	http://www.mobilednajournal.com	2010
+	BioMed Central Ltd	Molecular Autism	Mol Autism	2040-2392	http://www.molecularautism.com	2010
+	BioMed Central Ltd	Molecular Brain	Mol Brain	1756-6606	http://www.molecularbrain.com	2008
+	BioMed Central Ltd	Molecular Cancer	Mol Cancer	1476-4598	http://www.molecular-cancer.com	2002
+	BioMed Central Ltd	Molecular Cytogenetics	Mol Cytogenet	1755-8166	http://www.molecularcytogenetics.org	2008
+	BioMed Central Ltd	Molecular Neurodegeneration	Mol Neurodegeneration	1750-1326	http://www.molecularneurodegeneration.com	2006
+	BioMed Central Ltd	Molecular Pain	Mol Pain	1744-8069	http://www.molecularpain.com	2005
+	BioMed Central Ltd	Multidisciplinary Respiratory Medicine	Multidiscip Respir Med	2049-6958	http://www.mrmjournal.com	2006
+	BioMed Central Ltd	Neural Development	Neural Dev	1749-8104	http://www.neuraldevelopment.com	2006
+	BioMed Central Ltd	Neural Systems & Circuits	Neural Syst Circuits	2042-1001	http://www.neuralsystemsandcircuits.com	2011
+	BioMed Central Ltd	Nonlinear Biomedical Physics	Nonlinear Biomed Phys	1753-4631	http://www.nonlinearbiomedphys.com	2007
+	BioMed Central Ltd	Nuclear Receptor	Nucl Recept	1478-1336	http://www.nuclear-receptor.com	2003
+	BioMed Central Ltd	Nutrition & Metabolism	Nutr Metab (Lond)	1743-7075	http://www.nutritionandmetabolism.com	2004
+	BioMed Central Ltd	Nutrition Journal	Nutr J	1475-2891	http://www.nutritionj.com	2002
+	BioMed Central Ltd	Open Research Computation	Open Res Comput	2042-5767	http://www.openresearchcomputation.com	0
+	Springer	Optical Nanoscopy	Opt Nanoscopy	2192-2853	http://www.optnano.com	2011
+	BioMed Central Ltd	Orphanet Journal of Rare Diseases	Orphanet J Rare Dis	1750-1172	http://www.ojrd.com	2006
+	BioMed Central Ltd	Osteopathic Medicine and Primary Care	Osteopath Med Prim Care	1750-4732	http://www.om-pc.com	2007
+	BioMed Central Ltd	Parasites & Vectors	Parasit Vectors	1756-3305	http://www.parasitesandvectors.com	2008
+	BioMed Central Ltd	Particle and Fibre Toxicology	Part Fibre Toxicol	1743-8977	http://www.particleandfibretoxicology.com	2004
+	BioMed Central Ltd	PathoGenetics	Pathogenetics	1755-8417	http://www.pathogeneticsjournal.com	2008
+	BioMed Central Ltd	Patient Safety in Surgery	Patient Saf Surg	1754-9493	http://www.pssjournal.com	2007
+	BioMed Central Ltd	Pediatric Rheumatology	Pediatr Rheumatol	1546-0096	http://www.ped-rheum.com	2003
+	BioMed Central Ltd	Perioperative Medicine	perioper med	2047-0525	http://www.perioperativemedicinejournal.com	2011
+	BioMed Central Ltd	Philosophy, Ethics, and Humanities in Medicine	Philos Ethics Humanit Med	1747-5341	http://www.peh-med.com	2006
+	BioMed Central Ltd	Plant Methods	Plant Methods	1746-4811	http://www.plantmethods.com	2005
+	BioMed Central Ltd	Population Health Metrics	Popul Health Metrics	1478-7954	http://www.pophealthmetrics.com	2003
+	BioMed Central Ltd	Proteome Science	Proteome Sci	1477-5956	http://www.proteomesci.com	2003
+	BioMed Central Ltd	Radiation Oncology	Radiat Oncol	1748-717X	http://www.ro-journal.com	2006
+	BioMed Central Ltd	Reproductive Biology and Endocrinology	Reprod Biol Endocrinol	1477-7827	http://www.rbej.com	2003
+	BioMed Central Ltd	Reproductive Health	Reprod Health	1742-4755	http://www.reproductive-health-journal.com	2004
+	BioMed Central Ltd	Respiratory Research	Respir Res	1465-9921	http://respiratory-research.com	2000
+	BioMed Central Ltd	Retrovirology	Retrovirology	1742-4690	http://www.retrovirology.com	2004
+	Springer	Rice	Rice	1939-8433	http://www.thericejournal.com	2011
+	BioMed Central Ltd	Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine	Scand J Trauma Resusc Emerg Med	1757-7241	http://www.sjtrem.com	2008
+	BioMed Central Ltd	Scoliosis	Scoliosis	1748-7161	http://www.scoliosisjournal.com	2006
+	BioMed Central Ltd	Silence	Silence	1758-907X	http://www.silencejournal.com	2010
+	BioMed Central Ltd	Skeletal Muscle	Skeletal Muscle	2044-5040	http://www.skeletalmusclejournal.com	2011
+	BioMed Central Ltd	Source Code for Biology and Medicine	Source Code Biol Med	1751-0473	http://www.scfbm.org	2006
+	BioMed Central Ltd	Sports Medicine, Arthroscopy, Rehabilitation, Therapy & Technology	Sports Med Arthrosc Rehabil Ther Technol	1758-2555	http://www.smarttjournal.com	2009
+	Springer	SpringerPlus	SpringerPlus	2193-1801	http://www.springerplus.com	2011
+	BioMed Central Ltd	Stem Cell Research & Therapy	Stem Cell Res Ther	1757-6512	http://stemcellres.com	2010
+	BioMed Central Ltd	Substance Abuse Treatment, Prevention, and Policy	Subst Abuse Treat Prev Policy	1747-597X	http://www.substanceabusepolicy.com	2006
+	BioMed Central Ltd	Systematic Reviews	Sys Rev	2046-4053	http://www.systematicreviewsjournal.com	2012
+	Springer	The HUGO Journal	Hugo J	1877-6566	http://www.thehugojournal.com	2011
+	Springer	The Journal of Mathematical Neuroscience	The Journal of Mathematical Neuroscience	2190-8567	http://www.mathematical-neuroscience.com	2010
+	BioMed Central Ltd	Theoretical Biology and Medical Modelling	Theor Biol Med Model	1742-4682	http://www.tbiomed.com	2004
+	BioMed Central Ltd	Thrombosis Journal	Thrombosis J	1477-9560	http://www.thrombosisjournal.com	2003
+	BioMed Central Ltd	Thyroid Research	Thyroid Res	1756-6614	http://www.thyroidresearchjournal.com	2008
+	BioMed Central Ltd	Tobacco Induced Diseases	Tob Induced Dis	1617-9625	http://www.tobaccoinduceddiseases.com	2002
+	BioMed Central Ltd	Translational Neurodegeneration	Transl Neurodegener	2047-9158	http://www.translationalneurodegeneration.com	2012
+	BioMed Central Ltd	Transplantation Research	Transplant Res	2047-1440	http://www.transplantationresearch.com	2011
+	BioMed Central Ltd	Trials	Trials	1745-6215	http://www.trialsjournal.com	2000
+	BioMed Central Ltd	Vascular Cell	Vasc Cell	2045-824X	http://www.vascularcell.com	2009
+	BioMed Central Ltd	Veterinary Research	Vet Res	1297-9716	http://www.veterinaryresearch.org	2011
+	BioMed Central Ltd	Virology Journal	Virol J	1743-422X	http://www.virologyj.com	2004
+	BioMed Central Ltd	World Journal of Emergency Surgery	World J Emerg Surg	1749-7922	http://www.wjes.org	2006
+	BioMed Central Ltd	World Journal of Surgical Oncology	World J Surg Onc	1477-7819	http://www.wjso.com	2003
+	BioMed Central Ltd	eHealth International	eHealth Int	1476-3591	http://www.ehealthinternational.org	0
+
+#### bmc_journals_to_skip.txt
+
+	Australia and New Zealand Health Policy
+	Beilstein Journal of Organic Chemistry
+	BioMagnetic Research and Technology
+	Biomedical Digital Libraries
+	Cases Journal
+	Cell & Chromosome
+	Centrosome Research
+	Clinical Practice and Epidemiology in Mental Health
+	CytoJournal
+	Dynamic Medicine
+	eHealth International
+	Epidemiologic Perspectives & Innovations
+	Filaria Journal
+	Immunome Research
+	International Seminars in Surgical Oncology
+	Journal of Autoimmune Diseases
+	Journal of Biology
+	Journal of Biomedical Discovery and Collaboration
+	Journal of Carcinogenesis
+	Journal of Experimental & Clinical Assisted Reproduction
+	Journal of Immune Based Therapies and Vaccines
+	Journal of the International AIDS Society
+	Kinetoplastid Biology and Disease
+	Medical Immunology
+	Nuclear Receptor
+	Open Research Computation
+	Osteopathic Medicine and Primary Care
+	PathoGenetics
+
+#### bmc_style_template.csl
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
+	  <!-- This style was generated automatically from a script created by Charles Parnot. This was done based on the assumption that all BMC journals follow the same reference style. In general, this style should not be modified and made independent: any adjustment would likely have be made to the parent style instead, "biomed-central". See also: https://github.com/citation-style-language/styles/issues/190 -->
+	  <info>
+	    <title>#TITLE#</title>
+	    <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
+	    <link href="http://www.zotero.org/styles/biomed-central" rel="independent-parent"/>
+	    <link href="#URL#/authors/instructions" rel="documentation"/>
+	    <category citation-format="numeric"/>
+	    <category field="biology"/>
+	    <category field="medicine"/>
+	    <issn>#ISSN#</issn>
+	    <updated>2012-06-29T12:00:00+00:00</updated>
+	    <rights>This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
+	  </info>
+	</style>
+
+
+#### generate_bmc_styles.rb
+
+	#! /usr/bin/ruby
+
+	# for File.makedirs
+	require 'ftools'
+
+	# where are we?
+	This_script_path = File.dirname(File.expand_path(__FILE__))
+	puts "running script #{This_script_path}"
+
+	# hashes of hashes that will contain all the styles to generate
+	styles = { }
+
+	# template used by all the styles
+	template_path = "#{This_script_path}/bmc_style_template.csl"
+	template = File.read(template_path)
+
+	# styles to skip
+	skip_list_path = "#{This_script_path}/bmc_journals_to_skip.txt"
+	skipped_journals = File.read(skip_list_path).split(/\n/)
+
+	# start with new empty style directory
+	style_dir_path = "#{This_script_path}/generated_styles"
+	puts "creating directory at path #{style_dir_path}"
+	`rm -R '#{style_dir_path}'`
+	File.makedirs style_dir_path
+
+	# load all the info from the tab-delimited info file
+	journal_info = "#{This_script_path}/bmc_journals.tab"
+	File.read(journal_info).split(/\n/).each do |journal_line|
+
+	  # each line has the following fields
+	  # Publisher	Journal name	Abbreviation	ISSN	URL	Start Date
+	  fields = journal_line.split(/\t/)
+	  if (fields.length != 6)
+	    puts "invalid journal line: #{journal_line}"
+	    next
+	  end
+	  publisher = fields[0]
+	  title = fields[1]
+	  issn = fields[3]
+	  url = fields[4]
+	  year = fields[5]
+  
+	  # identifier is created from the title
+	  identifier = title.downcase
+	  identifier.gsub!(',', ' ')
+	  identifier.gsub!(':', ' ')
+	  identifier.gsub!("\'", '')
+	  identifier.gsub!('  ', ' ')
+	  identifier.gsub!('  ', ' ')
+	  identifier.gsub!(' ', '-')
+	  identifier.gsub!('&', 'and')
+
+	  # only BMC journals actually use the common style
+	  if (publisher != 'BioMed Central Ltd')
+	    $stderr.puts "skipping journal: #{title} because publisher = #{publisher}"
+	    next
+	  end
+
+	  # only BMC journals actually use the common style
+	  if (skipped_journals.include?(title) or skipped_journals.include?(identifier))
+	    $stderr.puts "skipping journal: #{title} because it's in the exclusion list"
+	    next
+	  end
+  
+	  # skip archived journals
+	  # only BMC journals actually use the common style
+	  if (year.to_i == 0)
+	    $stderr.puts "skipping journal: #{title} because year = #{year}"
+	    next
+	  end
+  
+	  # create style xml
+	  puts "creating style: #{identifier}"
+	  style_content = template.gsub('#TITLE#', title.gsub('&', '&amp;'))
+	  style_content.gsub!('#IDENTIFIER#', identifier)
+	  style_content.gsub!('#URL#', url.gsub('&', '&amp;'))
+	  style_content.gsub!('#ISSN#', issn)
+  
+	  # save file
+	  style_path = "#{style_dir_path}/#{identifier}.csl"
+	  File.open(style_path, 'w') { |fileio| fileio.write style_content }
+  
+	end

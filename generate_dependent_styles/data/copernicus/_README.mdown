@@ -1,0 +1,222 @@
+## 09-14-2012
+
+## Modernization
+
+To streamline the creation of the dependent styles, the script that generates the styles has been modified to handle **all** the publishers at once. See `README.mdown` at the root level, and the script `generate_styles_from_data.rb`. The subdirectory in the `data` folder contains the same data as before, but slightly reformatted to be compatible with the new script. The template has also been modified to take advantage of the CSL 1.0.1 specifications.
+
+The info necessary to generate the styles is now comprised of 3 files:
+
+* file `_journals.tab` tab-delimited list of journals, where the column header use the same name as the placeholders in the template
+* file `skip.txt` contains a list of journals to skip (either the title or the identifier)
+* file `_template.csl` is the template for this group of journals; if a field is empty in the journal list, the corresponding line will be removed in the template, which allows optional fields
+
+
+## 07-11-2012
+
+## Generating CSL files for all the journals published by Copernicus Publications
+
+I contacted Copernicus Publications, and got a confirmation from Nadine Deisel that all their journals use the same reference style. She also provided me with an Excel file with the list of journals, with their titles, ISSNs and eISSNs.
+
+	Dear Charles,
+
+	thank you very much for your email. As you already assumed we
+	are using the same reference style for all journals published
+	by Copernicus Publication. Attached please find the journal list
+	with ISSN and eIISN information.
+
+	If you have any further question please let me know.
+
+	Kind regards, 
+
+	Nadine Deisel 
+
+
+
+### Files
+
+These are the files used to generate the styles
+
+* file `copernicus_journals.tab`: derived from the Excel file sent by Nadine Deisel, to have a tab-delimited version of the journal list, to make it easier to parse; I added manually "field" values to be used for the element `<category field="#FIELD#"/>`
+
+* file `copernicus_journals_to_skip.txt`: list of journals to skip
+
+* file `generate_bmc_styles.rb`: script that generate the final CSL styles
+
+* file `bmc_style_template.csl`: template used by the script
+
+* directory `generated_styles`: will contain generated BMC styles
+
+
+#### copernicus_journals.tab
+
+	Title	eISSN	ISSN	Category1	Category2
+	Advances in Geosciences (ADGEO)	1680-7359	1680-7340	geology	
+	Advances in Radio Science (ARS)	1684-9973	1684-9965	physics	
+	Advances in Science and Research (ASR)	1992-0628	1992-0636	science	
+	Annales Geophysicae (ANGEO)	1432-0576	0992-7689	geology	
+	Astrophysics and Space Sciences Transactions (ASTRA)	1810-6536	1810-6528	astronomy	
+	Atmospheric Chemistry and Physics (ACP)	1680-7324	1680-7316	chemistry	physics
+	Atmospheric Chemistry and Physics Discussions (ACPD)	1680-7375	X	chemistry	physics
+	Atmospheric Measurement Techniques (AMT)	1867-8548	1867-1381	science	
+	Atmospheric Measurement Techniques Discussions (AMTD)	1867-8610	X	science	
+	Biogeosciences (BG)	1726-4189	1726-4170	biology	geology
+	Biogeosciences Discussions (BGD)	1810-6285	X	biology	geology
+	Climate of the Past (CP)	1814-9332	1814-9324	science	
+	Climate of the Past Discussions (CPD)	1814-9359	X	science	
+	Drinking Water Engineering and Science (DWES)	1996-9465	1996-9457	science	
+	Drinking Water Engineering and Science Discussions (DWESD)	1996-9481	X	science	
+	Earth System Science Data (ESSD)	1866-3516	1866-3508	science	
+	Earth System Science Data Discussions (ESSDD)	1866-3591	X	science	
+	Earth System Dynamics (ESD)	2190-4987	2190-4979	science	
+	Earth System Dynamics Discussions (ESDD)	2190-4995	X	science	
+	Geoscientific Instrumentation, Methods and Data Systems (GI)	2193-0864	2193-0856	geology	
+	Geoscientific Instrumentation, Methods and Data Systems Discussions (GID)	2193-0872	X	geology	
+	Geoscientific Model Development (GMD)	1991-9603	1991-959X	geology	
+	Geoscientific Model Development Discussions (GMDD)	1991-962X	X	geology	
+	History of Geo- and Space Sciences (HGSS)	2190-5029	2190-5010	geology	
+	Hydrology and Earth System Sciences (HESS) 	1607-7938	1027-5606	geology	
+	Hydrology and Earth System Sciences Discussions (HESSD) 	1812-2116	X	geology	
+	Journal of Sensors and Sensor Systems (JSSS)	not yet registered		engineering	
+	Mechanical Sciences (MS)	2191-916X	2191-9151	physics	
+	Natural Hazards and Earth System Sciences (NHESS)	1684-9981	1561-8633	geology	
+	Nonlinear Processes in Geophysics (NPG)	1607-7946	1023-5809	geology	
+	Ocean Science (OS) 	1812-0792	1812-0784	geology	
+	Ocean Science Discussions (OSD) 	1812-0822	X	geology	
+	Social Geography (SG)	1729-4312	1729-4274	geography	
+	Social Geography Discussions (SGD)	1816-1502	x	geography	
+	Solid Earth (SE)	1869-9529	1869-9510	geology	
+	Solid Earth Discussions (SED)	1869-9537	X	geology	
+	Stephan Mueller Special Publication Series (SMSPS)	1868-4564	1868-4556	science	
+	The Cryosphere (TC)	1994-0424	1994-0416	geology	
+	The Cryosphere Discussions (TCD)	1994-0440	X	geology	
+	Web Ecology	1399-1183	2193-3081	science	
+
+
+#### copernicus_journals_to_skip.txt
+
+	Stephan Mueller Special Publication Series (SMSPS)
+	Journal of Sensors and Sensor Systems (JSSS)
+
+
+#### copernicus_style_template.csl
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
+	  <!-- This style was generated automatically from a script created by Charles Parnot. This was done based on the assumption that all Copernicus Publications journals follow the same reference style. This style should not be modified and made independent: any adjustment would likely have be made to the parent style instead, "copernicus-publications". See also: https://github.com/citation-style-language/styles/issues/198 -->
+	  <info>
+	    <title>#TITLE#</title>
+	    <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
+	    <link href="http://www.zotero.org/styles/copernicus-publications" rel="independent-parent"/>
+	    <category citation-format="author-date"/>
+	    <category field="#FIELD1#"/>#OPTIONAL_CATEGORY#    <category field="#FIELD2#"/>
+	    <issn>#EISSN#</issn>  <!-- Electronic -->#OPTIONAL_ISSN#    <issn>#ISSN#</issn>  <!-- Print -->
+	    <updated>2012-07-11T12:00:00+00:00</updated>
+	    <rights>This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
+	  </info>
+	</style>
+
+
+#### generate_copernicus_styles.rb
+
+	#! /usr/bin/ruby
+
+	# for File.makedirs
+	require 'ftools'
+
+	# where are we?
+	This_script_path = File.dirname(File.expand_path(__FILE__))
+	puts "running script #{This_script_path}"
+
+	# hashes of hashes that will contain all the styles to generate
+	styles = { }
+
+	# template used by all the styles
+	template_path = "#{This_script_path}/copernicus_style_template.csl"
+	template = File.read(template_path)
+
+	# styles to skip
+	skip_list_path = "#{This_script_path}/copernicus_journals_to_skip.txt"
+	skipped_journals = File.read(skip_list_path).split(/\n/)
+
+	# start with new empty style directory
+	style_dir_path = "#{This_script_path}/generated_styles"
+	puts "creating directory at path #{style_dir_path}"
+	`rm -R '#{style_dir_path}'`
+	File.makedirs style_dir_path
+
+	# load all the info from the tab-delimited info file
+	journal_info = "#{This_script_path}/copernicus_journals.tab"
+	File.read(journal_info).split(/\n/).each do |journal_line|
+
+	  # each line has the following fields
+	  # Journal name	EISSN	ISSN	Category1	Category2
+	  fields = journal_line.split(/\t/)
+	  if (fields.length != 4 && fields.length != 5)
+	    puts "invalid journal line: #{journal_line}"
+	    next
+	  end
+	  title  = fields[0]
+	  eissn  = fields[1]
+	  issn   = fields[2]
+	  categ1 = fields[3]
+	  categ2 = fields[4]
+	  categ2 = '' if (fields.length == 4)
+  
+	  # skip header of the tab delimited file
+	  next if title == 'Title'
+
+	  # skipped journals
+	  if (skipped_journals.include?(title))
+	    $stderr.puts "skipping journal: #{title} because it's in the exclusion list"
+	    next
+	  end
+
+	  # clean-up title: remove abbrevation in parenthesis
+	  title.gsub!(/ \(.*\)/, '') 
+
+	  # clean-up accidental extra spaces
+	  eissn.gsub!(' ', '')
+	  issn.gsub!('  ', ' ')
+	  categ1.gsub!('  ', ' ')
+	  categ2.gsub!('  ', ' ')
+
+	  # identifier is created from the title
+	  identifier = title.downcase
+	  identifier.gsub!(',', ' ')
+	  identifier.gsub!(':', ' ')
+	  identifier.gsub!("\'", '')
+	  identifier.gsub!('  ', ' ')
+	  identifier.gsub!('  ', ' ')
+	  identifier.gsub!(/^ +/, '')
+	  identifier.gsub!(/ +$/, '')
+	  identifier.gsub!(' ', '-')
+	  identifier.gsub!('--', '-')
+	  identifier.gsub!('--', '-')
+	  identifier.gsub!('&', 'and')
+
+	  # create style xml
+	  puts "creating style: #{identifier}"
+	  style_content = template.gsub('#TITLE#', title.gsub('&', '&amp;'))
+	  style_content.gsub!('#IDENTIFIER#', identifier)
+	  style_content.gsub!('#EISSN#', eissn)
+	  style_content.gsub!('#FIELD1#', categ1)
+  
+	  if (issn.length == 9)
+	    style_content.gsub!('#OPTIONAL_ISSN#', "\n")
+	    style_content.gsub!('#ISSN#', issn)
+	  else
+	    style_content.gsub!(/#OPTIONAL_ISSN#.*$/, "")
+	  end
+
+	  if (categ2.length > 1)
+	    style_content.gsub!("#OPTIONAL_CATEGORY#", "\n")
+	    style_content.gsub!('#FIELD2#', categ2)
+	  else
+	    style_content.gsub!(/#OPTIONAL_CATEGORY#.*$/, "")
+	  end
+  
+	  # save file
+	  style_path = "#{style_dir_path}/#{identifier}.csl"
+	  File.open(style_path, 'w') { |fileio| fileio.write style_content }
+  
+	end
