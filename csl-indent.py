@@ -27,7 +27,11 @@ for style in styles:
         verbatimsStyle = styleElement.find(".//{http://purl.org/net/xbiblio/csl}rights").text
         parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
         parsedStyle = parsedStyle.replace("'", '"', 4)
-        parsedStyle = parsedStyle.replace(" ", "&#160;")
+        parsedStyle = parsedStyle.replace(" ", "&#160;")#no-break space
+        parsedStyle = parsedStyle.replace("ᵉ", "&#7497;")
+        parsedStyle = parsedStyle.replace("‑", "&#8209;")#non-breaking hyphen
+        parsedStyle = parsedStyle.replace("–", "&#8211;")#en dash
+        parsedStyle = parsedStyle.replace("—", "&#8212;")#em dash
         f = open(style, 'w')
         f.write ( parsedStyle )
         f.close()
