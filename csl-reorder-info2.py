@@ -24,8 +24,6 @@ desiredOrder = ["preceding-comment", "title", "title-short", "id", "link[@self]"
 
 # for comments in the middle, keep them with preceding element
 
-# to select attributes, 
-
 ##0 preceding-comment
 ##1 title
 ##2 title-short
@@ -52,9 +50,8 @@ for style in styles:
     parsedStyle = etree.parse(style, parser)
     styleElement = parsedStyle.getroot()
 
-
     # loop over elements desiredOrder list, all that is needed is to strip
-    # namespace from tag
+    # namespace from tag, append attribute or attribute value
     csInfo = styleElement.find(".//{http://purl.org/net/xbiblio/csl}info")
 
     counter = []
@@ -76,27 +73,26 @@ for style in styles:
         # check if node is a comment
         elif (str(infoNode) == ("<!--" + infoNode.text + "-->")):
             print("[[comment]]" + infoNode.text)
+            print(len(counter))
+            # if counter length is 0 --> preceding-comment (0)
+            # if counter length is length csInfo --> end-comment (position -1 of desiredOrder)
+            # otherwise, use position of prior element (position -1 of counter)
+
+            # might want to make exceptions for recognizable comments (issn, category)
+            # count comments (strings + frequency), print
         else:
             print(infoNode.text)
             print(infoNode)
             print("<!--" + infoNode.text + "-->")
-    # try:
-        
 
-    
-##    if csInfo[0].tag == "{http://purl.org/net/xbiblio/csl}title":
-##        counter.append(desiredOrder.index("title"))
-##    elif csInfo[0].tag == "{http://purl.org/net/xbiblio/csl}title-short":
-##        counter.append(desiredOrder.index("title-short"))
-##    elif csInfo[0].tag == "{http://purl.org/net/xbiblio/csl}id":
-##        counter.append(desiredOrder.index("id"))
-##    elif csInfo[0].tag == "{http://purl.org/net/xbiblio/csl}link[@self]":
-##        counter.append(desiredOrder.index("link[@self]"))
+    # if length counter is identical to length csInfo
+    # http://scienceoss.com/sort-one-list-by-another-list/
+
+    #agesAndPeople = zip(ages, people)
+    #agesAndPeople.sort()
+    #sortedAges, sortedPeople = zip(*agesAndPeople)
 
     print(counter)
-##    print(csInfo[0].tag)
-##    print(len(csInfo))
-##    print(len(styleElement[0]))
     
 ##    
 ##    try:
