@@ -55,7 +55,7 @@ for style in styles:
     csInfo = styleElement.find(".//{http://purl.org/net/xbiblio/csl}info")
 
     counter = []
-    for infoNode in csInfo:
+    for infoNodeIndex, infoNode in enumerate(csInfo):
         # check if node is an element
         if isinstance(infoNode.tag, basestring):
             # get rid of namespace
@@ -72,11 +72,15 @@ for style in styles:
                 print("Unknown element: " + infoElement)
         # check if node is a comment
         elif (str(infoNode) == ("<!--" + infoNode.text + "-->")):
-            print("[[comment]]" + infoNode.text)
-            print(len(counter))
-            # if counter length is 0 --> preceding-comment (0)
-            # if counter length is length csInfo --> end-comment (position -1 of desiredOrder)
-            # otherwise, use position of prior element (position -1 of counter)
+            # keep comments that precede any element at the top
+            if(sum(counter) == 0):
+                counter.append(desiredOrder.index("preceding-comment"))
+            # keep a comment at the end at the end
+            elif(len(counter) == (len(csInfo) - 1)):
+                counter.append(desiredOrder.index("end-comment"))
+            # keep other comments with preceding element
+            else:
+                counter.append(counter[-1] + 0.5)
 
             # might want to make exceptions for recognizable comments (issn, category)
             # count comments (strings + frequency), print
