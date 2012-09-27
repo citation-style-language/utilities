@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Python script for to reorder cs:info section of styles
 # Author: Rintze M. Zelle
-# Version: 2012-09-24
+# Version: 2012-09-26
 # * Requires lxml library (http://lxml.de/)
 
 import os, glob, re
@@ -14,13 +14,6 @@ styles = []
 #    styles.append(os.path.join(stylepath))
 for stylepath in glob.glob( os.path.join(path, 'dependent', 'aa*.csl') ):
     styles.append(os.path.join(stylepath))
-
-desiredOrder = ["preceding-comment", "title", "title-short", "id", "link[@self]",
-                "link[@independent-parent]", "link[@template]",
-                "link[@documentation]", "author", "contributor",
-                "category[@citation-format]", "category[@field]", "issn",
-                "eissn", "issnl", "summary", "published", "updated", "rights",
-                "end-comment"]
 
 # for comments in the middle, keep them with preceding element
 
@@ -45,13 +38,18 @@ desiredOrder = ["preceding-comment", "title", "title-short", "id", "link[@self]"
 ##18 rights
 ##19 end-comment
 
+desiredOrder = ["preceding-comment", "title", "title-short", "id", "link[@self]",
+                "link[@independent-parent]", "link[@template]",
+                "link[@documentation]", "author", "contributor",
+                "category[@citation-format]", "category[@field]", "issn",
+                "eissn", "issnl", "summary", "published", "updated", "rights",
+                "end-comment"]
+
 for style in styles:
     parser = etree.XMLParser(remove_blank_text=True)
     parsedStyle = etree.parse(style, parser)
     styleElement = parsedStyle.getroot()
 
-    # loop over elements desiredOrder list, all that is needed is to strip
-    # namespace from tag, append attribute or attribute value
     csInfo = styleElement.find(".//{http://purl.org/net/xbiblio/csl}info")
 
     counter = []
@@ -82,33 +80,33 @@ for style in styles:
             else:
                 counter.append(counter[-1] + 0.5)
 
-            # might want to make exceptions for recognizable comments (issn, category)
-            # count comments (strings + frequency), print
+            # Possible improvements:
+            # * exceptions for recognizable comments (issn, category)
+            # * print comments (strings + frequency)
         else:
-            print(infoNode.text)
             print(infoNode)
-            print("<!--" + infoNode.text + "-->")
 
-    # if length counter is identical to length csInfo
+    # make sure if length counter is identical to length csInfo
     # http://scienceoss.com/sort-one-list-by-another-list/
+    if(len(counter) == len(csInfo)):
+        csInfoWithKeys = zip(counter, csInfo)
+        csInfoWithKeys.sort()
+        sortedCounter, sortedCsInfo = zip(*csInfoWithKeys)
 
-    #agesAndPeople = zip(ages, people)
-    #agesAndPeople.sort()
-    #sortedAges, sortedPeople = zip(*agesAndPeople)
+        # overwrite list contents
+        # http://stackoverflow.com/questions/5438362/overwrite-entire-object-in-place
+        csInfo[:] = sortedCsInfo
 
-    print(counter)
-    
-##    
-##    try:
-##        parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
-##        parsedStyle = parsedStyle.replace("'", '"', 4)
-##        parsedStyle = parsedStyle.replace(" ", "&#160;")#no-break space
-##        parsedStyle = parsedStyle.replace("ᵉ", "&#7497;")
-##        parsedStyle = parsedStyle.replace("‑", "&#8209;")#non-breaking hyphen
-##        parsedStyle = parsedStyle.replace("–", "&#8211;")#en dash
-##        parsedStyle = parsedStyle.replace("—", "&#8212;")#em dash
-##        f = open(style, 'w')
-##        f.write ( parsedStyle )
-##        f.close()
-##    except:
-##        pass
+    try:
+        parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
+        parsedStyle = parsedStyle.replace("'", '"', 4)
+        parsedStyle = parsedStyle.replace(" ", "&#160;")#no-break space
+        parsedStyle = parsedStyle.replace("ᵉ", "&#7497;")
+        parsedStyle = parsedStyle.replace("‑", "&#8209;")#non-breaking hyphen
+        parsedStyle = parsedStyle.replace("–", "&#8211;")#en dash
+        parsedStyle = parsedStyle.replace("—", "&#8212;")#em dash
+        f = open(style, 'w')
+        f.write ( parsedStyle )
+        f.close()
+    except:
+        pass
