@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Python script for to reorder cs:info section of styles
 # Author: Rintze M. Zelle
-# Version: 2012-09-26
+# Version: 2012-09-27
 # * Requires lxml library (http://lxml.de/)
 
 import os, glob, re
@@ -10,9 +10,9 @@ from lxml import etree
 path = 'C:\Documents and Settings\zelle\My Documents\CSL\styles\\'
 styles = []
 
-#for stylepath in glob.glob( os.path.join(path, '*.csl') ):
-#    styles.append(os.path.join(stylepath))
-for stylepath in glob.glob( os.path.join(path, 'dependent', 'aa*.csl') ):
+for stylepath in glob.glob( os.path.join(path, '*.csl') ):
+    styles.append(os.path.join(stylepath))
+for stylepath in glob.glob( os.path.join(path, 'dependent', '*.csl') ):
     styles.append(os.path.join(stylepath))
 
 # for comments in the middle, keep them with preceding element
@@ -82,13 +82,15 @@ for style in styles:
 
             # Possible improvements:
             # * exceptions for recognizable comments (issn, category)
-            # * print comments (strings + frequency)
         else:
             print(infoNode)
 
     # make sure if length counter is identical to length csInfo
     # http://scienceoss.com/sort-one-list-by-another-list/
     if(len(counter) == len(csInfo)):
+        for index in range(len(counter)):
+            # use float() to avoid integer division
+            counter[index] += (index / (float(len(counter))))
         csInfoWithKeys = zip(counter, csInfo)
         csInfoWithKeys.sort()
         sortedCounter, sortedCsInfo = zip(*csInfoWithKeys)
