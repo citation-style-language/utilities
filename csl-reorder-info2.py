@@ -69,7 +69,7 @@ for style in styles:
             except:
                 print("Unknown element: " + infoElement)
         # check if node is a comment
-        elif (str(infoNode) == ("<!--" + infoNode.text + "-->")):
+        elif (etree.tostring(infoNode, encoding='UTF-8', xml_declaration=False) == ("<!--" + infoNode.text.encode("utf-8") + "-->")):
             # keep comments that precede any element at the top
             if(sum(counter) == 0):
                 counter.append(desiredOrder.index("preceding-comment"))
@@ -78,7 +78,7 @@ for style in styles:
                 counter.append(desiredOrder.index("end-comment"))
             # keep other comments with preceding element
             else:
-                counter.append(counter[-1] + 0.5)
+                counter.append(counter[-1])
 
             # Possible improvements:
             # * exceptions for recognizable comments (issn, category)
