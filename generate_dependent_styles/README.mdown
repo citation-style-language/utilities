@@ -2,15 +2,30 @@
 
 ## Generating CSL files
 
-To streamline the creation of the dependent styles, the script that generates the styles has been modified to handle **all** the publishers at once.
+To streamline the creation of the dependent styles, the script that generates
+the styles has been modified to handle **all** the publishers at once.
 
-The subdirectories in the `data` folder contains the same data as before, but slightly reformatted to be compatible with the new script. The format of the info necessary to generate dependent styles is now more consistent, to make it easier to add more series of journals in the future. In particular, the placeholders in the templates use the same name as the column header in the tab-delimited file with the list of journals, and the relationship is automatically applied (only the 'Title' column is mandatory). The templates have also been modified to take advantage of the CSL 1.0.1 specifications.
+The subdirectories in the `data` folder contains the same data as before, but
+slightly reformatted to be compatible with the new script. The format of the
+info necessary to generate dependent styles is now more consistent, to make it
+easier to add more series of journals in the future. In particular, the
+placeholders in the templates use the same name as the column header in the
+tab-delimited file with the list of journals, and the relationship is
+automatically applied (only the 'Title' column is mandatory). The templates have
+also been modified to take advantage of the CSL 1.0.1 specifications.
 
-The info necessary to generate the styles is now comprised of 3 files, which have to be present in each `data` subdirectory:
+The info necessary to generate the styles is now comprised of 3 files, which
+have to be present in each `data` subdirectory:
 
-* file `_journals.tab` tab-delimited list of journals, where the column header use the same name as the placeholders in the template
-* file `skip.txt` contains a list of journals to skip, either the title or the identifier; this file is actually optional
-* file `_template.csl` is the template for this group of journals; if a field is empty in the journal list, the corresponding line will be removed in the template, which allows optional fields
+* file `_journals.tab` tab-delimited list of journals, where the column header
+use the same name as the placeholders in the template
+* file `skip.txt` contains a list of journals to skip, either the title or the
+identifier; this file is actually optional
+* file `_template.csl` is the template for this group of journals; if a field is
+empty in the journal list, the corresponding line will be removed in the
+template, which allows optional fields
 
-
-The script `generate_styles_from_data.rb` iterates over each subdirectory in `data` and generates the style based on the journal list, the list of journals to skip, and the template. The generated styles are stored in the directory `generated_styles`.
+The script `generate_styles_from_data.rb` iterates over each subdirectory in
+`data` and generates the style based on the journal list, the list of journals
+to skip, and the template. The generated styles are stored in the directory
+`generated_styles`.
