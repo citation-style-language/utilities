@@ -30,6 +30,9 @@ for style in styles:
     styleElement = parsedStyle.getroot()
 
     termsToDefine = []
+    termValues = {"director":"dir.","editor":"ed.",
+                  "editorial-director":"ed.","illustrator":"illus.",
+                  "translator":"trans."}
 
     if "default-locale" in styleElement.attrib:
         defaultLocale = styleElement.get("default-locale")
@@ -43,11 +46,30 @@ for style in styles:
         print(os.path.basename(style))
         localeElements = len(styleElement.findall('.//{http://purl.org/net/xbiblio/csl}locale'))
         if (localeElements == 0):
-            print("create new locale element")
+            #Add new cs:locale element
+            newLocaleElement = etree.Element("{http://purl.org/net/xbiblio/csl}locale")
+
+            for term in termsToDefine:
+                termElement = etree.Element("{http://purl.org/net/xbiblio/csl}term", name=term, form="verb-short")
+                termElement.text = termValues[term]
+                newLocaleElement.append(termElement)
+            
+            infoIndex = styleElement.index(styleElement.find('.//{http://purl.org/net/xbiblio/csl}info'))
+            styleElement.insert(infoIndex+1,newLocaleElement)
         elif (localeElements == 1):
-            print("use existing locale element")
+            #Add terms to existing locale element unless they're already defined
+            LocaleElement = styleElement.find('.//{http://purl.org/net/xbiblio/csl}locale')
+            for term in termsToDefine:
+                #print(LocaleElement)
+                if (len(LocaleElement.findall('.//{http://purl.org/net/xbiblio/csl}term[@form="verb-short"][@name="' + term + '"]')) == 0):
+                    termElement = etree.Element("{http://purl.org/net/xbiblio/csl}term", name=term, form="verb-short")
+                    termElement.text = termValues[term]
+                    LocaleElement.append(termElement)
+            
+            #print(etree.tostring(styleElement, pretty_print=True))
+            #print("use existing locale element")
         else:
-            print("Eek! More than one locale element!")
+            print("Ignored '" + os.path.basename(style) + ": more than one locale element!")
 
 #print(termsToDefine)
 
