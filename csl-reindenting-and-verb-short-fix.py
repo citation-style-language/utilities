@@ -15,35 +15,46 @@ for stylepath in glob.glob( os.path.join(path, 'a*.csl') ):
 
 def findNamesInUse(styleElement):
     termsToDefine = []
-    changingNames = ["director", "editor", "editorial-director", "illustrator", "translator"]
-    for csNames in styleElement.findall(".//{http://purl.org/net/xbiblio/csl}names"):
-        for changingName in changingNames:
-            if ((changingName in csNames.get("variable")) and (changingName not in termsToDefine)):
-                termsToDefine.append(changingName)
-    print(termsToDefine)
-    
-##    for changingName in changingNames:
-##        # doesn't work if variable value is a list; need to start with all names tags, match
-##        if (styleElement.find('.//{http://purl.org/net/xbiblio/csl}names[@variable="' + changingName + '"]') is not None):
-##            print(changingName)
+
+    if (styleElement.find('.//{http://purl.org/net/xbiblio/csl}label[@form="verb-short"]') is not None):    
+        changingNames = ["director", "editor", "editorial-director", "illustrator", "translator"]
+        for csNames in styleElement.findall(".//{http://purl.org/net/xbiblio/csl}names"):
+            for changingName in changingNames:
+                if ((changingName in csNames.get("variable")) and (changingName not in termsToDefine)):
+                    termsToDefine.append(changingName)
+    return(termsToDefine)
 
 for style in styles:
     parser = etree.XMLParser(remove_blank_text=True)
     parsedStyle = etree.parse(style, parser)
     styleElement = parsedStyle.getroot()
 
-    try:
+    termsToDefine = []
+
+    if "default-locale" in styleElement.attrib:
         defaultLocale = styleElement.get("default-locale")
         if (re.match("^en((-US)|(-GB))?$",defaultLocale)):
-            # print(defaultLocale)
-            if (styleElement.find('.//{http://purl.org/net/xbiblio/csl}label[@form="verb-short"]') is not None):
-                print(style)
-                findNamesInUse(styleElement)
-    except:
-        if (styleElement.find('.//{http://purl.org/net/xbiblio/csl}label[@form="verb-short"]') is not None):
-            print(style)
-            findNamesInUse(styleElement)
+            termsToDefine = findNamesInUse(styleElement)
+            #print(termsToDefine)
+    else:
+        termsToDefine = findNamesInUse(styleElement)
 
+    if (len(termsToDefine) != 0):
+        print(os.path.basename(style))
+        localeElements = len(styleElement.findall('.//{http://purl.org/net/xbiblio/csl}locale'))
+        if (localeElements == 0):
+            print("create new locale element")
+        elif (localeElements == 1):
+            print("use existing locale element")
+        else:
+            print("Eek! More than one locale element!")
+
+#print(termsToDefine)
+
+# todo:
+# locale elements: it's possible to have en-GB, en-US, en and no xml:lang
+# just pick one if it exists (shout out if there are more than one locale elements), otherwise create one with the same value as default-locale
+# add verb-short terms in termsToDefine if missing
 
 ##
 ##    csInfo = styleElement.find(".//{http://purl.org/net/xbiblio/csl}info")
