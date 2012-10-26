@@ -10,7 +10,7 @@ from lxml import etree
 path = 'C:\Documents and Settings\zelle\My Documents\CSL\styles\\'
 styles = []
 
-for stylepath in glob.glob( os.path.join(path, 'a*.csl') ):
+for stylepath in glob.glob( os.path.join(path, '*.csl') ):
     styles.append(os.path.join(stylepath))
 
 # Determine which terms should be defined in a locale element
@@ -46,7 +46,7 @@ for style in styles:
         termsToDefine = findNamesInUse(styleElement)
 
     if (len(termsToDefine) != 0):
-        print(os.path.basename(style))
+        #print(os.path.basename(style))
         localeElements = len(styleElement.findall('.//{http://purl.org/net/xbiblio/csl}locale'))
         if (localeElements == 0):
             #Add new cs:locale element
@@ -81,6 +81,8 @@ for style in styles:
             #print("use existing locale element")
         else:
             print("Ignored '" + os.path.basename(style) + ": more than one locale element!")
+            print("Terms to define:")
+            print(termsToDefine)
 
     try:
         parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
