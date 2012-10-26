@@ -13,6 +13,7 @@ styles = []
 for stylepath in glob.glob( os.path.join(path, 'a*.csl') ):
     styles.append(os.path.join(stylepath))
 
+# Determine which terms should be defined in a locale element
 def findNamesInUse(styleElement):
     termsToDefine = []
 
@@ -34,6 +35,8 @@ for style in styles:
                   "editorial-director":"ed.","illustrator":"illus.",
                   "translator":"trans."}
 
+    # Limit ourselves to styles with either an English default-locale ("en", "en-GB", or "en-US"),
+    # or without a default-locale.
     if "default-locale" in styleElement.attrib:
         defaultLocale = styleElement.get("default-locale")
         if (re.match("^en((-US)|(-GB))?$",defaultLocale)):
@@ -48,82 +51,47 @@ for style in styles:
         if (localeElements == 0):
             #Add new cs:locale element
             newLocaleElement = etree.Element("{http://purl.org/net/xbiblio/csl}locale")
+            newTermsElement = etree.Element("{http://purl.org/net/xbiblio/csl}terms")
+            newLocaleElement.append(newTermsElement)
 
             for term in termsToDefine:
-                termElement = etree.Element("{http://purl.org/net/xbiblio/csl}term", name=term, form="verb-short")
-                termElement.text = termValues[term]
-                newLocaleElement.append(termElement)
+                newTermElement = etree.Element("{http://purl.org/net/xbiblio/csl}term", name=term, form="verb-short")
+                newTermElement.text = termValues[term]
+                newLocaleElement.find("{http://purl.org/net/xbiblio/csl}terms").append(newTermElement)
             
             infoIndex = styleElement.index(styleElement.find('.//{http://purl.org/net/xbiblio/csl}info'))
             styleElement.insert(infoIndex+1,newLocaleElement)
         elif (localeElements == 1):
             #Add terms to existing locale element unless they're already defined
             LocaleElement = styleElement.find('.//{http://purl.org/net/xbiblio/csl}locale')
+
+            #Check if there is already a cs:terms element
+            if (len(LocaleElement.findall('.//{http://purl.org/net/xbiblio/csl}terms')) == 0):
+                newTermsElement = etree.Element("{http://purl.org/net/xbiblio/csl}terms")
+                LocaleElement.append(newTermsElement)
+            
             for term in termsToDefine:
                 #print(LocaleElement)
                 if (len(LocaleElement.findall('.//{http://purl.org/net/xbiblio/csl}term[@form="verb-short"][@name="' + term + '"]')) == 0):
                     termElement = etree.Element("{http://purl.org/net/xbiblio/csl}term", name=term, form="verb-short")
                     termElement.text = termValues[term]
-                    LocaleElement.append(termElement)
+                    LocaleElement.find("{http://purl.org/net/xbiblio/csl}terms").append(termElement)
             
             #print(etree.tostring(styleElement, pretty_print=True))
             #print("use existing locale element")
         else:
             print("Ignored '" + os.path.basename(style) + ": more than one locale element!")
 
-#print(termsToDefine)
-
-# todo:
-# locale elements: it's possible to have en-GB, en-US, en and no xml:lang
-# just pick one if it exists (shout out if there are more than one locale elements), otherwise create one with the same value as default-locale
-# add verb-short terms in termsToDefine if missing
-
-##
-##    csInfo = styleElement.find(".//{http://purl.org/net/xbiblio/csl}info")
-##
-##    counter = []
-##    for infoNodeIndex, infoNode in enumerate(csInfo):
-##        # check if node is an element
-##        if isinstance(infoNode.tag, basestring):
-##            # get rid of namespace
-##            infoElement = infoNode.tag.replace("{http://purl.org/net/xbiblio/csl}","")
-##            if(infoElement == "link"):
-##                infoElement += "[@" + infoNode.get("rel") + "]"
-##            if((infoElement == "category") & (infoNode.get("citation-format") is not None)):
-##                infoElement += "[@citation-format]"
-##            if((infoElement == "category") & (infoNode.get("field") is not None)):
-##                infoElement += "[@field]"
-##            try:
-##                counter.append(desiredOrder.index(infoElement))
-##            except:
-##                print("Unknown element: " + infoElement)
-##        # check if node is a comment
-##        elif (etree.tostring(infoNode, encoding='UTF-8', xml_declaration=False) == ("<!--" + infoNode.text.encode("utf-8") + "-->")):
-##            # keep comments that precede any element at the top
-##            if(sum(counter) == 0):
-##                counter.append(desiredOrder.index("preceding-comment"))
-##            # keep a comment at the end at the end
-##            elif(len(counter) == (len(csInfo) - 1)):
-##                counter.append(desiredOrder.index("end-comment"))
-##            # keep other comments with preceding element
-##            else:
-##                counter.append(counter[-1])
-##
-##            # Possible improvements:
-##            # * exceptions for recognizable comments (issn, category)
-##        else:
-##            print(infoNode)
-##
-##    try:
-##        parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
-##        parsedStyle = parsedStyle.replace("'", '"', 4)
-##        parsedStyle = parsedStyle.replace(" ", "&#160;")#no-break space
-##        parsedStyle = parsedStyle.replace("ᵉ", "&#7497;")
-##        parsedStyle = parsedStyle.replace("‑", "&#8209;")#non-breaking hyphen
-##        parsedStyle = parsedStyle.replace("–", "&#8211;")#en dash
-##        parsedStyle = parsedStyle.replace("—", "&#8212;")#em dash
-##        f = open(style, 'w')
-##        f.write ( parsedStyle )
-##        f.close()
-##    except:
-##        pass
+    try:
+        parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
+        parsedStyle = parsedStyle.replace("'", '"', 4)
+        parsedStyle = parsedStyle.replace(" ", "&#160;")#no-break space
+        parsedStyle = parsedStyle.replace("ᵉ", "&#7497;")
+        parsedStyle = parsedStyle.replace("‑", "&#8209;")#non-breaking hyphen
+        parsedStyle = parsedStyle.replace("–", "&#8211;")#en dash
+        parsedStyle = parsedStyle.replace("—", "&#8212;")#em dash
+        f = open(style, 'w')
+        f.write ( parsedStyle )
+        f.close()
+    except:
+        pass
