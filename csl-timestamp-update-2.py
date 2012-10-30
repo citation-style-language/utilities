@@ -18,18 +18,25 @@ assert repo.bare == False
 ##limit = 0
 commitTime = {}
 
-for blob in repo.tree().blobs:
-    last_commit = [c for c in repo.iter_commits(rev=None, paths=blob.path)][0]
-    commitTime[os.path.join(path, blob.path)] = last_commit.authored_date
-##    limit += 1
-##    if limit == 10:
-##        break
+for t in repo.tree().trees:
+    if t.path == "dependent":
+        for blob in t.blobs:
+            last_commit = [c for c in repo.iter_commits(rev=None, paths=blob.path)][0]
+            blob.path = blob.path.replace('/','\\')
+            commitTime[os.path.join(path, blob.path)] = last_commit.authored_date
+##            limit += 1
+##            if limit == 10:
+##                break
+
+#print(commitTime)
 
 styles = []
 
-for stylepath in glob.glob( os.path.join(path, '*.csl') ):
+for stylepath in glob.glob( os.path.join(path, "dependent", '*.csl') ):
     if stylepath in commitTime:
         styles.append(os.path.join(stylepath))
+
+#print(styles)
 
 for style in styles:
     modTime = datetime.datetime.fromtimestamp(commitTime[style]//1)
