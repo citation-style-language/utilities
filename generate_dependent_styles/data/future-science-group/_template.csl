@@ -4,8 +4,8 @@
   <info>
     <title>#TITLE#</title>
     <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
-    <link href="http://www.zotero.org/styles/vancouver" rel="independent-parent"/>
-    <link href="http://www.aacrjournals.org/site/InstrAuthors/ifora.xhtml#references" rel="documentation"/>
+    <link href="http://www.zotero.org/styles/future-science-group" rel="independent-parent"/>
+    <link href="http://www.future-science-group.com/" rel="documentation"/>
     <category citation-format="numeric"/>
     <category field="#CATEGORY1#"/>
     <category field="#CATEGORY2#"/>
