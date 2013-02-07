@@ -1,0 +1,12 @@
+## 02-07-2013
+
+From Rintze:
+
+> The Current Opinion journals I curated by hand.
+
+> One additional request: we currently have several
+> "current-opinion-....csl" journals.
+> current-opinion-in-ophthalmology.csl is not part of the set and should
+> be left untouched. Once you've generated the new styles, could you
+> delete the other original styles? All miss "-in-" in their titles and
+> need to be renamed.
