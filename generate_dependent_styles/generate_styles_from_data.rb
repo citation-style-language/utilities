@@ -111,6 +111,7 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     identifier = title.downcase
     identifier.gsub!(',', ' ')
     identifier.gsub!(':', ' ')
+    identifier.gsub!("/", ' ')
     identifier.gsub!("\'", '')
     identifier.gsub!('  ', ' ')
     identifier.gsub!('  ', ' ')
