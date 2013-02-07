@@ -1,0 +1,22 @@
+## 02-07-2013
+
+The list of styles for Springer journals was obtained from Springer / Mekentosj in an XLS format. After removing journals that have ceased publications, there remained 1421 journals. The list of journals was stored in `journals_raw.txt`.
+
+Springer also provided a PDF file describing the various styles used by their journals, see file `Key_Style_Points_1.0.pdf`, as well as `manuscript-guidelines-1.0.pdf`. These documents are also available online:
+
+- [http://www.springer.com/cda/content/document/cda_downloaddocument/manuscript-guidelines-1.0.pdf]()
+- [http://www.springer.com/cda/content/document/cda_downloaddocument/Key_Style_Points_Aug2012.pdf]()
+
+Using this information, the goal was to:
+
+- generate parent styles corresponding to each of the styles described in the PDF, and listed for the different journals
+- generate a final list of journals in the correct format `_journals.tab`, that would work with the template `_template.csl`, and that would have the final identifier for the `independent-parent` style, the correct value for `citation-format`, and a correct value for `field` attribute(s)
+
+
+### Generation of parent styles
+
+TODO
+
+### Generation of `_journals.tab`
+
+TODO
