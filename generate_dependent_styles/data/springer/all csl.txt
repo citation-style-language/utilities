@@ -1,0 +1,2822 @@
+AAPG Bulletin
+Academic Medicine
+Academy of Management Journal
+Accounts of Chemical Research
+ACM SIG Proceedings
+ACM SIG Proceedings With Long Author List
+ACM SIGCHI Conference Proceedings
+ACM SIGGRAPH
+ACS Applied Materials &amp; Interfaces
+ACS Chemical Biology
+ACS Nano
+Acta Crystallographica Section A: Foundations of Crystallography
+Acta Crystallographica Section B: Structural Science
+Acta Crystallographica Section C: Crystal Structure Communications
+Acta Crystallographica Section D: Biological Crystallography
+Acta Crystallographica Section E: Structure Reports Online
+Acta Crystallographica Section F: Structural Biology and Crystallization Communications
+Acta Cytologica
+Acta Haematologica
+Acta Materialia
+Acta Medica
+Acta Médica Colombiana
+Acta Naturae
+Acta Neurochirurgica
+Acta Ophthalmologica
+Acta Orthopaedica
+Acta Otorrinolaringológica Española
+Acta Paediatrica
+Acta Palaeontologica Polonica
+Acta Pharmaceutica
+Acta Pharmacologica Sinica
+Acta Tropica
+Acta Universitatis Agriculturae Sueciae
+Acta Veterinaria Scandinavica
+Acupuncture in Medicine
+Addiction Science &amp; Clinical Practice
+Administrative Science Quarterly (ASQ)
+Administrative Sciences
+Advanced Engineering Materials
+Advanced Functional Materials
+Advanced Materials
+Advanced Packaging, IEEE Transactions on
+Advances in Complex Systems
+Advances in Geosciences
+Advances in Physiology Education
+Advances in Radio Science
+Advances in Science and Research
+Aerospace and Electronic Systems, IEEE Transactions on
+Aging Cell
+Aging Health
+Agricultural and Forest Meteorology
+Agriculture
+Agriculture &amp; Food Security
+Agriculture, Ecosystems &amp; Environment
+Agronomy
+Agronomy for Sustainable Development
+Agronomy Journal
+AIAA Journal
+AIDS
+AIDS Research and Therapy
+Algorithms
+Algorithms for Molecular Biology
+ALL - display all fields in a debug view
+Allergy
+Allergy, Asthma &amp; Clinical Immunology
+Alternatives to Animal Experimentation (ALTEX)
+Alzheimer's Research &amp; Therapy
+American Anthropological Association
+American Antiquity
+American Association for Cancer Research
+American Association of Petroleum Geologists
+American Chemical Society (ACS)
+American Chemical Society (ACS) - with titles
+American Chemical Society (ACS) - with titles, brackets
+American Educational Research Journal
+American Entomologist
+American Family Physician
+American Geophysical Union (AGU)
+American Heart Association
+American Heart Journal
+American Institute of Aeronautics and Astronautics (AIAA)
+American Institute of Physics (AIP)
+American Journal of Alzheimer's Disease &amp; Other Dementias
+American Journal of Archaeology
+American Journal of Botany
+American Journal of Cardiology
+American Journal of Cardiovascular Drugs
+American Journal of Clinical Dermatology
+American Journal of Epidemiology
+American Journal of Health-System Pharmacy
+American Journal of Human Genetics
+American Journal of Hypertension
+American Journal of Infection Control
+American Journal of Medical Genetics
+American Journal of Nephrology
+American Journal of Obstetrics &amp; Gynecology
+American Journal of Ophthalmology
+American Journal of Orthodontics and Dentofacial Orthopedics
+American Journal of Orthopsychiatry
+American Journal of Pathology
+American Journal of Physical Anthropology
+American Journal of Physiology - Cell Physiology
+American Journal of Physiology - Endocrinology and Metabolism
+American Journal of Physiology - Gastrointestinal and Liver Physiology
+American Journal of Physiology - Heart and Circulatory Physiology
+American Journal of Physiology - Lung Cellular and Molecular Physiology
+American Journal of Physiology - Regulatory, Integrative, and Comparative Physiology
+American Journal of Physiology - Renal Physiology
+American Journal of Political Science (AJPS)
+American Journal of Public Health
+American Journal of Reproductive Immunology
+American Journal of Respiratory and Critical Care Medicine
+American Journal of Roentgenology (AJR)
+American Journal of Veterinary Research
+American Medical Association (AMA)
+American Medical Association (AMA) (no "et al.")
+American Medical Association (AMA) (no URL)
+American Medical Association (AMA) - alphabetical
+American Medical Writers Association Journal
+American Meteorological Society
+American Physics Society (APS)
+American Physiological Society
+American Phytopathological Society
+American Phytopathological Society (numeric)
+American Political Science Association
+American Political Science Review
+American Psychological Association (no DOI, no Issue)
+American Psychological Association 5th Edition
+American Psychological Association 6th Edition
+American Psychological Association 6th Edition (Turkish)
+American Psychologist
+American Society for Microbiology (ASM)
+American Society of Agronomy
+American Society of Civil Engineers (ASCE)
+American Society of Mechanical Engineers (ASME)
+American Sociological Association
+American Sociological Review
+American Veterinary Medical Association
+Amino Acids
+Anaesthesia
+Anaesthesia and Intensive Care
+Anales de Pediatría
+Analyst
+Analytica Chimica Acta
+Analytical Abstracts
+Analytical Chemistry
+Analytical Methods
+Anesthesia and Analgesia
+Anesthesiology
+Angewandte Chemie International Edition
+Animal Behaviour
+Animals
+Annalen des Naturhistorischen Museums in Wien
+Annales de Dermatologie et de Vénéréologie
+Annales Geophysicae
+Annales. Histoire, Sciences sociales (French)
+Annals of Allergy, Asthma &amp; Immunology
+Annals of Biomedical Engineering
+Annals of Botany
+Annals of Clinical &amp; Laboratory Science
+Annals of Clinical Biochemistry
+Annals of Clinical Microbiology and Antimicrobials
+Annals of Emergency Medicine
+Annals of Epidemiology
+Annals of General Psychiatry
+Annals of Internal Medicine
+Annals of Neurology
+Annals of Nutrition &amp; Metabolism
+Annals of Oncology
+Annals of Otology, Rhinology and Laryngology
+Annals of Saudi Medicine
+Annals of Surgery
+Annals of Surgical Innovation and Research
+Annals of the Association of American Geographers
+Annals of the Entomological Society of America
+Annals of the Rheumatic Diseases
+Annals of the Royal College of Surgeons of England
+Annals of Tropical Paediatrics
+Annals, Academy of Medicine, Singapore
+Annual Reports Section A - Inorganic Chemistry
+Annual Reports Section B - Organic Chemistry
+Annual Reports Section C - Physical Chemistry
+Annual Review of Analytical Chemistry
+Annual Review of Biomedical Engineering
+Annual Review of Biophysics
+Annual Review of Entomology
+Annual Review of Environment and Resources
+Annual Review of Genetics
+Annual Review of Genomics and Human Genetics
+Annual Review of Immunology
+Annual Review of Materials Research
+Annual Review of Medicine
+Annual Review of Microbiology
+Annual Review of Nutrition
+Annual Review of Pathology: Mechanisms of Disease
+Annual Review of Pharmacology and Toxicology
+Annual Review of Physical Chemistry
+Annual Review of Physiology
+Annual Review of Phytopathology
+Annual Review of Plant Biology
+Annual Review of Public Health
+Annual Reviews (sorted alphabetically)
+Annual Reviews (sorted by order of appearance)
+Antarctic Science
+Antennas and Propagation, IEEE Transactions on
+Antennas and Wireless Propagation Letters
+Antibiotics
+Antibodies
+Antimicrobial Agents and Chemotherapy
+Antimicrobial Resistance and Infection Control
+Antonie van Leeuwenhoek
+Applied and Environmental Microbiology
+Applied Clay Science
+Applied Ergonomics
+Applied Mechanics Reviews
+Applied Microbiology and Biotechnology
+Applied Physics Letters
+Applied Sciences
+Applied Spectroscopy
+Applied Superconductivity, IEEE Transactions on
+Aquaculture
+Aquaculture Environment Interactions
+Aquatic Biology
+Aquatic Biosystems
+Aquatic Conservation
+Aquatic Microbial Ecology
+Archives of Dermatology
+Archives of Disease in Childhood
+Archives of Facial Plastic Surgery
+Archives of General Psychiatry
+Archives of Internal Medicine
+Archives of Medical Research
+Archives of Neurology
+Archives of Ophthalmology
+Archives of Otolaryngology - Head &amp; Neck Surgery
+Archives of Pathology &amp; Laboratory Medicine
+Archives of Pediatrics &amp; Adolescent Medicine
+Archives of Physical Medicine and Rehabilitation
+Archives of Public Health
+Archives of Surgery
+Archivos de Bronconeumología
+Archivos de Cardiología de México
+Archivos de Medicina Interna
+Archivos de Psiquiatría
+Arquivos Brasileiros de Cardiologia
+Arquivos Brasileiros de Endocrinologia &amp; Metabologia
+Art History
+Arteriosclerosis, Thrombosis, and Vascular Biology
+Arthritis &amp; Rheumatism
+Arthritis Research &amp; Therapy
+Arthropod Structure &amp; Development
+Arthroscopy
+Arzneimitteltherapie
+Asia Pacific Family Medicine
+Asian Journal of Andrology
+Asian Studies Review
+Association for Computing Machinery (ACM)
+Associação Brasileira de Normas Técnicas (ABNT)
+Associação Brasileira de Normas Técnicas (ABNT) (note)
+Associação Brasileira de Normas Técnicas (ABNT) - Instituto de Pesquisa Econômica Aplicada (IPEA)
+Associação Brasileira de Normas Técnicas (ABNT) - Universidade Federal de Minas Gerais (UFMG) - FACE [Autoria abreviada. Exemplo: MENDES, J.]
+Associação Brasileira de Normas Técnicas (ABNT) - Universidade Federal de Minas Gerais (UFMG) - FACE [Autoria completa. Exemplo: MENDES, José]
+Associação Brasileira de Normas Técnicas (ABNT) - Universidade Federal do Paraná (UFPR)
+Astrophysics and Space Sciences Transactions
+Athletic Training &amp; Sports Health Care
+Atmosphere
+Atmospheric Chemistry and Physics
+Atmospheric Chemistry and Physics Discussions
+Atmospheric Measurement Techniques
+Atmospheric Measurement Techniques Discussions
+Audio, Speech and Language Processing, IEEE Transactions on
+Audiology and Neurotology
+Audiology and Neurotology Extra
+Austral Ecology
+Australasian Journal of Dermatology
+Australian Family Physician
+Australian Historical Studies
+Australian Journal of Earth Sciences
+Australian Journal of Grape and Wine Research
+Australian Journal of Rural Health
+Australian Legal Citation
+Australian Orthoptic Journal
+Austrian Legal
+Austrian Studies
+Automated Experimentation
+Automatic Control, IEEE Transactions on
+Automation Science and Engineering, IEEE Transactions on
+Avian Diseases
+Avian Pathology
+Aviation, Space, and Environmental Medicine
+Axioms
+Bangladesh Journal of Child Health
+Basic and Applied Ecology
+Basic and Applied Pathology
+BBA - Bioenergetics
+BBA - Biomembranes
+BBA - Gene Regulatory Mechanisms
+BBA - General Subjects
+BBA - Molecular and Cell Biology of Lipids
+BBA - Molecular Basis of Disease
+BBA - Molecular Cell Research
+BBA - Proteins and Proteomics
+BBA - Reviews on Cancer
+Behavioral and Brain Functions
+Behavioral Ecology
+Behavioral Ecology and Sociobiology
+Behavioral Neuroscience
+Behavioral Sciences
+Bibliotek for Læger
+BibTex generic citation style
+Bioanalysis
+Biochemical and Biophysical Research Communications
+Biochemical Journal
+Biochemistry
+Biochimica et Biophysica Acta (BBA)
+Bioconjugate Chemistry
+BioData Mining
+Biodrugs
+Bioelectromagnetics
+BioEssays
+Biofuels
+Biogeochemistry
+Biogeosciences
+Biogeosciences Discussions
+Bioinformatics
+Biological Conservation
+Biological Invasions
+Biological Procedures Online
+Biological Psychiatry
+Biology
+Biology Direct
+Biology Letters
+Biology of Mood &amp; Anxiety Disorders
+Biology of Sex Differences
+Biology Open (BiO)
+Biomacromolecules
+Biomarkers in Medicine
+Biomass &amp; Bioenergy
+Biomaterials Science
+BioMed Central
+Biomedical Circuits and Systems, IEEE Transactions on
+BioMedical Engineering OnLine
+Biomedical Engineering, IEEE Transactions on
+Biomedical Imaging and Intervention Journal
+Biomedical Reviews
+Biomicrofluidics
+Biomolecules
+Bioorganic &amp; Medicinal Chemistry Letters
+Biophysical Journal
+BioPsychoSocial Medicine
+Bioresource Technology
+Biosensors
+Biosensors &amp; Bioelectronics
+Biotechniques
+Biotechnology and Bioengineering
+Biotechnology for Biofuels
+Biotechnology Progress
+Biotropica
+BJOG
+Blood
+Blood Purification
+Bluebook Inline
+Bluebook Law Review
+Bluebook Law Review (2)
+BMC Anesthesiology
+BMC Biochemistry
+BMC Bioinformatics
+BMC Biology
+BMC Biophysics
+BMC Biotechnology
+BMC Blood Disorders
+BMC Cancer
+BMC Cardiovascular Disorders
+BMC Cell Biology
+BMC Chemical Biology
+BMC Clinical Pathology
+BMC Clinical Pharmacology
+BMC Complementary and Alternative Medicine
+BMC Dermatology
+BMC Developmental Biology
+BMC Ear, Nose and Throat Disorders
+BMC Ecology
+BMC Emergency Medicine
+BMC Endocrine Disorders
+BMC Evolutionary Biology
+BMC Family Practice
+BMC Gastroenterology
+BMC Genetics
+BMC Genomics
+BMC Geriatrics
+BMC Health Services Research
+BMC Immunology
+BMC Infectious Diseases
+BMC International Health and Human Rights
+BMC Medical Education
+BMC Medical Ethics
+BMC Medical Genetics
+BMC Medical Genomics
+BMC Medical Imaging
+BMC Medical Informatics and Decision Making
+BMC Medical Physics
+BMC Medical Research Methodology
+BMC Medicine
+BMC Microbiology
+BMC Molecular Biology
+BMC Musculoskeletal Disorders
+BMC Nephrology
+BMC Neurology
+BMC Neuroscience
+BMC Nursing
+BMC Ophthalmology
+BMC Oral Health
+BMC Palliative Care
+BMC Pediatrics
+BMC Pharmacology &amp; Toxicology 
+BMC Physiology
+BMC Plant Biology
+BMC Pregnancy and Childbirth
+BMC Proceedings
+BMC Psychiatry
+BMC Public Health
+BMC Pulmonary Medicine
+BMC Research Notes
+BMC Structural Biology
+BMC Surgery
+BMC Systems Biology
+BMC Urology
+BMC Veterinary Research
+BMC Women's Health
+BMJ
+BMJ Case Reports
+BMJ Open
+BMJ Supportive &amp; Palliative Care
+Body &amp; Society
+Boletín Médico del Hospital Infantil de México
+Bone
+Bone &amp; Joint Research
+Bone Marrow Transplantation
+Brain
+Brain &amp; Development
+Brain Sciences
+Brain, Behavior and Evolution
+Breast Cancer Management
+Breast Cancer Research
+Breast Care
+Briefings in Bioinformatics
+British Dental Journal
+British Ecological Society
+British Journal of Anaesthesia
+British Journal of Biomedical Science
+British Journal of Cancer
+British Journal of Clinical Psychology
+British Journal of Developmental Psychology
+British Journal of Educational Psychology
+British Journal of Haematology
+British Journal of Health Psychology
+British Journal of Industrial Relations
+British Journal of Mathematical and Statistical Psychology
+British Journal of Ophthalmology
+British Journal of Pain
+British Journal of Pharmacology
+British Journal of Political Science
+British Journal of Psychology
+British Journal of Social Psychology
+British Journal of Sports Medicine
+British Journal of Surgery
+British Medical Bulletin
+Broadcasting, IEEE Transactions on
+Building and Environment
+Building Structure
+Buildings
+Bulletin de la Société préhistorique française (BSPF) (French)
+Bulletin of Marine Science
+Bulletin of the American Meteorological Society (BAMS)
+Bulletin of the World Health Organization
+Canada Journal of Public Health
+Canadian Family Physician
+Canadian Guide to Uniform Legal Citation, 7th ed. (McGill Guide)
+Canadian Journal of Anesthesia
+Canadian Journal of Behavioral Science
+Canadian Journal of Dietetic Practice and Research
+Canadian Journal of Experimental Psychology
+Canadian Journal of Fisheries and Aquatic Sciences
+Canadian Journal of Occupational Therapy
+Canadian Journal of Ophthalmology
+Canadian Journal of Surgery
+Canadian Journal of Veterinary Research
+Canadian Legal - McGill
+Canadian Pharmacists Journal
+Canadian Psychology
+Cancer and Metastasis Reviews
+Cancer Biology &amp; Medicine
+Cancer Cell
+Cancer Cell International
+Cancer Chemotherapy and Pharmacology
+Cancer Discovery
+Cancer Epidemiology
+Cancer Epidemiology, Biomarkers &amp; Prevention
+Cancer Gene Therapy
+Cancer Immunology Research
+Cancer Prevention Research
+Cancer Research
+Cancers
+Carbon
+Carbon Balance and Management
+Carbon Management
+Cardiology
+Cardiorenal Medicine
+Cardiovascular Diabetology
+Cardiovascular Research
+Cardiovascular Ultrasound
+Caries Research
+Case Reports in Dermatology
+Case Reports in Gastroenterology
+Case Reports in Nephrology and Urology
+Case Reports in Neurology
+Case Reports in Oncology
+Case Reports in Ophthalmology
+Catalysis Science &amp; Technology
+Catalysts
+Catalysts &amp; Catalysed Reactions
+Catholic Biblical Association (Full Note)
+Catholic Biblical Quarterly
+Cell
+Cell &amp; Bioscience
+Cell Calcium
+Cell Communication and Signaling
+Cell Death &amp; Differentiation
+Cell Division
+Cell Host &amp; Microbe
+Cell journals (numeric)
+Cell Metabolism
+Cell Regeneration
+Cell Research
+Cell Stem Cell
+Cell Transplantation
+Cells
+Cells Tissues Organs
+Cellular and Molecular Bioengineering
+Cellular Physiology and Biochemistry
+Centaurus
+Central Asian Survey
+Cephalalgia
+Cerebral Cortex
+Cerebrovascular Diseases
+Cerebrovascular Diseases Extra
+Challenges
+Chaos
+Chemical Communications
+Chemical Hazards in Industry
+Chemical Physics
+Chemical Research in Toxicology
+Chemical Reviews
+Chemical Science
+Chemical Senses
+Chemical Society Reviews
+Chemistry &amp; Biology
+Chemistry Education: Research and Practice
+Chemistry of Materials
+Chemistry World
+Chemotherapy
+Chest
+Chicago Manual of Style (author-date)
+Chicago Manual of Style (author-date, Basque)
+Chicago Manual of Style (author-date, German)
+Chicago Manual of Style (full note)
+Chicago Manual of Style (full note, no Ibid.)
+Chicago Manual of Style (library list)
+Chicago Manual of Style (note)
+Chicago Manual of Style (note, annotated bibliography)
+Chicago Manual of Style (note, no Ibid.)
+Child and Adolescent Psychiatry and Mental Health
+Chinese Medical Journal
+Chinese Medicine
+Chinese Std GB/T 7714-1987 (numeric)
+Chinese Std GB/T 7714-2005 (numeric)
+Chiropractic &amp; Manual Therapies
+Chiropractic Journal of Australia
+Chronic Diseases in Canada
+Cilia
+Circuits and Systems for Video Technology, IEEE Transactions on
+Circuits and Systems I: Regular Papers, IEEE Transactions on
+Circuits and Systems II: Express Briefs, IEEE Transactions on
+Circulation
+Cirugía y Cirujanos
+Cirujano General
+Cities
+Climacteric
+Climate Dynamics
+Climate of the Past
+Climate of the Past Discussions
+Climate Research
+Climatic Change
+Clinica Chimica Acta
+Clinical &amp; Experimental Ophthalmology
+Clinical and Experimental Optometry
+Clinical and Experimental Pharmacology and Physiology
+Clinical and Investigative Medicine
+Clinical and Molecular Allergy
+Clinical and Translational Allergy
+Clinical and Vaccine Immunology
+Clinical Biochemistry
+Clinical Biomechanics
+Clinical Cancer Research
+Clinical Chemistry
+Clinical Drug Investigation
+Clinical Epigenetics
+Clinical Infectious Diseases
+Clinical Investigation
+Clinical Lipidology
+Clinical Microbiology Reviews
+Clinical Neurophysiology
+Clinical Nutrition
+Clinical Orthopaedics and Related Research
+Clinical Otolaryngology
+Clinical Pediatrics
+Clinical Pharmacokinetics
+Clinical Pharmacology &amp; Therapeutics
+Clinical Pharmacy
+Clinical Physiology and Biochemistry
+Clinical Practice
+Clinical Preventive Dentistry
+Clinical Proteomics
+Clinical Sarcoma Research
+Clinical Science
+Clinician’s Research Digest
+Clio Medica, Rodopi: The Wellcome Series in the History of Medicine
+CMAJ (Canadian Medical Association Journal)
+CNS &amp; Neurological Disorders - Drug Targets
+Cns Drugs
+CNS Oncology
+Coatings
+Cold Spring Harbor Laboratory Press
+College of Physicians &amp; Surgeons Pakistan
+Colo-Proctology
+Colombia Medica
+Colorectal Cancer
+Comision Economica para America Latina y el Caribe (CEPAL)
+Communications Letters, IEEE
+Communications Magazine, IEEE
+Communications, IEEE Transactions on
+Community Dentistry and Oral Epidemiology
+Community Medicine
+Comparative Effectiveness Research
+Comparative Hepatology
+Comparative Medicine
+Complement
+Components and Packaging Technologies, IEEE Transactions on
+Comprehensive Psychiatry
+Computational Biology and Bioinformatics, IEEE/ACM Transactions on
+Computational Materials Science
+Computer Architecture Letters, IEEE
+Computer-Aided Design of Integrated Circuits and Systems, IEEE Transactions on
+Computers
+Computers in Entertainment
+Computers, IEEE Transactions on
+Computing in Science &amp; Engineering
+Computing Surveys
+Conflict and Health
+Conservation Biology
+Conservation Letters
+Consulting Psychology Journal: Practice and Research
+Consumer Electronics, IEEE Transactions on
+Contemporary Sociology: A Journal of Reviews
+Contexts
+Control Systems Technology, IEEE Transactions on
+Copernicus Publications
+Cor Et Vasa
+Coral Reefs
+Cornea
+Cornell Veternarian
+Coronary Artery Disease
+Corrosion Science
+Cost Effectiveness and Resource Allocation
+Cough
+Council of Science Editors (CSE)
+Council of Science Editors (CSE) (author-date)
+Critical Care
+Critical Care Medicine
+Crop Science
+Cryobiology
+Crystal Growth &amp; Design
+Crystals
+CrystEngComm
+Cuadernos de Filología Clásica. Estudios Griegos e Indoeuropeos (autor-año)
+Cuadernos del Hospital de Clinicas
+Cultural Diversity &amp; Ethnic Minority Psychology
+Culture, Medicine, and Psychiatry
+Current Biology
+Current Eye Research
+Current Opinion in ...
+Current Opinion in Biotechnology
+Current Opinion in Cell Biology
+Current Opinion in Chemical Biology
+Current Opinion in Environmental Sustainability
+Current Opinion in Genetics &amp; Development
+Current Opinion in Immunology
+Current Opinion in Microbiology
+Current Opinion in Neurobiology
+Current Opinion in Ophthalmology
+Current Opinion in Pharmacology
+Current Opinion in Plant Biology
+Current Opinion in Structural Biology
+Current Protocols in ...
+Current Urology
+Currents in Biblical Research
+Cytogenetic and Genome Research
+Cytometry
+Dalton Transactions
+Danish Dental Journal
+Danish Medical Bulletin
+Das Arztliche Laboratorium
+Daseinsanalyse
+De Buck (Dutch)
+Deep-Sea Research Part II
+Dementia and Geriatric Cognitive Disorders
+Dementia and Geriatric Cognitive Disorders Extra
+Dendrochronologia
+Dental Abstracts
+Dental Materials
+Dental Teamwork
+Dentomaxillofacial Radiology
+Dependable and Secure Computing, IEEE Transactions on
+Der Chirurg
+Dermatologica
+Dermatology
+Deutsches Ärzteblatt
+Development
+Developmental Biology
+Developmental Cell
+Developmental Neuroscience
+Developmental Pharmacology and Therapeutics
+Developmental Psychology
+Device and Materials Reliability, IEEE Transactions on
+Diabetes
+Diabetes &amp; Vascular Disease Research
+Diabetes Care
+Diabetes Management
+Diabetologia
+Diabetology &amp; Metabolic Syndrome
+Diagnostic Cytopathology
+Diagnostic Pathology
+Diagnostics
+Dielectrics and Electrical Insulation, IEEE Transactions on
+Digestion
+Digestive Diseases
+Digestive Surgery
+DIN 1505-2 (alphanumeric, German)
+DIN 1505-2 (author-date, German)
+DIN 1505-2 (numeric, German)
+Diplo
+Disability and Rehabilitation
+Disaster Management &amp; Response (DMR)
+Disease Management &amp; Health Outcomes
+Disease Models &amp; Mechanisms
+Diseases of Aquatic Organisms
+Diseases of the Colon and Rectum
+Diversity
+Diversity and Distributions
+Documenta Ophthalmologica
+Domestic Animal Endocrinology
+Dreaming
+Drinking Water Engineering and Science
+Drinking Water Engineering and Science Discussions
+Drug and Alcohol Dependence
+Drug Development Research
+Drug Intelligence &amp; Clinical Pharmacy
+Drug Safety
+Drugs
+Drugs &amp; Aging
+Drugs in R&amp;D
+Drugs of the Future
+Drugs of Today
+Ear and Hearing
+Early Medieval Europe
+Earth and Planetary Science Letters
+Earth Interactions
+Earth Surface Processes and Landforms
+Earth System Dynamics
+Earth System Dynamics Discussions
+Earth System Science Data
+Earth System Science Data Discussions
+Eastern Mediterranean Health Journal
+Ecography
+Ecological Engineering
+Ecological Modelling
+Ecology
+Ecology Letters
+Economic Commission for Latin America and the Caribbean (ECLAC)
+Ecoscience
+Ecosystems
+Edizioni Minerva Medica
+Educacion Medica Superior
+Education
+Education in Chemistry
+Education, IEEE Transactions on
+Educational Evaluation and Policy Analysis
+Educational Researcher
+Eighteenth-Century Life
+EL Profesional de la Informacion
+Electrical and Computer Engineering, Canadian Journal of
+Electromagnetic Compatibility, IEEE Transactions on
+Electron Device Letters, IEEE
+Electron Devices, IEEE Transactions on
+Electronic Materials, IEEE/TMS Journal of
+Electronics
+Electronics Packaging Manufacturing, IEEE Transactions on
+Elsevier (with titles)
+Elsevier (with titles, alphabetical)
+Elsevier (without titles)
+Elsevier Harvard 2
+Elsevier Vancouver
+Elsevier's Harvard Style (with titles)
+Elsevier's Harvard Style (without titles)
+EMBO reports
+Emerald journals (Harvard)
+Emergency Medicine Journal
+Emerging Infectious Diseases
+Emerging Themes in Epidemiology
+Emotion
+Emu - Austral Ornithology
+Endangered Species Research
+Endocrine-Related Cancer
+Energies
+Energy &amp; Environmental Science
+Energy &amp; Fuels
+Energy Conversion, IEEE Transactions on
+Energy Policy
+Enfermedades Infecciosas y Microbiologia Clinica
+Engineering Management, IEEE Transactions on
+Entomologia Experimentalis et Applicata
+Entomological Society of America
+Entropy
+Environmental &amp; Engineering Geoscience
+Environmental and Experimental Botany
+Environmental Conservation
+Environmental Entomology
+Environmental Evidence
+Environmental Geosciences
+Environmental Health
+Environmental Health Perspectives
+Environmental Medicine
+Environmental Microbiology
+Environmental Science &amp; Technology
+Environmental Science and Policy
+Environmental Toxicology and Chemistry
+Enzyme
+Epidemiologie et Sante Animale
+Epidemiology
+Epigenetics &amp; Chromatin
+Epigenomics
+EPMA Journal
+Equine Veterinary Education
+Equine Veterinary Journal
+ergoscience
+Ethics (for book reviews)
+Ethics in Science and Environmental Politics
+Eukaryotic Cell
+Europace
+European Addiction Research
+European Cells &amp; Materials (eCM)
+European Heart Journal
+European Heart Journal - Acute Cardiovascular Care
+European Heart Journal - Cardiovascular Imaging
+European Journal of Cancer &amp; Clinical Oncology
+European Journal of Cardiovascular Nursing
+European Journal of Clinical Investigation
+European Journal of Clinical Microbiology and Infectious Diseases
+European Journal of Clinical Nutrition
+European Journal of Clinical Research
+European Journal of Emergency Medicine
+European Journal of Gastroenterology &amp; Hepatology
+European Journal of Gerontology
+European Journal of Heart Failure
+European Journal of Human Genetics
+European Journal of Immunology
+European Journal of Information Systems (EJIS)
+European Journal of Medical Research
+European Journal of Neuroscience
+European Journal of Nuclear Medicine and Molecular Imaging
+European Journal of Ophthalmology
+European Journal of Physical Medicine and Rehabilitation
+European Journal of Preventive Cardiology
+European Journal of Radiology
+European Journal of Rheumatology and Inflammation
+European Journal of Soil Science
+European Neurology
+European Radiology, Neuroradiology
+European Respiratory Journal
+European Retail Research
+European Society of Cardiology
+European Surgical Research
+European Thyroid Journal
+European Union Interinstitutional Style Guide
+European Urology
+Evidence-Based Dentistry
+Evidence-Based Medicine
+Evidence-Based Mental Health
+Evidence-Based Nursing
+EvoDevo
+Evolution
+Evolution &amp; Development
+Evolutionary Computation, IEEE Transactions on
+Evolutionary Ecology
+Excel
+Experimental &amp; Translational Stroke Medicine
+Experimental and Clinical Immunogenetics
+Experimental and Clinical Psychopharmacology
+Experimental Cell Biology
+Experimental Eye Research
+Experimental Hematology &amp; Oncology
+Experimental Physiology
+Expert Review of Anti-infective Therapy
+Expert Review of Anticancer Therapy
+Expert Review of Cardiovascular Therapy
+Expert Review of Clinical Immunology
+Expert Review of Clinical Pharmacology
+Expert Review of Dermatology
+Expert Review of Endocrinology &amp; Metabolism
+Expert Review of Gastroenterology &amp; Hepatology
+Expert Review of Hematology
+Expert Review of Medical Devices
+Expert Review of Molecular Diagnostics
+Expert Review of Neurotherapeutics
+Expert Review of Obstetrics &amp; Gynecology
+Expert Review of Ophthalmology
+Expert Review of Pharmacoeconomics &amp; Outcomes Research
+Expert Review of Proteomics
+Expert Review of Respiratory Medicine
+Expert Review of Vaccines
+Eye
+Eye &amp; Contact Lens
+F1000 Research
+Fachhochschule Vorarlberg (FHV) (German)
+Families, Systems, &amp; Health
+Family Medicine
+Family Practice Research Journal
+Faraday Discussions
+Farmacia Hospitalaria
+Fasti On Line Documents &amp; Research (FOLD&amp;R)
+FEBS Journal
+Federation of European Microbiological Societies (FEMS)
+FEMS Immunology &amp; Medical Microbiology
+FEMS Microbiology Ecology
+FEMS Microbiology Letters
+FEMS Microbiology Reviews
+FEMS Yeast Research
+Fertility and Sterility
+Fetal Diagnosis and Therapy
+Fetal Therapy
+Fibrogenesis &amp; Tissue Repair
+Finnish Medical Journal
+First Monday
+Fish and Fisheries
+Fisheries Research
+Fitness &amp; Performance Journal
+Flavour
+Fluids and Barriers of the CNS
+Focus on Critical Care
+Folia Phoniatrica
+Folia Phoniatrica et Logopaedica
+Folia Primatologica
+Folio Primatologica
+Food &amp; Function
+Food Science and Technology Research
+Foot &amp; Ankle International
+Foreign Policy Analysis 
+Forest Ecology and Management
+Forests
+France (auteurs et al., auteur-date)
+France (auteurs et al., numérotation)
+France (tous les auteurs, auteur-date)
+France (tous les auteurs, numérotation)
+Free Radical Biology &amp; Medicine
+French Historical Studies
+French Politics
+Freshwater Biology
+Frontiers in Addictive Disorders
+Frontiers in Affective Disorders and Psychosomatic Research
+Frontiers in Aging Neuroscience
+Frontiers in Alloimmunity and Transplantation
+Frontiers in Antigen Presenting Cell Biology
+Frontiers in Antimicrobials, Resistance and Chemotherapy
+Frontiers in Applied Genetic Epidemiology
+Frontiers in Aquatic Microbiology
+Frontiers in Aquatic Physiology
+Frontiers in Auditory Cognitive Neuroscience
+Frontiers in Autonomic Neuroscience
+Frontiers in B Cell Biology
+Frontiers in Behavioral and Psychiatric Genetics
+Frontiers in Behavioral Neuroscience
+Frontiers in Bioinformatics and Computational Biology
+Frontiers in Bone Research
+Frontiers in Brain Imaging Methods
+Frontiers in Cancer Endocrinology
+Frontiers in Cancer Epidemiology and Prevention
+Frontiers in Cancer Genetics
+Frontiers in Cancer Imaging and Diagnosis
+Frontiers in Cancer Molecular Targets and Therapeutics
+Frontiers in Cardiac Electrophysiology
+Frontiers in Cardiovascular and Smooth Muscle Pharmacology
+Frontiers in Cellular and Infection Microbiology
+Frontiers in Cellular Endocrinology
+Frontiers in Cellular Neuroscience
+Frontiers in Chemoattractants
+Frontiers in Child and Neurodevelopmental Psychiatry
+Frontiers in Clinical and Translational Physiology
+Frontiers in Cognition
+Frontiers in Cognitive Science
+Frontiers in Comparative Psychology
+Frontiers in Computational Neuroscience
+Frontiers in Computational Physiology and Medicine
+Frontiers in Consciousness Research
+Frontiers in Craniofacial Biology
+Frontiers in Crop Science and Horticulture
+Frontiers in Cultural Psychology
+Frontiers in Decision Neuroscience
+Frontiers in Dementia
+Frontiers in Developmental Psychology
+Frontiers in Diabetes
+Frontiers in Drug Metabolism and Transport
+Frontiers in Educational Psychology
+Frontiers in Emotion Science
+Frontiers in Endocrinology
+Frontiers in Endocrinology of Aging
+Frontiers in Endovascular and Interventional Neurology
+Frontiers in Epigenomics
+Frontiers in Epilepsy
+Frontiers in Ethnopharmacology
+Frontiers in Evolutionary and Genomic Microbiology
+Frontiers in Evolutionary and Population Genetics
+Frontiers in Evolutionary Neuroscience
+Frontiers in Evolutionary Psychology
+Frontiers in Exercise Physiology
+Frontiers in Experimental Endocrinology
+Frontiers in Experimental Pharmacology and Drug Discovery
+Frontiers in Extreme Microbiology
+Frontiers in Fatty Acid and Lipid Physiology
+Frontiers in Food Microbiology
+Frontiers in Forensic Psychiatry
+Frontiers in Fractal Physiology
+Frontiers in Functional Plant Ecology
+Frontiers in Fungi and Their Interactions
+Frontiers in Gastrointestinal Cancers
+Frontiers in Gastrointestinal Pharmacology
+Frontiers in Gastrointestinal Sciences
+Frontiers in Genetic Architecture
+Frontiers in Genetics
+Frontiers in Genetics of Aging
+Frontiers in Genitourinary Oncology
+Frontiers in Genomic Assay Technology
+Frontiers in Genomic Endocrinology
+Frontiers in Genomic Physiology
+Frontiers in Head and Neck Cancer
+Frontiers in Headache Medicine and Facial Pain
+Frontiers in Hematology Oncology
+Frontiers in HIV and AIDS
+Frontiers in Human Neuroscience
+Frontiers in Immunological Memory
+Frontiers in Immunological Tolerance
+Frontiers in Immunology
+Frontiers in Immunotherapies and Vaccines
+Frontiers in Impulsivity, Compulsivity and Behavioral Dyscontrol
+Frontiers in Inflammation
+Frontiers in Inflammation Pharmacology
+Frontiers in Integrative and Regenerative Pharmacology
+Frontiers in Integrative Neuroscience
+Frontiers in Integrative Physiology
+Frontiers in Invertebrate Physiology
+Frontiers in Language Sciences
+Frontiers in Livestock Genomics
+Frontiers in Membrane Physiology and Biophysics
+Frontiers in Microbial Immunology
+Frontiers in Microbial Physiology and Metabolism
+Frontiers in Microbiological Chemistry
+Frontiers in Microbiology
+Frontiers in Microbiotechnology, Ecotoxicology and Bioremediation
+Frontiers in Mitochondrial Research
+Frontiers in Molecular and Cellular Oncology
+Frontiers in Molecular and Structural Endocrinology
+Frontiers in Molecular Innate Immunity
+Frontiers in Molecular Neuroscience
+Frontiers in Molecular Psychiatry
+Frontiers in Movement Disorders
+Frontiers in Movement Science and Sport Psychology
+Frontiers in Mucosal Immunity
+Frontiers in Multiple Sclerosis and Neuroimmunology
+Frontiers in Neural Circuits
+Frontiers in Neuro-Ophthalmology
+Frontiers in Neuro-otology
+Frontiers in Neuroanatomy
+Frontiers in Neurocritical and Neurohospitalist Care
+Frontiers in Neurodegeneration
+Frontiers in Neuroendocrine Science
+Frontiers in Neuroenergetics
+Frontiers in Neuroengineering
+Frontiers in Neurogenesis
+Frontiers in Neurogenomics
+Frontiers in Neuroinformatics
+Frontiers in Neurology
+Frontiers in Neurology Education
+Frontiers in Neuromorphic Engineering
+Frontiers in Neuromuscular Diseases
+Frontiers in Neuropharmacology
+Frontiers in Neuroprosthetics
+Frontiers in Neuropsychiatric Imaging and Stimulation
+Frontiers in Neurorobotics
+Frontiers in Neuroscience
+Frontiers in Neurotrauma
+Frontiers in NK Cell Biology
+Frontiers in Non-Coding RNA
+Frontiers in Nutrigenomics
+Frontiers in Oncology
+Frontiers in Oxidant Physiology
+Frontiers in Pediatric Endocrinology
+Frontiers in Pediatric Oncology
+Frontiers in Perception Science
+Frontiers in Personality Science and Individual Differences
+Frontiers in Pharmaceutical Medicine and Outcomes Research
+Frontiers in Pharmacogenetics and Pharmacogenomics
+Frontiers in Pharmacology
+Frontiers in Pharmacology of Anti-Cancer Drugs
+Frontiers in Pharmacology of Ion Channels and Channelopathies
+Frontiers in Physiology
+Frontiers in Pituitary Endocrinology
+Frontiers in Plant Biophysics and Modeling
+Frontiers in Plant Biotechnology
+Frontiers in Plant Cell Biology
+Frontiers in Plant Evolution and Development
+Frontiers in Plant Genetics and Genomics
+Frontiers in Plant Metabolism and Chemodiversity
+Frontiers in Plant Nutrition
+Frontiers in Plant Physiology
+Frontiers in Plant Proteomics
+Frontiers in Plant Science
+Frontiers in Plant Systems Biology
+Frontiers in Plant Traffic and Transport
+Frontiers in Plant-Microbe Interaction
+Frontiers in Predictive Toxicity
+Frontiers in Primary Immunodeficiencies
+Frontiers in Psychiatry
+Frontiers in Psychoanalysis and Neuropsychoanalysis
+Frontiers in Psychology
+Frontiers in Psychology for Clinical Settings
+Frontiers in Psychopathology
+Frontiers in Psychopharmacology
+Frontiers in Quantitative Psychology and Measurement
+Frontiers in Radiation Oncology
+Frontiers in Renal and Epithelial Physiology
+Frontiers in Respiratory Pharmacology
+Frontiers in Respiratory Physiology
+Frontiers in Schizophrenia
+Frontiers in Sleep and Chronobiology
+Frontiers in Sleep Disorders
+Frontiers in Spinal Cord Medicine
+Frontiers in Sports Neurology
+Frontiers in Statistical Genetics and Methodology
+Frontiers in Striated Muscle Physiology
+Frontiers in Stroke
+Frontiers in Synaptic Neuroscience
+Frontiers in Systems and Translational Endocrinology
+Frontiers in Systems Biology
+Frontiers in Systems Neuroscience
+Frontiers in Systems Physiology
+Frontiers in T Cell Biology
+Frontiers in Technical Advances in Plant Science
+Frontiers in Teleneurology
+Frontiers in Terrestrial Microbiology
+Frontiers in Theoretical and Philosophical Psychology
+Frontiers in Thoracic Oncology
+Frontiers in Thyroid Endocrinology
+Frontiers in Toxicogenomics
+Frontiers in Tumor Immunity
+Frontiers in Vascular Physiology
+Frontiers in Virology
+Frontiers in Women's Cancer
+Frontiers in Zoology
+Frontiers journals
+Frontline Gastroenterology
+Functional Ecology
+Fungal Biology
+Fungal Ecology
+Future Cardiology
+Future Internet
+Future Medicinal Chemistry
+Future Microbiology
+Future Neurology
+Future Oncology
+Future Science Group
+Future Science journals
+Future Virology
+Fuzzy Systems, IEEE Transactions on
+Gaceta Sanitaria
+Gait and Posture
+Gallia (French)
+Games
+Gastroenterologia y Hepatologia
+Gastroenterology
+Gastrointestinal Endoscopy
+Gene Therapy
+General and Comparative Endocrinology
+Genes
+Genes and Development
+Genes and Immunity
+Genetic Vaccines and Therapy
+Genetics
+Genetics Selection Evolution
+Genome Announcements
+Genome Biology
+Genome Biology and Evolution
+Genome Integrity
+Genome Medicine
+Genome Research
+Genèses: Sciences sociales et histoire (French)
+Geochimica et Cosmochimica Acta
+Geoderma
+Geological Magazine
+Geological Society of America
+Geological Society of America Bulletin
+Geology
+Geomorphology
+Geopolitics
+Georg-August-Universität Göttingen - Institut für Ethnologie und Ethnologische Sammlung
+Geoscience and Remote Sensing Letters, IEEE
+Geoscience and Remote Sensing, IEEE Transactions on
+Geosciences
+Geoscientific Instrumentation, Methods and Data Systems
+Geoscientific Instrumentation, Methods and Data Systems Discussions
+Geoscientific Model Development
+Geoscientific Model Development Discussions
+Geosphere
+Geriatric Cardiovascular Medicine
+Geriatrics
+Gerontology
+Global Change Biology
+Global Ecology and Biogeography
+Globalization and Health
+Graefe's Archive for Clinical and Experimental Ophthalmology
+Green Chemistry
+Group Dynamics: Theory, Research, and Practice
+GSA Today
+Gullet
+Gut
+Gut Pathogens
+Gynakologische Rundschau
+Gynecologic and Obstetric Investigation
+Haematologica
+Haemostasis
+Hamburg School of Food Science (diploma, German)
+HAND
+Harm Reduction Journal
+Harvard - Anglia Ruskin University
+Harvard - Cardiff University
+Harvard - European Archaeology
+Harvard - Imperial College London
+Harvard - Institut für Praxisforschung (Bahr &amp; Frackmann) (German)
+Harvard - King's College London
+Harvard - Leeds Metropolitan University
+Harvard - Manchester Business School
+Harvard - Oxford Brookes University
+Harvard - Staffordshire University
+Harvard - University of Abertay Dundee
+Harvard - University of Birmingham
+Harvard - University of Gloucestershire
+Harvard - University of Leeds
+Harvard - University of Limerick (Cite it Right) 
+Harvard - University of Northampton
+Harvard - University of Sheffield - East Asian Studies
+Harvard - University of Sheffield - Town and Regional Planning Department
+Harvard - University of Sunderland
+Harvard - University of the West of England (UWE Bristol)
+Harvard - University of West London
+Harvard Educational Review
+Harvard Reference format (Unisa / GBFE) (author-date, German)
+Harvard Reference format 1 (author-date)
+Harvard Reference format 1 (author-date, German)
+Harvard Reference format 3
+Harvard Reference format 7 (author-date, German)
+Hawaii International Conference on System Sciences (HICSS) Proceedings
+Hawaii Medical Journal
+HBP
+Head &amp; Face Medicine
+Head &amp; Neck Oncology
+Headache
+Health and Quality of Life Outcomes
+Health Economics, Policy and Law
+Health Psychology
+Health Research Policy and Systems
+Health Services Research
+Health Trends
+Heart
+Heart and Lung: the Journal of Critical Care
+Heart Asia
+Heart Rhythm
+Hellenic Journal of Cardiology
+Hellenic Journal of Surgery
+Helleniki Cheirougirke
+Helliniki Iatriki
+Hepatology
+Hereditary Cancer in Clinical Practice
+Hereditas
+Heredity
+Herpesviridae
+Hide citations and bibliography
+Hispanic American Historical Review
+Histoire &amp; Mesure (French)
+Histoire@Politique. Politique, culture, société (French)
+History and Theory
+History of Geo- and Space Sciences
+History of Political Economy
+History of Psychology
+History of the Human Sciences
+History of the journal Nature
+Hochschule der Medien Stuttgart (HdM Stuttgart) (German)
+Hochschule für Wirtschaft und Recht Berlin (HWR Berlin) (German)
+Homeopathy
+Hong Kong Journal of Ophthalmology
+Hong Kong Journal of Orthopaedic Surgery
+Hong Kong Journal of Psychiatry
+Hong Kong Journal of Radiology
+Hong Kong Medical Technology Association Journal
+Hormone and Metabolic Research
+Hormone Research
+Hormone Research in Paediatrics
+Hospital Chronicles (Nosokomiaka Chronica)
+Hospital Pharmacy
+Huisarts En Wetenschap (General Practitioner and Science)
+Human Development
+Human Heredity
+Human Molecular Genetics
+Human Mutation
+Human Resource Management Journal
+Human Resources for Health
+Humanities
+Hungarian Journal of Obstetrics and Gynecology
+Hydrogeology Journal
+Hydrological Sciences Journal
+Hydrology and Earth System Sciences 
+Hydrology and Earth System Sciences Discussions 
+Hypertension Research
+Hypotheses in the Life Sciences (HyLS)
+Iatriki
+ICES Journal of Marine Science
+IEEE
+IEEE with URL
+IEICE Transactions on Communications
+IEICE Transactions on Electronics
+IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences
+IEICE Transactions on Information and Systems
+IICA-CATIE
+Image Processing, IEEE Transactions on
+Imaging in Medicine
+Immunity
+Immunity &amp; Ageing
+Immunologica Research
+Immunological Reviews
+Immunology &amp; Cell Biology
+Immunotherapy
+Implementation Science
+In Practice
+Indian Journal for Practising Doctor
+Indian Journal of Anaesthesia
+Indian Journal of Cancer
+Indian Journal of Critical Care Medicine
+Indian Journal of Dermatology
+Indian Journal of Dermatology, Venereology and Leprology
+Indian Journal of Gastroenterology
+Indian Journal of Human Genetics
+Indian Journal of Medical Informatics
+Indian Journal of Medical Microbiology
+Indian Journal of Medical Sciences
+Indian Journal of Occupational &amp; Environmental Medicine
+Indian Journal of Ophthalmology
+Indian Journal of Otolaryngology &amp; Head &amp; Neck Surgery
+Indian Journal of Palliative Care
+Indian Journal of Pharmacology
+Indian Journal of Plastic Surgery
+Indian Journal of Surgery
+Indian Journal of Urology
+Indian Pacing and Electrophysiology Journal
+Industrial &amp; Engineering Chemistry Research
+Industrial Crops and Products
+Industrial Electronics, IEEE Transactions on
+Industrial Informatics, IEEE Transactions on
+Industry Applications, IEEE Transactions on
+Infection and Immunity
+Infectious Agents and Cancer
+Inflammatory Bowel Diseases
+Inflammopharmocology
+Infoclio Deutschschweiz
+Infoclio Francophone (petites majuscules)
+Infoclio Francophone (sans majuscules)
+Information
+Information Forensics and Security, IEEE Transactions on
+Information Systems Research (ISR)
+Information Technology in Biomedicine, IEEE Transactions on
+Information Theory, IEEE Transactions on
+Information, Communication &amp; Society
+Injury Prevention
+Innovate
+Inorganic Chemistry
+Insects
+Institute of Electronics, Information and Communication Engineers (IEICE, 電子情報通信学会)
+Institute of Physics (IOP) (Harvard)
+Institute of Physics (IOP) (numeric)
+Instituto Nacional de Cardiologia Ignacio Chavez
+Instrumentation and Measurement, IEEE Transactions on
+Integrative Biology
+Intelligent Transportation Systems, IEEE Transactions on
+Inter-Research Science Center
+INTER: Romanian Review for Theological and Religious Studies
+International Archives of Allergy and Applied Immunology
+International Archives of Allergy and Immunology
+International Archives of Medicine
+International Breastfeeding Journal
+International Disability Studies
+International Journal for Equity in Health
+International Journal of Audiology
+International Journal of Behavioral Nutrition and Physical Activity
+International Journal of Biological Sciences
+International Journal of Biosocial and Medical Research
+International Journal of Cancer
+International Journal of Clinical Rheumatology
+International Journal of Cross Cultural Management
+International Journal of Environmental Research and Public Health
+International Journal of Epidemiology
+International Journal of Exercise Science
+International Journal of Health Geographics
+International Journal of Hematologic Oncology
+International Journal of Humanoid Robotics
+International Journal of Hydrogen Energy
+International Journal of Impotence Research
+International Journal of Integrative Biology
+International Journal of Legal Medicine
+International Journal of Medical Sciences
+International Journal of Mental Health Systems
+International Journal of Molecular Sciences
+International Journal of Nursing Practice
+International Journal of Obesity
+International Journal of Pediatric Endocrinology
+International Journal of Pediatric Nephrology
+International Journal of Pharmacy Practice
+International Journal of Play Therapy
+International Journal of Production Economics
+International Journal of Project Management
+International Journal of Psychiatry in Medicine
+International Journal of Psychoanalysis
+International Journal of Radiation Oncology Biology Physics
+International Journal of Solids and Structures
+International Journal of STD and AIDS
+International Journal of Stress Management
+International Journal of Systematic and Evolutionary Microbiology
+International Journal of Wildland Fire
+International Microbiology
+International Organization
+International Pig Veterinary Society (IPVS) Congress Proceedings
+International Political Sociology
+International Studies Association
+International Studies Perspectives
+International Studies Quarterly
+International Studies Review
+International Surgery
+International Union of Crystallography (IUCr) journals
+Interventional Cardiology
+Interviology
+Intervirology
+Invasion and Metastasis
+Investigative Genetics
+Investigative Ophthalmology &amp; Visual Science
+Investigative Radiology
+InVisu (French)
+Iranian Journal of Allergy, Asthma and Immunology
+Iraqi Journal of Veterinary Sciences
+Irish Historical Studies
+Irish Journal of Psychological Medicine
+Irish Veterinary Journal
+ISO-690 (author-date, Czech)
+ISO-690 (author-date, English)
+ISO-690 (author-date, French)
+ISO-690 (full note, Slovak)
+ISO-690 (numeric, Czech)
+ISO-690 (numeric, English)
+ISO-690 (numeric, French)
+ISO-690 (numeric, Lithuanian)
+ISO-690 (numeric, Slovak)
+ISPRS International Journal of Geo-Information
+Israel Journal of Health Policy Research
+Israel Journal of Psychiatry and Related Sciences
+Italian Journal of Gastroenterology
+Italian Journal of Pediatrics
+Jahrbuch für Evangelikale Theologie
+Japanese Journal of Ophthalmology
+Javnost - The Public
+JID Symposium Proceedings
+Jornal de Pediatria
+Journal for Oto-Rhino-Laryngology, Head and Neck Surgery (ORL)
+Journal of AAPOS
+Journal of Abnormal Psychology
+Journal of Aerospace Computing, Information, and Communication
+Journal of Agricultural and Food Chemistry
+Journal of Aircraft
+Journal of Allergy and Clinical Immunology
+Journal of Alloys and Compounds
+Journal of Alzheimer's Disease
+Journal of Analytical Atomic Spectrometry
+Journal of Animal Ecology
+Journal of Animal Science and Biotechnology
+Journal of Antimicrobial Chemotherapy
+Journal of Applied Animal Science
+Journal of Applied Crystallography
+Journal of Applied Ecology
+Journal of Applied Mechanics
+Journal of Applied Meteorology and Climatology
+Journal of Applied Nutrition
+Journal of Applied Philosophy
+Journal of Applied Physics
+Journal of Applied Physiology
+Journal of Applied Psychology
+Journal of Applied Remote Sensing
+Journal of Archaeological Research
+Journal of Archaeological Science
+Journal of Assisted Reproduction &amp; Genetics
+Journal of Atmospheric and Oceanic Technology
+Journal of Avian Biology
+Journal of Bacteriology
+Journal of Basic Microbiology
+Journal of Biogeography
+Journal of Biological Engineering
+Journal of Biological Standardization
+Journal of Biomechanical Engineering
+Journal of Biomechanics
+Journal of Biomedical Optics
+Journal of Biomedical Science
+Journal of Biomedical Semantics
+Journal of Biomolecular Structure and Dynamics
+Journal of Biotechnology
+Journal of Brachial Plexus and Peripheral Nerve Injury
+Journal of Cancer Research &amp; Therapeutics
+Journal of Cardiothoracic Surgery
+Journal of Cardiovascular Magnetic Resonance
+Journal of Cardiovascular Pharmacology &amp; Therapeutics
+Journal of Cardiovascular Surgery
+Journal of Cataract &amp; Refractive Surgery
+Journal of Cell Biology
+Journal of Cell Science
+Journal of Cerebral Blood Flow and Metabolism
+Journal of Chemical &amp; Engineering Data
+Journal of Chemical Ecology
+Journal of Chemical Information and Modeling
+Journal of Chemical Theory and Computation
+Journal of Chemistry and Chemical Engineering
+Journal of Chemotherapy
+Journal of Chiropractic Medicine
+Journal of Chronic Diseases
+Journal of Circadian Rhythms
+Journal of Climate
+Journal of Clinical Bioinformatics
+Journal of Clinical Endocrinology and Metabolism
+Journal of Clinical Gastroenterology
+Journal of Clinical Investigation
+Journal of Clinical Microbiology
+Journal of Clinical Oncology
+Journal of Clinical Pathology
+Journal of Clinical Psychiatry
+Journal of Combinatorial Chemistry
+Journal of Combinatorics
+Journal of Community Health
+Journal of Comparative Physiology A
+Journal of Comparative Psychology
+Journal of Computational and Nonlinear Dynamics
+Journal of Consulting and Clinical Psychology
+Journal of Counseling Psychology
+Journal of Dairy Science
+Journal of Data and Information Quality
+Journal of Dental Education
+Journal of Dental Research
+Journal of Dentistry
+Journal of Diabetic Complications
+Journal of Diarrhoeal Disease Research
+Journal of Display Technology
+Journal of Diversity in Higher Education
+Journal of Dynamic Systems, Measurement and Control
+Journal of Ecology
+Journal of Economic Entomology
+Journal of Educational and Behavioral Statistics
+Journal of Educational Evaluation for Health Professions
+Journal of Educational Psychology
+Journal of Elections, Public Opinion &amp; Parties
+Journal of Electronic Imaging
+Journal of Electronic Packaging
+Journal of Emergency Nursing
+Journal of Endocrinology
+Journal of Energy Resources Technology
+Journal of Engineering for Gas Turbines and Power
+Journal of Engineering Materials and Technology
+Journal of Enterostomal Therapy
+Journal of Environmental Management
+Journal of Environmental Monitoring
+Journal of Environmental Quality
+Journal of Epidemiology &amp; Community Health
+Journal of Epidemiology and Community Health
+Journal of Ethnobiology and Ethnomedicine
+Journal of Evolutionary Biology
+Journal of Experimental &amp; Clinical Assisted Reproduction
+Journal of Experimental &amp; Clinical Cancer Research
+Journal of Experimental Algorithmics
+Journal of Experimental Medicine
+Journal of Experimental Psychology: Animal Behavior Processes
+Journal of Experimental Psychology: Applied
+Journal of Experimental Psychology: General
+Journal of Experimental Psychology: Human Perception and Performance
+Journal of Experimental Psychology: Learning, Memory, and Cognition
+Journal of Experimental Zoology
+Journal of Exposure Science and Environmental Epidemiology
+Journal of Family Psychology
+Journal of Field Ornithology
+Journal of Finance
+Journal of Financial Economics
+Journal of Fish Diseases
+Journal of Fluids Engineering
+Journal of Food Protection
+Journal of Foot and Ankle Research
+Journal of Forensic Sciences
+Journal of Fuel Cell Science and Technology
+Journal of Functional Biomaterials
+Journal of Gastroenterology and Hepatology
+Journal of Gastrointestinal and Liver Diseases
+Journal of General Internal Medicine
+Journal of General Physiology
+Journal of General Virology
+Journal of Geography in Higher Education
+Journal of Gerontological Nursing
+Journal of Glaucoma
+Journal of Guidance, Control, and Dynamics
+Journal of Hand Surgery
+Journal of Hazardous Materials
+Journal of Health and Social Behavior
+Journal of Health Economics
+Journal of Hearing Science
+Journal of Heart and Lung Transplantation
+Journal of Heart Transplantation
+Journal of Hellenic Studies
+Journal of Hematology &amp; Oncology
+Journal of Hepatology
+Journal of Hong Kong Medical Association
+Journal of Hong Kong Medical Technology Association
+Journal of Human Hypertension
+Journal of Hydrometeorology
+Journal of Hypertension
+Journal of Indian Association for Child and Adolescent Mental Health
+Journal of Indian Association of Pediatric Surgeons
+Journal of Indian Prosthodontic Society
+Journal of Industrial Ecology
+Journal of Inflammation
+Journal of Information Technology (JIT)
+Journal of Innate Immunity
+Journal of Integrated OMICS
+Journal of Internal Medicine
+Journal of Investigative Dermatology
+Journal of Juristic Papyrology
+Journal of Knee Surgery
+Journal of Korean Medical Science
+Journal of Laboratory and Clinical Medicine
+Journal of Lightwave Technology
+Journal of Lipid Research
+Journal of Low Power Electronics and Applications
+Journal of Magnetism and Magnetic Materials
+Journal of Mammalogy
+Journal of Management
+Journal of Management Information Systems
+Journal of Manipulative and Physiological Therapeutics
+Journal of Marketing
+Journal of Materials Chemistry
+Journal of Maternal and Child Health
+Journal of Mathematical Physics
+Journal of Medical Case Reports
+Journal of Medical Economics
+Journal of Medical Entomology
+Journal of Medical Ethics
+Journal of Medical Genetics
+Journal of Medical Imaging and Radiation Oncology
+Journal of Medical Microbiology
+Journal of Medical Physics
+Journal of Medicinal Chemistry
+Journal of Medieval and Early Modern Studies
+Journal of Micro/Nanolithography, MEMS, and MOEMS
+Journal of Microbiology, Immunology and Infection
+Journal of Microelectromechanical Systems (JMEMS)
+Journal of Midwifery &amp; Women’s Health
+Journal of Minimal Access Surgery
+Journal of Modern History
+Journal of Molecular Biology
+Journal of Molecular Endocrinology
+Journal of Molecular Microbiology and Biotechnology
+Journal of Molecular Signaling
+Journal of Morphology
+Journal of Nanobiotechnology
+Journal of Nanophotonics
+Journal of Natural Products
+Journal of Negative Results in BioMedicine
+Journal of Neuro Interventional Surgery
+Journal of Neurodevelopmental Disorders
+Journal of NeuroEngineering and Rehabilitation
+Journal of Neuroinflammation
+Journal of Neurology, Neurosurgery and Psychiatry
+Journal of Neurooncology
+Journal of Neuropathology and Experimental Neurology
+Journal of Neurophysiology
+Journal of Neuropsychology
+Journal of Neurosurgery
+Journal of Neurosurgery: Pediatrics
+Journal of Neurosurgery: Spine
+Journal of NeuroVirology
+Journal of Nuclear Materials
+Journal of Nuclear Medicine
+Journal of Nuclear Medicine Technology
+Journal of Nurse-Midwifery
+Journal of Nursing Education
+Journal of Nutrigenetics and Nutrigenomics
+Journal of Occupational and Organizational Psychology
+Journal of Occupational Health Psychology
+Journal of Occupational Medicine and Toxicology
+Journal of Ocular Pharmacology and Therapeutics
+Journal of Oral and Maxillofacial Surgery
+Journal of Oral and Maxillofacial Surgery, Medicine, and Pathology
+Journal of Orthopaedic Research
+Journal of Orthopaedic Surgery and Research
+Journal of Orthopaedic Trauma
+Journal of Ovarian Research
+Journal of Paediatrics and Child Health
+Journal of Paleontology
+Journal of Palliative Care
+Journal of Pathology
+Journal of Pediatric and Adolescent Gynecology
+Journal of Pediatric Nephrology
+Journal of Pediatric Neurosciences
+Journal of Pediatric Ophthalmology &amp; Strabismus
+Journal of Pediatrics
+Journal of Perinatal Medicine
+Journal of Perinatology
+Journal of Periodontology
+Journal of Personality and Social Psychology
+Journal of Personalized Medicine
+Journal of Petrology
+Journal of Pharmacology and Experimental Therapeutics
+Journal of Pharmacology and Pharmacotherapeutics
+Journal of pharmacy practice and research
+Journal of Pharmacy Technology
+Journal of Physical and Chemical Reference Data
+Journal of Physical Oceanography
+Journal of Physics A: Mathematical and Theoretical
+Journal of Physiological Anthropology
+Journal of Plastic, Reconstructive &amp; Aesthetic Surgery
+Journal of Pollination Ecology
+Journal of Postgraduate Medicine
+Journal of Power Sources
+Journal of Pragmatics
+Journal of Propulsion and Power
+Journal of Prosthetic Dentistry
+Journal of Proteome Research
+Journal of Proteomics
+Journal of Psychiatry &amp; Neuroscience
+Journal of Psychosocial Nursing and Mental Health Services
+Journal of Psychosomatic Research
+Journal of Psychotherapy Integration
+Journal of Quality in Clinical Practice
+Journal of Refractive Surgery
+Journal of Rehabilitation
+Journal of Rehabilitation Research and Development (JRRD)
+Journal of Renewable and Sustainable Energy
+Journal of Research in Science Teaching
+Journal of Sensor and Actuator Networks
+Journal of Shoulder and Elbow Surgery
+Journal of Social Archaeology
+Journal of Spacecraft and Rockets
+Journal of Spirochetal and Tick-Borne Diseases
+Journal of Studies on Alcohol and Drugs
+Journal of Superconductivity and Novel Magnetism
+Journal of Synchrotron Radiation
+Journal of the Academy of Nutrition and Dietetics
+Journal of the ACM
+Journal of the Air &amp; Waste Management Association (JAWMA)
+Journal of the American Academy of Dermatology (JAAD)
+Journal of the American Academy of Orthopaedic Surgeons (JAAOS)
+Journal of the American Academy of Physician Assistants
+Journal of the American Association of Laboratory Animal Science
+Journal of the American Board of Family Medicine
+Journal of the American Chemical Society
+Journal of the American College of Cardiology (JACC)
+Journal of the American Dental Association (JADA)
+Journal of the American Medical Association (JAMA)
+Journal of the American Medical Informatics Association
+Journal of the American Osteopathic Association
+Journal of the American Society of Echocardiography
+Journal of the American Society of Nephrology
+Journal of the American Veterinary Medical Association
+Journal of the American Water Resources Association (JAWRA)
+Journal of the Association for Research in Otolaryngology
+Journal of the Atmospheric Sciences
+Journal of the Brazilian Chemical Society (JBCS)
+Journal of the British Association for Immediate Care
+Journal of the Canadian Association of Radiologists
+Journal of the Canadian Chiropractic Association
+Journal of the Danish Medical Association
+Journal of the Egyptian Public Health Association
+Journal of The Electrochemical Society (JES)
+Journal of the Faculty of Medicine Baghdad
+Journal of the Faculty of Medicine, Selcuk University
+Journal of the Formosan Medical Association
+Journal of the Indian Society of Pedodontics &amp; Preventative Dentistry
+Journal of the Institute of Medicine
+Journal of the International AIDS Society
+Journal of the International Society of Sports Nutrition
+Journal of the Irish Colleges of Physicians and Surgeons
+Journal of the Kuwait Medical Association
+Journal of the Medical Library Association
+Journal of the National Cancer Institute (JNCI)
+Journal of the National Medical Association
+Journal of the Norwegian Medical Association
+Journal of the Royal Anthropological Institute
+Journal of the Royal Army Medical Corps
+Journal of the Royal College of Physicians of London
+Journal of the Royal College of Surgeons of Edinburgh
+Journal of the Royal Naval Medical Service
+Journal of the Royal Society of Medicine
+Journal of the Torrey Botanical Society
+Journal of the Vivekananda Institute of Medical Sciences
+Journal of Theoretical and Philosophical Psychology
+Journal of Thermophysics and Heat Transfer
+Journal of Thoracic and Cardiovascular Surgery
+Journal of Thoracic Oncology
+Journal of Thrombosis and Haemostasis
+Journal of Translational Medicine
+Journal of Trauma Management &amp; Outcomes
+Journal of Tropical Ecology
+Journal of Urology
+Journal of Vascular Research
+Journal of Vascular Surgery
+Journal of Vertebrate Paleontology
+Journal of Veterinary Internal Medicine
+Journal of Virology
+Journal of Vision
+Journal of Visualized Experiments
+Journal of Wildlife Diseases
+Journal of Zoology
+Journal on Computing and Cultural Heritage
+Journal on Emerging Technologies in Computing Systems
+Journalistica
+Juristische Zitierweise (Stüber) (German)
+Karger journals
+Karger journals (author-date)
+Kenya Veterinarian
+Kidney and Blood Pressure Research
+Kidney International
+Kindheit und Entwicklung
+Klinische Labor/Clinical Laboratory
+Klinische Monatsblätter für Augenheilkunde
+Knee Surgery, Sports Traumatology, Arthroscopy (KSSTA)
+Knowledge and Data Engineering, IEEE Transactions on
+Korean Journal of Gynecologic Oncology
+Kritische Ausgabe (German)
+Kölner Zeitschrift für Soziologie und Sozialpsychologie (KZfSS) (German)
+La Prensa Medica Argentina
+Lab on a Chip
+Laboratory Hazards Bulletin
+Laboratory Investigation
+Lakartidningen
+Langmuir
+Language
+Language in Society
+Latin America Transactions, IEEE
+Law generic style (note with bibliography, German)
+Laws
+Le Mouvement Social (French)
+Learning and Memory
+Legal and Criminological Psychology
+Leprosy Review
+Les Journées de la Recherche Porcine (French)
+Lethaia
+Lettres et Sciences Humaines Françaises (biblio et notes, French)
+Leukemia
+Leviathan
+Life
+Lijecnicki Vjesnik
+Limnology and Oceanography
+Lindbergia
+Lipids in Health and Disease
+Lithosphere
+Livestock Science
+Low Temperature Physics
+Lung Cancer Management
+Lung India
+Macedonian Journal of Medical Sciences
+Macedonian Stomatologial Review
+Macromolecular Reaction Engineering
+Macromolecules
+Magnesium
+Magnetic Resonance in Medicine
+Magnetics, IEEE Transactions on
+Magyar Noorvosok Lapja
+Maladies chroniques au Canada
+Malaria Journal
+Malaysian Journal of Pathology
+Mammal Review
+Manchester University Press Monographs
+Manuel canadien de la référence juridique 7e éd. (note et bibliographie, French)
+Manufacturing Technology, IEEE Transactions on
+Marine Drugs
+Marine Ecology Progress Series
+Marine Policy
+Matej Bel University - Faculty of Natural Sciences
+Materials
+Materials Science and Engineering A
+Materials Science and Engineering B
+Materials Science and Engineering C
+Materials Science and Engineering R
+mBio
+Mechanical Sciences
+Mechatronics, IEEE/american-society-of-mechanical-engineers Transactions on
+MedChemComm
+Media, Culture and Society
+Medical Acupuncture
+Medical and Pediatric Oncology
+Medical Care
+Medical Education
+Medical Gas Research
+Medical History
+Medical Humanities
+Medical Imaging, IEEE Transactions on
+Medical Journal of Australia
+Medical Laboratory Sciences
+Medical Physics
+Medical Principles and Practice
+Medicina Clinica
+Medicina Intensiva
+Medicina Militar
+Medicina, the Official Journal of the Croatian Medical Association - Rijeka
+Medicine
+Medicine &amp; Science in Sports &amp; Exercise
+Melbourne School of Theology
+Membranes
+Memórias do Instituto Oswaldo Cruz
+Metabolic Engineering
+Metabolites
+Metallomics
+Metallurgical and Materials Transactions
+Metals
+Meteoritics &amp; Planetary Science
+Meteorological Monographs
+Methods in Ecology and Evolution
+Methods in Organic Synthesis
+Methods of Information in Medicine
+Microarrays
+Microbial Cell Factories
+Microbial Drug Resistance
+Microbial Ecology
+Microbial Informatics and Experimentation
+Microbiology
+Microbiology and Molecular Biology Reviews
+Micromachines
+Micron
+Microscopy and Microanalysis
+Microwave and Wireless Components Letters, IEEE
+Microwave Theory and Techniques, IEEE Transactions on
+Military Medicine
+Mineral and Electrolyte Metabolism
+Minerals
+MIS Quarterly (MISQ)
+MLA (Notes - 6th edition) 
+Mobile Computing, IEEE Transactions on
+Mobile DNA
+Modern Humanities Research Association (Author-Date)
+Modern Humanities Research Association (note with bibliography)
+Modern Language Association
+Modern Language Association (underline)
+Modern Language Association with URL
+Modern Language Review
+Modern Pathology
+Molbank
+Molecular and Biochemical Parasitology
+Molecular and Cellular Biology
+Molecular Autism
+Molecular Biology and Evolution
+Molecular Biology of the Cell
+Molecular BioSystems
+Molecular Brain
+Molecular Cancer
+Molecular Cancer Research
+Molecular Cancer Therapeutics
+Molecular Cell
+Molecular Cytogenetics
+Molecular Diagnosis &amp; Therapy
+Molecular Ecology
+Molecular Microbiology
+Molecular Neurodegeneration
+Molecular Pain
+Molecular Pharmaceutics
+Molecular Phylogenetics and Evolution
+Molecular Plant
+Molecular Psychiatry
+Molecular Psychiatry (letters to the editor)
+Molecular Syndromology
+Molecular Systems Biology
+Molecular Therapy
+Molecular Vision
+Molecules
+Monthly Weather Review
+Moore Theological College
+Moorlands College
+Mount Sinai Journal of Medicine
+Mucosal Immunology
+Multidisciplinary Digital Publishing Institute (MDPI)
+Multidisciplinary Respiratory Medicine
+Multimedia, IEEE Transactions on
+Multiple Sclerosis Journal
+Månedsskrift for almen praksis
+Médecine/Sciences
+Médula Espinal
+Métropolitiques (French)
+Nano Biomedicine and Engineering
+Nano Letters
+Nanobioscience, IEEE Transactions on
+Nanomaterials
+Nanomedicine
+Nanoscale
+Nanotechnology
+Nanotechnology, IEEE Transactions on
+National Archives of Australia
+National Library of Medicine (NLM)
+National Library of Medicine (NLM) (brackets, no "et al.")
+National Library of Medicine (NLM) - Grant with PMID
+National Medical Journal of China
+National Science Foundation - Grant Proposals
+Natural Hazards and Earth System Sciences
+Natural Immunity and Cell Growth Regulation
+Natural Product Reports
+Natural Product Updates
+Nature
+Nature Biotechnology
+Nature Cell Biology
+Nature Chemical Biology
+Nature Chemistry
+Nature Clinical Practice Cardiovascular Medicine
+Nature Clinical Practice Endocrinology &amp; Metabolism
+Nature Clinical Practice Gastroenterology and Hepatology
+Nature Clinical Practice journals
+Nature Clinical Practice Nephrology
+Nature Clinical Practice Neurology
+Nature Clinical Practice Oncology
+Nature Clinical Practice Rheumatology
+Nature Clinical Practice Urology
+Nature Digest
+Nature Genetics
+Nature Geoscience
+Nature Immunology
+Nature Journal (no superscript)
+Nature Materials
+Nature Medicine
+Nature Methods
+Nature Nanotechnology
+Nature Neuroscience
+Nature Neuroscience Brief Communication
+Nature Photonics
+Nature Physics
+Nature Protocols
+Nature research journals
+Nature Reviews Cancer
+Nature Reviews Drug Discovery
+Nature Reviews Genetics
+Nature Reviews Immunology
+Nature Reviews journals
+Nature Reviews Microbiology
+Nature Reviews Molecular Cell Biology
+Nature Reviews Neuroscience
+Nature Structural and Molecular Biology
+Natureza &amp; Conservação (Brazilian Journal of Nature Conservation)
+Nederlands Tijdschrift Voor Geneeskunde
+Neonatology
+Nephrology
+Nephron
+Nephron Clinical Practice
+Nephron Experimental Nephrology
+Nephron Extra
+Nephron Physiology
+Netherlands Journal of Medicine
+Network and Service Management, IEEE Transactions on
+Networking, IEEE/ACM Transactions on
+Neumologica y Cirugia de Torax Neurofibromatosis
+Neural Development
+Neural Networks, IEEE Transactions on
+Neural Systems &amp; Circuits
+Neural Systems and Rehabilitation Engineering, IEEE Transactions on
+Neurobiology of Aging
+Neurochemistry International
+Neurodegenerative Disease Management
+Neurodegenerative Diseases
+Neuroendocrinology
+Neuroepidemiology
+NeuroImage
+Neuroimmunomodulation
+Neurology
+Neurology India
+Neuron
+Neuropsychiatry
+Neuropsychobiology
+Neuropsychologia
+Neuropsychology
+Neuropsychopharmacology
+Neurorehabilitation and Neural Repair
+Neuroreport
+Neuroscience &amp; Biobehavioral Reviews
+Neuroscience Letters
+Neuroscience Research
+Neurosignals
+Neurosurgical Focus
+Neurourology and Urodynamics
+New Biotechnology
+New Doctor
+New England Journal of Medicine
+New Iraqi Journal of Medicine
+New Journal of Chemistry
+New Phytologist
+New Solutions
+New Zealand Dental Journal
+New Zealand Family Physician
+New Zealand Journal of Medical Laboratory Technology
+New Zealand Journal of Ophthalmology
+New Zealand Medical Journal
+New Zealand Plant Protection
+New Zealand Veterinary Journal
+Nigerian Medical Journal
+No To Hattatsu
+Nonlinear Biomedical Physics
+Nonlinear Processes in Geophysics
+Nordic Journal of Botany
+Nordisk Medicin
+North Carolina Medical Journal
+North-West University (Harvard)
+Northeastern Naturalist
+Nosokomiaka Chronica
+Nuclear Science, IEEE Transactions on
+Nucleic Acids Research
+Nursing
+Nursing Inquiry
+Nutrients
+Nutrition &amp; Metabolism
+Nutrition Journal
+Obesity
+Obesity Facts
+Occupation, Participation and Health
+Occupational and Environmental Medicine
+Ocean Science 
+Ocean Science Discussions 
+Oceanic Engineering, IEEE Journal of
+Ocular Immunology and Inflammation
+Oecologia
+Oikos
+Oncogene
+Oncology
+Onkologie
+Ophthalmic and Physiological Optics
+Ophthalmic Epidemiology
+Ophthalmic Genetics
+Ophthalmic Research
+Ophthalmic Surgery, Lasers and Imaging
+Ophthalmologica
+Ophthalmology
+Optical Engineering
+Optical Fiber Technology
+Optical Society of America (OSA)
+Optics Communications
+Optometry &amp; Vision Science
+Oral Oncology
+Organic &amp; Biomolecular Chemistry
+Organic Electronics
+Organic Geochemistry
+Organic Letters
+Organic Process Research &amp; Development
+Organization Science
+Organization Studies
+Organization: The Critical Journal of Organization, Theory and Society
+Organometallics
+Ornitología Neotropical
+Orphanet Journal of Rare Diseases
+Orthopedics
+Oryx
+OSCOLA - Oxford Standard for Citation of Legal Authorities (no Ibid. and "(n__)")
+Osteoarthritis and Cartilage
+Otolaryngology and Head and Neck Surgery
+Oxford Art Journal
+Oxford Brookes University - Faculty of Health and Life Sciences
+Oxford German Studies
+Oxford Reference Style (University of New South Wales)
+Oxford Standard for Citation of Legal Authorities (OSCOLA)
+PAIN
+Pain Management
+Pakistan Journal of Medical Research
+Pakistan Journal of Otolaryngology
+Palaeontologia Electronica
+Palaeontology
+Palaios
+Paleobiology
+Pancreatology
+Papua New Guinea Medical Journal
+Parallel and Distributed Systems, IEEE Transactions on
+Parasites &amp; Vectors
+Particle and Fibre Toxicology
+Pathobiology
+Pathogens
+Pathology
+Pathology International
+Pathophysiology of Haemostasis and Thrombosis
+Patient Safety in Surgery
+Patient: Patient-Centered Outcomes Research
+Pattern Analysis and Machine Intelligence, IEEE Transactions on
+Pediatric Annals
+Pediatric Blood &amp; Cancer
+Pediatric Critical Care Medicine
+Pediatric Drugs
+Pediatric Nephrology
+Pediatric Neurosurgery
+Pediatric Research
+Pediatric Rheumatology
+Pediatrics
+Pediatrics International
+Peptide and Protein Research
+Perioperative Medicine
+Permafrost and Periglacial Processes
+Personalized Medicine
+Perspectives on Politics
+Pharmaceutical Bioprocessing 
+Pharmaceutical Medicine
+Pharmaceutical Patent Analyst
+Pharmaceuticals
+Pharmaceutics
+Pharmaceutisch Weekblad
+Pharmaceutisch Weekblad Scientific Edition
+PharmacoEconomics
+Pharmacogenomics
+Pharmacognosy Magazine
+Pharmacognosy Reviews
+Pharmacological Research Communications
+Pharmacology
+Pharmacotherapy
+Pharmacy Management
+Philosophia Scientiae
+Philosophical Transactions of the Royal Society B
+Philosophy, Ethics, and Humanities in Medicine
+Phonetica
+Photochemical &amp; Photobiological Sciences
+Photonics and Nanostructures---Fundamentals and Applications
+Photonics Technology Letters, IEEE
+Physical Chemistry Chemical Physics
+Physical Review A
+Physical Review B
+Physical Review C
+Physical Review D
+Physical Review E
+Physical Review Letters
+Physician and Sports Medicine
+Physics of Fluids
+Physics of Plasmas
+Physiological and Biochemical Zoology
+Physiological Genomics
+Physiological Reviews
+Physiology
+Phytochemistry
+Phytopathology
+Plant Biology
+Plant Cell
+Plant Cell Reports
+Plant Disease
+Plant Methods
+Plant Physiology
+Plasma Science, IEEE Transactions on
+PLoS Biology
+PLoS Computational Biology
+PLoS Genetics
+PLoS Medicine
+PLoS Neglected Tropical Diseases
+PLoS One
+PLoS Pathogens
+PM &amp; R
+Polish Botanical Society
+Political Studies
+Politische Vierteljahresschrift (German)
+Polymer Chemistry
+Polymers
+Pontifical Athenaeum Regina Apostolorum
+Pontifical Biblical Institute
+Population Health Metrics
+Portuguese Journal of Cardiology
+Portuguese Studies
+Postgraduate Doctor-Africa
+Postgraduate Doctor-Asia
+Postgraduate Doctor-Middle/East
+Postgraduate Medical Journal
+Postgraduate Medicine
+Poultry Science
+Powder Technology
+Power Delivery, IEEE Transactions on
+Power Electronics Letters, IEEE
+Power Electronics, IEEE Transactions on
+Power Systems, IEEE Transactions on
+Practical Neurology
+Presses Universitaires de Rennes
+Primary Care Companion to the Journal of Clinical Psychiatry
+Proceedings of the National Academy of Sciences of the United States of America (PNAS)
+Proceedings of the Royal Society B
+Professional Communication, IEEE Transactions on
+Professional Psychology: Research and Practice
+Progress in Materials Science
+Progress in Natural Science
+Progress in Retinal and Eye Research
+Project Safety Engineering, IEEE Journal on
+Prostate Cancer and Prostatic Diseases
+Protein Science
+Proteome Science
+PROTEOMICS
+PS: Political Science &amp; Politics
+Psychiatria Fennica
+Psychiatria Hungarica
+Psychiatric Annals
+Psychiatry and Clinical Neurosciences
+Psychoanalytic Psychology
+Psychological Assessment
+Psychological Bulletin
+Psychological Methods
+Psychological Review
+Psychological Services
+Psychological Trauma: Theory, Research, Practice, and Policy
+Psychology and Aging
+Psychology and Psychotherapy: Theory, Research and Practice
+Psychology of Addictive Behaviors
+Psychology of Aesthetics, Creativity and the Arts
+Psychology of Men and Masculinity
+Psychology of Religion and Spirituality
+Psychology, Public Policy, and Law
+Psychopathology
+Psychotherapy and Psychosomatics
+Psychotherapy: Theory, Research, Practice, Training
+Public Health
+Public Health Genomics
+Public Health Nutrition
+Public Library of Science (PLOS)
+Puerto Rico Health Sciences Journal
+Pädagogische Hochschule Heidelberg (PH Heidelberg) (German)
+Quaderni degli Avogadro Colloquia
+Quality &amp; Quantity
+Quality &amp; Safety in Health Care
+Quantum Electronics, IEEE Journal of
+Quarterly Journal of Medicine
+Quaternary Research
+Quimica Clinica
+Radiation Oncology
+Radiology
+Radiología
+Radiopaedia
+Regenerative Medicine
+Rehabilitation Psychology
+Reliability, IEEE Transactions on
+Religions
+Remote Sensing
+Renal Physiology
+Reproductive Biology and Endocrinology
+Reproductive Health
+Research in Gerontological Nursing
+Research in Mathematics Education
+Research Policy
+Resources, Conservation and Recycling
+Respiration
+Respiratory Research
+Resumed
+Retina
+Retrovirology
+Review of Educational Research
+Review of Financial Studies
+Review of General Psychology
+Review of Research in Education
+Review of Scientific Instruments
+Revista Argentina de Cirugia
+Revista Brasileira de Botânica (Brazilian Journal of Botany)
+Revista Brasileira de Reumatologia (Brazilian Journal of Rheumatology)
+Revista Chilena de Pediatria
+Revista Clinica Espanola
+Revista Colombiana de Ciencias Pecuarias
+Revista Cubana de Alimentacion y Nutiricion
+Revista Cubana de Cardiologia y Cirugia Cardiovascular
+Revista Cubana de Cirugia
+Revista Cubana de Endocrinologia
+Revista Cubana de Enfermeria
+Revista Cubana de Estomatologia
+Revista Cubana de Farmacia
+Revista Cubana de Hematologia, Immunologia y Hemoterapia
+Revista Cubana de Higiene y Epidemiologia
+Revista Cubana de Investigaciones Biomedicas
+Revista Cubana de Medicina
+Revista Cubana de Medicina General Integral
+Revista Cubana de Medicina Militar
+Revista Cubana de Medicina Tropical
+Revista Cubana de Obstetricia y Ginecologia
+Revista Cubana de Oftalmologia
+Revista Cubana de Oncologia
+Revista Cubana de Ortodonica
+Revista Cubana de Ortopedia y Traumatologia
+Revista Cubana de Pediatria
+Revista Cubana Di Salud Publica
+Revista de Biología Tropical (International Journal of Tropical Biology and Conservation)
+Revista de Diagnostico Biologico
+Revista de Gastoenterologia de Mexico
+Revista de Investigacion Clinica
+Revista de La Sociedad Espanola de Quimica Clinica
+Revista de Sanidad E Higiene Publica
+Revista del Instituto Nacional de Enfermedades Respiratorias
+Revista Espanola de Anestesiologia y Reanimacion
+Revista Espanola de Reumatologia
+Revista Ginecología y Obstetricia (Universidad Católica de Santiago de Guayaquil)
+Revista Iberoamericana de Trombosis y Hemostasia
+Revista Medica de Cardiologia
+Revista Medica de Chile
+Revista Medica del Instituto Mexicano del Seguro Social
+Revista Mexicana de Anestesiologia
+Revista Mexicana de Radiologia
+Revista Panamericana de Salud Pública (Pan American Journal of Public Health)
+Revista Portuguesa de Cardiologia
+Revue Archéologique (French)
+Revue d'histoire moderne et contemporaine (French)
+Revue de Médecine Vétérinaire
+Revue des maladies respiratoires
+Rheumatology
+RNA
+RNA Biology
+Robotics, IEEE Transactions on
+Rockefeller University Press
+Romanian Humanities
+ROSE School
+Royal Society of Chemistry
+RSC Advances
+RTF Scan
+Russian GOST R 7.0.5-2008
+Russian GOST R 7.0.5-2008 (numeric)
+Russian GOST R 7.0.5-2008 CSL 1.0
+RöFo: Fortschritte auf dem Gebiet der Röntgenstrahlen und bildgebenden Verfahren
+Sage Harvard
+Sage Vancouver
+Salud Colectiva
+Salud Publica de Mexico
+Sascha Foerster - Geisteswissenschaft (German)
+Saudi Medical Journal
+Scandinavian Journal of Clinical and Laboratory Investigation
+Scandinavian Journal of Clinical Research
+Scandinavian Journal of Dental Research
+Scandinavian Journal of Haematology
+Scandinavian Journal of Infectious Diseases
+Scandinavian Journal of Respiratory Diseases
+Scandinavian Journal of Social Medicine
+Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine
+Scandinavian Political Studies
+School Psychology Quarterly
+Schumpert Medical Quarterly
+Schweizerische Zeitschrift für Ganzheitsmedizin / Swiss Journal of Integrative Medicine
+SciBX: Science-Business eXchange
+Science
+Science (without title)
+Science of the Total Environment
+Science Translational Medicine
+Scoliosis
+Scripta Materialia
+Selected Areas in Communications, IEEE Journal on
+Selected Topics in Quantum Electronics, IEEE Journal of
+Selected Topics in Signal Processing, IEEE Journal on
+Semiconductor Manufacturing, IEEE Transactions on
+Seminars in Pediatric Neurology
+Sensors
+Sensors &amp; Actuators B
+Sensors Journal, IEEE
+Sexual Development
+Sexuality and Early Development in Aquatic Organisms
+Sexually Transmitted Diseases
+Sexually Transmitted Infections
+Shinkei Byorigaku Neuropathology
+Signal Processing Letters, IEEE
+Signal Processing, IEEE Transactions on
+Silence
+Skeletal Muscle
+Skin Pharmacology
+Skin Pharmacology and Physiology
+Slavonic and East European Review
+Small
+Social Geography
+Social Geography Discussions
+Social Psychiatry and Psychiatric Epidemiology
+Social Psychology Quarterly
+Social Science and Medicine
+Social Sciences
+Social Studies of Science
+Sociedade Brasileira de Computação
+Societe Nationale des Groupements Techniques Veterinaires
+Societies
+Society for American Archaeology (author-date)
+Society for General Microbiology
+Society for Historical Archaeology
+Society of Biblical Literature (Full Note)
+Socio Economic Review
+Sociological Methodology
+Sociological Theory
+Sociology of Education
+Soft Matter
+Software Engineering, IEEE Transactions on
+Soil Biology &amp; Biochemistry
+Soil Science Society of America Journal
+Solid Earth
+Solid Earth Discussions
+Solid-State Circuits, IEEE Journal of
+Solid-State Electronics
+Source Code for Biology and Medicine
+South African Medical Journal
+Southern Medical Journal
+Soziale Welt
+Spanish Legal
+Special Care Dentistry
+Special Care in Dentistry
+Speech Communication
+SPIE BiOS
+SPIE journals
+Spinal Cord
+SPIP-Cite
+Sports Medicine
+Sports Medicine, Arthroscopy, Rehabilitation, Therapy &amp; Technology
+Springer Author Date
+Springer LNCS
+Springer LNCS Sorted
+Springer Plasmonics
+Springer Protocols
+Springer Vancouver
+Springfield Clinic
+Sri Lankan Family Physician
+Standards in Genomic Sciences
+Stem Cell Research &amp; Therapy
+Stem Cells
+Stem Cells and Development
+Stereotactic and Functional Neurosurgery
+Strahlentherapie und Onkologie
+Stroke
+Structure
+Substance Abuse Treatment, Prevention, and Policy
+Superlattices and Microstructures
+Surgery
+Surgical Neurology International
+Survey of Ophthalmology
+Sustainability
+Swedish Medical Journal
+Swiss Medical Weekly
+Symmetry
+Synthetic Metals
+Systematic Biology
+Systematic Reviews
+Systems Journal, IEEE
+Systems, Man and Cybernetics, Part A, IEEE Transactions on
+Systems, Man and Cybernetics, Part B, IEEE Transactions on
+Systems, Man and Cybernetics, Part C, IEEE Transactions on
+tah Geistes- und Kulturwissenschaften (German)
+tah Sozialwissenschaften (German)
+Taylor &amp; Francis - Harvard V
+Taylor &amp; Francis - Harvard X
+Taylor and Francis Reference Style F
+Teaching Sociology
+Technovation
+Tectonophysics
+Teologia Catalunya
+TGM Wien Diplomarbeit (German)
+The Academy of Management Review (AMR)
+The Accounting Review
+The American Journal of Clinical Nutrition
+The American Journal of Emergency Medicine
+The American Journal of Gastroenterology (AJG)
+The American Journal of Geriatric Pharmacotherapy
+The American Journal of Medicine
+The American Journal of Psychiatry
+The American Journal of Sports Medicine
+The American Journal of Surgery
+The American Journal of Tropical Medicine and Hygiene
+The American Naturalist
+The American Surgeon
+The Annals of Thoracic Surgery
+The Astronomical Journal
+The Astrophysical Journal
+The Auk
+The Bone &amp; Joint Journal
+The British Journal of Psychiatry
+The British Journal of Sociology
+The Canadian Journal of Hospital Pharmacy
+The Canadian Veterinary Journal
+The Central African Journal of Medicine
+The Ceylon Journal of Medical Science
+The Ceylon Medical Journal
+The Company of Biologists
+The Condor
+The Cryosphere
+The Cryosphere Discussions
+The Design Journal
+The EMBO Journal
+The Historical Journal
+The Holocene
+The ISME Journal
+The Journal of Biological Chemistry (JBC)
+The Journal of Bone &amp; Joint Surgery
+The Journal of Chemical Physics
+The Journal of Comparative Neurology
+The Journal of Continuing Education in Nursing
+The Journal of Eukaryotic Microbiology
+The Journal of Experimental Biology
+The Journal of Immunology
+The Journal of Neuropsychiatry and Clinical Neurosciences
+The Journal of Neuroscience
+The Journal of Organic Chemistry
+The Journal of Physical Chemistry
+The Journal of Physiology
+The Journal of the Acoustical Society of America
+The Journal of Wildlife Management
+The Korean Journal of Pathology
+The Lancet
+The Lancet Infectious Diseases
+The Lancet Neurology
+The Lancet Oncology
+The Lichenologist
+The Neuroscientist
+The Ocular Surface
+The Oncologist
+The Open University (Harvard)
+The Open University (numeric)
+The Open University (numeric, superscript)
+The Open University - A251 - Arts Course
+The Open University - M801 - Research Project and Dissertation
+The Pharmacogenomics Journal
+The Plant Journal
+Theoretical Biology and Medical Modelling
+Theoretical Medicine
+Theory, Culture &amp; Society
+Therapeutic Advances in Neurological Disorders
+Therapeutic Delivery
+Theriogenology
+Thin Solid Films
+Thorax
+Thrombosis and Haemostasis
+Thrombosis Journal
+Thyroid Research
+Thèse de Medecine à Amiens
+Tidsskrift For Den Norske Laegeforening
+Tijdschrift voor Nucleaire Geneeskunde
+Tissue Engineering
+Tobacco Control
+Tobacco Induced Diseases
+Toxicology Research
+Toxicon
+Toxins
+Traces
+Traffic
+Traffic Injury Prevention
+Training and Education in Professional Psychology
+Transactions on Accessible Computing
+Transactions on Algorithms
+Transactions on Applied Perception
+Transactions on Architecture and Code Optimization
+Transactions on Asian Language Information Processing
+Transactions on Autonomous and Adaptive Systems
+Transactions on Computation Theory
+Transactions on Computational Logic
+Transactions on Computer Systems
+Transactions on Computer-Human Interaction
+Transactions on Computing Education
+Transactions on Database Systems
+Transactions on Design Automation of Electronic Systems
+Transactions on Embedded Computing Systems
+Transactions on Graphics
+Transactions on Information and System Security
+Transactions on Information Systems
+Transactions on Intelligent Systems and Technology
+Transactions on Interactive Intelligent Systems
+Transactions on Internet Technology
+Transactions on Knowledge Discovery from Data
+Transactions on Management Information Systems
+Transactions on Mathematical Software
+Transactions on Modeling and Computer Simulation
+Transactions on Multimedia Computing, Communications, and Applications
+Transactions on Programming Languages and Systems
+Transactions on Reconfigurable Technology and Systems
+Transactions on Sensor Networks
+Transactions on Software Engineering and Methodology
+Transactions on Speech and Language Processing
+Transactions on Storage
+Transactions on the Web
+Transfusion
+Transfusion Medicine and Hemotherapy
+Translational Neurodegeneration
+Translational Psychiatry
+Transplantation Research
+Transportation Research Record: Journal of the Transportation Research Board (TRR)
+Trends in Biochemical Sciences
+Trends in Biotechnology
+Trends in Cell Biology
+Trends in Cognitive Sciences
+Trends in Ecology and Evolution
+Trends in Endocrinology and Metabolism
+Trends in Genetics
+Trends in Immunology
+Trends in Microbiology
+Trends in Molecular Medicine
+Trends in Neurosciences
+Trends in Parasitology
+Trends in Pharmacological Sciences
+Trends in Plant Science
+Trends journals
+Trials
+Triangle (French)
+Tropical Doctor
+Tropical Gastroenterology
+TU-Wien Dissertation (German)
+Tumor Biology
+Turabian Style (author-date)
+Turabian Style (Full Note with Bibliography)
+Turkish Journal of Trauma &amp; Emergency Surgery
+U.S. Geological Survey
+Ugeskrift for Læger
+Ukrainian Medical Journal
+Ulster Medical Journal
+Ultrasonics, Ferroelectrics and Frequency Control, IEEE Transactions on
+Ultrasound in Obstetrics &amp; Gynecology
+Undersea Biomedical Research
+Unified Style Sheet for Linguistics Journals
+United Nations Conference on Trade and Development (UNCTAD)
+Universidad Evangélica del Paraguay (Spanish)
+University College Dublin - School of History &amp; Archives
+University of Melbourne (Harvard)
+University of South Australia 2007 (Harvard)
+University of South Australia 2011 (Harvard)
+University of Wolverhampton (Harvard)
+Università Cattolica del Sacro Cuore (note)
+Universität Freiburg - Geschichte (German)
+Universität Heidelberg - Historisches Seminar
+Université de Liège (ULg) - Histoire (French)
+Université Laval - Faculté de théologie et de sciences religieuses
+Université Laval Communications (French)
+Urban Forestry and Urban Greening
+Urban Habitats
+Urban Studies
+Urologia Internationalis
+User Modeling and User-Adapted Interaction (UMUAI)
+Vaccine
+Vadose Zone Journal
+Vancouver
+Vancouver (author-date)
+Vancouver (brackets)
+Vancouver (brackets, no "et al.")
+Vancouver (superscript)
+Vancouver (superscript, brackets, only year in date)
+Vancouver (superscript, only year in date, no issue number)
+Vascular Cell
+Vascular Medicine
+Vehicular Technology, IEEE Transactions on
+Verhaltenstherapie
+Very Large Scale Integration (VLSI) Systems, IEEE Transactions on
+Veterinary Medicine Austria
+Veterinary Parasitology
+Veterinary Radiology &amp; Ultrasound
+Veterinary Record
+Veterinary Research
+Vienna Legal
+Vingtième Siècle. Revue d'histoire (French)
+Virology
+Virology Journal
+Virus Research
+Viruses
+Vision Research
+Visual Neuroscience
+Visualization and Computer Graphics, IEEE Transactions on
+Viszeralmedizin 
+Vital
+Vox Sanguinis
+Water
+Water Environment Research
+Water Research
+Water Science and Technology
+Weather and Forecasting
+Weather, Climate, and Society
+Web Ecology
+Weed Science
+Weed Science Society of America
+Weed Technology
+West Virginia Medical Journal
+Western Journal of Medicine
+Western Pacific Surveillance and Response
+Wetlands
+Wheaton College Ph.D. in Biblical and Theological Studies
+WHO Monog Service
+WHO Regional Office for Europe (Harvard)
+WHO Regional Office for Europe (numeric)
+WHO South-East Asia Journal of Public Health
+WHO Tech Rep Service
+Wireless Communications, IEEE Transactions on
+Women's Health
+Workplace Health &amp; Safety
+World Congress for Engineering Asset Management (WCEAM) 2010
+World Health Organization (WHO) journals
+World Journal of Biological Psychiatry
+World Journal of Emergency Surgery
+World Journal of Surgery
+World Journal of Surgical Oncology
+World Medical Journal
+Xenotransplantation
+Yakuzai Ekigaku (Japanese Journal of Pharmacoepidemiology)
+Yale Journal of Biology and Medicine
+Yearbook of English Studies
+Yeast
+Zagazig University Medical Journal
+Zdravniški Vestnik/Slovenian Medical Journal (Zdrav Vestn)
+Zeitschrift für Medienwissenschaft (German)
+Zeitschrift für Soziologie
+Zookeys
+Zootaxa
+Österreichische Zeitschrift für Politikwissenschaft (OEZP) (German - Austria)
+ΒΥΖΑΝΤΙΝΑ SΥΜΜΕΙΚΤΑ
