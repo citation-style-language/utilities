@@ -1,0 +1,8 @@
+## 02-08-2013
+
+List prepared by Rintze:
+
+> I added more metadata, this time for ASA. I prepared the list from
+> [http://www.asanet.org/journals/journals.cfm]() . "Contexts" is the odd
+> one, since it apparently doesn't want authors to use any citation
+> style. We currently have it in the repo, but I'll delete it.
