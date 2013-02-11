@@ -1,28 +1,31 @@
-Archives of emergency medicine
-Association medical journal
+Archives of Emergency Medicine
+Association Medical Journal
 BMJ (BMJ.com)
 BMJ (Clinical research ed.)
-British heart journal
-British journal of industrial medicine
-British journal of preventive & social medicine
-British journal of social medicine
-British medical journal
-British medical journal (Clinical research ed.)
+British Heart Journal
+British Journal of Industrial Medicine
+British Journal of Preventive & Social Medicine
+British Journal of Social Medicine
+British Medical Journal
+British Medical Journal (Clinical Research ed.)
 Bulletin - British Association of Sport and Medicine.
-Epidemiology and community health.
-Genitourinary medicine
-Journal of accident & emergency medicine
-Journal of epidemiology and community health
-Journal of medical genetics
-Journal of neurology and psychiatry
-London journal of medicine
-Molecular pathology 
+Epidemiology and Community Health.
+Genitourinary Medicine
+Journal of Accident & Emergency Medicine
+Journal of Epidemiology and Community Health
+Journal of Neurology and Psychiatry
+London Journal of Medicine
+Molecular Pathology 
 Prov Med Surg J 
-Provincial medical & surgical journal
+Provincial Medical & Surgical Journal
 Provincial Medical Journal and Retrospect of the Medical Sciences
 Quality & Safety in Health Care
-Quality in health care : QHC.
+Quality in Health Care : QHC.
 The British Edition of the Medical Letter on Drugs and Therapeutics
-The British journal of family planning
-The British journal of venereal diseases
-The Journal of neurology and psychopathology
+The British Journal of Family Planning
+The British Journal of Venereal Diseases
+The Journal of Neurology and Psychopathology
+
+# this style follows a special rule for the number of authors, as stated in the documentation:
+# "List the names and initials of all authors if there are 3 or fewer; otherwise list the first 3 and add et al. (The exception is the Journal of Medical Genetics, which lists all authors.)"
+journal-of-medical-genetics
