@@ -53,6 +53,9 @@ for style in styles:
                 if(len(typeTest.attrib) == 1):
                     typeTest.attrib["match"]="any"
                     fixedStyle = True
+                else:
+                    print("Warning: can't set 'match', testing multiple conditionals")
+                    print(os.path.basename(style))
 
     typeTests = styleElement.findall('.//{http://purl.org/net/xbiblio/csl}else-if[@type]')
     for typeTest in typeTests:
@@ -70,6 +73,9 @@ for style in styles:
                 if(len(typeTest.attrib) == 1):
                     typeTest.attrib["match"]="any"
                     fixedStyle = True
+                else:
+                    print("Warning: can't set 'match', testing multiple conditionals")
+                    print(os.path.basename(style))
 
     if (fixedStyle == False):
         continue
