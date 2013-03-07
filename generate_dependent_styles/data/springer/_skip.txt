@@ -1,3 +1,38 @@
+# unusual characters in the title: not sure how to handle the CSL identifier
+3 Biotech
+4OR
+
+# journals that have had so far a parent inconsistent with the list obtained from Springer
+# we should look through those and pick which is right
+# Springer Basic?
+diabetologia
+indian-journal-of-otolaryngology-and-head-and-neck-surgery
+indian-journal-of-surgery
+international-journal-of-legal-medicine
+social-psychiatry-and-psychiatric-epidemiology
+world-journal-of-surgery
+
+# Springer Vancouver?
+american-journal-of-cardiovascular-drugs
+american-journal-of-clinical-dermatology
+biodrugs
+clinical-drug-investigation
+clinical-pharmacokinetics
+cns-drugs
+drug-safety
+drugs-and-aging
+drugs
+indian-journal-of-gastroenterology
+japanese-journal-of-ophthalmology
+journal-of-assisted-reproduction-and-genetics
+journal-of-neuro-oncology
+molecular-diagnosis-and-therapy
+pediatric-drugs
+pharmaceutical-medicine
+sports-medicine
+the-journal-of-indian-prosthodontic-society
+tumor-biology
+
 # duplicates with same name
 acta-neurochirurgica
 antonie-van-leeuwenhoek
@@ -18,6 +53,7 @@ hydrogeology-journal
 journal-of-community-health
 journal-of-comparative-physiology-a
 journal-of-superconductivity-and-novel-magnetism
+metabolic-brain-disease
 microbial-ecology
 oecologia
 pediatric-nephrology

@@ -12,11 +12,105 @@ Using this information, the goal was to:
 - generate parent styles corresponding to each of the styles described in the PDF, and listed for the different journals
 - generate a final list of journals in the correct format `_journals.tab`, that would work with the template `_template.csl`, and that would have the final identifier for the `independent-parent` style, the correct value for `citation-format`, and a correct value for `field` attribute(s)
 
+## 02-11-2013
 
-### Generation of parent styles
+Here is more information on the styles we already have in the repository, as emailed by Sebastian:
 
-TODO
+> I had a quick look:
+> The "Springer Basic" style from the Key Notes is our "Springer (Author Date)"
+> The "Springer Vancouver" style is _not at all_ equivalent to our "Springer Vancouver" (cf. e.g. the date placement) - we'd have to check on that and see what we use the Springer Vancouver for. The style they call Vancouver is actually very similar to regular Vancouver.
+> The Springer "MathPhys" style is close but not equivalent to the Springer LNCS style (and I checked, the LNCS style is correct)
+> The Springer "Physics" styles is very close to the American Institute of Physics or American Physics society (we'd have to check e.g. formatting of numbers in text and bibliography, otherwise the two are identical)
+> The Springer "SocPsyc" style is a simplified APA version - we probably need to code that
+> The Springer "Humanities" style is a variant of Chicago (author date) - they say 15th edition, which might mean some significant divergence, we'd have to check.
+> 
+> I don't have any insight on how the Springer "Plasmonics" and "Protocols" styles fit in.
+> 
+> Hope that helps,
+> Sebastian
+
+
+## 02-15-2013
+
+A "Springer Humanities" style has been added by Sebastian Karcher to be used as the parent for some of the journals: https://github.com/citation-style-language/styles/commit/e9ed9b22d0b999176220486c5ae21639e555420a
+
+Here is also more notes on language locales for the "Humanities" styles, as gathered by Sebastian:
+
+> Paläontologische Zeitschrift is published in English entirely 
+> Zeitschrift für Vergleichende Politikwissenschaft allows for English and 
+> German articles with respective locales, so either we leave the style 
+> locale free or we have both 
+> KZfSS Kölner Zeitschrift für Soziologie und Sozialpsychologie and 
+> Österreichische Zeitschrift für Soziologie are German entirely. 
+
+
+## 03-07-2013
 
 ### Generation of `_journals.tab`
 
-TODO
+We have the list of journals in a "raw" format in `journals_raw.tab`. To generate the final `_journals.tab` file, we need to go through the Springer list and generate the proper CSL identifier to be used as the parent style, as well as the citation format. The other fields can be used as-is: title, issn, eissn, etc...
+
+The final journal list is generated with the script `process_raw_springer_list.rb` which does the following:
+
+- load the journal information from `journals_raw.tab` into an array of hashes
+- for each journal info:
+	- output unchanged fields title, issn, eissn, ...
+	- "translate" the `Bibliography` + `Citation` values, which correspond to the Springer nomenclature, into the proper CSL identifiers that correspond to the style output in the author instructions, and into the proper value for the `citation-format` attribute
+
+The translation dictionary looks like this:
+
+	Bibliography   Citation   Springer id               CSL id
+	------------   --------   -----------               ------
+	APA            NameYear   SocPsych Author Name      springer-socpsych-author-date
+	APA            Numbered   SocPsych Numbered         springer-socpsych-brackets
+	APS            NameYear   Physics Author Name       springer-physics-author-date
+	APS            Numbered   Physics Numbered          springer-physics-brackets
+	Basic          NameYear   Basic Author Name         springer-basic-author-date
+	Basic          Numbered   Basic Numbered            springer-basic-brackets
+	Chicago        NameYear   Humanities Author Name    springer-humanities-author-date
+	Chicago        Numbered   Humanities Numbered       springer-humanities-brackets
+	MathPhysSci    NameYear   MathPhys Author Name      springer-mathphys-author-date
+	MathPhysSci    Numbered   MathPhys Numbered         springer-mathphys-brackets
+	Vancouver      NameYear   Vancouver Author Name     springer-vancouver-author-date
+	Vancouver      Numbered   Vancouver Numbered        springer-vancouver-brackets
+
+The `citation_format` attribute is 'author-date' for 'NameYear' and 'numeric' for 'Numbered'. 
+
+
+### TODO: Adjust parent styles
+
+Still some work needed to adjust those parents, from the most divergent to the most accurate:
+
+- springer-socpsyc ~ APA
+- springer-mathphys ~ LNCS
+- springer-vancouver = almost vancouver
+- springer-physics = almost APS
+
+
+### TODO: Clean-up
+
+* Check the remaining dependent styles that now refer to an unused springer parent:
+
+	- springer-author-date
+	- springer-vancouver
+	- springer-plasmonics
+	- springer-protocols
+
+
+* Check the remaining dependent styles that had to be skipped because they already existed with another parent, which we should change to the ones we have now added. These styles are listed in the `_skip.txt` file:
+
+	- springer-author-date
+	- springer-vancouver
+	- springer-plasmonics
+	- springer-protocols
+
+
+* There is also the problem of numeric citations, which are not always square brackets, in contradiction with the Springer document. We need to determine which styles are:
+
+	- square brackets
+	- parentheses
+	- superscript
+	- others?
+
+* Problems with locales in the dependent for the humanities styles, in particular German vs English, see https://github.com/citation-style-language/styles/commit/e9ed9b22d0b999176220486c5ae21639e555420a
+
