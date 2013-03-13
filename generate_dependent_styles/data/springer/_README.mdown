@@ -76,6 +76,13 @@ The translation dictionary looks like this:
 
 The `citation_format` attribute is 'author-date' for 'NameYear' and 'numeric' for 'Numbered'. 
 
+## 03-12-2013
+
+### TODO: take into account title adjustements
+
+
+The Patient - Patient-Centered Outcomes Research	The Patient: Patient-Centered Outcomes Research
+
 
 ### TODO: Adjust parent styles
 
