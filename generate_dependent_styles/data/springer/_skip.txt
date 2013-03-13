@@ -76,3 +76,6 @@ kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
 kzfss-kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
 quality-and-quantity
 user-modeling-and-user-adapted-interaction
+
+# already in IOP dependents (???)
+journal-of-optics
