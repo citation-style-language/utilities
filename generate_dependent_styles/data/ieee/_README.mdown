@@ -1,0 +1,6 @@
+## 03-13-2013
+
+See https://github.com/citation-style-language/styles/issues/380#issuecomment-13869850
+
+- Adding a field1 / field2 for category as some journals are really just for physics
+- Removing previous ieee-xxx journals to avoid duplicates

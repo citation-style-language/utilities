@@ -7,10 +7,10 @@
     <link href="http://www.zotero.org/styles/ieee" rel="independent-parent"/>
     <link href="#DOCUMENTATION#" rel="documentation"/>
     <category citation-format="numeric"/>
-    <category field="engineering"/>
-    <category field="communications"/>
+    <category field="#FIELD1#"/>
+    <category field="#FIELD2#"/>
     <issn>#ISSN#</issn>
-    <updated>2013-02-21T12:00:00+00:00</updated>
+    <updated>2013-03-13T12:00:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 </style>
