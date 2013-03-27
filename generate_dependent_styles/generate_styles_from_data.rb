@@ -1,7 +1,7 @@
 #! /usr/bin/ruby
 
-# for File.makedirs
-require 'ftools'
+# for FileUtils.mkdir_p
+require 'fileutils'
 
 # where are we?
 This_script_dir = File.dirname(File.expand_path(__FILE__))
@@ -26,7 +26,7 @@ end
 generated_style_dir_path = "#{This_script_dir}/generated_styles"
 `rm -R '#{generated_style_dir_path}'` if File.exist? generated_style_dir_path
 $stderr.puts "Creating empty directory for the generated styles at path: #{generated_style_dir_path}"
-File.makedirs generated_style_dir_path
+FileUtils.mkdir_p generated_style_dir_path
 
 # we can now iterate over each of the data subdirs
 Dir.foreach(Data_dir_path) do |data_subdir|
@@ -51,7 +51,7 @@ Dir.foreach(Data_dir_path) do |data_subdir|
   end
 
   # create subdir for the generated styles
-  File.makedirs "#{generated_style_dir_path}/#{data_subdir}"
+  FileUtils.mkdir_p "#{generated_style_dir_path}/#{data_subdir}"
 
   # hashes of hashes that will contain all the styles to generate
   styles = { }
