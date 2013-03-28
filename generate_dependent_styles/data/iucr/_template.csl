@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="en-US">
-  <!-- Generated automatically by the script `generate_styles_from_data.rb` from the CSL utilities -->
+  <!-- Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles -->
   <info>
     <title>#TITLE#</title>
     <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
+    <link href="http://www.zotero.org/styles/#IDENTIFIER#" rel="self"/>
     <link href="http://www.zotero.org/styles/international-union-of-crystallography" rel="independent-parent"/>
     <category citation-format="author-date"/>
     <category field="#CATEGORY1#"/>

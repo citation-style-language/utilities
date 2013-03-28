@@ -4,6 +4,7 @@
   <info>
     <title>#TITLE#</title>
     <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
+    <link href="http://www.zotero.org/styles/#IDENTIFIER#" rel="self"/>
     <link href="http://www.zotero.org/styles/trends-journal" rel="independent-parent"/>
     <link href="#URL#" rel="documentation"/>
     <category citation-format="numeric"/>
