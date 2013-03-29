@@ -23,7 +23,7 @@ trap finish EXIT
 pathJing='../jing-20091111/bin/jing.jar'
 pathSaxon='../jing-20091111/bin/saxon.jar'
 pathTrang='../trang-20091111/trang.jar'
-pathCSLSchema='../schema/csl.rnc'
+pathCSLSchema='../schema/csl-repository.rnc'
 pathCSLStyles='../styles/'
 
 echo "# Input from: ${pathCSLStyles}"
