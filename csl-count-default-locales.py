@@ -1,22 +1,28 @@
 # Python script to count default-locale values
 # Author: Rintze M. Zelle
-# Version: 2012-11-01
+# Version: 2013-04-07
 # * Requires lxml library (http://lxml.de/)
 #
 # Prints the default-locale values
 
-import os, glob, re
+import os, glob, re, inspect
 from lxml import etree
 
-path = 'C:\Documents and Settings\zelle\My Documents\CSL\styles\\'
-uniqueStrings = {}
+# http://stackoverflow.com/questions/50499
+folderPath =  os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+
+parentFolderPath = os.path.dirname (folderPath)
+path =  os.path.join(parentFolderPath, 'styles')
+
 styles = []
-stylesTested = 0
 
 for stylepath in glob.glob( os.path.join(path, '*.csl') ):
     styles.append(os.path.join(stylepath))
-##for stylepath in glob.glob( os.path.join(path, 'dependent', '*.csl') ):
-##    styles.append(os.path.join(stylepath))
+for stylepath in glob.glob( os.path.join(path, 'dependent', '*.csl') ):
+    styles.append(os.path.join(stylepath))
+
+uniqueStrings = {}
+stylesTested = 0
 
 for style in styles:
     parsedStyle = etree.parse(style)
