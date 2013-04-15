@@ -27,11 +27,16 @@
 # - number of dependent styles per independent style (if printDependentsCount is
 #   set to True)
 
-import os, glob, re
+import os, glob, re, inspect
 from lxml import etree
 
-path = 'C:\Documents and Settings\zelle\My Documents\CSL\styles\\'
-printDependentsCount = False
+# http://stackoverflow.com/questions/50499
+folderPath =  os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+
+parentFolderPath = os.path.dirname (folderPath)
+path =  os.path.join(parentFolderPath, 'styles')
+
+printDependentsCount = True
 
 def parseStyle(stylePath):
     style = etree.parse(stylePath)
