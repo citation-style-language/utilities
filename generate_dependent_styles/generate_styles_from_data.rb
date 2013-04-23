@@ -121,9 +121,11 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     identifier.gsub!(/^ +/, '')
     identifier.gsub!(/ +$/, '')
     identifier.gsub!(' ', '-')
-    identifier.gsub!('--', '-')
-    identifier.gsub!('--', '-')
     identifier.gsub!('&', 'and')
+    identifier.gsub!('–', '-')
+    identifier.gsub!('--', '-')
+    identifier.gsub!('--', '-')
+    identifier.gsub!('---', '-')
     
     # for accents, it seems `tr` does not work very well as there seems to be some issue with how things are encoded
     identifier.gsub!('à', 'a')
