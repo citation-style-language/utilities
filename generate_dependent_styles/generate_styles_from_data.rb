@@ -1,4 +1,5 @@
 #! /usr/bin/ruby
+# encoding: utf-8
 
 # for FileUtils.mkdir_p
 require 'fileutils'
