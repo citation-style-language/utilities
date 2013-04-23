@@ -1,0 +1,32 @@
+## 04-23-2013
+
+The list of the styles was obtained from Elsevier by Mendeley team.
+
+Elsevier is in a process to use only 6 styles.
+
+Mendeley removed the journals that:
+ -are in the Elsevier list but not published anymore.
+ -are using some citation style that will be migrated to the set of styles soon.
+ -don't have any style specified (blank or "Non-standard"). We have been told that the number of
+  journals with blank/Non-standard styles will be reduced.
+
+We mapped the parent styles to existing CSL styles following the name and description from Elsevier.
+
+Translation dictionary between Elsevier names and CSL styles:
+
+       Elsevier					CSL id				
+       --------					------
+       1 Numbered				elsevier-with-titles
+       2 Harvard				elsevier-harvard
+       3 Vancouver numbered			elsevier-vancouver
+       4 Vancouver name/year			vancouver-author-date
+       5 APA					apa
+       6 AMA					american-medical-association
+
+## TODO
+-The first generation didn't update the existing styles from the repository (they were added in the skip.txt file).
+ That styles could be updated. If they don't point to the same styles it may cause some regression.
+-Elsevier will use only the before mentioned 6 citation styles. Only that 6 CSL styles should contain the
+ name "Elsevier". Dependent styles should be updated.
+-At the moment I don't have any information regarding field or category. I'll request to the correct
+ Elsevier teams and see if I can add it.

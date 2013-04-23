@@ -121,9 +121,11 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     identifier.gsub!(/^ +/, '')
     identifier.gsub!(/ +$/, '')
     identifier.gsub!(' ', '-')
-    identifier.gsub!('--', '-')
-    identifier.gsub!('--', '-')
     identifier.gsub!('&', 'and')
+    identifier.gsub!('–', '-')
+    identifier.gsub!('--', '-')
+    identifier.gsub!('--', '-')
+    identifier.gsub!('---', '-')
     
     # for accents, it seems `tr` does not work very well as there seems to be some issue with how things are encoded
     identifier.gsub!('à', 'a')
@@ -132,10 +134,22 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     identifier.gsub!('è', 'e')
     identifier.gsub!('é', 'e')
     identifier.gsub!('ë', 'e')
+    identifier.gsub!('í', 'i')
+    identifier.gsub!('ó', 'o')
+    identifier.gsub!('č', 'c')
+    identifier.gsub!('É', 'E')
+    identifier.gsub!('ń', 'n')
+    identifier.gsub!('É', 'E')
     identifier.gsub!('ö', 'o')
     identifier.gsub!('Ö', 'o')
     identifier.gsub!('ü', 'u')
     identifier.gsub!('ß', 'ss')
+    identifier.gsub!('’', '')
+    identifier.gsub!('E', 'e')
+    identifier.gsub!('?', '')
+
+    identifier.gsub!('ç', 'c')
+    identifier.gsub!('', '')
     
     field_values['TITLE'] = title.gsub('&', '&amp;') # XML escape
     field_values['IDENTIFIER'] = identifier
