@@ -17,14 +17,11 @@ Translation dictionary between Elsevier names and CSL styles:
        Elsevier					CSL id				
        --------					------
        1 Numbered				elsevier-with-titles
-       2 Harvard				elsevier-with-titles-alphabetical
+       2 Harvard				elsevier-harvard
        3 Vancouver numbered			elsevier-vancouver
        4 Vancouver name/year			vancouver-author-date
        5 APA					apa
        6 AMA					american-medical-association
-
-`elsevier-with-titles` and `elsevier-with-titles-alphabetical` documentation links to the same description
-as `1 Numbered` and `2 Harvard`.
 
 ## TODO
 -The first generation didn't update the existing styles from the repository (they were added in the skip.txt file).
