@@ -104,6 +104,14 @@ for style in styles:
         # http://stackoverflow.com/questions/5438362/overwrite-entire-object-in-place
         csInfo[:] = sortedCsInfo
 
+    # Trim whitespace from cs:summary text contents
+    try:
+    	summary = styleElement.find(".//{http://purl.org/net/xbiblio/csl}summary")
+    	summary.text = summary.text.strip()
+    except:
+        pass
+
+
     try:
         parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
         parsedStyle = parsedStyle.replace("'", '"', 4)
