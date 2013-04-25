@@ -28,5 +28,5 @@ Translation dictionary between Elsevier names and CSL styles:
  That styles could be updated. If they don't point to the same styles it may cause some regression.
 -Elsevier will use only the before mentioned 6 citation styles. Only that 6 CSL styles should contain the
  name "Elsevier". Dependent styles should be updated.
--At the moment I don't have any information regarding field or category. I'll request to the correct
+-At the moment I don't have any information regarding field. I'll request to the correct
  Elsevier teams and see if I can add it.
