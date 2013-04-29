@@ -29,9 +29,7 @@ journal-of-neuro-oncology
 molecular-diagnosis-and-therapy
 pediatric-drugs
 pharmaceutical-medicine
-sports-medicine
 the-journal-of-indian-prosthodontic-society
-tumor-biology
 
 # duplicates with same name
 acta-neurochirurgica

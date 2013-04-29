@@ -34,7 +34,8 @@ for style in styles:
         defaultLocale = styleElement.get("default-locale")
     else:
         defaultLocale = "no default-locale"
-
+        print("No default-locale:" + style)
+        
     if defaultLocale in uniqueStrings:
         uniqueStrings[defaultLocale] += 1
     else:
