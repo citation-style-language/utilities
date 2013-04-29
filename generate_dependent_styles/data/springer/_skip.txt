@@ -6,8 +6,6 @@
 # we should look through those and pick which is right
 # Springer Basic?
 diabetologia
-indian-journal-of-otolaryngology-and-head-and-neck-surgery
-indian-journal-of-surgery
 international-journal-of-legal-medicine
 social-psychiatry-and-psychiatric-epidemiology
 world-journal-of-surgery
@@ -22,7 +20,6 @@ cns-drugs
 drug-safety
 drugs
 drugs-and-aging
-indian-journal-of-gastroenterology
 japanese-journal-of-ophthalmology
 journal-of-assisted-reproduction-and-genetics
 journal-of-neuro-oncology
