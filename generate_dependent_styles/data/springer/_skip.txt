@@ -4,28 +4,10 @@
 
 # journals that have had so far a parent inconsistent with the list obtained from Springer
 # we should look through those and pick which is right
-# Springer Basic?
-diabetologia
-international-journal-of-legal-medicine
-social-psychiatry-and-psychiatric-epidemiology
-world-journal-of-surgery
 
 # Springer Vancouver?
-american-journal-of-cardiovascular-drugs
-american-journal-of-clinical-dermatology
-biodrugs
-clinical-drug-investigation
-clinical-pharmacokinetics
-cns-drugs
-drug-safety
-drugs
-drugs-and-aging
-japanese-journal-of-ophthalmology
 journal-of-assisted-reproduction-and-genetics
 journal-of-neuro-oncology
-molecular-diagnosis-and-therapy
-pediatric-drugs
-pharmaceutical-medicine
 the-journal-of-indian-prosthodontic-society
 
 # duplicates with same name
