@@ -12,45 +12,17 @@ the-journal-of-indian-prosthodontic-society
 
 # duplicates with same name
 acta-neurochirurgica
-antonie-van-leeuwenhoek
-applied-microbiology-and-biotechnology
-behavioral-ecology-and-sociobiology
-cancer-and-metastasis-reviews
-cancer-chemotherapy-and-pharmacology
-climate-dynamics
-climatic-change
 coral-reefs
-documenta-ophthalmologica
-drugs-in-r&d
-european-journal-of-nuclear-medicine-and-molecular-imaging
-evolutionary-ecology
-graefe-s-archive-for-clinical-and-experimental-ophthalmology
 hand
-journal-of-community-health
-journal-of-comparative-physiology-a
-journal-of-superconductivity-and-novel-magnetism
-metabolic-brain-disease
-microbial-ecology
-oecologia
-pediatric-nephrology
-pharmacoeconomics
-quality-&-quantity
-the-patient-patient-centered-outcomes-research
-wetlands
-
 
 # duplicates with different names
 canadian-journal-of-anesthesia
 canadian-journal-of-anesthesia-journal-canadien-danesthesie
-drugs-in-randd
 european-journal-of-clinical-microbiology-and-infectious-diseases
-graefes-archive-clinical-and-experimental-ophthalmology
-graefes-archive-for-clinical-and-experimental-ophthalmology
 journal-of-gambling-studies
 knee-surgery-sports-traumatology-arthroscopy
 kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
 kzfss-kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
-quality-and-quantity
 user-modeling-and-user-adapted-interaction
 
 # already in IOP dependents (???)
