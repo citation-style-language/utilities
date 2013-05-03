@@ -5,10 +5,15 @@
 #
 # Prints the text contents of the cs:rights elements
 
-import os, glob, re
+import os, glob, re, inspect
 from lxml import etree
 
-path = 'C:\Documents and Settings\zelle\My Documents\CSL\styles\\'
+# http://stackoverflow.com/questions/50499
+folderPath =  os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+
+parentFolderPath = os.path.dirname (folderPath)
+path =  os.path.join(parentFolderPath, 'styles')
+
 uniqueStrings = {}
 styles = []
 stylesTested = 0

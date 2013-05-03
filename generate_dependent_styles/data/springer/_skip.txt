@@ -4,77 +4,23 @@
 
 # journals that have had so far a parent inconsistent with the list obtained from Springer
 # we should look through those and pick which is right
-# Springer Basic?
-diabetologia
-indian-journal-of-otolaryngology-and-head-and-neck-surgery
-indian-journal-of-surgery
-international-journal-of-legal-medicine
-social-psychiatry-and-psychiatric-epidemiology
-world-journal-of-surgery
 
 # Springer Vancouver?
-american-journal-of-cardiovascular-drugs
-american-journal-of-clinical-dermatology
-biodrugs
-clinical-drug-investigation
-clinical-pharmacokinetics
-cns-drugs
-drug-safety
-drugs
-drugs-and-aging
-indian-journal-of-gastroenterology
-japanese-journal-of-ophthalmology
 journal-of-assisted-reproduction-and-genetics
 journal-of-neuro-oncology
-molecular-diagnosis-and-therapy
-pediatric-drugs
-pharmaceutical-medicine
-sports-medicine
 the-journal-of-indian-prosthodontic-society
-tumor-biology
 
-# duplicates with same name
+# currently exist as independent styles
 acta-neurochirurgica
-antonie-van-leeuwenhoek
-applied-microbiology-and-biotechnology
-behavioral-ecology-and-sociobiology
-cancer-and-metastasis-reviews
-cancer-chemotherapy-and-pharmacology
-climate-dynamics
-climatic-change
 coral-reefs
-documenta-ophthalmologica
-drugs-in-r&d
-european-journal-of-nuclear-medicine-and-molecular-imaging
-evolutionary-ecology
-graefe-s-archive-for-clinical-and-experimental-ophthalmology
-hand
-journal-of-community-health
-journal-of-comparative-physiology-a
-journal-of-superconductivity-and-novel-magnetism
-metabolic-brain-disease
-microbial-ecology
-oecologia
-pediatric-nephrology
-pharmacoeconomics
-quality-&-quantity
-the-patient-patient-centered-outcomes-research
-wetlands
-
-
-# duplicates with different names
-canadian-journal-of-anesthesia
-canadian-journal-of-anesthesia-journal-canadien-danesthesie
-drugs-in-randd
 european-journal-of-clinical-microbiology-and-infectious-diseases
-graefes-archive-clinical-and-experimental-ophthalmology
-graefes-archive-for-clinical-and-experimental-ophthalmology
-journal-of-gambling-studies
+hand
 knee-surgery-sports-traumatology-arthroscopy
 kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
-kzfss-kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
-quality-and-quantity
 user-modeling-and-user-adapted-interaction
+
+# bad metadata: same value for ISSN and eISSN
+journal-of-gambling-studies
 
 # already in IOP dependents (???)
 journal-of-optics
