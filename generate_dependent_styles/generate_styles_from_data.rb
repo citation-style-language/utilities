@@ -15,6 +15,7 @@ $stderr.puts "\n"
 #   data/bmc/_template.csl  --> template for those journals
 #   data/bmc/_journals.tab  --> tab-delimited list of journals + info
 #   data/bmc/_skip.txt      --> journals to skip
+#   data/bmc/_rename.tab      --> journal identifiers to rename
 Data_dir_path = "#{This_script_dir}/data"
 $stderr.puts "Styles will be generated from data at path: #{Data_dir_path}"
 if not File.exist? Data_dir_path
@@ -40,6 +41,7 @@ Dir.foreach(Data_dir_path) do |data_subdir|
   template_path = "#{data_subdir_path}/_template.csl"
   journals_path = "#{data_subdir_path}/_journals.tab"
   skip_path     = "#{data_subdir_path}/_skip.txt"
+  rename_path   = "#{data_subdir_path}/_rename.tab"
   all_good = true
   [template_path, journals_path].each do |file_to_check|
     next if File.exist? file_to_check
@@ -62,6 +64,17 @@ Dir.foreach(Data_dir_path) do |data_subdir|
   journals = File.read(journals_path).split(/\n/)
   skipped_journals = [ ]
   skipped_journals = File.read(skip_path).split(/\n/) if File.exist? skip_path
+  renamed_journals = [ ]
+  renamed_journals = File.read(rename_path).split(/\n/) if File.exist? rename_path
+
+  # parse renamed_journals file
+  old_and_new_names = Hash.new
+  renamed_journals.each do |renamed_journals_line|
+    fields = renamed_journals_line.split(/\t/)
+    if (fields.length == 2)
+      old_and_new_names[fields[0]]=fields[1]
+    end
+  end
 
   # iterate over each journal
   header_info = [ ]
@@ -153,6 +166,12 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     identifier.gsub!('', '')
     
     field_values['TITLE'] = title.gsub('&', '&amp;') # XML escape
+
+    # replace identifier if in renamed_journals file
+    if (old_and_new_names.has_key?(identifier))
+      identifier = old_and_new_names[identifier]
+    end
+    
     field_values['IDENTIFIER'] = identifier
 
     # excluded journal?
