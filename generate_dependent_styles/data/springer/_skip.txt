@@ -10,20 +10,17 @@ journal-of-assisted-reproduction-and-genetics
 journal-of-neuro-oncology
 the-journal-of-indian-prosthodontic-society
 
-# duplicates with same name
+# currently exist as independent styles
 acta-neurochirurgica
 coral-reefs
-hand
-
-# duplicates with different names
-canadian-journal-of-anesthesia
-canadian-journal-of-anesthesia-journal-canadien-danesthesie
 european-journal-of-clinical-microbiology-and-infectious-diseases
-journal-of-gambling-studies
+hand
 knee-surgery-sports-traumatology-arthroscopy
 kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
-kzfss-kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
 user-modeling-and-user-adapted-interaction
+
+# bad metadata: same value for ISSN and eISSN
+journal-of-gambling-studies
 
 # already in IOP dependents (???)
 journal-of-optics
