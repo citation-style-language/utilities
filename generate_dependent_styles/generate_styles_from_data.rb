@@ -15,7 +15,7 @@ $stderr.puts "\n"
 #   data/bmc/_template.csl  --> template for those journals
 #   data/bmc/_journals.tab  --> tab-delimited list of journals + info
 #   data/bmc/_skip.txt      --> journals to skip
-#   data/bmc/_rename.tab      --> journal identifiers to rename
+#   data/bmc/_rename.tab    --> journal identifiers to rename
 Data_dir_path = "#{This_script_dir}/data"
 $stderr.puts "Styles will be generated from data at path: #{Data_dir_path}"
 if not File.exist? Data_dir_path
@@ -31,6 +31,7 @@ $stderr.puts "Creating empty directory for the generated styles at path: #{gener
 FileUtils.mkdir_p generated_style_dir_path
 
 # we can now iterate over each of the data subdirs
+total_count_created_styles = 0
 Dir.foreach(Data_dir_path) do |data_subdir|
   
   # skip invalid entries
@@ -80,6 +81,7 @@ Dir.foreach(Data_dir_path) do |data_subdir|
   header_info = [ ]
 
   # load all the info from the tab-delimited info file
+  count_created_styles = 0
   journals.each do |journal_line|
 
     # each line contains tab-delimited fields
@@ -176,12 +178,13 @@ Dir.foreach(Data_dir_path) do |data_subdir|
 
     # excluded journal?
     if (skipped_journals.include?(initial_title) or skipped_journals.include?(identifier))
-      $stderr.puts "skipping journal: #{title} because it is in the exclusion list"
+      $stderr.puts "excluded journal: #{title}"
       next
     end
   
     # create style xml by replacing fields in the template
-    $stderr.puts "creating style: #{identifier}"
+    # $stderr.puts "creating style: #{identifier}"
+    count_created_styles = count_created_styles + 1
     style_xml = "#{template}"
     field_values.each do |name, value|
       placeholder = "##{name}#"
@@ -200,5 +203,9 @@ Dir.foreach(Data_dir_path) do |data_subdir|
   
   end
 
+  $stderr.puts "... #{count_created_styles} styles generated from subdirectory '#{data_subdir}'"
+  total_count_created_styles = total_count_created_styles + count_created_styles
+
 end
 
+$stderr.puts "\n\nDone! #{total_count_created_styles} dependent styles generated"
