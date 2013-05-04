@@ -1,7 +1,3 @@
-# unusual characters in the title: not sure how to handle the CSL identifier
-3 Biotech
-4OR
-
 # journals that have had so far a parent inconsistent with the list obtained from Springer
 # we should look through those and pick which is right
 
@@ -18,9 +14,6 @@ hand
 knee-surgery-sports-traumatology-arthroscopy
 kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
 user-modeling-and-user-adapted-interaction
-
-# bad metadata: same value for ISSN and eISSN
-journal-of-gambling-studies
 
 # already in IOP dependents (???)
 journal-of-optics
