@@ -55,6 +55,7 @@ cardiovascular-research
 clinica-chimica-acta
 cancer-cell
 cell
+cell-reports
 chemistry-and-biology
 chemical-geology
 chemical-physics
