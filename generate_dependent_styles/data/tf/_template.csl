@@ -7,6 +7,7 @@
     <link href="http://www.zotero.org/styles/#IDENTIFIER#" rel="self"/>
     <link href="http://www.zotero.org/styles/#PARENT#" rel="independent-parent"/>
     <link href="#DOCUMENTATION#" rel="documentation"/>
+    <category field="#CATEGORY-FIELD#"/>
     <issn>#ISSN#</issn>
     <eissn>#EISSN#</eissn>
     <updated>2013-04-25T12:00:00+00:00</updated>
