@@ -6,8 +6,8 @@
     <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
     <link href="http://www.zotero.org/styles/#IDENTIFIER#" rel="self"/>
     <link href="http://www.zotero.org/styles/#PARENT#" rel="independent-parent"/>
-    <category field="#CATEGORY-FIELD#"/>
     <category citation-format="#FORMAT#"/>
+    <category field="#CATEGORY-FIELD#"/>
     <issn>#ISSN#</issn>
     <eissn>#EISSN#</eissn>
     <updated>2013-04-25T12:00:00+00:00</updated>
