@@ -111,6 +111,12 @@ for style in styles:
     except:
         pass
 
+    # Trim whitespace from cs:title text contents
+    try:
+    	title = styleElement.find(".//{http://purl.org/net/xbiblio/csl}title")
+    	title.text = title.text.strip()
+    except:
+        pass
 
     try:
         parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
