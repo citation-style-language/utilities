@@ -126,6 +126,7 @@ for style in styles:
         parsedStyle = parsedStyle.replace("‑", "&#8209;")#non-breaking hyphen
         parsedStyle = parsedStyle.replace("–", "&#8211;")#en dash
         parsedStyle = parsedStyle.replace("—", "&#8212;")#em dash
+        parsedStyle = parsedStyle.replace(" ", "&#8239;")#narrow no-break space
         f = open(style, 'w')
         f.write ( parsedStyle )
         f.close()
