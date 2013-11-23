@@ -3,6 +3,7 @@
   <!-- Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles -->
   <info>
     <title>#TITLE#</title>
+    <title-short>#TITLESHORT#</title-short>
     <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
     <link href="http://www.zotero.org/styles/#IDENTIFIER#" rel="self"/>
     <link href="http://www.zotero.org/styles/association-for-computing-machinery" rel="independent-parent"/>
