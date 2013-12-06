@@ -118,6 +118,16 @@ for style in styles:
     except:
         pass
 
+    # Reorder attributes on cs:link
+    try:
+        links = styleElement.findall(".//{http://purl.org/net/xbiblio/csl}link")
+        for link in links:
+            rel = link.get("rel")
+            del link.attrib["rel"]
+            link.set("rel",rel)
+    except:
+        pass
+
     try:
         parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
         parsedStyle = parsedStyle.replace("'", '"', 4)
