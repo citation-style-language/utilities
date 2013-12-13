@@ -123,6 +123,9 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     # remove abbreviation in parenthesis that sometimes follow a title
     title = initial_title.gsub(/ \(.*\)/, '')
 
+    # replace en-dashes in title by hyphens
+    title = initial_title.gsub('–', '-')
+
     # identifier is created from the title
     identifier = title.downcase
     identifier.gsub!(',', ' ')
