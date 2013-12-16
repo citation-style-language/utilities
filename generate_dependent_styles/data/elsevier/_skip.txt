@@ -327,7 +327,6 @@ pharmacological-research
 quaternary-research
 seminars-in-pediatric-neurology
 superlattices-and-microstructures
-virology
 the-american-journal-of-human-genetics
 canadian-journal-of-ophthalmology-journal-canadien-dophtalmologie
 soil-biology-and-biochemistry
