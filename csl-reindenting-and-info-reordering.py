@@ -128,6 +128,21 @@ for style in styles:
     except:
         pass
 
+    #Add citation-number sort for non-sorting numeric styles
+    try:
+        citation = styleElement.find(".//{http://purl.org/net/xbiblio/csl}citation")
+
+        # make sure style is independent
+        # make sure style is numeric
+        # if style doesn't sort, add sort (cs:sort, cs:key) for citation-number
+        citationFormat = styleElement.find(".//{http://purl.org/net/xbiblio/csl}category[@citation-format]")
+        if(citationFormat.attrib.get("citation-format") == "numeric"):
+            if citation[0].tag != "{http://purl.org/net/xbiblio/csl}sort":
+                numberSort = etree.fromstring('<sort><key variable="citation-number"/></sort>')
+                citation.insert(0, numberSort)
+    except:
+        pass
+
     try:
         parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
         parsedStyle = parsedStyle.replace("'", '"', 4)
