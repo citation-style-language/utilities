@@ -127,6 +127,7 @@ heart-rhythm
 image-and-vision-computing
 immunity
 industrial-crops-and-products
+information-sciences
 journal-of-the-american-college-of-cardiology
 journal-of-alloys-and-compounds
 journal-of-the-academy-of-nutrition-and-dietetics
@@ -144,6 +145,7 @@ applied-ergonomics
 journal-of-the-formosan-medical-association
 journal-of-health-economics
 journal-of-hepatology
+journal-of-human-evolution
 japanese-journal-of-ophthalmology
 journal-of-dentistry
 micron
@@ -340,4 +342,3 @@ american-journal-of-geriatric-pharmacotherapy
 photonics-and-nanostructures-fundamentals-and-applications
 pmandr
 aasri-procedia
-research-policy
