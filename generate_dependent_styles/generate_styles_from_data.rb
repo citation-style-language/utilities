@@ -124,7 +124,7 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     title = initial_title.gsub(/ \(.*\)/, '')
 
     # replace en-dashes in title by hyphens
-    title = initial_title.gsub('–', '-')
+    title = title.gsub('–', '-')
 
     # identifier is created from the title
     identifier = title.downcase
@@ -166,6 +166,11 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     identifier.gsub!('’', '')
     identifier.gsub!('E', 'e')
     identifier.gsub!('?', '')
+    identifier.gsub!('ę', 'e')
+    identifier.gsub!('(', '')
+    identifier.gsub!(')', '')
+    identifier.gsub!('ą', 'a')
+    identifier.gsub!('ñ', 'n')
 
     identifier.gsub!('ç', 'c')
     identifier.gsub!('', '')
