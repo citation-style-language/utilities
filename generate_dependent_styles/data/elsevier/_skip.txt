@@ -347,3 +347,7 @@ aasri-procedia
 revista-brasileira-de-reumatologia
 pm-and-r
 journal-francais-dophtalmologie
+drug-discovery-today-disease-mechanisms
+drug-discovery-today-therapeutic-strategies
+drug-discovery-today-disease-models
+drug-discovery-today-technologies
