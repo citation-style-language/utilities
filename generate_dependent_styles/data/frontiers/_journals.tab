@@ -1,201 +1,44 @@
-Type	Title	Child EISSN	Parent_Title	Parent EISSN	Published_Date	Journal_Id	Journal_DOI	Field	EISSN
-Field	Frontiers in Endocrinology	1664-2392	Frontiers in Endocrinology	1664-2392	8/18/10	106	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Diabetes	-	Frontiers in Endocrinology	1664-2392	1/24/12	107	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Pituitary Endocrinology	-	Frontiers in Endocrinology	1664-2392	8/18/10	112	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Neuroendocrine Science	-	Frontiers in Endocrinology	1664-2392	8/18/10	113	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Cancer Endocrinology	-	Frontiers in Endocrinology	1664-2392	8/18/10	116	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Genomic Endocrinology	-	Frontiers in Endocrinology	1664-2392	9/15/10	117	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Molecular and Structural Endocrinology	-	Frontiers in Endocrinology	1664-2392	8/18/10	118	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Cellular Endocrinology	-	Frontiers in Endocrinology	1664-2392	8/18/10	120	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Experimental Endocrinology	-	Frontiers in Endocrinology	1664-2392	3/16/11	121	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Systems and Translational Endocrinology	-	Frontiers in Endocrinology	1664-2392	2/24/11	122	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Pediatric Endocrinology	-	Frontiers in Endocrinology	1664-2392	8/18/10	124	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Endocrinology of Aging	-	Frontiers in Endocrinology	1664-2392	8/18/10	127	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Thyroid Endocrinology	-	Frontiers in Endocrinology	1664-2392	9/7/10	128	10.3389/endocrin	Endocrinology	1664-2392
-Specialty	Frontiers in Bone Research	-	Frontiers in Endocrinology	1664-2392	9/15/10	457	-	Endocrinology	1664-2392
-Field	Frontiers in Genetics	1664-8021	Frontiers in Genetics	1664-8021	10/21/10	240	10.3389/gene	Genetics	1664-8021
-Specialty	Frontiers in Neurogenomics	-	Frontiers in Genetics	1664-8021	7/2/07	19	10.3389/neuro.15	Genetics	1664-8021
-Specialty	Frontiers in Livestock Genomics	-	Frontiers in Genetics	1664-8021	10/21/10	241	10.3389/gene	Genetics	1664-8021
-Specialty	Frontiers in Genetic Architecture	-	Frontiers in Genetics	1664-8021	10/21/10	453	-	Genetics	1664-8021
-Specialty	Frontiers in Statistical Genetics and Methodology	-	Frontiers in Genetics	1664-8021	10/27/10	454	-	Genetics	1664-8021
-Specialty	Frontiers in Epigenomics	-	Frontiers in Genetics	1664-8021	10/21/10	455	-	Genetics	1664-8021
-Specialty	Frontiers in Nutrigenomics	-	Frontiers in Genetics	1664-8021	10/21/10	456	-	Genetics	1664-8021
-Specialty	Frontiers in Evolutionary and Population Genetics	-	Frontiers in Genetics	1664-8021	8/2/11	535	-	Genetics	1664-8021
-Specialty	Frontiers in Behavioral and Psychiatric Genetics	-	Frontiers in Genetics	1664-8021	3/8/11	536	-	Genetics	1664-8021
-Specialty	Frontiers in Applied Genetic Epidemiology	-	Frontiers in Genetics	1664-8021	3/18/11	549	-	Genetics	1664-8021
-Specialty	Frontiers in Bioinformatics and Computational Biology	-	Frontiers in Genetics	1664-8021	4/21/11	551	-	Genetics	1664-8021
-Specialty	Frontiers in Non-Coding RNA	-	Frontiers in Genetics	1664-8021	10/21/10	555	-	Genetics	1664-8021
-Specialty	Frontiers in Toxicogenomics	-	Frontiers in Genetics	1664-8021	7/26/11	556	-	Genetics	1664-8021
-Specialty	Frontiers in Genomic Assay Technology	-	Frontiers in Genetics	1664-8021	3/3/11	557	-	Genetics	1664-8021
-Specialty	Frontiers in Genetics of Aging	-	Frontiers in Genetics	1664-8021	7/26/11	596	-	Genetics	1664-8021
-Field	Frontiers in Immunology	1664-3224	Frontiers in Immunology	1664-3224	10/28/10	276	10.3389/immun	Immunology	1664-3224
-Specialty	Frontiers in B Cell Biology	-	Frontiers in Immunology	1664-3224	10/28/10	277	10.3389/immun	Immunology	1664-3224
-Specialty	Frontiers in T Cell Biology	-	Frontiers in Immunology	1664-3224	10/28/10	278	10.3389/immun	Immunology	1664-3224
-Specialty	Frontiers in Immunological Tolerance	-	Frontiers in Immunology	1664-3224	10/28/10	445	-	Immunology	1664-3224
-Specialty	Frontiers in Immunological Memory	-	Frontiers in Immunology	1664-3224	10/28/10	459	-	Immunology	1664-3224
-Specialty	Frontiers in NK Cell Biology	-	Frontiers in Immunology	1664-3224	6/7/11	461	-	Immunology	1664-3224
-Specialty	Frontiers in HIV and AIDS	-	Frontiers in Immunology	1664-3224	11/3/11	518	-	Immunology	1664-3224
-Specialty	Frontiers in Microbial Immunology	-	Frontiers in Immunology	1664-3224	11/23/10	520	-	Immunology	1664-3224
-Specialty	Frontiers in Mucosal Immunity	-	Frontiers in Immunology	1664-3224	10/28/10	521	-	Immunology	1664-3224
-Specialty	Frontiers in Primary Immunodeficiencies	-	Frontiers in Immunology	1664-3224	11/4/10	524	-	Immunology	1664-3224
-Specialty	Frontiers in Inflammation	-	Frontiers in Immunology	1664-3224	10/28/10	525	-	Immunology	1664-3224
-Specialty	Frontiers in Tumor Immunity	-	Frontiers in Immunology	1664-3224	9/6/11	527	-	Immunology	1664-3224
-Specialty	Frontiers in Immunotherapies and Vaccines	-	Frontiers in Immunology	1664-3224	2/8/12	528	-	Immunology	1664-3224
-Specialty	Frontiers in Chemoattractants	-	Frontiers in Immunology	1664-3224	11/16/10	531	-	Immunology	1664-3224
-Specialty	Frontiers in Alloimmunity and Transplantation	-	Frontiers in Immunology	1664-3224	8/26/11	532	-	Immunology	1664-3224
-Specialty	Frontiers in Antigen Presenting Cell Biology	-	Frontiers in Immunology	1664-3224	6/7/11	533	-	Immunology	1664-3224
-Specialty	Frontiers in Molecular Innate Immunity	-	Frontiers in Immunology	1664-3224	2/25/11	559	-	Immunology	1664-3224
-Field	Frontiers in Microbiology	1664-302X	Frontiers in Microbiology	1664-302X	7/19/10	310	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Terrestrial Microbiology	-	Frontiers in Microbiology	1664-302X	8/3/10	311	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Aquatic Microbiology	-	Frontiers in Microbiology	1664-302X	4/4/10	313	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Extreme Microbiology	-	Frontiers in Microbiology	1664-302X	4/27/10	315	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Microbiotechnology, Ecotoxicology and Bioremediation	-	Frontiers in Microbiology	1664-302X	12/13/11	316	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Food Microbiology	-	Frontiers in Microbiology	1664-302X	5/7/10	318	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Microbial Physiology and Metabolism	-	Frontiers in Microbiology	1664-302X	8/16/10	322	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Evolutionary and Genomic Microbiology	-	Frontiers in Microbiology	1664-302X	6/19/10	323	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Cellular and Infection Microbiology	2235-2988	Frontiers in Microbiology	1664-302X	4/27/10	325	10.3389/microbio	Microbiology	2235-2988
-Specialty	Frontiers in Antimicrobials, Resistance and Chemotherapy	-	Frontiers in Microbiology	1664-302X	8/4/10	327	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Fungi and Their Interactions	-	Frontiers in Microbiology	1664-302X	4/1/10	329	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Virology	-	Frontiers in Microbiology	1664-302X	4/7/10	332	10.3389/microbio	Microbiology	1664-302X
-Specialty	Frontiers in Microbiological Chemistry	-	Frontiers in Microbiology	1664-302X	6/22/11	548	-	Microbiology	1664-302X
-Specialty	Frontiers in Cellular and Infection Microbiology - closed section	-	Frontiers in Microbiology	1664-302X	9/30/11	599	-	Microbiology	1664-302X
-Field	Frontiers in Neurology	1664-2295	Frontiers in Neurology	1664-2295	12/3/09	141	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Stroke	-	Frontiers in Neurology	1664-2295	12/21/09	142	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Endovascular and Interventional Neurology	-	Frontiers in Neurology	1664-2295	11/18/09	143	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Epilepsy	-	Frontiers in Neurology	1664-2295	11/24/09	144	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Movement Disorders	-	Frontiers in Neurology	1664-2295	1/14/10	145	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Neuromuscular Diseases	-	Frontiers in Neurology	1664-2295	10/28/10	146	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Multiple Sclerosis and Neuroimmunology	-	Frontiers in Neurology	1664-2295	8/12/10	147	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Spinal Cord Medicine	-	Frontiers in Neurology	1664-2295	1/14/10	148	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Sleep and Chronobiology	-	Frontiers in Neurology	1664-2295	12/18/09	151	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Headache Medicine and Facial Pain	-	Frontiers in Neurology	1664-2295	11/25/09	153	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Neuro-Ophthalmology	-	Frontiers in Neurology	1664-2295	1/7/10	154	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Neuro-otology	-	Frontiers in Neurology	1664-2295	3/9/10	155	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Autonomic Neuroscience	-	Frontiers in Neurology	1664-2295	11/22/09	157	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Neurocritical and Neurohospitalist Care	-	Frontiers in Neurology	1664-2295	12/16/09	159	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Neurotrauma	-	Frontiers in Neurology	1664-2295	12/2/09	163	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Teleneurology	-	Frontiers in Neurology	1664-2295	11/18/09	164	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Sports Neurology	-	Frontiers in Neurology	1664-2295	11/17/09	165	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Neurology Education	-	Frontiers in Neurology	1664-2295	8/19/10	167	10.3389/neur	Neurology	1664-2295
-Specialty	Frontiers in Dementia	-	Frontiers in Neurology	1664-2295	12/17/09	168	10.3389/neur	Neurology	1664-2295
-Field	Frontiers in Neuroscience	1662-453X	Frontiers in Neuroscience	1662-453X	6/1/07	1	10.3389/neuro.01	Neuroscience	1662-453X
-Specialty	Frontiers in Molecular Neuroscience	1662-5099	Frontiers in Neuroscience	1662-453X	7/2/07	2	10.3389/neuro.02	Neuroscience	1662-5099
-Specialty	Frontiers in Cellular Neuroscience	1662-5102	Frontiers in Neuroscience	1662-453X	7/2/07	3	10.3389/neuro.03	Neuroscience	1662-5102
-Specialty	Frontiers in Neuroanatomy	1662-5129	Frontiers in Neuroscience	1662-453X	7/2/07	4	10.3389/neuro.05	Neuroscience	1662-5129
-Specialty	Frontiers in Systems Neuroscience	1662-5137	Frontiers in Neuroscience	1662-453X	7/2/07	5	10.3389/neuro.06	Neuroscience	1662-5137
-Specialty	Frontiers in Integrative Neuroscience	1662-5145	Frontiers in Neuroscience	1662-453X	7/2/07	6	10.3389/neuro.07	Neuroscience	1662-5145
-Specialty	Frontiers in Behavioral Neuroscience	1662-5153	Frontiers in Neuroscience	1662-453X	7/2/07	7	10.3389/neuro.08	Neuroscience	1662-5153
-Specialty	Frontiers in Computational Neuroscience	1662-5188	Frontiers in Neuroscience	1662-453X	7/2/07	9	10.3389/neuro.10	Neuroscience	1662-5188
-Specialty	Frontiers in Neural Circuits	1662-5110	Frontiers in Neuroscience	1662-453X	7/2/07	11	10.3389/neuro.04	Neuroscience	1662-5110
-Specialty	Frontiers in Neuroinformatics	1662-5196	Frontiers in Neuroscience	1662-453X	7/2/07	12	10.3389/neuro.11	Neuroscience	1662-5196
-Specialty	Frontiers in Neurorobotics	1662-5218	Frontiers in Neuroscience	1662-453X	7/2/07	13	10.3389/neuro.12	Neuroscience	1662-5218
-Specialty	Frontiers in Human Neuroscience	1662-5161	Frontiers in Neuroscience	1662-453X	7/2/07	16	10.3389/neuro.09	Neuroscience	1662-5161
-Specialty	Frontiers in Neuroenergetics	1662-6427	Frontiers in Neuroscience	1662-453X	7/2/07	17	10.3389/neuro.14	Neuroscience	1662-6427
-Specialty	Frontiers in Neuroengineering	1662-6443	Frontiers in Neuroscience	1662-453X	7/2/07	18	10.3389/neuro.16	Neuroscience	1662-6443
-Specialty	Frontiers in Evolutionary Neuroscience	1663-070X	Frontiers in Neuroscience	1662-453X	7/2/07	21	10.3389/neuro.18	Neuroscience	1663-070X
-Specialty	Frontiers in Synaptic Neuroscience	1663-3563	Frontiers in Neuroscience	1662-453X	7/2/07	22	10.3389/neuro.19	Neuroscience	1663-3563
-Specialty	Frontiers in Neuroprosthetics	-	Frontiers in Neuroscience	1662-453X	7/2/07	23	10.3389/neuro.20	Neuroscience	1662-453X
-Specialty	Frontiers in Neurogenesis	-	Frontiers in Neuroscience	1662-453X	7/2/07	25	10.3389/neuro.22	Neuroscience	1662-453X
-Specialty	Frontiers in Aging Neuroscience	1663-4365	Frontiers in Neuroscience	1662-453X	7/2/07	27	10.3389/neuro.24	Neuroscience	1663-4365
-Specialty	Frontiers in Neuromorphic Engineering	-	Frontiers in Neuroscience	1662-453X	2/15/10	31	10.3389/neuro.01	Neuroscience	1662-453X
-Specialty	Frontiers in Decision Neuroscience	-	Frontiers in Neuroscience	1662-453X	2/26/10	33	10.3389/neuro.01	Neuroscience	1662-453X
-Specialty	Frontiers in Brain Imaging Methods	-	Frontiers in Neuroscience	1662-453X	6/12/12	600	-	Neuroscience	1662-453X
-Field	Frontiers in Oncology	2234-943X	Frontiers in Oncology	2234-943X	2/1/11	451	10.3389/fonc	Oncology	2234-943X
-Specialty	Frontiers in Gastrointestinal Cancers	-	Frontiers in Oncology	2234-943X	12/21/11	501	-	Oncology	2234-943X
-Specialty	Frontiers in Thoracic Oncology	-	Frontiers in Oncology	2234-943X	6/28/11	502	-	Oncology	2234-943X
-Specialty	Frontiers in Genitourinary Oncology	-	Frontiers in Oncology	2234-943X	10/18/11	503	-	Oncology	2234-943X
-Specialty	Frontiers in Hematology Oncology	-	Frontiers in Oncology	2234-943X	4/21/11	505	-	Oncology	2234-943X
-Specialty	Frontiers in Cancer Genetics	-	Frontiers in Oncology	2234-943X	7/5/11	506	-	Oncology	2234-943X
-Specialty	Frontiers in Cancer Molecular Targets and Therapeutics	-	Frontiers in Oncology	2234-943X	3/2/11	507	-	Oncology	2234-943X
-Specialty	Frontiers in Molecular and Cellular Oncology	-	Frontiers in Oncology	2234-943X	2/21/11	508	-	Oncology	2234-943X
-Specialty	Frontiers in Pediatric Oncology	-	Frontiers in Oncology	2234-943X	6/28/11	509	-	Oncology	2234-943X
-Specialty	Frontiers in Radiation Oncology	-	Frontiers in Oncology	2234-943X	2/1/11	511	-	Oncology	2234-943X
-Specialty	Frontiers in Cancer Epidemiology and Prevention	-	Frontiers in Oncology	2234-943X	2/23/11	513	-	Oncology	2234-943X
-Specialty	Frontiers in Cancer Imaging and Diagnosis	-	Frontiers in Oncology	2234-943X	6/28/11	515	-	Oncology	2234-943X
-Specialty	Frontiers in Head and Neck Cancer	-	Frontiers in Oncology	2234-943X	12/22/11	517	-	Oncology	2234-943X
-Specialty	Frontiers in Women's Cancer	-	Frontiers in Oncology	2234-943X	10/19/11	597	-	Oncology	2234-943X
-Field	Frontiers in Pharmacology	1663-9812	Frontiers in Pharmacology	1663-9812	11/12/09	176	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Neuropharmacology	-	Frontiers in Pharmacology	1663-9812	7/2/07	26	10.3389/neuro.23	Pharmacology	1663-9812
-Specialty	Frontiers in Integrative and Regenerative Pharmacology	-	Frontiers in Pharmacology	1663-9812	12/9/09	178	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Pharmacology of Ion Channels and Channelopathies	-	Frontiers in Pharmacology	1663-9812	2/23/10	179	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Cardiovascular and Smooth Muscle Pharmacology	-	Frontiers in Pharmacology	1663-9812	1/7/10	182	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Experimental Pharmacology and Drug Discovery	-	Frontiers in Pharmacology	1663-9812	2/22/10	183	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Ethnopharmacology	-	Frontiers in Pharmacology	1663-9812	4/15/10	184	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Gastrointestinal Pharmacology	-	Frontiers in Pharmacology	1663-9812	2/18/10	186	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Inflammation Pharmacology	-	Frontiers in Pharmacology	1663-9812	12/14/09	188	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Respiratory Pharmacology	-	Frontiers in Pharmacology	1663-9812	8/26/10	190	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Pharmacology of Anti-Cancer Drugs	-	Frontiers in Pharmacology	1663-9812	1/7/10	192	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Predictive Toxicity	-	Frontiers in Pharmacology	1663-9812	12/23/09	195	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Pharmacogenetics and Pharmacogenomics	-	Frontiers in Pharmacology	1663-9812	12/11/09	198	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Drug Metabolism and Transport	-	Frontiers in Pharmacology	1663-9812	2/3/10	199	10.3389/pharm	Pharmacology	1663-9812
-Specialty	Frontiers in Pharmaceutical Medicine and Outcomes Research	-	Frontiers in Pharmacology	1663-9812	3/24/10	202	10.3389/pharm	Pharmacology	1663-9812
-Field	Frontiers in Physiology	1664-042X	Frontiers in Physiology	1664-042X	11/12/09	210	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Cardiac Electrophysiology	-	Frontiers in Physiology	1664-042X	12/21/09	211	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Computational Physiology and Medicine	-	Frontiers in Physiology	1664-042X	8/31/10	212	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Membrane Physiology and Biophysics	-	Frontiers in Physiology	1664-042X	3/12/10	213	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Craniofacial Biology	-	Frontiers in Physiology	1664-042X	3/26/10	214	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Exercise Physiology	-	Frontiers in Physiology	1664-042X	2/16/10	215	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Gastrointestinal Sciences	-	Frontiers in Physiology	1664-042X	5/31/10	216	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Genomic Physiology	-	Frontiers in Physiology	1664-042X	12/22/09	217	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Integrative Physiology	-	Frontiers in Physiology	1664-042X	2/23/10	218	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Oxidant Physiology	-	Frontiers in Physiology	1664-042X	12/17/09	219	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Striated Muscle Physiology	-	Frontiers in Physiology	1664-042X	6/4/10	221	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Renal and Epithelial Physiology	-	Frontiers in Physiology	1664-042X	1/12/10	222	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Respiratory Physiology	-	Frontiers in Physiology	1664-042X	1/25/10	224	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Vascular Physiology	-	Frontiers in Physiology	1664-042X	12/21/09	225	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Invertebrate Physiology	-	Frontiers in Physiology	1664-042X	12/23/09	229	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Aquatic Physiology	-	Frontiers in Physiology	1664-042X	11/27/09	230	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Mitochondrial Research	-	Frontiers in Physiology	1664-042X	3/20/12	232	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Systems Physiology	-	Frontiers in Physiology	1664-042X	1/7/10	234	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Fractal Physiology	-	Frontiers in Physiology	1664-042X	1/12/10	235	10.3389/physio	Physiology	1664-042X
-Specialty	Frontiers in Fatty Acid and Lipid Physiology	-	Frontiers in Physiology	1664-042X	10/12/11	444	-	Physiology	1664-042X
-Specialty	Frontiers in Clinical and Translational Physiology	-	Frontiers in Physiology	1664-042X	4/8/11	579	-	Physiology	1664-042X
-Field	Frontiers in Plant Science	1664-462X	Frontiers in Plant Science	1664-462X	1/28/11	373	10.3389/plantsci	Plant Science	1664-462X
-Specialty	Frontiers in Plant Physiology	-	Frontiers in Plant Science	1664-462X	1/26/10	226	10.3389/physio	Plant Science	1664-462X
-Specialty	Frontiers in Functional Plant Ecology	-	Frontiers in Plant Science	1664-462X	3/3/11	467	-	Plant Science	1664-462X
-Specialty	Frontiers in Crop Science and Horticulture	-	Frontiers in Plant Science	1664-462X	7/13/11	468	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Evolution and Development	-	Frontiers in Plant Science	1664-462X	1/28/11	474	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Traffic and Transport	-	Frontiers in Plant Science	1664-462X	3/11/11	479	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Metabolism and Chemodiversity	-	Frontiers in Plant Science	1664-462X	2/21/12	481	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Systems Biology	-	Frontiers in Plant Science	1664-462X	2/21/12	483	-	Plant Science	1664-462X
-Specialty	Frontiers in Technical Advances in Plant Science	-	Frontiers in Plant Science	1664-462X	5/13/11	484	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant-Microbe Interaction	-	Frontiers in Plant Science	1664-462X	4/6/11	485	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Nutrition	-	Frontiers in Plant Science	1664-462X	3/2/11	486	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Biotechnology	-	Frontiers in Plant Science	1664-462X	3/8/11	560	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Genetics and Genomics	-	Frontiers in Plant Science	1664-462X	10/21/10	576	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Cell Biology	-	Frontiers in Plant Science	1664-462X	1/28/11	577	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Proteomics	-	Frontiers in Plant Science	1664-462X	1/28/11	580	-	Plant Science	1664-462X
-Specialty	Frontiers in Plant Biophysics and Modeling	-	Frontiers in Plant Science	1664-462X	7/13/11	589	-	Plant Science	1664-462X
-Field	Frontiers in Psychiatry	1664-0640	Frontiers in Psychiatry	1664-0640	11/19/09	71	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Neurodegeneration	-	Frontiers in Psychiatry	1664-0640	5/4/11	73	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Schizophrenia	-	Frontiers in Psychiatry	1664-0640	12/16/09	74	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Affective Disorders and Psychosomatic Research	-	Frontiers in Psychiatry	1664-0640	10/28/09	76	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Sleep Disorders	-	Frontiers in Psychiatry	1664-0640	1/8/10	78	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Forensic Psychiatry	-	Frontiers in Psychiatry	1664-0640	1/24/12	79	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Addictive Disorders	-	Frontiers in Psychiatry	1664-0640	9/30/09	80	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Impulsivity, Compulsivity and Behavioral Dyscontrol	-	Frontiers in Psychiatry	1664-0640	10/7/09	82	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Child and Neurodevelopmental Psychiatry	-	Frontiers in Psychiatry	1664-0640	2/18/10	83	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Systems Biology	-	Frontiers in Psychiatry	1664-0640	10/27/09	84	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Molecular Psychiatry	-	Frontiers in Psychiatry	1664-0640	9/29/09	87	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Neuropsychiatric Imaging and Stimulation	-	Frontiers in Psychiatry	1664-0640	2/5/10	88	10.3389/psychiatry	Psychiatry	1664-0640
-Specialty	Frontiers in Psychopharmacology	-	Frontiers in Psychiatry	1664-0640	10/7/09	91	10.3389/psychiatry	Psychiatry	1664-0640
-Field	Frontiers in Psychology	1664-1078	Frontiers in Psychology	1664-1078	11/6/09	36	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Cognition	-	Frontiers in Psychology	1664-1078	10/15/09	37	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Language Sciences	-	Frontiers in Psychology	1664-1078	11/19/09	39	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Perception Science	-	Frontiers in Psychology	1664-1078	9/22/09	41	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Cognitive Science	-	Frontiers in Psychology	1664-1078	10/14/09	42	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Consciousness Research	-	Frontiers in Psychology	1664-1078	9/24/09	43	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Personality Science and Individual Differences	-	Frontiers in Psychology	1664-1078	1/20/10	45	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Developmental Psychology	-	Frontiers in Psychology	1664-1078	2/25/10	46	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Psychopathology	-	Frontiers in Psychology	1664-1078	10/18/09	52	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Psychology for Clinical Settings	-	Frontiers in Psychology	1664-1078	1/7/10	53	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Emotion Science	-	Frontiers in Psychology	1664-1078	12/9/09	55	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Educational Psychology	-	Frontiers in Psychology	1664-1078	4/1/10	56	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Evolutionary Psychology	-	Frontiers in Psychology	1664-1078	11/30/09	57	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Cultural Psychology	-	Frontiers in Psychology	1664-1078	10/9/09	58	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Comparative Psychology	-	Frontiers in Psychology	1664-1078	6/7/10	59	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Movement Science and Sport Psychology	-	Frontiers in Psychology	1664-1078	3/18/10	60	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Quantitative Psychology and Measurement	-	Frontiers in Psychology	1664-1078	10/10/09	61	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Theoretical and Philosophical Psychology	-	Frontiers in Psychology	1664-1078	1/2/10	62	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Auditory Cognitive Neuroscience	-	Frontiers in Psychology	1664-1078	12/22/09	65	10.3389/psychology	Psychology	1664-1078
-Specialty	Frontiers in Psychoanalysis and Neuropsychoanalysis	-	Frontiers in Psychology	1664-1078	5/16/11	581	-	Psychology	1664-1078
+TITLE	PARENT	EISSN	FORMAT
+Frontiers in Aging Neuroscience	frontiers	1663-4365	author-date
+Frontiers in Behavioral Neuroscience	frontiers	1662-5153	author-date
+Frontiers in Bioengineering and Biotechnology	frontiers	2296-4185	author-date
+Frontiers in Cell and Developmental Biology	frontiers	2296-634X	author-date
+Frontiers in Cellular and Infection Microbiology	frontiers	2235-2988	author-date
+Frontiers in Cellular Neuroscience	frontiers	1662-5102	author-date
+Frontiers in Chemistry	frontiers	2296-2646	author-date
+Frontiers in Computational Neuroscience	frontiers	1662-5188	author-date
+Frontiers in Earth Science	frontiers	2296-6463	author-date
+Frontiers in Ecology and Evolution	frontiers	2296-701X	author-date
+Frontiers in Endocrinology	frontiers-medical-journals	1664-2392	numeric
+Frontiers in Energy Research	frontiers	2296-598X	author-date
+Frontiers in Environmental Science	frontiers	2296-665X	author-date
+Frontiers in Evolutionary Neuroscience	frontiers	1663-070X	author-date
+Frontiers in Genetics	frontiers	1664-8021	author-date
+Frontiers in Human Neuroscience	frontiers	1662-5161	author-date
+Frontiers in Immunology	frontiers-medical-journals	1664-3224	numeric
+Frontiers in Integrative Neuroscience	frontiers	1662-5145	author-date
+Frontiers in Marine Science	frontiers	2296-7745	author-date
+Frontiers in Materials	frontiers	2296-8016	author-date
+Frontiers in Microbiology	frontiers	1664-302X	author-date
+Frontiers in Molecular Biosciences	frontiers	2296-889X	author-date
+Frontiers in Molecular Neuroscience	frontiers	1662-5099	author-date
+Frontiers in Neural Circuits	frontiers	1662-5110	author-date
+Frontiers in Neuroanatomy	frontiers	1662-5129	author-date
+Frontiers in Neuroenergetics	frontiers	1662-6427	author-date
+Frontiers in Neuroengineering	frontiers	1662-6443	author-date
+Frontiers in Neuroinformatics	frontiers	1662-5196	author-date
+Frontiers in Neurology	frontiers-medical-journals	1664-2295	numeric
+Frontiers in Neurorobotics	frontiers	1662-5218	author-date
+Frontiers in Neuroscience	frontiers	1662-453X	author-date
+Frontiers in Nutrition	frontiers-medical-journals	2296-861X	numeric
+Frontiers in Oncology	frontiers-medical-journals	2234-943X	numeric
+Frontiers in Physiology	frontiers	1664-042X	author-date
+Frontiers in Plant Science	frontiers	1664-462X	author-date
+Frontiers in Psychiatry	frontiers-medical-journals	1664-0640	numeric
+Frontiers in Psychology	frontiers	1664-1078	author-date
+Frontiers in Public Health	frontiers-medical-journals	2296-2565	numeric
+Frontiers in Pediatrics	frontiers-medical-journals	2296-2360	numeric
+Frontiers in Pharmacology	frontiers	1663-9812	author-date
+Frontiers in Surgery	frontiers-medical-journals	2296-875X	numeric
+Frontiers in Synaptic Neuroscience	frontiers	1663-3563	author-date
+Frontiers in Systems Neuroscience	frontiers	1662-5137	author-date

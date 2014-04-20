@@ -1,3 +1,7 @@
+## 04-20-2014
+
+Update styles based on an updated spreadsheet I obtained via production.office@frontiersin.org in March 2014, with some manual corrections. Removing all specialty journal styles.
+
 ## 09-14-2012
 
 ## Modernization
@@ -532,7 +536,7 @@ These are the files used to generate the styles
 	    eissn = captures[0][0]
 	  end
 	  parent_eissn = eissn if (is_field)
-  
+
 	  raise "error with parent: #{journal_line}" if parent_title.length == 0
 	  raise "error with parent: #{journal_line}" if parent_eissn.length == 0
 
@@ -859,10 +863,10 @@ frontiers-in-cellular-and-infection-microbiology
 	  eissn   = fields[2]
 	  parent_title  = fields[3]
 	  parent_eissn  = fields[4]
-  
+
 	  # skip header
 	  next if title =~ /^Title/
-  
+
 	  # identifier is created from the title
 	  identifier = title.downcase
 	  identifier.gsub!(',', ' ')
@@ -882,19 +886,19 @@ frontiers-in-cellular-and-infection-microbiology
 	    $stderr.puts "skipping journal: #{title} because it's in the exclusion list"
 	    next
 	  end
-  
+
 	  # create style xml
 	  puts "creating style: #{identifier}"
 	  style_content = template.gsub('#TITLE#', title.gsub('&', '&amp;'))
 	  style_content.gsub!('#IDENTIFIER#', identifier)
-  
+
 	  # optional eISSN
 	  if (eissn.length == 9)
 	    style_content.gsub!('#EISSN#', eissn)
 	  else
 	    style_content.gsub!(/^.*#EISSN#.*$\n/, '')
 	  end
-  
+
 	  # optional parent title
 	  if (type == "Specialty" and parent_title.length > 0)
 	    style_content.gsub!('#PARENT_TITLE#', parent_title)
@@ -912,5 +916,5 @@ frontiers-in-cellular-and-infection-microbiology
 	  # save file
 	  style_path = "#{style_dir_path}/#{identifier}.csl"
 	  File.open(style_path, 'w') { |fileio| fileio.write style_content }
-  
+
 	end
