@@ -6,8 +6,7 @@ require 'fileutils'
 
 # where are we?
 This_script_dir = File.dirname(File.expand_path(__FILE__))
-$stderr.puts "Running script: #{This_script_dir}"
-$stderr.puts "\n"
+$stderr.puts "Script:\t#{This_script_dir}"
 
 # the 'data' directory contains info for each group of journals
 # for instance:
@@ -17,7 +16,7 @@ $stderr.puts "\n"
 #   data/bmc/_skip.txt      --> journals to skip
 #   data/bmc/_rename.tab    --> journal identifiers to rename
 Data_dir_path = "#{This_script_dir}/data"
-$stderr.puts "Styles will be generated from data at path: #{Data_dir_path}"
+$stderr.puts "Input:\t#{Data_dir_path}"
 if not File.exist? Data_dir_path
   $stderr.puts "WARNING: no file at path '#{Data_dir_path}'"
   $stderr.puts "WARNING: cannot generate styles"
@@ -27,17 +26,17 @@ end
 # start with new empty style directory
 generated_style_dir_path = "#{This_script_dir}/generated_styles"
 `rm -R '#{generated_style_dir_path}'` if File.exist? generated_style_dir_path
-$stderr.puts "Creating empty directory for the generated styles at path: #{generated_style_dir_path}"
+$stderr.puts "Output:\t#{generated_style_dir_path}"
+$stderr.puts "\n"
+$stderr.puts "Generating styles..."
 FileUtils.mkdir_p generated_style_dir_path
 
 # we can now iterate over each of the data subdirs
 total_count_created_styles = 0
 Dir.foreach(Data_dir_path) do |data_subdir|
-  
+
   # skip invalid entries
   next if data_subdir =~ /^\./
-  $stderr.puts "\n"
-  $stderr.puts "Generating styles from subdirectory '#{data_subdir}'..."
   data_subdir_path = "#{Data_dir_path}/#{data_subdir}"
   template_path = "#{data_subdir_path}/_template.csl"
   journals_path = "#{data_subdir_path}/_journals.tab"
@@ -46,11 +45,11 @@ Dir.foreach(Data_dir_path) do |data_subdir|
   all_good = true
   [template_path, journals_path].each do |file_to_check|
     next if File.exist? file_to_check
-    $stderr.puts "WARNING: missing file at path '#{file_to_check}'"
+    $stderr.puts "WARNING for '#{data_subdir}': missing file at path '#{file_to_check}'"
     all_good = false
   end
   unless all_good
-    $stderr.puts "WARNING: cannot generate styles from directory '#{data_subdir}'"
+    $stderr.puts "WARNING for '#{data_subdir}': cannot generate styles from directory"
     next
   end
 
@@ -82,12 +81,13 @@ Dir.foreach(Data_dir_path) do |data_subdir|
 
   # load all the info from the tab-delimited info file
   count_created_styles = 0
+  count_skipped_styles = 0
   journals.each do |journal_line|
 
     # each line contains tab-delimited fields
     fields = journal_line.split(/\t/)
     count_fields = fields.length
-    
+
     # first line = the header
     if (header_info.length == 0)
       header_info = fields
@@ -99,14 +99,14 @@ Dir.foreach(Data_dir_path) do |data_subdir|
       $stderr.puts "WARNING: journal info has the wrong number of fields (#{fields.join(', ')})"
       next
     end
-    
+
     # create hash from the field values
     field_values = { }
     (0..count_fields-1).each do |field_index|
       field_name = header_info[field_index].upcase
       field_values[field_name] = fields[field_index]
     end
-    
+
     # more sanity check
     mandatory_fields = [ 'TITLE' ]
     fields_all_good = true
@@ -116,10 +116,10 @@ Dir.foreach(Data_dir_path) do |data_subdir|
       $stderr.puts "WARNING: journal info is missing field '#{field_name_to_check}': (#{fields.join(', ')})"
     end
     next if not fields_all_good
-   
+
     # keep track of initial value of title to compare to the skip list
     initial_title = field_values['TITLE']
-    
+
     # remove abbreviation in parenthesis that sometimes follow a title
     title = initial_title.gsub(/ \(.*\)/, '')
 
@@ -145,7 +145,7 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     identifier.gsub!('--', '-')
     identifier.gsub!('--', '-')
     identifier.gsub!('---', '-')
-    
+
     # for accents, it seems `tr` does not work very well as there seems to be some issue with how things are encoded
     identifier.gsub!('à', 'a')
     identifier.gsub!('á', 'a')
@@ -174,7 +174,7 @@ Dir.foreach(Data_dir_path) do |data_subdir|
 
     identifier.gsub!('ç', 'c')
     identifier.gsub!('', '')
-    
+
     field_values['TITLE'] = title.gsub('&', '&amp;') # XML escape
 
     if field_values.has_key?("DOCUMENTATION")
@@ -185,15 +185,16 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     if (old_and_new_names.has_key?(identifier))
       identifier = old_and_new_names[identifier]
     end
-    
+
     field_values['IDENTIFIER'] = identifier
 
     # excluded journal?
     if (skipped_journals.include?(initial_title) or skipped_journals.include?(identifier))
-      $stderr.puts "excluded journal: #{title}"
+      #$stderr.puts "excluded journal: #{title}"
+      count_skipped_styles = count_skipped_styles + 1
       next
     end
-  
+
     # create style xml by replacing fields in the template
     # $stderr.puts "creating style: #{identifier}"
     count_created_styles = count_created_styles + 1
@@ -212,12 +213,16 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     # save file
     style_path = "#{generated_style_dir_path}/#{data_subdir}/#{identifier}.csl"
     File.open(style_path, 'w') { |fileio| fileio.write style_xml }
-  
+
   end
 
-  $stderr.puts "... #{count_created_styles} styles generated from subdirectory '#{data_subdir}'"
+  if (count_skipped_styles == 0)
+    $stderr.puts "Generated #{count_created_styles}\t\t\t#{data_subdir}"
+  else
+    $stderr.puts "Generated #{count_created_styles}\tSkipped #{count_skipped_styles}\t#{data_subdir}"
+  end
   total_count_created_styles = total_count_created_styles + count_created_styles
 
 end
 
-$stderr.puts "\n\nDone! #{total_count_created_styles} dependent styles generated"
+$stderr.puts "\nDone! #{total_count_created_styles} dependent CSL styles generated."
