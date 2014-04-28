@@ -1,3 +1,11 @@
+## 23-04-2014
+
+Updated metadata (just scraped by hand from http://www.aacrjournals.org/ ).
+
+## 02-04-2013
+
+Running the script based on the content just committed by Rintze: https://github.com/citation-style-language/utilities/commit/34324bc135910367e10457590b48ad795cb36a7d
+
 ## 01-17-2013
 
 Content based on a metadata spreadsheet for AACR made by Rintze:
@@ -6,9 +14,3 @@ https://docs.google.com/spreadsheet/ccc?key=0AoKgWUjfrk4_dFNxQUFSdTg0VXZmX3hBMVh
 
 
 "The last journal on the list has only been announced: there is a call for papers, but I couldn't find its issn/eissn."
-
-
-## 02-04-2013
-
-Running the script based on the content just committed by Rintze: https://github.com/citation-style-language/utilities/commit/34324bc135910367e10457590b48ad795cb36a7d
-
