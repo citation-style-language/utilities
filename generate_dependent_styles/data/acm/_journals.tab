@@ -1,40 +1,42 @@
-Title	TitleShort	eISSN	ISSN	Category1	Category2
-Computers in Entertainment	CIE	1544-3574	x	x	x
-Computing Surveys	CSUR	1557-7341	0360-0300	x	x
-Journal on Emerging Technologies in Computing Systems	JETC	1550-4840	1550-4832	x	x
-Journal of Data and Information Quality	JDIC	1936-1963	1936-1955	x	x
-Journal of Experimental Algorithmics	JEA	1084-6654	x	x	x
-Journal of the ACM	JACM	1557-735X	0004-5411	x	x
-Journal on Computing and Cultural Heritage	JOCCH	1556-4711	1556-4673	x	x
-Transactions on Accessible Computing	TACCESS	1936-7236	1936-7228	x	x
-Transactions on Algorithms	TALG	1549-6333	1549-6325	x	x
-Transactions on Applied Perception	TAP	1544-3965	1544-3558	x	x
-Transactions on Architecture and Code Optimization	TACO	1544-3973	1544-3566	x	x
-Transactions on Asian Language Information Processing	TALIP	1558-3430	1530-0226	x	x
-Transactions on Autonomous and Adaptive Systems	TAAS	1556-4703	1556-4665	x	x
-Transactions on Computation Theory	TOCT	1942-3462	1942-3454	x	x
-Transactions on Computational Logic	TOCL	1557-945X	1529-3785	x	x
-Transactions on Computer Systems	TOCS	1557-7333	0734-2071	x	x
-Transactions on Computer-Human Interaction	TOCHI	1557-7325	1073-0516	x	x
-Transactions on Computing Education	TOCE	1946-6226	x	x	x
-Transactions on Database Systems	TODS	1557-4644	0362-5915	x	x
-Transactions on Design Automation of Electronic Systems	TODAES	1557-7309	1084-4309	x	x
-Transactions on Embedded Computing Systems	TECS	1558-3465	1539-9087	x	x
-Transactions on Graphics	TOG	1557-7368	0730-0301	x	x
-Transactions on Information Systems	TOIS	1558-2868	1046-8188	x	x
-Transactions on Information and System Security	TISSEC	1557-7406	1094-9224	x	x
-Transactions on Intelligent Systems and Technology	TIST	2157-6912	2157-6904	x	x
-Transactions on Interactive Intelligent Systems	TIIS	2160-6463	2160-6455	x	x
-Transactions on Internet Technology	TOIT	1557-6051	1533-5399	x	x
-Transactions on Knowledge Discovery from Data	TKDD	1556-472X	1556-4681	x	x
-Transactions on Management Information Systems	TMIS	x	2158-656X	x	x
-Transactions on Mathematical Software	TOMS	1557-7295	0098-3500	x	x
-Transactions on Modeling and Computer Simulation	TOMACS	1558-1195	1049-3301	x	x
-Transactions on Multimedia Computing, Communications, and Applications	TOMCCAP	1551-6865	1551-6857	x	x
-Transactions on Programming Languages and Systems	TOPLAS	1558-4593	0164-0925	x	x
-Transactions on Reconfigurable Technology and Systems	TRETS	1936-7414	1936-7406	x	x
-Transactions on Sensor Networks	TOSN	1550-4867	1550-4859	x	x
-Transactions on Software Engineering and Methodology	TOSEM	1557-7392	1049-331X	x	x
-Transactions on Speech and Language Processing	TSLP	1550-4883	1550-4875	x	x
-Transactions on Storage	TOS	1553-3093	1553-3077	x	x
-Transactions on the Web	TWEB	1559-114X	1559-1131	x	x
+TITLE	TITLESHORT	ISSN	eISSN
+Computers in Entertainment	CIE	x	1544-3574
+ACM Computing Surveys	CSUR	0360-0300	1557-7341
+Journal of the ACM	JACM	0004-5411	1557-735X
+Journal of Data and Information Quality	JDIQ	1936-1955	1936-1963
+Journal of Experimental Algorithmics	JEA	1084-6654	1084-6654
+ACM Journal on Emerging Technologies in Computing Systems	JETC	1550-4832	1550-4840
+Journal on Computing and Cultural Heritage	JOCCH	1556-4673	1556-4711
+ACM Transactions on Autonomous and Adaptive Systems	TAAS	1556-4665	1556-4703
+ACM Transactions on Accessible Computing	TACCESS	1936-7228	1936-7236
+ACM Transactions on Architecture and Code Optimization	TACO	1544-3566	1544-3973
+ACM Transactions on Algorithms	TALG	1549-6325	1549-6333
+ACM Transactions on Asian Language Information Processing	TALIP	1530-0226	1558-3430
+ACM Transactions on Applied Perception	TAP	1544-3558	1544-3965
+ACM Transactions on Embedded Computing Systems	TECS	1539-9087	1558-3465
+ACM Transactions on Interactive Intelligent Systems	TIIS	2160-6455	2160-6463
+ACM Transactions on Information and System Security	TISSEC	1094-9224	1557-7406
+ACM Transactions on Intelligent Systems and Technology	TIST	2157-6904	2157-6912
+ACM Transactions on Knowledge Discovery from Data	TKDD	1556-4681	1556-472X
+ACM Transactions on Management Information Systems	TMIS	2158-656X	2158-6578
+ACM Transactions on Computing Education	TOCE	x	1946-6226
+ACM Transactions on Computer-Human Interaction	TOCHI	1073-0516	1557-7325
+ACM Transactions on Computational Logic	TOCL	1529-3785	1557-945X
+ACM Transactions on Computer Systems	TOCS	0734-2071	1557-7333
+ACM Transactions on Computation Theory	TOCT	1942-3454	1942-3462
+ACM Transactions on Design Automation of Electronic Systems	TODAES	1084-4309	1557-7309
+ACM Transactions on Database Systems	TODS	0362-5915	1557-4644
+ACM Transactions on Graphics	TOG	0730-0301	1557-7368
+ACM Transactions on Information Systems	TOIS	1046-8188	1558-2868
+ACM Transactions on Internet Technology	TOIT	1533-5399	1557-6051
+ACM Transactions on Modeling and Computer Simulation	TOMACS	1049-3301	1558-1195
+ACM Transactions on Multimedia Computing, Communications, and Applications	TOMCCAP	1551-6857	1551-6865
+ACM Transactions on Mathematical Software	TOMS	0098-3500	1557-7295
+ACM Transactions on Parallel Computing	TOPC	x	x
+ACM Transactions on Programming Languages and Systems	TOPLAS	0164-0925	1558-4593
+ACM Transactions on Storage	TOS	1553-3077	1553-3093
+ACM Transactions on Software Engineering and Methodology	TOSEM	1049-331X	1557-7392
+ACM Transactions on Sensor Networks	TOSN	1550-4859	1550-4867
+ACM Transactions on Reconfigurable Technology and Systems	TRETS	1936-7406	1936-7414
+ACM Transactions on Spatial Algorithms and Systems	TSAS	x	x
+ACM Transactions on Speech and Language Processing	TSLP	1550-4875	1550-4883
+ACM Transactions on the Web	TWEB	1559-1131	1559-114X
