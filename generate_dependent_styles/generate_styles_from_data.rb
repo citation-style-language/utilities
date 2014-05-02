@@ -180,6 +180,8 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     if field_values.has_key?("DOCUMENTATION")
       field_values['DOCUMENTATION'] = field_values['DOCUMENTATION'].gsub('&', '&amp;') # XML escape
     end
+    
+    field_values['XML-COMMENT'] = "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/#{data_subdir}"
 
     # replace identifier if in renamed_journals file
     if (old_and_new_names.has_key?(identifier))
