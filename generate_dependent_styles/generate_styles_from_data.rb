@@ -87,6 +87,9 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     # each line contains tab-delimited fields
     fields = journal_line.split(/\t/)
     count_fields = fields.length
+    
+    # trim fields
+    fields.each { |field| field.strip! }
 
     # first line = the header
     if (header_info.length == 0)
