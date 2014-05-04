@@ -203,7 +203,7 @@ Dir.foreach(Data_dir_path) do |data_subdir|
     style_xml = "#{template}"
     field_values.each do |name, value|
       placeholder = "##{name}#"
-      if value.length > 2
+      if value.length > 1
         # the value is valid --> replace the corresponding placeholder in the template
         style_xml.gsub! placeholder, value
       else
