@@ -1,103 +1,82 @@
-This directory contains a script that can generate dependent styles automatically based list of journals provided in text format.
+# Generate Dependent Styles
+Journals from the same publisher often share the same citation format. The script  `generate_styles_from_data.rb` can be used to quickly generate dependent CSL styles for such journals, based on journal metadata stored in the `data` subdirectory.
 
-## Preparing the data
+## Preparing the journal metadata
+Within the `data` subdirectory, a subdirectory should be added for each publisher, e.g. `data/asm` for the American Society for Microbiology.
 
-The information about dependents is stored in the "`data`" directory, which itself contains a bunch of subdirectories, one per publisher, like for instance "`springer`" or "`acm`". Each publisher sudirectory then typically contains 3 files:
+Within this subdirectory, add the following files:
 
-* "`_journals.tab`": tab-delimited list of journals, with as many column as you want to customize the final XML output, like 'ISSN', 'Parent', etc...
-* "`_template.csl`": template used to generate the XML for each CSL file, with placeholders corresponding to the columns from the tab-delimited text file
-* "`skip.txt`": list of journals to skip, either based on the title or the identifier, which can be useful to skip some journals but still keep all the information in the journal list (this file is actually optional)
+### _journals.tab
+`_journals.tab` must be a tab-delimited file. Following the header row, each subsequent row should contain the metadata of a single journal. Metadata fields are identified by the column header. For example, the first few rows could look like:
 
-The "`_journals.tab`" and "`_template.csl`" files work together. The contents of the "`_journals.tab`" file could be for instance:
+    TITLE                                  ISSN       EISSN      DOCUMENTATION
+    Antimicrobial Agents and Chemotherapy  0066-4804  1098-6596  http://aac.asm.org/
+    Applied and Environmental Microbiology 0099-2240  1098-5336  http://aem.asm.org/
+    Genome Announcements                   x          2169-8287  http://genomea.asm.org/
 
-    Title       ISSN        Field1      Field2      Docs
-    Natura      7283-0918   biology     physics     http://natura.com
-    Cello       7867-0129   generic     X           http://cello.com
-    Boing       1234-5678   generic     X           X
+When preparing `_journals.tab`, keep the following in mind:
 
-The columns are then used as placeholders in the "`_template.csl`" file, which could for instance look like this:
+- `_journals.tab` should ideally only contain metadata that differs between journals. If, for example, all journals have the same documentation URL, this URL should be added directly to the style template.
+- the only required metadata field is "TITLE", providing the style title. The field names "IDENTIFIER" and "XML-COMMENT" are reserved and may not be used within `_journals.tab`. There are no other restrictions on the naming of column headers.
+- for consistency, we recommend the following names for common metadata fields:
+  - "TITLESHORT": abbreviated journal title
+  - "PARENT": independent parent style
+  - "DOCUMENTATION": documentation URL (with "DOCUMENTATION", ampersands are automatically escaped)
+  - "FORMAT": citation format (e.g. "numeric")
+  - "FIELD": field (e.g. "medicine")
+  - "ISSN": print ISSN
+  - "EISSN": electronic ISSN
+- the script identifies metadata fields by their column header, using a case-insensitive match: "TITLE" is the same as "title" or "Title".
+- there is no upper limit on the number of metadata fields.
+- some journals may not have a value for each metadata field. For example, online-only journals typically don't have a (print) ISSN. In this case, just leave the field empty, or fill it with a single character, such as "x". 
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
-	  <info>
-	    <title>#TITLE#</title>
-	    <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
-	    <link href="http://www.zotero.org/styles/#IDENTIFIER#" rel="self"/>
-	    <link href="http://www.zotero.org/styles/foobar" rel="independent-parent"/>
-	    <link href="#DOCS#" rel="documentation"/>
-	    <category citation-format="numeric"/>
-	    <category field="#FIELD1#"/>
-	    <category field="#FIELD2#"/>
-	    <issn>#ISSN#</issn>
-	    <updated>2013-02-07T12:00:00+00:00</updated>
-	    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
-	  </info>
-	</style>
+### _template.csl
 
-Here is what you need to know about the column names and the placeholders:
+`_template.csl` must contain the XML template for the dependent CSL styles. An example is shown below:
 
-- column names are case-insensitive, so 'ISSN' is the same as 'issn' or even 'iSsN'
-- placeholder fields in the template are constructed by putting the column name in all-caps, between two pound signs, for instance #ISSN# or #FIELD2#
-- the 'Title' column is **required**
-- the #IDENTIFIER# placeholder is a special case; it is generated automatically by the script, based on the title, and following the csl file naming convention
-- as a result, you should **not** have a column 'Identifier' in the journal list
-- if a column value is less than 2-character long (for instance just an 'X' string), the column is considered empty for that row; in the template, the entire line with the corresponding placeholder is skipped
+    <?xml version="1.0" encoding="utf-8"?>
+    <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" default-locale="en-US">
+      <!-- #XML-COMMENT# -->
+      <info>
+        <title>#TITLE#</title>
+        <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
+        <link href="http://www.zotero.org/styles/#IDENTIFIER#" rel="self"/>
+        <link href="http://www.zotero.org/styles/american-society-for-microbiology" rel="independent-parent"/>
+        <link href="#DOCUMENTATION#" rel="documentation"/>
+        <category citation-format="numeric"/>
+        <category field="biology"/>
+        <issn>#ISSN#</issn>
+        <eissn>#EISSN#</eissn>
+        <updated>2014-04-29T12:00:00+00:00</updated>
+        <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+      </info>
+    </style>
 
-Here is for instance the output for the 'Boing' journal. Note how the #IDENTIFIER# placeholder was correctly generated from the title, and note that the lines with the #FIELD2# and the #DOCS# placeholders are gone:
+The template should be a complete CSL style. Placeholders indicate where metadata fields should be substituted in during style generation. Placeholders should match the metadata field names from `_journals.tab`. They must be in all-caps and enclosed in pound signs.
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
-	  <info>
-	    <title>Boing</title>
-	    <id>http://www.zotero.org/styles/boing</id>
-	    <link href="http://www.zotero.org/styles/boing" rel="self"/>
-	    <link href="http://www.zotero.org/styles/foobar" rel="independent-parent"/>
-	    <category citation-format="numeric"/>
-	    <category field="generic"/>
-	    <issn>1234-5678</issn>
-	    <updated>2013-02-07T12:00:00+00:00</updated>
-	    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
-	  </info>
-	</style>
+The style file name is automatically generated from its title, by, among others, removing diacritics and punctuation, and replacing spaces by hyphens. The style identifier (the file name without ".csl" extension) is substituted through the "#IDENTIFIER#" placeholder, which must be used to generate the style ID and "self"-link.
 
+The placeholder "#XML-COMMENT#" is replaced by the string "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**", with "subdirectory" matching the name of the subdirectory being processed.
 
-## Running the script
+If the metadata field for a journal is empty or contains only a single character, the entire line with the matching placeholder is deleted in the generated style.
 
-The script is written in Ruby and is called "`generate_styles_from_data.rb`". It should be run as-is, without argument.
+### _skip.txt
 
-The CSL files are output in a directory called "`generated_styles`" that will be created if needed (first removed if previously existing). The styles are stored inside subdirectories, one per publisher. The "`generated_styles`" directory is in the `.gitignore` and should thus not end up in the repository.
+`_skip.txt` is an optional file. It can be used to list journals that should be skipped during style generation. Journals can be specified by their title or identifier, one per line.
 
-The generated styles should then be manually copied into the style repository as needed.
+### _rename.tab
 
+`_rename.tab` is an optional file. It can be used to change the file name and style identifier in generated styles. Each line in this tab-delimited file should list the original style identifier, followed by the new identifier.
 
-## Development notes
+An example of `_rename.tab` is shown below:
 
-### 09-14-2012
+    acm-computing-surveys           computing-surveys
+    acm-transactions-on-algorithms  transactions-on-algorithms
 
-To streamline the creation of the dependent styles, the script that generates
-the styles has been modified to handle **all** the publishers at once.
+## Running generate_styles_from_data.rb
 
-The subdirectories in the `data` folder contains the same data as before, but
-slightly reformatted to be compatible with the new script. The format of the
-info necessary to generate dependent styles is now more consistent, to make it
-easier to add more series of journals in the future. In particular, the
-placeholders in the templates use the same name as the column header in the
-tab-delimited file with the list of journals, and the relationship is
-automatically applied (only the 'Title' column is mandatory). The templates have
-also been modified to take advantage of the CSL 1.0.1 specifications.
+The Ruby script `generate_styles_from_data.rb` should be run as-is, without arguments.
 
-The info necessary to generate the styles is now comprised of 3 files, which
-have to be present in each `data` subdirectory:
+Generated CSL files are placed in the `generated_styles` subdirectory, within subdirectories matching those in `data`. The `generated_styles` directory and its subdirectories will be created if they do not yet exist. Otherwise the contents of `generated_styles` will be replaced. The `generated_styles` directory is listed in `.gitignore`, preventing it from being committed to the Git repository.
 
-* file `_journals.tab` tab-delimited list of journals, where the column header
-use the same name as the placeholders in the template
-* file `skip.txt` contains a list of journals to skip, either the title or the
-identifier; this file is actually optional
-* file `_template.csl` is the template for this group of journals; if a field is
-empty in the journal list, the corresponding line will be removed in the
-template, which allows optional fields
-
-The script `generate_styles_from_data.rb` iterates over each subdirectory in
-`data` and generates the style based on the journal list, the list of journals
-to skip, and the template. The generated styles are stored in the directory
-`generated_styles`.
+After the script finishes, generated styles should be copied manually into the `dependent` subdirectory of the style repository.
