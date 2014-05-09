@@ -1,45 +1,45 @@
-Title	ISSN	eISSN	Parent	Format	Category1	Category2	CategoryPlaceholder
-Annual Review of Analytical Chemistry	1936-1327	1936-1335	annual-reviews	numeric	chemistry	X	X
-Annual Review of Animal Biosciences	2165-8102	2165-8110	annual-reviews	numeric	biology	X	X
-Annual Review of Anthropology	0084-6570	1545-4290	annual-reviews-author-date	author-date	anthropology	X	X
-Annual Review of Astronomy and Astrophysics	0066-4146	1545-4282	annual-reviews-author-date	author-date	physics	astronomy	X
-Annual Review of Biochemistry	0066-4154	1545-4509	annual-reviews	numeric	biology	chemistry	X
-Annual Review of Biomedical Engineering	1523-9829	1545-4274	annual-reviews	numeric	medicine	X	X
-Annual Review of Biophysics	1936-122X	1936-1238	annual-reviews-alphabetical	numeric	biology	physics	X
-Annual Review of Cell and Developmental Biology	1081-0706	1530-8995	annual-reviews-author-date	author-date	biology	X	X
-Annual Review of Chemical and Biomolecular Engineering	1947-5438	1947-5446	annual-reviews	numeric	chemistry	X	X
-Annual Review of Clinical Psychology	1548-5943	1548-5951	annual-reviews-author-date	author-date	psychology	medicine	X
-Annual Review of Condensed Matter Physics	1947-5454	1947-5462	annual-reviews-without-titles	numeric	physics	X	X
-Annual Review of Earth and Planetary Sciences	0084-6597	1545-4495	annual-reviews-author-date	author-date	physics	geology	X
-Annual Review of Ecology, Evolution, and Systematics	1543-592X	1545-2069	annual-reviews-author-date	author-date	biology	X	X
-Annual Review of Economics	1941-1383	1941-1391	annual-reviews-author-date	author-date	X	X	economics
-Annual Review of Entomology	0066-4170	1545-4487	annual-reviews-alphabetical	numeric	biology	X	X
-Annual Review of Environment and Resources	1543-5938	1545-2050	annual-reviews	numeric	engineering	X	X
-Annual Review of Financial Economics	1941-1367	1941-1375	annual-reviews-author-date	author-date	X	X	economics
-Annual Review of Fluid Mechanics	0066-4189	1545-4479	annual-reviews-author-date	author-date	physics	X	X
-Annual Review of Food Science and Technology	1941-1413	1941-1421	annual-reviews-author-date	author-date	science	X	X
-Annual Review of Genetics	0066-4197	1545-2948	annual-reviews-alphabetical	numeric	biology	X	X
-Annual Review of Genomics and Human Genetics	1527-8204	1545-293X	annual-reviews-alphabetical	numeric	biology	medicine	X
-Annual Review of Immunology	0732-0582	1545-3278	annual-reviews	numeric	medicine	X	X
-Annual Review of Law and Social Science	1550-3585	1550-3631	annual-reviews-author-date	author-date	law	social_science	X
-Annual Review of Marine Science	1941-1405	1941-0611	annual-reviews-author-date	author-date	science	X	X
-Annual Review of Materials Research	1531-7331	1545-4118	annual-reviews	numeric	engineering	X	X
-Annual Review of Medicine	0066-4129	1545-326X	annual-reviews	numeric	medicine	X	X
-Annual Review of Microbiology	0066-4227	1545-3251	annual-reviews-alphabetical	numeric	biology	X	X
-Annual Review of Neuroscience	0147-006X	1545-4126	annual-reviews-author-date	author-date	biology	X	X
-Annual Review of Nuclear and Particle Science	0163-8998	1545-4134	annual-reviews-without-titles	numeric	physics	X	X
-Annual Review of Nutrition	0199-9885	1545-4312	annual-reviews-alphabetical	numeric	medicine	X	X
-Annual Review of Organizational Psychology and Organizational Behavior	2327-0608	2327-0616	annual-reviews-author-date	author-date	psychology	X	X
-Annual Review of Pathology: Mechanisms of Disease	1553-4006	1553-4014	annual-reviews	numeric	medicine	X	X
-Annual Review of Pharmacology and Toxicology	0362-1642	1545-4304	annual-reviews	numeric	medicine	X	X
-Annual Review of Physical Chemistry	0066-426X	1545-1593	annual-reviews	numeric	physics	chemistry	X
-Annual Review of Physiology	0066-4278	1545-1585	annual-reviews	numeric	medicine	X	X
-Annual Review of Phytopathology	0066-4286	1545-2107	annual-reviews-alphabetical	numeric	botany	biology	X
-Annual Review of Plant Biology	1543-5008	1545-2123	annual-reviews-alphabetical	numeric	botany	biology	X
-Annual Review of Political Science	1094-2939	1545-1577	annual-reviews-author-date	author-date	science	X	X
-Annual Review of Psychology	0066-4308	1545-2085	annual-reviews-author-date	author-date	psychology	X	X
-Annual Review of Public Health	0163-7525	1545-2093	annual-reviews-alphabetical	numeric	medicine	X	X
-Annual Review of Resource Economics	1941-1340	1941-1359	annual-reviews-author-date	author-date	X	X	economics
-Annual Review of Sociology	0360-0572	1545-2115	annual-reviews-author-date	author-date	sociology	X	X
-Annual Review of Statistics and Its Application	2326-8298	2326-831X	annual-reviews	numeric	math	X	X
-Annual Review of Virology	2327-056X	2327-0578	annual-reviews	numeric	medicine	X	X
+Title	ISSN	eISSN	Parent	Format	Field	Field2
+Annual Review of Analytical Chemistry	1936-1327	1936-1335	annual-reviews	numeric	chemistry	X
+Annual Review of Animal Biosciences	2165-8102	2165-8110	annual-reviews	numeric	biology	X
+Annual Review of Anthropology	0084-6570	1545-4290	annual-reviews-author-date	author-date	anthropology	X
+Annual Review of Astronomy and Astrophysics	0066-4146	1545-4282	annual-reviews-author-date	author-date	physics	astronomy
+Annual Review of Biochemistry	0066-4154	1545-4509	annual-reviews	numeric	biology	chemistry
+Annual Review of Biomedical Engineering	1523-9829	1545-4274	annual-reviews	numeric	medicine	X
+Annual Review of Biophysics	1936-122X	1936-1238	annual-reviews-alphabetical	numeric	biology	physics
+Annual Review of Cell and Developmental Biology	1081-0706	1530-8995	annual-reviews-author-date	author-date	biology	X
+Annual Review of Chemical and Biomolecular Engineering	1947-5438	1947-5446	annual-reviews	numeric	chemistry	X
+Annual Review of Clinical Psychology	1548-5943	1548-5951	annual-reviews-author-date	author-date	psychology	medicine
+Annual Review of Condensed Matter Physics	1947-5454	1947-5462	annual-reviews-without-titles	numeric	physics	X
+Annual Review of Earth and Planetary Sciences	0084-6597	1545-4495	annual-reviews-author-date	author-date	physics	geology
+Annual Review of Ecology, Evolution, and Systematics	1543-592X	1545-2069	annual-reviews-author-date	author-date	biology	X
+Annual Review of Economics	1941-1383	1941-1391	annual-reviews-author-date	author-date	X	X
+Annual Review of Entomology	0066-4170	1545-4487	annual-reviews-alphabetical	numeric	biology	X
+Annual Review of Environment and Resources	1543-5938	1545-2050	annual-reviews	numeric	engineering	X
+Annual Review of Financial Economics	1941-1367	1941-1375	annual-reviews-author-date	author-date	X	X
+Annual Review of Fluid Mechanics	0066-4189	1545-4479	annual-reviews-author-date	author-date	physics	X
+Annual Review of Food Science and Technology	1941-1413	1941-1421	annual-reviews-author-date	author-date	science	X
+Annual Review of Genetics	0066-4197	1545-2948	annual-reviews-alphabetical	numeric	biology	X
+Annual Review of Genomics and Human Genetics	1527-8204	1545-293X	annual-reviews-alphabetical	numeric	biology	medicine
+Annual Review of Immunology	0732-0582	1545-3278	annual-reviews	numeric	medicine	X
+Annual Review of Law and Social Science	1550-3585	1550-3631	annual-reviews-author-date	author-date	law	social_science
+Annual Review of Marine Science	1941-1405	1941-0611	annual-reviews-author-date	author-date	science	X
+Annual Review of Materials Research	1531-7331	1545-4118	annual-reviews	numeric	engineering	X
+Annual Review of Medicine	0066-4129	1545-326X	annual-reviews	numeric	medicine	X
+Annual Review of Microbiology	0066-4227	1545-3251	annual-reviews-alphabetical	numeric	biology	X
+Annual Review of Neuroscience	0147-006X	1545-4126	annual-reviews-author-date	author-date	biology	X
+Annual Review of Nuclear and Particle Science	0163-8998	1545-4134	annual-reviews-without-titles	numeric	physics	X
+Annual Review of Nutrition	0199-9885	1545-4312	annual-reviews-alphabetical	numeric	medicine	X
+Annual Review of Organizational Psychology and Organizational Behavior	2327-0608	2327-0616	annual-reviews-author-date	author-date	psychology	X
+Annual Review of Pathology: Mechanisms of Disease	1553-4006	1553-4014	annual-reviews	numeric	medicine	X
+Annual Review of Pharmacology and Toxicology	0362-1642	1545-4304	annual-reviews	numeric	medicine	X
+Annual Review of Physical Chemistry	0066-426X	1545-1593	annual-reviews	numeric	physics	chemistry
+Annual Review of Physiology	0066-4278	1545-1585	annual-reviews	numeric	medicine	X
+Annual Review of Phytopathology	0066-4286	1545-2107	annual-reviews-alphabetical	numeric	botany	biology
+Annual Review of Plant Biology	1543-5008	1545-2123	annual-reviews-alphabetical	numeric	botany	biology
+Annual Review of Political Science	1094-2939	1545-1577	annual-reviews-author-date	author-date	science	X
+Annual Review of Psychology	0066-4308	1545-2085	annual-reviews-author-date	author-date	psychology	X
+Annual Review of Public Health	0163-7525	1545-2093	annual-reviews-alphabetical	numeric	medicine	X
+Annual Review of Resource Economics	1941-1340	1941-1359	annual-reviews-author-date	author-date	X	X
+Annual Review of Sociology	0360-0572	1545-2115	annual-reviews-author-date	author-date	sociology	X
+Annual Review of Statistics and Its Application	2326-8298	2326-831X	annual-reviews	numeric	math	X
+Annual Review of Virology	2327-056X	2327-0578	annual-reviews	numeric	medicine	X
