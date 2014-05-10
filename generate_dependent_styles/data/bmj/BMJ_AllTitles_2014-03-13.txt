@@ -1,0 +1,76 @@
+publication_title	print_identifier	online_identifier	date_first_issue_online	num_first_vol_online	num_first_issue_online	date_last_issue_online	num_last_vol_online	num_last_issue_online	title_url	title_id	coverage_depth	coverage_notes	publisher_name
+Acupuncture in medicine	0964-5284 	1759-9873	1982	1	1				http://aim.bmj.com/	acupmed	full text		BMJ Group
+BMJ (BMJ.com)		1756-1833	2005	331	7529				http://www.bmj.com	bmj	full text	Career Focus articles not included.	BMJ Group
+BMJ (Clinical research ed.) 	0959-8138 	1468-5833	1988	296	6614		331	7528	http://www.bmj.com/	bmj	full text	Career Focus articles not included.	BMJ Group
+British medical journal (Clinical research ed.) 	0267-0623		1981	282	6257	1988	296	6639	http://www.bmj.com/	bmj	full text		BMJ Group
+British medical journal	0007-1447		1857	1	1	1980	281	6256	http://www.bmj.com/	bmj	full text		BMJ Group
+Association medical journal	2041-997X		1853	1	1	1856	4	208	http://www.bmj.com/	bmj	full text		BMJ Group
+London journal of medicine	2041-9988		1849	1	1	1852	4	46	http://www.bmj.com/	bmj	full text		BMJ Group
+Provincial medical & surgical journal	2041-997X		1844	8	1	1852	16	26	http://www.bmj.com/	bmj	full text		BMJ Group
+Provincial medical & surgical journal 	2041-9953		1840	1	1	1842	3	79	http://www.bmj.com/	bmj	full text		BMJ Group
+Provincial Medical Journal and Retrospect of the Medical Sciences	2041-9961		1842	4	80	1844	7	182	http://www.bmj.com/	bmj	full text		BMJ Group
+Annals of the Rheumatic Diseases	0003-4967 	1468-2060	1939	1	1				http://ard.bmj.com/	annrheumdis	full text		BMJ Group
+Archives of disease in childhood	0003-9888 	1468-2044	1926	1	1				http://adc.bmj.com/	archdischild	full text		BMJ Group
+Education & Practice	1743-0585 	1743-0593	2004	89	1				http://ep.bmj.com	edpract	full text		BMJ Group
+Fetal & Neonatal	1359-2998 	1468-2052	1994	70	1				http://fn.bmj.com	fetalneonatal	full text		BMJ Group
+BMJ Case Reports		1757-790X 	2008						http://casereports.bmj.com/	casereports	full text		BMJ Group
+BMJ Open		2044-6055 	2011	1	1				http://bmjopen.bmj.com/	bmjopen	full text		BMJ Group
+BMJ Open Diabetes Research & Care		2052-4897	2013	1	1				http://drc.bmj.com	bmjdrc	full text		BMJ Group
+BMJ Open Respiratory Research		2052-4439	2013	1	1				http://bmjopenrespres.bmj.com	bmjresp	full text		BMJ Group
+BMJ Quality & Safety	2044-5415	2044-5423	2011						http://qualitysafety.bmj.com/	qhc	full text		BMJ Group
+Quality & Safety in Health Care	1475-3898 	1475-3901	2002	11	1	2010	14	6	http://qualitysafety.bmj.com/	qhc	full text		BMJ Group
+Quality in health care : QHC.	0963-8172 		1992	1	1	2001	10	4	http://qualitysafety.bmj.com/	qhc	full text		BMJ Group
+BMJ Quality Improvement Reports		2050-1315	2012	1	1				http://qir.bmj.com	bmjqir	full text		BMJ Group
+BMJ Supportive & Palliative Care	2045-435X	2045-4368	2011						http://spcare.bmj.com/	bmjspcare	full text		BMJ Group
+British Journal of Ophthalmology	0007-1161	1468-2079	1917	1	1				http://bjo.bmj.com/	bjophthalmol	full text		BMJ Group
+British Journal of Sports Medicine	0306-3674	1473-0480	1969	5	1				http://bjsm.bmj.com/	bjsports	full text		BMJ Group
+Bulletin - British Association of Sport and Medicine.	0306-3690 		1964	1	1	1968	3	4	http://bjsm.bmj.com/	bjsports	full text		BMJ Group
+Drug and Therapeutics Bulletin	0012-6543 	1755-5248	1963	31	26				http://dtb.bmj.com/	dtb	full text		BMJ Group
+The British Edition of the Medical Letter on Drugs and Therapeutics	0543-2766		1962	1	1	1963	1	19	http://dtb.bmj.com/	dtb	full text		BMJ Group
+Emergency Medicine Journal 	1472-0205 	1472-0213	2001	18	1				http://emj.bmj.com/	emermed	full text		BMJ Group
+Journal of accident & emergency medicine	1351-0622 		1994	11	1	2000	17	1	http://emj.bmj.com/	emermed	full text		BMJ Group
+Archives of emergency medicine	0264-4924 		1984	1	1	1993	10	4	http://emj.bmj.com/	emermed	full text		BMJ Group
+Evidence-Based Mental Health	1362-0347 	1468-960X 	1998	1	1				http://ebmh.bmj.com/	ebmental	full text		BMJ Group
+Evidence-Based Medicine	1356-5524 	1473-6810 	1995	1	1				http://ebm.bmj.com/	ebmed	full text		BMJ Group
+Evidence-Based Nursing	1367-6539 	1468-9618 	1998	1	1				http://ebn.bmj.com/	ebnurs	full text		BMJ Group
+Frontline Gastroenterology	2041-4137 	2041-4145 	2010	1	1				http://fg.bmj.com/	flgastro	full text		BMJ Group
+Gut	0017-5749	1468-3288 	1960	1	1				http://gut.bmj.com/	gutjnl	full text		BMJ Group
+Heart	1355-6037	1468-201X 	1996	75	1				http://heart.bmj.com/	heartjnl	full text		BMJ Group
+British heart journal	0007-0769 		1939	1	1	1995	74	6	http://heart.bmj.com/	heartjnl	full text		BMJ Group
+Heart Asia		1759-1104 	2009						http://heartasia.bmj.com/	heartasia	full text		BMJ Group
+Injury Prevention	1353-8047 	1475-5785 	1995	1	1				http://injuryprevention.bmj.com/	injuryprev	full text		BMJ Group
+In Practice	0263-841X	2042-7689	1979	1	1				http://inpractice.bmj.com/	inpract	full text		BMJ Group
+JAMIA	1067-5027	1527-974X 	1994	1	1				http://jamia.bmj.com/	amiajnl	full text		BMJ Group
+Journal of Clinical Pathology	0021-9746	1472-4146 	1947	1	1				http://jcp.bmj.com/	jclinpath	full text		BMJ Group
+Molecular pathology 	1366-8714	1472-4154 	1997	48	1	2003	56	6	http://mp.bmj.com/content/by/year	molpath	full text		BMJ Group
+Journal of Epidemiology and Community Health	0143-005X	1470-2738 	1979	33	2				http://jech.bmj.com/	jech	full text		BMJ Group
+Epidemiology and community health.	0142-467X 		1978	32	2	1979	33	1	http://jech.bmj.com/	jech	full text		BMJ Group
+Journal of epidemiology and community health	0141-7681		1978	32	1	1978	32	1	http://jech.bmj.com/	jech	full text		BMJ Group
+British journal of preventive & social medicine	0007-1242 		1953	7	1	1977	31	4	http://jech.bmj.com/	jech	full text		BMJ Group
+British journal of social medicine	0366-0842		1947	1	1	1952	6	4	http://jech.bmj.com/	jech	full text		BMJ Group
+Journal of Family Planning and Reproductive Health Care	1471-1893 		2001	27	1				http://jfprhc.bmj.com/	familyplanning	full text		BMJ Group
+The British journal of family planning	0144-8625		1977	26	2	2000	26	4	http://jfprhc.bmj.com/	familyplanning	full text		BMJ Group
+Journal of medical ethics	0306-6800	1473-4257	1975	1	1				http://jme.bmj.com/	medethics	full text		BMJ Group
+Medical humanities	1468-215X	1473-4265	2000	26	1				http://mh.bmj.com/	medhum	full text		BMJ Group
+Journal of medical genetics	0022-2593	1468-6244	1964	1	1				http://jmg.bmj.com/	jmedgenet	full text		BMJ Group
+"Journal of neurology, neurosurgery, and psychiatry"	0022-3050	1468-330X	1944	7	3to4				http://jnnp.bmj.com/	jnnp	full text		BMJ Group
+Journal of neurology and psychiatry	0368-329X 		1938	1	1	1944	7	1to2	http://jnnp.bmj.com/	jnnp	full text		BMJ Group
+The Journal of neurology and psychopathology	0266-8637		1920	1	1	1937	17	68	http://jnnp.bmj.com/	jnnp	full text		BMJ Group
+Journal of NeuroInterventional surgery	1759-8478 	1759-8486	2009	1	1				http://jnis.bmj.com/	neurintsurg	full text		BMJ Group
+Journal of the Royal Army Medical Corps	0035-8665	2052-0468	1966	112	1				http://jramc.bmj.com/	jramc	full text		BMJ Group
+Lupus Science & Medicine		2053-8790	2014	1	1				http://lupus.bmj.com	lupusscimed	full text		BMJ Group
+Occupational and environmental medicine	1351-0711	1470-7926	1994	51	1				http://oem.bmj.com/	oemed	full text		BMJ Group
+British journal of industrial medicine	0007-1072		1944	1	1	1993	50	12	http://oem.bmj.com/	oemed	full text		BMJ Group
+Open Heart		2044-6055	2013	1	1				http://openheart.bmj.com/	openhrt	full text		BMJ Group
+Postgraduate medical journal	0032-5473	1469-0756	1925	1	1				http://pmj.bmj.com/	postgradmedj	full text		BMJ Group
+Practical neurology	1474-7758	1474-7766	2001	1	1				http://pn.bmj.com/	practneurol	full text		BMJ Group
+Sexually transmitted infections	1368-4973	1472-3263	1998	74	1				http://sti.bmj.com/	sextrans	full text		BMJ Group
+Genitourinary medicine	0266-4348		1985	61	1	1997	73	6	http://sti.bmj.com/	sextrans	full text		BMJ Group
+The British journal of venereal diseases	0007-134X		1925	1	1	1984	60	6	http://sti.bmj.com/	sextrans	full text		BMJ Group
+Student BMJ	0966-6494		1992						http://student.bmj.com/	n/a	full text		BMJ Group
+Thorax	0040-6376	1468-3296	1946	1	1				http://thorax.bmj.com/	thoraxjnl	full text		BMJ Group
+Veterinary Record	2042-7670		1888	138	1				http://veterinaryrecord.bmj.com/	vetrec	full text	Abstracts Only: January 1975 - December 1995. Tables of Contents Only: April 1950 - December 1974 	BMJ Group
+Veterinary Record Case Reports		2052-6121	2013	1	1				http://vetrecordcasereports.bmj.com/	vetreccr	full text		BMJ Group
+Veterinary Record Open		2052-6113	2013	1	1				http://vetrecordopen.bmj.com/	vetreco	full text		BMJ Group
+Tobacco control	0964-4563	1468-3318	1992	1	1				http://tobaccocontrol.bmj.com/	tobaccocontrol	full text		BMJ Group
+The European Journal of Hospital Pharmacy: Science and Practice	2047-9956	2047-9964	2012	19	1				http://ejhp.bmj.com/	ejhpharm	full text		BMJ Group

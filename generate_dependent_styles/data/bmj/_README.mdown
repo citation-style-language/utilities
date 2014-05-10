@@ -1,24 +1,23 @@
-## 02-11-2013
+## 2014-05-09
 
-From Rintze:
+Update metadata.
 
-> Some metadata for the BMJ journals.
-> 
-> On [http://journals.bmj.com/](), clicking the link "A-Z list of BMJ publications (KBART)" resolves to
-> [http://journals.bmj.com/site/KBART/BMJ_AllTitles_2012-08-16.txt](), which contains the necessary metadata.
-> 
-> I removed the titles of the discontinued journals and put them in _skip.txt, and corrected a few of the remaining titles:
-> 
-> [https://github.com/citation-style-language/utilities/commit/2c49f43a12e28e2e5f6022056f0a27c172b1e4e2]()
-> [https://github.com/citation-style-language/utilities/commit/ba909f224d1ce8f7c01b11ff1932963107001c4a]()
-> 
-> Some things that will have to be done:
-> 
-> * `quality-safety-in-health-care` is a discontinued journal and should be deleted
-> * `journal-of-the-american-medical-informatics-association` should be deleted (BMJ refers to the journal as JAMIA, so we would get `jamia` instead
-> * `journal-of-epidemiology-community-health` misses "-and-" in the title.
-> * `journal-of-neuro-interventional-surgery` has a superfluous hyphen in its name (the journal title is Journal of NeuroInterventional Surgery)
+## 2013-02-11
 
+Some metadata for the BMJ journals.
+
+On http://journals.bmj.com/, clicking the link "A-Z list of BMJ publications (KBART)" resolves to http://journals.bmj.com/site/KBART/BMJ_AllTitles_2012-08-16.txt, which contains the necessary metadata.
+
+I removed the titles of the discontinued journals and put them in _skip.txt, and corrected a few of the remaining titles:
+ https://github.com/citation-style-language/utilities/commit/2c49f43a12e28e2e5f6022056f0a27c172b1e4e2
+ https://github.com/citation-style-language/utilities/commit/ba909f224d1ce8f7c01b11ff1932963107001c4a
+
+Some things that will have to be done:
+
+* `quality-safety-in-health-care` is a discontinued journal and should be deleted
+* `journal-of-the-american-medical-informatics-association` should be deleted (BMJ refers to the journal as JAMIA, so we would get `jamia` instead
+* `journal-of-epidemiology-community-health` misses "-and-" in the title.
+* `journal-of-neuro-interventional-surgery` has a superfluous hyphen in its name (the journal title is Journal of NeuroInterventional Surgery)
 
 In addition, 2 of the styles were already defined as independent styles:
 
