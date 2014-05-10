@@ -1,30 +1,48 @@
 Australia and New Zealand Health Policy
+Automated Experimentation
 Beilstein Journal of Organic Chemistry
+Biointerphases
 BioMagnetic Research and Technology
 Biomedical Digital Libraries
+BMC Chemical Biology
+BMC Meeting Abstracts
+BMC Pharmacology
 Cases Journal
 Cell & Chromosome
 Centrosome Research
 Clinical Practice and Epidemiology in Mental Health
+Comparative Hepatology
 CytoJournal
 Dynamic Medicine
 eHealth International
 Epidemiologic Perspectives & Innovations
 Filaria Journal
+Genetic Vaccines and Therapy
+Head & Neck Oncology
 Immunome Research
+Integrative Omics and Molecular Biology
 International Seminars in Surgical Oncology
 Journal of Autoimmune Diseases
 Journal of Biology
 Journal of Biomedical Discovery and Collaboration
+Journal of Bioscience and Medicine
 Journal of Carcinogenesis
+Journal of Circadian Rhythms
 Journal of Experimental & Clinical Assisted Reproduction
 Journal of Immune Based Therapies and Vaccines
+Journal of Interventional Neuroradiology
 Journal of the International AIDS Society
 Kinetoplastid Biology and Disease
 Medical Immunology
+Neural Systems & Circuits
+Neuroglia
+Nonlinear Biomedical Physics
 Nuclear Receptor
+Open Network Biology
 Open Research Computation
 Osteopathic Medicine and Primary Care
 PathoGenetics
-
-bmc-bioinformatics
+Silence
+Sports Medicine, Arthroscopy, Rehabilitation, Therapy and Technology
+Sustainable Healthcare
+Video Journal of Endoscopic Surgery and Interventional Techniques
