@@ -1,6 +1,9 @@
-## 02-04-2013
+## 2014-05-10
 
-List of journals added by Rintze, who contacted the Future Science Group (http://www.future-science-group.com/) 
+Updated metadata by hand.
+
+## 2013-02-04
+
+List of journals added by Rintze, who contacted the Future Science Group (http://www.future-science-group.com/)
 
 In the XLS file, grey are discontinued journals, red are new ones. Rintze added metadata for the journals, based on this list. The parent was renamed from "future-medicine-journals" to "future-science-group". The grey journals were added to the _skip.txt file, and removed them from _journals.tab as well.
-
