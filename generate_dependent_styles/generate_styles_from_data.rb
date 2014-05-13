@@ -3,6 +3,24 @@
 
 # for FileUtils.mkdir_p
 require 'fileutils'
+# for script options
+require 'optparse'
+
+options = {:directory => nil}
+
+parser = OptionParser.new do|opts|
+  opts.banner = "Usage: generate_styles_from_data.rb [options]"
+  opts.on('-d', '--directory directory', 'Metadata subdirectory (e.g., "asm")') do |directory|
+    options[:directory] = directory;
+  end
+
+  opts.on('-h', '--help', 'Show help') do
+    puts opts
+    exit
+  end
+end
+
+parser.parse!
 
 # where are we?
 This_script_dir = File.dirname(File.expand_path(__FILE__))
@@ -18,9 +36,23 @@ $stderr.puts "Script:\t#{This_script_dir}"
 Data_dir_path = "#{This_script_dir}/data"
 $stderr.puts "Input:\t#{Data_dir_path}"
 if not File.exist? Data_dir_path
-  $stderr.puts "WARNING: no file at path '#{Data_dir_path}'"
-  $stderr.puts "WARNING: cannot generate styles"
+  $stderr.puts "WARNING: no 'data' directory found at '#{Data_dir_path}'"
   abort "Failed"
+end
+
+# determine directories to parse
+data_subdir_paths = []
+if options[:directory] != nil
+    if File.exist? "#{Data_dir_path}/#{options[:directory]}"
+      data_subdir_paths.push("#{options[:directory]}")
+    else
+      $stderr.puts "WARNING: subdirectory '#{options[:directory]}' does not exist"
+      abort "Failed"
+    end
+else
+  Dir.foreach(Data_dir_path) do |data_subdir|
+    data_subdir_paths.push(data_subdir)
+  end
 end
 
 # start with new empty style directory
@@ -33,7 +65,7 @@ FileUtils.mkdir_p generated_style_dir_path
 
 # we can now iterate over each of the data subdirs
 total_count_created_styles = 0
-Dir.foreach(Data_dir_path) do |data_subdir|
+data_subdir_paths.each do |data_subdir|
 
   # skip invalid entries
   next if data_subdir =~ /^\./
