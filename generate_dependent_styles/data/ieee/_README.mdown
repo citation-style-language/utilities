@@ -1,4 +1,8 @@
-## 03-13-2013
+## 2014-05-14
+
+Updated template and metadata (retrieved as describe at https://github.com/citation-style-language/styles/issues/380)
+
+## 2013-03-13
 
 See https://github.com/citation-style-language/styles/issues/380#issuecomment-13869850
 

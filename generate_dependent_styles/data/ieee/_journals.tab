@@ -1,6 +1,8 @@
-Title	ISSN	Field1	Field2	Documentation
-Applied Physics Letters	0003-6951	physics		http://ieeexplore.ieee.org/servlet/opac?punumber=4816218
+Title	ISSN	Field	Field2	Documentation
+Applied Physics Letters	0003-6951	physics	x	http://ieeexplore.ieee.org/servlet/opac?punumber=4816218
+Bell Labs Technical Journal	1089-7089	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6731002
 Canadian Journal of Electrical and Computer Engineering	0840-8688	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=9754
+China Communications	1673-5447	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6245522
 Computer	0018-9162	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=2
 Computer Architecture Letters	1556-6056	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=10208
 Computing in Science & Engineering	1521-9615	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5992
@@ -9,6 +11,7 @@ Electronics Letters	0013-5194	engineering	communications	http://ieeexplore.ieee.
 Engineering & Technology	1750-9637	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=10908
 Engineering Management Journal	0960-7919	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=2221
 IBM Journal of Research and Development	0018-8646	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5288520
+IEEE Access	2169-3536	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6287639
 IEEE Aerospace and Electronic Systems Magazine	0885-8985	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=62
 IEEE Annals of the History of Computing	1058-6180	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=85
 IEEE Antennas and Propagation Magazine	1045-9243	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=74
@@ -21,9 +24,9 @@ IEEE Computational Intelligence Magazine	1556-603X	engineering	communications	ht
 IEEE Computer Graphics and Applications	0272-1716	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=38
 IEEE Consumer Electronics Magazine	2162-2248	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5962380
 IEEE Control Systems	1066-033X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5488303
-IEEE Design & Test of Computers	0740-7475	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=54
-IEEE Design and Test	2168-2356	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6221038
+IEEE Design & Test	2168-2356	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6221038
 IEEE Electrical Insulation Magazine	0883-7554	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=57
+IEEE Electrification Magazine	2325-5897	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6508996
 IEEE Electromagnetic Compatibility Magazine	2162-2264	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5962381
 IEEE Electron Device Letters	0741-3106	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=55
 IEEE Embedded Systems Letters	1943-0663	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4563995
@@ -36,6 +39,9 @@ IEEE Instrumentation & Measurement Magazine	1094-6969	engineering	communications
 IEEE Intelligent Systems	1541-1672	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=9670
 IEEE Intelligent Transportation Systems Magazine	1939-1390	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5117645
 IEEE Internet Computing	1089-7801	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4236
+IEEE Internet of Things Journal	2327-4662	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6488907
+IEEE Journal of Biomedical and Health Informatics	2168-2194	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6221020
+IEEE Journal of Emerging and Selected Topics in Power Electronics	2168-6777	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6245517
 IEEE Journal of Oceanic Engineering	0364-9059	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=48
 IEEE Journal of Photovoltaics	2156-3381	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5503869
 IEEE Journal of Quantum Electronics	0018-9197	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=3
@@ -43,6 +49,8 @@ IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing
 IEEE Journal of Selected Topics in Quantum Electronics	1077-260X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=2944
 IEEE Journal of Selected Topics in Signal Processing	1932-4553	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4200690
 IEEE Journal of Solid-State Circuits	0018-9200	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4
+IEEE Journal of the Electron Devices Society	2168-6734	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6245494
+IEEE Journal of Translational Engineering in Health and Medicine	2168-2372	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6221039
 IEEE Journal on Emerging and Selected Topics in Circuits and Systems	2156-3357	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5503868
 IEEE Journal on Selected Areas in Communications	0733-8716	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=49
 IEEE Latin America Transactions (Revista IEEE America Latina)	1548-0992	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=9907
@@ -60,6 +68,7 @@ IEEE Potentials	0278-6648	engineering	communications	http://ieeexplore.ieee.org/
 IEEE Power and Energy Magazine	1540-7977	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=8014
 IEEE Pulse	2154-2287	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5454060
 IEEE Reviews in Biomedical Engineering	1937-3333	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4664312
+IEEE Revista Iberoamericana de Tecnologias del Aprendizaje	1932-8540	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6245520
 IEEE Robotics & Automation Magazine	1070-9932	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=100
 IEEE Security & Privacy	1540-7993	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=8013
 IEEE Sensors Journal	1530-437X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=7361
@@ -74,7 +83,6 @@ IEEE Transactions on Aerospace and Electronic Systems	0018-9251	engineering	comm
 IEEE Transactions on Affective Computing	1949-3045	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5165369
 IEEE Transactions on Antennas and Propagation	0018-926X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=8
 IEEE Transactions on Applied Superconductivity	1051-8223	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=77
-IEEE Transactions on Audio, Speech, and Language Processing	1558-7916	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=10376
 IEEE Transactions on Automatic Control	0018-9286	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=9
 IEEE Transactions on Automation Science and Engineering	1545-5955	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=8856
 IEEE Transactions on Autonomous Mental Development	1943-0604	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4563672
@@ -84,6 +92,7 @@ IEEE Transactions on Broadcasting	0018-9316	engineering	communications	http://ie
 IEEE Transactions on Circuits and Systems for Video Technology	1051-8215	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=76
 IEEE Transactions on Circuits and Systems I: Regular Papers	1549-8328	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=8919
 IEEE Transactions on Circuits and Systems II: Express Briefs	1549-7747	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=8920
+IEEE Transactions on Cloud Computing	2168-7161	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6245519
 IEEE Transactions on Communications	0090-6778	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=26
 IEEE Transactions on Components, Packaging and Manufacturing Technology	2156-3950	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5503870
 IEEE Transactions on Computational Intelligence and AI in Games	1943-068X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4804728
@@ -91,18 +100,21 @@ IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems	02
 IEEE Transactions on Computers	0018-9340	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=12
 IEEE Transactions on Consumer Electronics	0098-3063	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=30
 IEEE Transactions on Control Systems Technology	1063-6536	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=87
+IEEE Transactions on Cybernetics	2168-2267	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6221036
 IEEE Transactions on Dependable and Secure Computing	1545-5971	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=8858
 IEEE Transactions on Device and Materials Reliability	1530-4388	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=7298
 IEEE Transactions on Dielectrics and Electrical Insulation	1070-9878	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=94
 IEEE Transactions on Education	0018-9359	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=13
 IEEE Transactions on Electromagnetic Compatibility	0018-9375	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=15
 IEEE Transactions on Electron Devices	0018-9383	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=16
+IEEE Transactions on Emerging Topics in Computing	2168-6750	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6245516
 IEEE Transactions on Energy Conversion	0885-8969	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=60
 IEEE Transactions on Engineering Management	0018-9391	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=17
 IEEE Transactions on Evolutionary Computation	1089-778X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4235
 IEEE Transactions on Fuzzy Systems	1063-6706	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=91
 IEEE Transactions on Geoscience and Remote Sensing	0196-2892	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=36
 IEEE Transactions on Haptics	1939-1412	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4543165
+IEEE Transactions on Human-Machine Systems	2168-2291	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6221037
 IEEE Transactions on Image Processing	1057-7149	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=83
 IEEE Transactions on Industrial Electronics	0278-0046	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=41
 IEEE Transactions on Industrial Informatics	1551-3203	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=9424
@@ -139,6 +151,7 @@ IEEE Transactions on Signal Processing	1053-587X	engineering	communications	http
 IEEE Transactions on Smart Grid	1949-3053	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5165411
 IEEE Transactions on Software Engineering	0098-5589	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=32
 IEEE Transactions on Sustainable Energy	1949-3029	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5165391
+IEEE Transactions on Systems, Man, and Cybernetics: Systems	2168-2216	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6221021
 IEEE Transactions on Terahertz Science and Technology	2156-342X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5503871
 IEEE Transactions on Ultrasonics, Ferroelectrics and Frequency Control	0885-3010	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=58
 IEEE Transactions on Vehicular Technology	0018-9545	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=25
@@ -149,6 +162,7 @@ IEEE Vehicular Technology Magazine	1556-6072	engineering	communications	http://i
 IEEE Wireless Communications	1536-1284	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=7742
 IEEE Wireless Communications Letters	2162-2337	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5962382
 IEEE Women in Engineering Magazine	1942-065X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4509581
+IEEE/ACM Transactions on Audio, Speech, and Language Processing	2329-9290	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6570655
 IEEE/ACM Transactions on Computational Biology and Bioinformatics	1545-5963	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=8857
 IEEE/ACM Transactions on Networking	1063-6692	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=90
 IEEE/ASME Transactions on Mechatronics	1083-4435	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=3516
@@ -180,14 +194,14 @@ IET Synthetic Biology	1752-1394	engineering	communications	http://ieeexplore.iee
 IET Systems Biology	1751-8849	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4100185
 IET Wireless Sensor Systems	2043-6386	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5704589
 IT Professional	1520-9202	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=6294
-Journal of Applied Physics	0021-8979	physics		http://ieeexplore.ieee.org/servlet/opac?punumber=4915369
-Journal of Communications and Networks	1229-2370	physics		http://ieeexplore.ieee.org/servlet/opac?punumber=5449605
+Journal of Applied Physics	0021-8979	physics	x	http://ieeexplore.ieee.org/servlet/opac?punumber=4915369
+Journal of Communications and Networks	1229-2370	physics	x	http://ieeexplore.ieee.org/servlet/opac?punumber=5449605
 Journal of Display Technology	1551-319X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=9425
 Journal of Lightwave Technology	0733-8724	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=50
 Journal of Microelectromechanical Systems	1057-7157	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=84
-Journal of Systems Engineering and Electronics	X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5971804
+Journal of Systems Engineering and Electronics	x	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5971804
 Journal of Vacuum Science & Technology A: Vacuum, Surfaces, and Films	0734-2101	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4915548
 Journal of Vacuum Science & Technology B: Microelectronics and Nanometer Structures	1071-1023	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4915583
 Proceedings of the IEEE	0018-9219	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5
 Review of Scientific Instruments	0034-6748	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=4915264
-Tsinghua Science and Technology	X	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5971803
+Tsinghua Science and Technology	x	engineering	communications	http://ieeexplore.ieee.org/servlet/opac?punumber=5971803
