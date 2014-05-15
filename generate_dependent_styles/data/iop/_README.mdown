@@ -1,4 +1,8 @@
-## 03-13-2013
+## 2014-05-15
+
+Update metadata from http://iopscience.iop.org/page/Linking.
+
+## 2013-03-13
 
 See https://github.com/citation-style-language/utilities/issues/11
 
@@ -8,4 +12,3 @@ Here is what I did:
 - added a column 'Citation' for the citation format
 - added a column 'Parent', either "institute-of-physics-harvard.csl" or "institute-of-physics-numeric.csl"
 - sorted based on 'Journal End' to be able to remove journals no longer published (any journal that has an end date)
-
