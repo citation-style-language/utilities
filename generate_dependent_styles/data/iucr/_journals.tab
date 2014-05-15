@@ -1,9 +1,10 @@
-Title	ISSN	eISSN	Category1	Category2
-Acta Crystallographica Section A: Foundations of Crystallography	0108-7673	1600-5724	chemistry	x
-Acta Crystallographica Section B: Structural Science	0108-7681	1600-5740	chemistry	x
-Acta Crystallographica Section C: Crystal Structure Communications	0108-2701	1600-5759	chemistry	x
-Acta Crystallographica Section D: Biological Crystallography	0907-4449	1399-0047	chemistry	biology
-Acta Crystallographica Section E: Structure Reports Online	x	1600-5368	chemistry	x
-Acta Crystallographica Section F: Structural Biology and Crystallization Communications	x	1744-3091	chemistry	biology
-Journal of Applied Crystallography	0021-8898	1600-5767	chemistry	x
-Journal of Synchrotron Radiation	0909-0495	1600-5775	chemistry	x
+Title	eISSN	Field	Field2
+Acta Crystallographica Section A: Foundations and Advances	2053-2733	chemistry	x
+Acta Crystallographica Section B: Structural Science, Crystal Engineering and Materials	2052-5206	chemistry	x
+Acta Crystallographica Section C: Structural Chemistry	2053-2296	chemistry	x
+Acta Crystallographica Section D: Biological Crystallography	1399-0047	chemistry	biology
+Acta Crystallographica Section E: Structure Reports Online	1600-5368	chemistry	x
+Acta Crystallographica Section F: Structural Biology Communications	2053-230X	chemistry	biology
+IUCrJ	2052-2525	chemistry	x
+Journal of Applied Crystallography	1600-5767	chemistry	x
+Journal of Synchrotron Radiation	1600-5775	chemistry	x
