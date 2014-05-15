@@ -6,12 +6,16 @@ require 'fileutils'
 # for script options
 require 'optparse'
 
-options = {:directory => nil}
+options = {:directory => nil, :replace => false}
 
 parser = OptionParser.new do|opts|
   opts.banner = "Usage: generate_styles_from_data.rb [options]"
-  opts.on('-d', '--directory directory', 'Metadata subdirectory (e.g., "asm")') do |directory|
+  opts.on('-d', '--dir directory', 'Limit script to specified data subdirectory (e.g., "asm")') do |directory|
     options[:directory] = directory;
+  end
+
+  opts.on('-r', '--replace', 'Replace styles in "styles" repo') do
+    options[:replace] = true
   end
 
   opts.on('-h', '--help', 'Show help') do
@@ -107,6 +111,8 @@ data_subdir_paths.each do |data_subdir|
       old_and_new_names[fields[0]]=fields[1]
     end
   end
+
+  xml_comment = "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/#{data_subdir}"
 
   # iterate over each journal
   header_info = [ ]
@@ -216,7 +222,7 @@ data_subdir_paths.each do |data_subdir|
       end
     end
 
-    field_values['XML-COMMENT'] = "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/#{data_subdir}"
+    field_values['XML-COMMENT'] = xml_comment
 
     # replace identifier if in renamed_journals file
     if (old_and_new_names.has_key?(identifier))
@@ -259,6 +265,39 @@ data_subdir_paths.each do |data_subdir|
     $stderr.puts "Generated #{count_created_styles}\tSkipped #{count_skipped_styles}\t#{data_subdir}"
   end
   total_count_created_styles = total_count_created_styles + count_created_styles
+
+  # only replace styles if directory options is set, so we don't replace all styles at once
+  if (options[:replace] == true and options[:directory] != nil)
+  delete_styles = 0
+  copied_styles = 0
+
+    # check presence style dependents folder
+    Dependent_dir_path = File.expand_path("../../styles/dependent", This_script_dir)
+    if not File.exist? Dependent_dir_path
+      $stderr.puts "WARNING: target directory not found at '#{Dependent_dir_path}'"
+      abort "Failed"
+    end
+    
+    Dependents_path = "#{Dependent_dir_path}/*.csl"
+    # check each dependent style for XML comment (field_values['XML-COMMENT'])
+    Dir.glob(Dependents_path) do |dependent|
+      # delete dependent style if generated from current data subdirectory
+      if File.readlines(dependent).grep(/#{xml_comment}/).size > 0
+        File.delete(dependent)
+        delete_styles = delete_styles + 1
+      end
+    end
+    $stderr.puts "Deleted #{delete_styles} styles from #{Dependent_dir_path}"
+    
+    # copy generated styles into dependents folder
+    Generated_styles_path = "#{generated_style_dir_path}/#{data_subdir}/*.csl"
+    Dir.glob(Generated_styles_path) do |generated_style|
+      FileUtils.cp_r(generated_style, "#{Dependent_dir_path}", :remove_destination => true)
+      copied_styles = copied_styles + 1
+    end
+    $stderr.puts "Copied #{copied_styles} styles to #{Dependent_dir_path}"
+  
+  end
 
 end
 
