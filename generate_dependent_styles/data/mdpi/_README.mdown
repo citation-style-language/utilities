@@ -1,12 +1,14 @@
-## 02-07-2013
+## 2014-05-15
+
+Updated metadata from http://www.mdpi.com/about/journals.
+
+## 2013-02-07
 
 ### Initial data
 
-From Rintze
-
-> For MDPI I copy/pasted the journals from their 2012 flyer:
-> http://img.mdpi.org/files/misc/mdpi-oa-flyer-2012.pdf
+For MDPI I copy/pasted the journals from their 2012 flyer:
+http://img.mdpi.org/files/misc/mdpi-oa-flyer-2012.pdf
 
 ### Adjustments
 
-After running the autogeneration script, one of the journal caused a problem with the current repository: the journal with title "International Journal of Geo-Information", as listed in `_journals.tab`, is the same as an already existing journal "ISPRS International Journal of Geo-Information" from the CSL repository. From the web site at [http://www.mdpi.com/journal/ijgi](), I concluded the latter title is the correct one, and I adjusted the `_journals.tab` file accordingly.
+After running the script, one of the journals caused a problem with the current repository: the journal with title "International Journal of Geo-Information", as listed in `_journals.tab`, is the same as an already existing journal "ISPRS International Journal of Geo-Information" from the CSL repository. From the web site at http://www.mdpi.com/journal/ijgi, I concluded the latter title is the correct one, and I adjusted the `_journals.tab` file accordingly.
