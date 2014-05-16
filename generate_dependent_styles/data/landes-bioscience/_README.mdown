@@ -1,0 +1,3 @@
+## 2014-05-15
+
+Updated metadata from http://www.landesbioscience.com/journals/libraries/ (2014 Price List).

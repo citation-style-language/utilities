@@ -1,46 +1,46 @@
-Title	ISSN	EISSN	category-field	parent	format
-Adipocyte	2162-3945	2162-397X	medicine	landes-bioscience-journals	numeric
-Artificial DNA: PNA & XNA	1949-095X	1949-0968	biology	landes-bioscience-journals	numeric
-Autophagy	1554-8627	1554-8635	biology	landes-bioscience-journals	numeric
-Bacteriophage	2159-7073	2159-7081	medicine	landes-bioscience-journals	numeric
-BioArchitecture	1949-0992	1949-100X	biology	landes-bioscience-journals	numeric
-Bioengineered	1949-1018	1949-1026	biology	landes-bioscience-journals	numeric
-Biomatter	2159-2527	2159-2535	medicine	landes-bioscience-journals	numeric
-Cancer Biology & Therapy	1538-4047	1555-8576	medicine	landes-bioscience-journals	numeric
-Cell Adhesion & Migration	1933-6918	1933-6926	medicine	landes-bioscience-journals	numeric
-Cell Cycle	1538-4101	1551-4005	biology	landes-bioscience-journals	numeric
-Cellular Logistics	2159-2780	2159-2799	biology	landes-bioscience-journals	numeric
-Channels	1933-6950	1933-6969	biology	landes-bioscience-journals	numeric
-Chimerism	1938-1956	1938-1964	biology	landes-bioscience-journals	numeric
-Communicative & Integrative Biology		1942-0889	biology	landes-bioscience-journals	numeric
-Dermato-Endocrinology	1938-1972	1938-1980	medicine	landes-bioscience-journals	numeric
-Disaster Health	2166-5044	2166-5052	medicine	landes-bioscience-journals	numeric
-Endocrine Disruptors		2327-3747	medicine	landes-bioscience-journals	numeric
-Epigenetics	1559-2294	1559-2308	biology	landes-bioscience-journals	numeric
-Fly	1933-6934	1933-6942	biology	landes-bioscience-journals	numeric
-GM Crops and Food: Biotechnology in Agriculture and the Food Chain	1938-1999	1938-2006	biology	landes-bioscience-journals	numeric
-Gut Microbes	1949-0976	1949-0984	medicine	landes-bioscience-journals	numeric
-h bioscience	2166-708X	2166-7098	medicine	landes-bioscience-journals	numeric
-Human Vaccines & Immunotherapeutics	1554-8600	1554-8619	medicine	landes-bioscience-journals	numeric
-IntraVital	2165-9079	2165-9087	medicine	landes-bioscience-journals	numeric
-Immunomics	2324-9625	2324-9633	medicine	landes-bioscience-journals	numeric
-Intrinsically Disordered Proteins		2169-0707	biology	landes-bioscience-journals	numeric
-Islets	1938-2014	1938-2022	medicine	landes-bioscience-journals	numeric
-JAK-STAT		2162-3996	medicine	landes-bioscience-journals	numeric
-mAbs	1942-0862	1942-0870	medicine	landes-bioscience-journals	numeric
-Mobile Genetic Elements	2159-2543	2159-256X	biology	landes-bioscience-journals	numeric
-Nucleus	1949-1034	1949-1042	biology	landes-bioscience-journals	numeric
-OncoImmunology	2162-4011	2162-402X	medicine	landes-bioscience-journals	numeric
-Organogenesis	1547-6278	1555-8592	biology	landes-bioscience-journals	numeric
-Plant Signaling & Behavior	1559-2316	1559-2324	biology	landes-bioscience-journals	numeric
-Prion	1993-6896	1933-690X	biology	landes-bioscience-journals	numeric
-Rare Diseases		2167-5511	medicine	landes-bioscience-journals	numeric
-RNA Biology	1547-6286	1555-8584	biology	landes-bioscience-journals	numeric
-Small GTPases	2154-1248	2154-1256	biology	landes-bioscience-journals	numeric
-Spermatogenesis	2156-5554	2156-5562	biology	landes-bioscience-journals	numeric
-Systems Biomedicine	2162-8130	2162-8149	medicine	landes-bioscience-journals	numeric
-Tissue Barriers		2168-8370	medicine	landes-bioscience-journals	numeric
-Transcription	2154-1264	2154-1272	biology	landes-bioscience-journals	numeric
-Translation		2169-0731	biology	landes-bioscience-journals	numeric
-Virulence	2150-5594	2150-5608	medicine	landes-bioscience-journals	numeric
-Worm	2162-4046	2162-4054	biology	landes-bioscience-journals	numeric
+Title	ISSN	eISSN	Field
+Adipocyte	2162-3945	2162-397X	medicine
+Artificial DNA: PNA & XNA	1949-095X	1949-0968	biology
+Autophagy	1554-8627	1554-8635	biology
+Bacteriophage	2159-7073	2159-7081	medicine
+Bioarchitecture	1949-0992	1949-100X	biology
+Bioengineered	1949-1018	1949-1026	biology
+Biomatter	2159-2527	2159-2535	medicine
+Cancer Biology & Therapy	1538-4047	1555-8576	medicine
+Cell Adhesion & Migration	1933-6918	1933-6926	medicine
+Cell Cycle	1538-4101	1551-4005	biology
+Cellular Logistics	2159-2780	2159-2799	biology
+Channels	1933-6950	1933-6969	biology
+Chimerism	1938-1956	1938-1964	biology
+Communicative & Integrative Biology	1942-0889	1942-0889	biology
+Dermato-Endocrinology	1938-1972	1938-1980	medicine
+Disaster Health	2166-5044	2166-5052	medicine
+Endocrine Disruptors		2327-3747	medicine
+Epigenetics	1559-2294	1559-2308	biology
+Fly	1933-6934	1933-6942	biology
+GM Crops and Food: Biotechnology in Agriculture and the Food Chain	1938-1999	1938-2006	biology
+Gut Microbes	1949-0976	1949-0984	medicine
+h bioscience	2166-708X	2166-7098	medicine
+Human Vaccines & Immunotherapeutics	1554-8600	1554-8619	medicine
+Immunomics	x	2324-9633	medicine
+IntraVital	2165-9079	2165-9087	medicine
+Intrinsically Disordered Proteins	x	2169-0707	biology
+Islets	1938-2014	1938-2022	medicine
+JAK-STAT	x	2162-3996	medicine
+mAbs	1942-0862	1942-0870	medicine
+Mobile Genetic Elements	2159-2543	2159-256X	biology
+Nucleus	1949-1034	1949-1042	biology
+OncoImmunology	2162-4011	2162-402X	medicine
+Organogenesis	1547-6278	1555-8592	biology
+Plant Signaling & Behavior	1559-2316	1559-2324	biology
+Prion	1993-6896	1933-690X	biology
+Rare Diseases	x	2167-5511	medicine
+RNA Biology	1547-6286	1555-8584	biology
+Small GTPases	2154-1248	2154-1256	biology
+Spermatogenesis	2156-5554	2156-5562	biology
+Systems Biomedicine	2162-8130	2162-8149	medicine
+Tissue Barriers	x	2168-8370	medicine
+Transcription	2154-1264	2154-1272	biology
+Translation	x	2169-0731	biology
+Virulence	2150-5594	2150-5608	medicine
+Worm	2162-4046	2162-4054	biology
