@@ -350,7 +350,7 @@ Annals of Microbiology	Ann Microbiol	1590-4261	1869-2044	springer-basic-author-d
 Antonie van Leeuwenhoek	Antonie van Leeuwenhoek	0003-6072	1572-9699	springer-basic-author-date	author-date	science
 Applied Entomology and Zoology	Appl Entomol Zool	0003-6862	1347-605X	springer-basic-author-date	author-date	science
 Applied Geomatics	Appl Geomat	1866-9298	1866-928X	springer-basic-author-date	author-date	science
-Applied Microbiology and Biotechnology	Appl Microbiol Biotechnol	0175-7598	1432-0614	springer-basic-author-date	author-date	science
+Applied Microbiology and Biotechnology	Appl Microbiol Biotechnol	0175-7598	1432-0614	springer-basic-author-date-no-et-al	author-date	science
 Applied Nanoscience	Appl Nanosci	2190-5509	2190-5517	springer-basic-author-date	author-date	science
 Applied Water Science	Appl Water Sci	2190-5487	2190-5495	springer-basic-author-date	author-date	science
 Aquaculture International	Aquacult Int	0967-6120	1573-143X	springer-basic-author-date	author-date	science
@@ -985,7 +985,7 @@ Strategies in Trauma and Limb Reconstruction	Strat Traum Limb Recon	1828-8936	18
 Structural Chemistry	Struct Chem	1040-0400	1572-9001	springer-basic-brackets	numeric	science
 Supportive Care in Cancer	Support Care Cancer	0941-4355	1433-7339	springer-basic-brackets	numeric	science
 Surgical and Radiologic Anatomy	Surg Radiol Anat	0930-1038	1279-8517	springer-basic-brackets	numeric	science
-Surgical Endoscopy	Surg Endosc	0930-2794	1432-2218	springer-basic-brackets	numeric	science
+Surgical Endoscopy	Surg Endosc	0930-2794	1432-2218	springer-basic-brackets-no-et-al	numeric	science
 Targeted Oncology	Targ Oncol	1776-2596	1776-260X	springer-basic-brackets	numeric	science
 Techniques in Coloproctology	Tech Coloproctol	1123-6337	1128-045X	springer-basic-brackets	numeric	science
 The International Journal of Advanced Manufacturing Technology	Int J Adv Manuf Technol	0268-3768	1433-3015	springer-basic-brackets	numeric	science

@@ -1,3 +1,9 @@
+# Intentional independent: https://github.com/citation-style-language/styles/commit/084ea1efc408cfcd6359542d51ca1eb6a8e8139e
+ambio
+
+# Moved to Elsevier
+journal-of-infection-and-chemotherapy
+
 # journals that have had so far a parent inconsistent with the list obtained from Springer
 # we should look through those and pick which is right
 
