@@ -1,4 +1,4 @@
-## 02-07-2013
+## 2013-02-07
 
 The list of styles for Springer journals was obtained from Springer / Mekentosj in an XLS format. After removing journals that have ceased publications, there remained 1421 journals. The list of journals was stored in `journals_raw.txt`.
 
@@ -12,7 +12,7 @@ Using this information, the goal was to:
 - generate parent styles corresponding to each of the styles described in the PDF, and listed for the different journals
 - generate a final list of journals in the correct format `_journals.tab`, that would work with the template `_template.csl`, and that would have the final identifier for the `independent-parent` style, the correct value for `citation-format`, and a correct value for `field` attribute(s)
 
-## 02-11-2013
+## 2013-02-11
 
 Here is more information on the styles we already have in the repository, as emailed by Sebastian:
 
@@ -23,28 +23,28 @@ Here is more information on the styles we already have in the repository, as ema
 > The Springer "Physics" styles is very close to the American Institute of Physics or American Physics society (we'd have to check e.g. formatting of numbers in text and bibliography, otherwise the two are identical)
 > The Springer "SocPsyc" style is a simplified APA version - we probably need to code that
 > The Springer "Humanities" style is a variant of Chicago (author date) - they say 15th edition, which might mean some significant divergence, we'd have to check.
-> 
+>
 > I don't have any insight on how the Springer "Plasmonics" and "Protocols" styles fit in.
-> 
+>
 > Hope that helps,
 > Sebastian
 
 
-## 02-15-2013
+## 2013-02-15
 
 A "Springer Humanities" style has been added by Sebastian Karcher to be used as the parent for some of the journals: https://github.com/citation-style-language/styles/commit/e9ed9b22d0b999176220486c5ae21639e555420a
 
 Here is also more notes on language locales for the "Humanities" styles, as gathered by Sebastian:
 
-> Paläontologische Zeitschrift is published in English entirely 
-> Zeitschrift für Vergleichende Politikwissenschaft allows for English and 
-> German articles with respective locales, so either we leave the style 
-> locale free or we have both 
-> KZfSS Kölner Zeitschrift für Soziologie und Sozialpsychologie and 
-> Österreichische Zeitschrift für Soziologie are German entirely. 
+> Paläontologische Zeitschrift is published in English entirely
+> Zeitschrift für Vergleichende Politikwissenschaft allows for English and
+> German articles with respective locales, so either we leave the style
+> locale free or we have both
+> KZfSS Kölner Zeitschrift für Soziologie und Sozialpsychologie and
+> Österreichische Zeitschrift für Soziologie are German entirely.
 
 
-## 03-07-2013
+## 2013-03-07
 
 ### Generation of `_journals.tab`
 
@@ -74,9 +74,9 @@ The translation dictionary looks like this:
 	Vancouver      NameYear   Vancouver Author Name     springer-vancouver-author-date
 	Vancouver      Numbered   Vancouver Numbered        springer-vancouver-brackets
 
-The `citation_format` attribute is 'author-date' for 'NameYear' and 'numeric' for 'Numbered'. 
+The `citation_format` attribute is 'author-date' for 'NameYear' and 'numeric' for 'Numbered'.
 
-## 03-12-2013
+## 2013-03-12
 
 ### TODO: take into account title adjustements
 
@@ -120,4 +120,3 @@ Still some work needed to adjust those parents, from the most divergent to the m
 	- others?
 
 * Problems with locales in the dependent for the humanities styles, in particular German vs English, see https://github.com/citation-style-language/styles/commit/e9ed9b22d0b999176220486c5ae21639e555420a
-
