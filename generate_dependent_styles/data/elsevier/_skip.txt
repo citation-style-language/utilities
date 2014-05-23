@@ -1,13 +1,11 @@
 # List of styles that exists in the repository.
 # Will not be changed at the moment.
-analytica-chimica-acta
 academic-medicine
 archivos-de-cardiologia-de-mexico
 annals-of-epidemiology
 the-american-journal-of-cardiology
 the-american-journal-of-geriatric-pharmacotherapy
 american-journal-of-hypertension
-american-journal-of-human-genetics
 the-american-journal-of-medicine
 american-journal-of-ophthalmology
 the-american-journal-of-pathology
@@ -22,7 +20,6 @@ archivos-de-bronconeumologia
 archives-of-medical-research
 anthropod-structure-development
 the-annals-of-thoracic-surgery
-basic-and-applied-ecology
 bjog
 journal-of-biomechanics
 bioorganic-and-medicinal-chemistry-letters
@@ -38,7 +35,6 @@ chemistry-and-biology
 cell-host-and-microbe
 chromatographia
 clinical-biochemistry
-clinical-neurophysiology
 cell-metabolism
 current-opinion-in-biotechnology
 current-opinion-in-cell-biology
@@ -58,7 +54,6 @@ cor-et-vasa
 current-biology
 drug-and-alcohol-dependence
 domestic-animal-endocrinology
-dendrochronologia
 dental-materials
 developmental-cell
 enfermedades-infecciosas-y-microbiologia-clinica
