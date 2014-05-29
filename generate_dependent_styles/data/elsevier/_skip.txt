@@ -4,7 +4,6 @@ academic-medicine
 archivos-de-cardiologia-de-mexico
 annals-of-epidemiology
 the-american-journal-of-cardiology
-the-american-journal-of-geriatric-pharmacotherapy
 american-journal-of-hypertension
 the-american-journal-of-medicine
 american-journal-of-ophthalmology
@@ -229,17 +228,23 @@ heart-and-lung-the-journal-of-acute-and-critical-care
 american-journal-of-emergency-medicine
 arthroscopy-the-journal-of-arthroscopic-and-related-surgery
 progress-in-natural-science-materials-international
-american-journal-of-geriatric-pharmacotherapy
 pmandr
 aasri-procedia
 revista-brasileira-de-reumatologia
 pm-and-r
 journal-francais-dophtalmologie
-drug-discovery-today-disease-mechanisms
 
 cell-reports
 drug-discovery-today-disease-models
 drug-discovery-today-technologies
-drug-discovery-today-therapeutic-strategies
 journal-of-environmental-economics-and-management
 social-science-and-medicine
+
+#Discontinued journals that are still listed in _journals.tab as per 2014-05-29
+#See also http://info.sciencedirect.com/techsupport/journals/jnldiscontinued.htm
+american-journal-of-geriatric-pharmacotherapy
+drug-discovery-today-disease-mechanisms
+drug-discovery-today-therapeutic-strategies
+gender-medicine
+journal-of-dermatological-science-supplement
+metamaterials
