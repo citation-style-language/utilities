@@ -2,27 +2,20 @@
 # Will not be changed at the moment.
 academic-medicine
 archivos-de-cardiologia-de-mexico
-annals-of-epidemiology
 the-american-journal-of-cardiology
 american-journal-of-hypertension
-the-american-journal-of-medicine
 american-journal-of-ophthalmology
 the-american-journal-of-pathology
 the-american-journal-of-surgery
-acta-materialia
 the-american-journal-of-gastroenterology
 jamia
-annals-of-allergy-asthma-and-immunology
 annales-de-dermatologie-et-de-venereologie
 anales-de-pediatria
 archivos-de-bronconeumologia
 archives-of-medical-research
 anthropod-structure-development
-the-annals-of-thoracic-surgery
 bjog
-journal-of-biomechanics
 bioorganic-and-medicinal-chemistry-letters
-biophysical-journal
 biological-psychiatry
 brain-and-development
 cancer-epidemiology
@@ -197,6 +190,7 @@ social-science-and-medicine
 
 #Intentionally made independent
 journal-francais-dophtalmologie
+journal-of-biomechanics
 
 #Discontinued journals that are still listed in _journals.tab as per 2014-05-29
 #See also http://info.sciencedirect.com/techsupport/journals/jnldiscontinued.htm
@@ -208,6 +202,7 @@ journal-of-dermatological-science-supplement
 metamaterials
 
 #Cell Press journals
+biophysical-journal
 cancer-cell
 cell
 cell-host-and-microbe
