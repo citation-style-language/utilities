@@ -17,21 +17,10 @@ anthropod-structure-development
 bjog
 bioorganic-and-medicinal-chemistry-letters
 biological-psychiatry
-brain-and-development
-cancer-epidemiology
-canadian-association-of-radiologists-journal
 cardiovascular-research
 chromatographia
-clinical-biochemistry
-computational-materials-science
-cor-et-vasa
-drug-and-alcohol-dependence
-domestic-animal-endocrinology
-dental-materials
 enfermedades-infecciosas-y-microbiologia-clinica
 european-journal-of-cardiovascular-nursing
-european-journal-of-radiology
-european-urology
 farmacia-hospitalaria
 fluid-dynamics-research
 fertility-and-sterility
@@ -189,6 +178,7 @@ journal-of-environmental-economics-and-management
 social-science-and-medicine
 
 #Intentionally made independent
+drug-and-alcohol-dependence
 journal-francais-dophtalmologie
 journal-of-biomechanics
 
