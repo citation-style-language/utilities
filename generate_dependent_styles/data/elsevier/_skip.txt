@@ -113,7 +113,6 @@ molecular-imaging-and-biology
 molecular-therapy
 neurobiology-of-aging
 neuropsychopharmacology
-neuroscience-research
 ophthalmic-and-physiological-optics
 ophthalmology
 organisms-diversity-and-evolution
@@ -178,9 +177,13 @@ journal-of-environmental-economics-and-management
 social-science-and-medicine
 
 #Intentionally made independent
-drug-and-alcohol-dependence
 journal-francais-dophtalmologie
+
+#Dependents of elsevier-harvard2
+drug-and-alcohol-dependence
 journal-of-biomechanics
+neuroscience-research
+veterinary-parasitology
 
 #Discontinued journals that are still listed in _journals.tab as per 2014-05-29
 #See also http://info.sciencedirect.com/techsupport/journals/jnldiscontinued.htm
