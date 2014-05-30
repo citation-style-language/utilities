@@ -123,14 +123,8 @@ pancreatology
 photonics-and-nanostructures
 pmandr
 pm-and-r
-progress-in-natural-science
-progress-in-natural-science-materials-international
-psychiatry-research
 public-health
-quaternary-research
 radiologia
-rare-metals
-research-policy
 reumatologia-clinica
 revista-brasileira-de-reumatologia
 revista-clinica-espanola
@@ -138,17 +132,12 @@ revista-de-gastroenterologia-de-mexico
 revista-del-laboratorio-clinico
 revista-espanola-de-anestesiologia-y-reanimacion
 revista-portuguesa-de-cardiologia
-revista-portuguesa-de-cardiologia
 science-and-technology-of-advanced-materials
 scripta-materialia
 seminars-in-pediatric-neurology
-sensors-and-actuators-b
-soil-biology-biochemistry
-surface-science
 surgery
 survey-of-ophthalmology
 the-american-journal-of-cardiology
-the-american-journal-of-emergency-medicine
 the-american-journal-of-gastroenterology
 the-american-journal-of-human-genetics
 the-american-journal-of-pathology
@@ -162,13 +151,9 @@ the-journal-of-prosthetic-dentistry
 the-journal-of-urology
 the-lichenologist
 the-netherlands-journal-of-medicine
-the-ocular-surface
 theory-in-biosciences
-theriogenology
 the-surgeon
 translational-research
-tsinghua-science-and-technology
-urban-forestry-and-urban-greening
 veterinary-parasitology
 
 drug-discovery-today-disease-models
@@ -178,6 +163,8 @@ social-science-and-medicine
 
 #Intentionally made independent
 journal-francais-dophtalmologie
+psychiatry-research
+surface-science
 
 #Dependents of elsevier-harvard2
 drug-and-alcohol-dependence
