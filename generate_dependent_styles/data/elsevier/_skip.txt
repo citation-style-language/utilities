@@ -1,6 +1,5 @@
 # List of styles that exists in the repository.
 # Will not be changed at the moment.
-aasri-procedia
 academic-medicine
 acta-otorrinolaringologica-espanola
 american-heart-journal
@@ -60,7 +59,6 @@ medicina-intensiva
 medicine
 ophthalmology
 osteoarthritis-and-cartilage
-pain
 public-health
 radiologia
 reumatologia-clinica
@@ -75,7 +73,6 @@ seminars-in-pediatric-neurology
 surgery
 survey-of-ophthalmology
 the-american-journal-of-cardiology
-the-american-journal-of-human-genetics
 the-american-journal-of-pathology
 the-american-journal-of-surgery
 the-journal-of-allergy-and-clinical-immunology
@@ -130,7 +127,9 @@ developmental-cell
 immunity
 molecular-cell
 neuron
+stem-cell-reports
 structure
+the-american-journal-of-human-genetics
 
 #Cell Press Trends journals
 trends-in-biochemical-sciences
