@@ -5,7 +5,6 @@ academic-medicine
 acta-otorrinolaringologica-espanola
 american-heart-journal
 american-journal-of-emergency-medicine
-american-journal-of-hypertension
 american-journal-of-infection-control
 american-journal-of-obstetrics-and-gynecology
 american-journal-of-ophthalmology
@@ -23,8 +22,6 @@ arthroscopy-the-journal-of-arthroscopic-and-related-surgery
 biological-psychiatry
 biologicals
 bioorganic-and-medicinal-chemistry-letters
-bjog
-bulletin-of-mathematical-biology
 canadian-journal-of-ophthalmology
 canadian-journal-of-ophthalmology-journal-canadien-dophtalmologie
 cardiovascular-research
@@ -43,9 +40,7 @@ european-heart-journal
 european-heart-journal-cardiovascular-imaging
 european-journal-of-cardiovascular-nursing
 european-journal-of-heart-failure
-farmacia-hospitalaria
 fertility-and-sterility
-fluid-dynamics-research
 free-radical-biology-and-medicine
 fungal-biology
 gaceta-sanitaria
@@ -58,7 +53,6 @@ geochimica-et-cosmochimica-acta
 heart-and-lung-the-journal-of-acute-and-critical-care
 heart-and-lung-the-journal-of-critical-care
 heart-rhythm
-hepatology
 homeopathy
 ices-journal-of-marine-science
 information-sciences
@@ -66,7 +60,6 @@ international-journal-of-hydrogen-energy
 international-journal-of-project-management
 international-journal-of-radiation-oncology-biology-physics
 jamia
-japanese-journal-of-ophthalmology
 jornal-de-pediatria
 journal-of-american-association-for-pediatric-ophthalmology-and-strabismus
 journal-of-cataract-and-refractive-surgery
@@ -77,22 +70,17 @@ journal-of-dentistry
 journal-of-emergency-nursing
 journal-of-hepatology
 journal-of-human-evolution
-journal-of-management
 journal-of-manipulative-and-physiological-therapeutics
 journal-of-microbiology-immunology-and-infection
-journal-of-midwifery-and-womens-health
 journal-of-molecular-biology
-journal-of-nuclear-cardiology
 journal-of-nuclear-materials
 journal-of-oral-and-maxillofacial-surgery
 journal-of-oral-and-maxillofacial-surgery-medicine-and-pathology
-journal-of-orthopaedic-research
 journal-of-pediatric-and-adolescent-gynecology
 journal-of-plastic-reconstructive-and-aesthetic-surgery
 journal-of-power-sources
 journal-of-psychosomatic-research
 journal-of-shoulder-and-elbow-surgery
-journal-of-systems-engineering-and-electronics
 journal-of-the-academy-of-nutrition-and-dietetics
 journal-of-the-american-academy-of-dermatology
 journal-of-the-american-college-of-cardiology
@@ -100,7 +88,6 @@ journal-of-the-american-society-of-echocardiography
 journal-of-the-formosan-medical-association
 journal-of-transport-geography
 journal-of-vascular-surgery
-journal-of-wound-ostomy-and-continence-nursing
 medicina-clinica
 medicina-intensiva
 medicine
@@ -121,7 +108,6 @@ seminars-in-pediatric-neurology
 surgery
 survey-of-ophthalmology
 the-american-journal-of-cardiology
-the-american-journal-of-gastroenterology
 the-american-journal-of-human-genetics
 the-american-journal-of-pathology
 the-american-journal-of-surgery
