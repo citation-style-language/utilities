@@ -88,15 +88,12 @@ the-surgeon
 translational-research
 veterinary-parasitology
 
-drug-discovery-today-disease-models
-drug-discovery-today-technologies
-journal-of-environmental-economics-and-management
-social-science-and-medicine
-
 #Skipped because default-locale should be non-English
 annales-de-dermatologie-et-de-venereologie
 
 #Intentionally made independent
+drug-discovery-today-disease-models
+drug-discovery-today-technologies
 free-radical-biology-and-medicine
 information-sciences
 journal-francais-dophtalmologie
