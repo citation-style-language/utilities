@@ -4,33 +4,22 @@ aasri-procedia
 academic-medicine
 acta-otorrinolaringologica-espanola
 american-heart-journal
-american-journal-of-emergency-medicine
 american-journal-of-infection-control
 american-journal-of-obstetrics-and-gynecology
 american-journal-of-ophthalmology
 american-journal-of-orthodontics-and-dentofacial-orthopedics
 anales-de-pediatria
-animal-behaviour
-annales-de-dermatologie-et-de-venereologie
 anthropod-structure-development
 archives-of-medical-research
 archives-of-physical-medicine-and-rehabilitation
 archivos-de-bronconeumologia
 archivos-de-cardiologia-de-mexico
-arthroscopy
-arthroscopy-the-journal-of-arthroscopic-and-related-surgery
 biological-psychiatry
-biologicals
 bioorganic-and-medicinal-chemistry-letters
-canadian-journal-of-ophthalmology
-canadian-journal-of-ophthalmology-journal-canadien-dophtalmologie
 cardiovascular-research
-cell-calcium
 chromatographia
-clinical-biomechanics
 clinical-nutrition
 clinical-pharmacology-and-therapeutics
-comprehensive-psychiatry
 dental-abstracts
 developmental-biology
 digestive-and-liver-disease
@@ -125,6 +114,9 @@ drug-discovery-today-disease-models
 drug-discovery-today-technologies
 journal-of-environmental-economics-and-management
 social-science-and-medicine
+
+#Skipped because default-locale should be non-English
+annales-de-dermatologie-et-de-venereologie
 
 #Intentionally made independent
 journal-francais-dophtalmologie
