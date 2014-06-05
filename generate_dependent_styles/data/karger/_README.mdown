@@ -1,0 +1,14 @@
+## 2014-06-04
+
+Compiled metadata mostly by hand.
+
+Excluded the following journals for now since they use a different citation format:
+Cytogenetic and Genome Research
+Folia Primatologica
+Molecular Syndromology
+Phonetica
+Sexual Development
+
+Also excluded a journal for which I couldn't find the reference format. Also doesn't
+seem very "Karger":
+Food Science and Technology Research
