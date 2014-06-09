@@ -1,0 +1,4 @@
+## 2014-06-09
+
+Found metadata at http://www.kbplus.ac.uk/kbplus/publicExport :
+“American Society of Mechanical Engineers:All 25 Journals plus AMR-Package 2:2014”
