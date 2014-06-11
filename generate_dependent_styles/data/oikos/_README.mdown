@@ -1,0 +1,3 @@
+## 2014-06-10
+
+Kept "Journal of Avian Biology" as an independent, as per https://github.com/citation-style-language/styles/commit/4c6c96a71593492c339358606fa8a94d09371d19 .
