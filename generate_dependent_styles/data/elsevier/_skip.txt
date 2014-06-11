@@ -94,6 +94,7 @@ drug-discovery-today-technologies
 free-radical-biology-and-medicine
 information-sciences
 journal-francais-dophtalmologie
+journal-of-adolescent-health
 journal-of-transport-geography
 pain
 psychiatry-research
