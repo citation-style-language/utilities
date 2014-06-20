@@ -92,9 +92,14 @@ annales-de-dermatologie-et-de-venereologie
 drug-discovery-today-disease-models
 drug-discovery-today-technologies
 free-radical-biology-and-medicine
+human-pathology
+human-pathology-case-reports
+information-and-management
 information-sciences
 journal-francais-dophtalmologie
 journal-of-adolescent-health
+journal-of-chromatography-a
+journal-of-chromatography-b
 journal-of-transport-geography
 pain
 psychiatry-research
