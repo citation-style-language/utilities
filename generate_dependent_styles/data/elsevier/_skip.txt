@@ -96,6 +96,7 @@ human-pathology
 human-pathology-case-reports
 information-and-management
 information-sciences
+international-journal-of-gynecology-and-obstetrics
 journal-francais-dophtalmologie
 journal-of-adolescent-health
 journal-of-chromatography-a
