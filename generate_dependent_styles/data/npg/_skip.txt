@@ -1,0 +1,15 @@
+# NPG journals kept as independent styles
+Clinical Pharmacology & Therapeutics
+European Journal of Human Genetics
+Journal of Investigative Dermatology
+Kidney International
+Molecular Therapy
+Nature
+
+# Skip
+# No instructions to authors
+SciBX: Science-Business Exchange
+Scientific American
+Scientific American Mind
+# Discontinued
+Vital
