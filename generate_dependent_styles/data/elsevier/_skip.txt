@@ -89,6 +89,7 @@ veterinary-parasitology
 annales-de-dermatologie-et-de-venereologie
 
 #Intentionally made independent
+acta-materialia
 drug-discovery-today-disease-models
 drug-discovery-today-technologies
 free-radical-biology-and-medicine
