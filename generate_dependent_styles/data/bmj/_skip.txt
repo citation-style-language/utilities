@@ -1,3 +1,9 @@
 # this style follows a special rule for the number of authors, as stated in the documentation:
 # "List the names and initials of all authors if there are 3 or fewer; otherwise list the first 3 and add et al. (The exception is the Journal of Medical Genetics, which lists all authors.)"
 journal-of-medical-genetics
+
+# Follow entirely different, author-date style
+veterinary-record
+veterinary-record-case-reports
+veterinary-record-open
+
