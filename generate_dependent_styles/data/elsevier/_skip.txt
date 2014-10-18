@@ -110,6 +110,7 @@ surface-science
 #Dependents of elsevier-harvard2
 drug-and-alcohol-dependence
 journal-of-biomechanics
+journal-of-anthropological-archaeology
 neuroscience-research
 veterinary-parasitology
 
