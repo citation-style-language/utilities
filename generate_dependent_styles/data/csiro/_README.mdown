@@ -1,0 +1,25 @@
+## 2014-11-27
+
+Styles for the Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+http://www.publish.csiro.au/nid/17.htm
+
+Compiled metadata mostly by hand and checking manually.
+
+
+Excluded the following journals for now since they use each
+a different citation format (author-date, numeric and/or footnote;
+some are quite similiar to each other but not to the same):
+ * Exploration Geophysics
+ * Preview
+ * The South Pacific Journal of Natural and Applied Sciences
+ * Reproduction, Fertility and Development
+ * Australian Journal of Chemistry
+ * Environmental Chemistry
+ * Australian Health Review
+ * Healthcare Infection
+ * Health Promotion Journal of Australia
+ * Historical Records of Australian Science
+ * Microbiology Australia
+ * Sexual Health
+There might be individual indepentent implemention of some of 
+the styles in this list.
