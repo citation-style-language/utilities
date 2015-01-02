@@ -212,6 +212,8 @@ data_subdir_paths.each do |data_subdir|
     identifier.gsub!(')', '')
     identifier.gsub!('ą', 'a')
     identifier.gsub!('ñ', 'n')
+    identifier.gsub!('ã', 'a')
+    identifier.gsub!('ê', 'e')
 
     identifier.gsub!('ç', 'c')
     identifier.gsub!('', '')
