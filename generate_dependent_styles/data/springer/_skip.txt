@@ -4,22 +4,27 @@ ambio
 # Moved to Elsevier
 journal-of-infection-and-chemotherapy
 
-# journals that have had so far a parent inconsistent with the list obtained from Springer
-# we should look through those and pick which is right
+# journals that have a parent inconsistent with the list obtained from Springer (verified via style guide)
+acta-neuropathologica
+
+#Still dependent on Springer Standard, but different 
+acta-neuropathologica  
 
 # Springer Vancouver?
 journal-of-assisted-reproduction-and-genetics
 journal-of-neuro-oncology
 the-journal-of-indian-prosthodontic-society
 
-# currently exist as independent styles
+# currently exist as independent styles (checked)
 acta-neurochirurgica
 coral-reefs
 european-journal-of-clinical-microbiology-and-infectious-diseases
 hand
 knee-surgery-sports-traumatology-arthroscopy
 kolner-zeitschrift-fur-soziologie-und-sozialpsychologie
+magnetic-resonance-materials-in-physics-biology-and-medicine
 user-modeling-and-user-adapted-interaction
+wetlands
 
 # already in IOP dependents (???)
 journal-of-optics
