@@ -23,3 +23,10 @@ user-modeling-and-user-adapted-interaction
 
 # already in IOP dependents (???)
 journal-of-optics
+
+#German Springer Styles: https://github.com/citation-style-language/styles/pull/1336
+herzschrittmachertherapie-elektrophysiologie
+obere-extremitat
+pravention-und-gesundheitsforderung
+
+
