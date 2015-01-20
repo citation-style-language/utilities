@@ -300,8 +300,8 @@ data_subdir_paths.each do |data_subdir|
 
   # only replace styles if directory options is set, so we don't replace all styles at once
   if (options[:replace] == true and options[:directory] != nil)
-  delete_styles = 0
-  copied_styles = 0
+    delete_styles = 0
+    copied_styles = 0
 
     # check presence style dependents folder
     Dependent_dir_path = File.expand_path("../../styles/dependent", This_script_dir)
