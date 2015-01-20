@@ -37,6 +37,7 @@ $stderr.puts "Script:\t#{This_script_dir}"
 #   data/bmc/_journals.tab  --> tab-delimited list of journals + info
 #   data/bmc/_skip.txt      --> journals to skip
 #   data/bmc/_rename.tab    --> journal identifiers to rename
+#   data/bmc/_extra.tab     --> as _journals.tab; add or overwrite journals
 Data_dir_path = "#{This_script_dir}/data"
 $stderr.puts "Input:\t#{Data_dir_path}"
 if not File.exist? Data_dir_path
@@ -47,7 +48,7 @@ end
 # determine directories to parse
 data_subdir_paths = []
 if options[:directory] != nil
-    if File.exist? "#{Data_dir_path}/#{options[:directory]}"
+    if File.directory? "#{Data_dir_path}/#{options[:directory]}"
       data_subdir_paths.push("#{options[:directory]}")
     else
       $stderr.puts "WARNING: subdirectory '#{options[:directory]}' does not exist"
@@ -55,7 +56,9 @@ if options[:directory] != nil
     end
 else
   Dir.foreach(Data_dir_path) do |data_subdir|
-    data_subdir_paths.push(data_subdir)
+    if File.directory? "#{Data_dir_path}/#{data_subdir}"
+      data_subdir_paths.push(data_subdir)
+    end
   end
 end
 
@@ -78,6 +81,7 @@ data_subdir_paths.each do |data_subdir|
   journals_path = "#{data_subdir_path}/_journals.tab"
   skip_path     = "#{data_subdir_path}/_skip.txt"
   rename_path   = "#{data_subdir_path}/_rename.tab"
+  extra_path    = "#{data_subdir_path}/_extra.tab"
   all_good = true
   [template_path, journals_path].each do |file_to_check|
     next if File.exist? file_to_check
@@ -102,6 +106,11 @@ data_subdir_paths.each do |data_subdir|
   skipped_journals = File.read(skip_path).split(/\n/) if File.exist? skip_path
   renamed_journals = [ ]
   renamed_journals = File.read(rename_path).split(/\n/) if File.exist? rename_path
+  extra_journals = [ ]
+  extra_journals = File.read(extra_path).split(/\n/) if File.exist? extra_path
+
+  # combine journals and extra_journals, and remove header row from latter
+  journals.concat(extra_journals.drop(1))
 
   # parse renamed_journals file
   old_and_new_names = Hash.new
@@ -120,6 +129,11 @@ data_subdir_paths.each do |data_subdir|
   # load all the info from the tab-delimited info file
   count_created_styles = 0
   count_skipped_styles = 0
+  count_overwritten_styles = 0
+  
+  # keep track of file names
+  identifiers = [ ]
+  
   journals.each do |journal_line|
 
     # each line contains tab-delimited fields
@@ -241,9 +255,15 @@ data_subdir_paths.each do |data_subdir|
       next
     end
 
+    # count identifier if unique in dataset
+    if (identifiers.include?(identifier))
+      count_overwritten_styles = count_overwritten_styles + 1
+    else
+      identifiers.push(identifier)
+      count_created_styles = count_created_styles + 1
+    end
+
     # create style xml by replacing fields in the template
-    # $stderr.puts "creating style: #{identifier}"
-    count_created_styles = count_created_styles + 1
     style_xml = "#{template}"
     field_values.each do |name, value|
       placeholder = "##{name}#"
@@ -262,11 +282,20 @@ data_subdir_paths.each do |data_subdir|
 
   end
 
+  print "Generated #{count_created_styles}\t"
   if (count_skipped_styles == 0)
-    $stderr.puts "Generated #{count_created_styles}\t\t\t#{data_subdir}"
+    print "\t\t"
   else
-    $stderr.puts "Generated #{count_created_styles}\tSkipped #{count_skipped_styles}\t#{data_subdir}"
+    print "Skipped #{count_skipped_styles}\t"
   end
+  if (count_overwritten_styles == 0)
+    print "\t\t"
+  else
+    print "Overwrote #{count_overwritten_styles}\t"
+  end
+  print "#{data_subdir}\n"
+  $stdout.flush
+
   total_count_created_styles = total_count_created_styles + count_created_styles
 
   # only replace styles if directory options is set, so we don't replace all styles at once
