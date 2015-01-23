@@ -150,6 +150,7 @@ data_subdir_paths.each do |data_subdir|
   
   # keep track of file names
   identifiers = [ ]
+  overwritten_styles = [ ]
   
   journals.each do |journal_line|
 
@@ -193,7 +194,8 @@ data_subdir_paths.each do |data_subdir|
     initial_title = field_values['TITLE']
 
     # remove abbreviation in parenthesis that sometimes follow a title
-    field_values['TITLE'] = field_values['TITLE'].gsub(/ \(.*\)/, '')
+    # Only remove last match, per http://stackoverflow.com/a/3185179/1712389
+    field_values['TITLE'] = field_values['TITLE'].reverse.sub(/\).*?\( /, '').reverse
 
     # replace en-dashes in title by hyphens
     field_values['TITLE'] = field_values['TITLE'].gsub('–', '-')
@@ -275,6 +277,7 @@ data_subdir_paths.each do |data_subdir|
     # count identifier if unique in dataset
     if (identifiers.include?(identifier))
       count_overwritten_styles = count_overwritten_styles + 1
+      overwritten_styles.push(identifier)
     else
       identifiers.push(identifier)
       count_created_styles = count_created_styles + 1
@@ -333,6 +336,10 @@ data_subdir_paths.each do |data_subdir|
   end
   print "#{data_subdir}\n"
   $stdout.flush
+
+  overwritten_styles.each do |overwritten_style|
+    $stderr.puts "Overwrote: #{overwritten_style}"
+  end
 
   total_count_created_styles = total_count_created_styles + count_created_styles
 
