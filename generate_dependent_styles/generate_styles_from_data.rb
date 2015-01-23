@@ -62,6 +62,23 @@ else
   end
 end
 
+# determine whether styles can be replaced
+replace_styles = false
+if (options[:replace] == true)
+  
+  # check presence style dependents folder
+  Dependent_dir_path = File.expand_path("../../styles/dependent", This_script_dir)
+  if File.exist? Dependent_dir_path
+    replace_styles = true
+    
+    deleted_styles = 0
+    copied_styles = 0
+  else
+    $stderr.puts "WARNING: Can't replace styles. Target directory not found at '#{Dependent_dir_path}'"
+    abort "Failed"
+  end
+end
+
 # start with new empty style directory
 generated_style_dir_path = "#{This_script_dir}/generated_styles"
 `rm -R '#{generated_style_dir_path}'` if File.exist? generated_style_dir_path
@@ -282,6 +299,27 @@ data_subdir_paths.each do |data_subdir|
 
   end
 
+  if (replace_styles == true)
+    
+    dependents_path = "#{Dependent_dir_path}/*.csl"
+    # check each dependent style for XML comment (field_values['XML-COMMENT'])
+    Dir.glob(dependents_path) do |dependent|
+      # delete dependent style if generated from current data subdirectory
+      if File.readlines(dependent).grep(/#{xml_comment}/).size > 0
+        File.delete(dependent)
+        deleted_styles = deleted_styles + 1
+      end
+    end
+    
+    # copy generated styles into dependents folder
+    generated_styles_path = "#{generated_style_dir_path}/#{data_subdir}/*.csl"
+    Dir.glob(generated_styles_path) do |generated_style|
+      FileUtils.cp_r(generated_style, "#{Dependent_dir_path}", :remove_destination => true)
+      copied_styles = copied_styles + 1
+    end
+  
+  end
+
   print "Generated #{count_created_styles}\t"
   if (count_skipped_styles == 0)
     print "\t\t"
@@ -298,39 +336,11 @@ data_subdir_paths.each do |data_subdir|
 
   total_count_created_styles = total_count_created_styles + count_created_styles
 
-  # only replace styles if directory options is set, so we don't replace all styles at once
-  if (options[:replace] == true and options[:directory] != nil)
-    delete_styles = 0
-    copied_styles = 0
+end
 
-    # check presence style dependents folder
-    Dependent_dir_path = File.expand_path("../../styles/dependent", This_script_dir)
-    if not File.exist? Dependent_dir_path
-      $stderr.puts "WARNING: target directory not found at '#{Dependent_dir_path}'"
-      abort "Failed"
-    end
-    
-    Dependents_path = "#{Dependent_dir_path}/*.csl"
-    # check each dependent style for XML comment (field_values['XML-COMMENT'])
-    Dir.glob(Dependents_path) do |dependent|
-      # delete dependent style if generated from current data subdirectory
-      if File.readlines(dependent).grep(/#{xml_comment}/).size > 0
-        File.delete(dependent)
-        delete_styles = delete_styles + 1
-      end
-    end
-    $stderr.puts "Deleted #{delete_styles} styles from #{Dependent_dir_path}"
-    
-    # copy generated styles into dependents folder
-    Generated_styles_path = "#{generated_style_dir_path}/#{data_subdir}/*.csl"
-    Dir.glob(Generated_styles_path) do |generated_style|
-      FileUtils.cp_r(generated_style, "#{Dependent_dir_path}", :remove_destination => true)
-      copied_styles = copied_styles + 1
-    end
-    $stderr.puts "Copied #{copied_styles} styles to #{Dependent_dir_path}"
-  
-  end
-
+if (replace_styles == true)
+  $stderr.puts "Deleted #{deleted_styles} styles from #{Dependent_dir_path}"
+  $stderr.puts "Copied #{copied_styles} styles to #{Dependent_dir_path}"
 end
 
 $stderr.puts "\nDone! #{total_count_created_styles} dependent CSL styles generated."
