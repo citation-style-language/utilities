@@ -21,5 +21,5 @@ some are quite similiar to each other but not to the same):
  * Historical Records of Australian Science
  * Microbiology Australia
  * Sexual Health
-There might be individual indepentent implemention of some of 
+There might be individual independent implementation of some of 
 the styles in this list.
