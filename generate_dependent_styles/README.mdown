@@ -1,12 +1,12 @@
 # Generate Dependent Styles
-Journals from the same publisher often share the same citation format. The script  `generate_styles_from_data.rb` can be used to quickly generate dependent CSL styles for such journals, based on journal metadata stored in the `data` subdirectory.
+The script  `generate_styles_from_data.rb` can be used to automatically generate dependent CSL styles for publishers that use the same citation format(s) across multiple journals. All that is needed is a collection of journal metadata (journal title, ISSN, eISSN, citation format, etc.).
 
-## Preparing the journal metadata
-Within the `data` subdirectory, a subdirectory should be added for each publisher, e.g. `data/asm` for the American Society for Microbiology.
+## Preparing journal metadata
+Each publisher gets its own metadata directory in the `data` subdirectory of this repository (e.g. `data/asm` for the American Society for Microbiology). The file [data/publishers.json](https://github.com/citation-style-language/utilities/blob/master/generate_dependent_styles/data/publishers.json) matches directories to publisher names.
 
-Within this subdirectory, add the following files:
+### Required files
 
-### _journals.tab
+#### _journals.tab
 `_journals.tab` must be a tab-delimited file. Following the header row, each subsequent row should contain the metadata of a single journal. Metadata fields are identified by the column header. For example, the first few rows could look like:
 
     TITLE                                  ISSN       EISSN      DOCUMENTATION
@@ -26,11 +26,11 @@ When preparing `_journals.tab`, keep the following in mind:
   - "FIELD": field (e.g. "medicine")
   - "ISSN": print ISSN
   - "EISSN": electronic ISSN
-- the script identifies metadata fields by their column header, using a case-insensitive match: "TITLE" is the same as "title" or "Title".
+- capitalization of column headers is not important. The script uses a case-insensitive match, so "TITLE" is the same as "title" or "Title".
 - there is no upper limit on the number of metadata fields.
-- some journals may not have a value for each metadata field. For example, online-only journals typically don't have a (print) ISSN. In this case, just leave the field empty, or fill it with a single character, such as "x". 
+- some journals may not have a value for each metadata field. For example, online-only journals typically don't have a print ISSN. In this case, just leave the field empty, or fill it with a single character, such as "x". 
 
-### _template.csl
+#### _template.csl
 
 `_template.csl` must contain the XML template for the dependent CSL styles. An example is shown below:
 
@@ -52,19 +52,25 @@ When preparing `_journals.tab`, keep the following in mind:
       </info>
     </style>
 
-The template should be a complete CSL style. Placeholders indicate where metadata fields should be substituted in during style generation. Placeholders should match the metadata field names from `_journals.tab`. They must be in all-caps and enclosed in pound signs.
+Placeholders in the template indicate where metadata fields should be substituted in during style generation. They must match the metadata field names from `_journals.tab`, be in all-caps and enclosed in pound signs.
 
 The style file name is automatically generated from its title, by, among others, removing diacritics and punctuation, and replacing spaces by hyphens. The style identifier (the file name without ".csl" extension) is substituted through the "#IDENTIFIER#" placeholder, which must be used to generate the style ID and "self"-link.
 
-The placeholder "#XML-COMMENT#" is replaced by the string "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**", with "subdirectory" matching the name of the subdirectory being processed.
+The placeholder "#XML-COMMENT#" is replaced by the string "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**", with "subdirectory" matching the name of the subdirectory being processed. It should be used in all templates.
 
 If the metadata field for a journal is empty or contains only a single character, the entire line with the matching placeholder is deleted in the generated style.
 
-### _skip.txt
+### Optional files
+
+#### _README.mdown
+
+It is always a good idea to document your work in `_README.mdown`. Do we have contacts at the publisher? Where exactly does the metadata come from? Who reorganized the metadata into our own format?
+
+#### _skip.txt
 
 `_skip.txt` is an optional file. It can be used to list journals that should be skipped during style generation. Journals can be specified by their title or identifier, one per line.
 
-### _rename.tab
+#### _rename.tab
 
 `_rename.tab` is an optional file. It can be used to change the file name and style identifier in generated styles. Each line in this tab-delimited file should list the original style identifier, followed by the new identifier.
 
