@@ -1,0 +1,6 @@
+## 2015-02-15
+
+- Newly created; data based on IEEE via https://github.com/citation-style-language/styles/issues/380#issuecomment-13869850
+- author guidelines at http://digital-library.theiet.org/journals/author-guide
+- leaving the original IEEE links there because they contain links to author guidelines in case some differ. 
+
