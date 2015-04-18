@@ -1,3 +1,11 @@
+## 2015-04-17
+
+Add overwriting data to \_extra.tab for:
+
+Analytical and Bioanalytical Chemistry: https://github.com/citation-style-language/styles/commit/2fd0897e82ec721dcb68e306cef509b347a1b1d4
+Basic Research in Cardiology: https://github.com/citation-style-language/styles/pull/1075
+Plant Ecology: https://github.com/citation-style-language/utilities/issues/19
+
 ## 2013-02-07
 
 The list of styles for Springer journals was obtained from Springer / Mekentosj in an XLS format. After removing journals that have ceased publications, there remained 1421 journals. The list of journals was stored in `journals_raw.txt`.
