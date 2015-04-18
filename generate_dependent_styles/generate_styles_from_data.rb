@@ -308,7 +308,7 @@ data_subdir_paths.each do |data_subdir|
     # check each dependent style for XML comment (field_values['XML-COMMENT'])
     Dir.glob(dependents_path) do |dependent|
       # delete dependent style if generated from current data subdirectory
-      if File.readlines(dependent).grep(/#{xml_comment}/).size > 0
+      if File.readlines(dependent).grep(/<!-- #{xml_comment} -->/).size > 0
         File.delete(dependent)
         deleted_styles = deleted_styles + 1
       end
