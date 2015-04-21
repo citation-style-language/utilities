@@ -14,8 +14,10 @@ parser = OptionParser.new do|opts|
     options[:directory] = directory;
   end
 
-  opts.on('-r', '--replace', 'Replace styles in "styles" repo') do
+  opts.on('-r', '--replace [LIMITED_TO]', ["additions", "deletions", "modifications"],
+          'Replace styles in "styles" repo, optionally limited to: "[a]dditions", "[d]eletions", "[m]odifications"') do |replace_type|
     options[:replace] = true
+    options[:replace_type] = replace_type || ''
   end
 
   opts.on('-h', '--help', 'Show help') do
@@ -70,6 +72,23 @@ if (options[:replace] == true)
   Dependent_dir_path = File.expand_path("../../styles/dependent", This_script_dir)
   if File.exist? Dependent_dir_path
     replace_styles = true
+    
+    do_additions = false
+    do_deletions = false
+    do_modifications = false
+    
+    case options[:replace_type]
+    when "additions"
+      do_additions = true
+    when "deletions"
+      do_deletions = true
+    when "modifications"
+      do_modifications = true
+    else
+      do_additions = true
+      do_deletions = true
+      do_modifications = true
+    end
     
     deleted_styles = 0
     copied_styles = 0
@@ -303,22 +322,39 @@ data_subdir_paths.each do |data_subdir|
   end
 
   if (replace_styles == true)
+    old_identifiers = [ ]
     
     dependents_path = "#{Dependent_dir_path}/*.csl"
     # check each dependent style for XML comment (field_values['XML-COMMENT'])
     Dir.glob(dependents_path) do |dependent|
       # delete dependent style if generated from current data subdirectory
       if File.readlines(dependent).grep(/<!-- #{xml_comment} -->/).size > 0
-        File.delete(dependent)
-        deleted_styles = deleted_styles + 1
+        old_identifier = File.basename(dependent, ".csl")
+        old_identifiers.push(old_identifier) 
+        
+        if (do_deletions and !identifiers.include?(old_identifier))
+          File.delete(dependent)
+          deleted_styles = deleted_styles + 1
+        end
       end
     end
     
     # copy generated styles into dependents folder
     generated_styles_path = "#{generated_style_dir_path}/#{data_subdir}/*.csl"
     Dir.glob(generated_styles_path) do |generated_style|
-      FileUtils.cp_r(generated_style, "#{Dependent_dir_path}", :remove_destination => true)
-      copied_styles = copied_styles + 1
+      new_identifier = File.basename(generated_style, ".csl")
+      
+      write = false
+      if (do_additions and !old_identifiers.include?(new_identifier))
+        write = true
+      elsif (do_modifications and old_identifiers.include?(new_identifier))
+        write = true
+      end
+      
+      if (write)
+        FileUtils.cp_r(generated_style, "#{Dependent_dir_path}", :remove_destination => true)
+        copied_styles = copied_styles + 1
+      end  
     end
   
   end
