@@ -221,6 +221,13 @@ data_subdir_paths.each do |data_subdir|
 
     # identifier is created from the title
     identifier = field_values['TITLE'].downcase
+    
+    # remove content between square brackets from identifier
+    identifier = identifier.reverse.sub(/\].*?\[ /, '').reverse
+    # convert square brackets to parentheses in title
+    field_values['TITLE'] = field_values['TITLE'].gsub('[', '(')
+    field_values['TITLE'] = field_values['TITLE'].gsub(']', ')')
+    
     identifier.gsub!(',', ' ')
     identifier.gsub!(':', ' ')
     identifier.gsub!("/", ' ')
