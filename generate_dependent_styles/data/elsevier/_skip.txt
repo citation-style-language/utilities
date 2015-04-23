@@ -53,6 +53,7 @@ journal-of-the-american-academy-of-dermatology
 journal-of-the-american-college-of-cardiology
 journal-of-the-american-society-of-echocardiography
 journal-of-the-formosan-medical-association
+journal-of-ultrasound
 journal-of-vascular-surgery
 medicina-clinica
 medicina-intensiva
