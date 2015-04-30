@@ -6,6 +6,66 @@ require 'fileutils'
 # for script options
 require 'optparse'
 
+def title_to_styleID(title)
+  styleID = title.downcase
+  
+  # remove content between last set of parentheses
+  styleID = styleID.reverse.sub(/\).*?\( /, '').reverse
+  
+  # remove content between last set of square brackets
+  styleID = styleID.reverse.sub(/\].*?\[ /, '').reverse
+  
+  styleID.gsub!(',', ' ')
+  styleID.gsub!(':', ' ')
+  styleID.gsub!('/', ' ')
+  styleID.gsub!('+', ' ')
+  styleID.gsub!('.', ' ')
+  styleID.gsub!(/\s{2,}/, ' ')
+
+  # punctuation to eliminate
+  styleID.gsub!(/^ +/, '')
+  styleID.gsub!(/ +$/, '')
+  styleID.gsub!('?', '')
+  styleID.gsub!('’', '')
+  styleID.gsub!("\'", '')
+  styleID.gsub!('(', '')
+  styleID.gsub!(')', '')
+  
+  # punctuation to replace
+  styleID.gsub!(' ', '-')
+  styleID.gsub!('&', '-and-')
+  styleID.gsub!('–', '-')
+  styleID.gsub!(/-{2,}/, '-')
+  
+  # remove diacritics
+  styleID.gsub!('á', 'a')
+  styleID.gsub!('à', 'a')
+  styleID.gsub!('ä', 'a')
+  styleID.gsub!('Ä', 'a')
+  styleID.gsub!('ã', 'a')
+  styleID.gsub!('ą', 'a')
+  styleID.gsub!('č', 'c')
+  styleID.gsub!('ç', 'c')
+  styleID.gsub!('E', 'e')
+  styleID.gsub!('é', 'e')
+  styleID.gsub!('É', 'e')
+  styleID.gsub!('è', 'e')
+  styleID.gsub!('ê', 'e')
+  styleID.gsub!('ë', 'e')
+  styleID.gsub!('ę', 'e')
+  styleID.gsub!('í', 'i')
+  styleID.gsub!('ń', 'n')
+  styleID.gsub!('ñ', 'n')
+  styleID.gsub!('ó', 'o')
+  styleID.gsub!('ö', 'o')
+  styleID.gsub!('Ö', 'o')
+  styleID.gsub!('ß', 'ss')
+  styleID.gsub!('ü', 'u')
+  styleID.gsub!('Ü', 'u')
+  
+  return styleID
+end
+
 options = {:directory => nil, :replace => false}
 
 parser = OptionParser.new do|opts|
@@ -212,71 +272,18 @@ data_subdir_paths.each do |data_subdir|
     # keep track of initial value of title to compare to the skip list
     initial_title = field_values['TITLE']
 
+    identifier = title_to_styleID(field_values['TITLE'])
+
     # remove abbreviation in parenthesis that sometimes follow a title
     # Only remove last match, per http://stackoverflow.com/a/3185179/1712389
     field_values['TITLE'] = field_values['TITLE'].reverse.sub(/\).*?\( /, '').reverse
 
     # replace en-dashes in title by hyphens
     field_values['TITLE'] = field_values['TITLE'].gsub('–', '-')
-
-    # identifier is created from the title
-    identifier = field_values['TITLE'].downcase
     
-    # remove content between square brackets from identifier
-    identifier = identifier.reverse.sub(/\].*?\[ /, '').reverse
     # convert square brackets to parentheses in title
     field_values['TITLE'] = field_values['TITLE'].gsub('[', '(')
     field_values['TITLE'] = field_values['TITLE'].gsub(']', ')')
-    
-    identifier.gsub!(',', ' ')
-    identifier.gsub!(':', ' ')
-    identifier.gsub!("/", ' ')
-    identifier.gsub!("+", ' ')
-    identifier.gsub!(".", ' ')
-    identifier.gsub!("\'", '')
-    identifier.gsub!('  ', ' ')
-    identifier.gsub!('  ', ' ')
-    identifier.gsub!(/^ +/, '')
-    identifier.gsub!(/ +$/, '')
-    identifier.gsub!(' ', '-')
-    identifier.gsub!('-&-', '-and-')
-    identifier.gsub!('&', '-and-')
-    identifier.gsub!('–', '-')
-    identifier.gsub!('--', '-')
-    identifier.gsub!('--', '-')
-    identifier.gsub!('---', '-')
-
-    # for accents, it seems `tr` does not work very well as there seems to be some issue with how things are encoded
-    identifier.gsub!('à', 'a')
-    identifier.gsub!('á', 'a')
-    identifier.gsub!('ä', 'a')
-    identifier.gsub!('Ä', 'a')
-    identifier.gsub!('è', 'e')
-    identifier.gsub!('é', 'e')
-    identifier.gsub!('ë', 'e')
-    identifier.gsub!('í', 'i')
-    identifier.gsub!('ó', 'o')
-    identifier.gsub!('č', 'c')
-    identifier.gsub!('É', 'e')
-    identifier.gsub!('ń', 'n')
-    identifier.gsub!('ö', 'o')
-    identifier.gsub!('Ö', 'o')
-    identifier.gsub!('ü', 'u')
-    identifier.gsub!('Ü', 'u')
-    identifier.gsub!('ß', 'ss')
-    identifier.gsub!('’', '')
-    identifier.gsub!('E', 'e')
-    identifier.gsub!('?', '')
-    identifier.gsub!('ę', 'e')
-    identifier.gsub!('(', '')
-    identifier.gsub!(')', '')
-    identifier.gsub!('ą', 'a')
-    identifier.gsub!('ñ', 'n')
-    identifier.gsub!('ã', 'a')
-    identifier.gsub!('ê', 'e')
-
-    identifier.gsub!('ç', 'c')
-    identifier.gsub!('', '')
 
     ['TITLE', 'TITLESHORT', 'DOCUMENTATION'].each do |key|
       if field_values.has_key?(key)
