@@ -6,6 +6,7 @@ require 'fileutils'
 # for script options
 require 'optparse'
 
+# converts style title to style ID
 def title_to_styleID(title)
   styleID = title.downcase
   
@@ -14,54 +15,49 @@ def title_to_styleID(title)
   
   # remove content between last set of square brackets
   styleID = styleID.reverse.sub(/\].*?\[ /, '').reverse
-  
-  styleID.gsub!(',', ' ')
-  styleID.gsub!(':', ' ')
-  styleID.gsub!('/', ' ')
-  styleID.gsub!('+', ' ')
-  styleID.gsub!('.', ' ')
-  styleID.gsub!(/\s{2,}/, ' ')
 
   # punctuation to eliminate
-  styleID.gsub!(/^ +/, '')
-  styleID.gsub!(/ +$/, '')
   styleID.gsub!('?', '')
   styleID.gsub!('’', '')
-  styleID.gsub!("\'", '')
   styleID.gsub!('(', '')
   styleID.gsub!(')', '')
+  styleID.gsub!('\'', '')
   
   # punctuation to replace
   styleID.gsub!(' ', '-')
-  styleID.gsub!('&', '-and-')
   styleID.gsub!('–', '-')
+  styleID.gsub!(',', '-')
+  styleID.gsub!(':', '-')
+  styleID.gsub!('.', '-')
+  styleID.gsub!('/', '-')
+  styleID.gsub!('&', '-and-')
+  styleID.gsub!('+', '-')
   styleID.gsub!(/-{2,}/, '-')
   
+  # remove hyphens at ends
+  styleID.gsub!(/^-/, '')
+  styleID.gsub!(/-$/, '')
+  
   # remove diacritics
-  styleID.gsub!('á', 'a')
-  styleID.gsub!('à', 'a')
-  styleID.gsub!('ä', 'a')
-  styleID.gsub!('Ä', 'a')
-  styleID.gsub!('ã', 'a')
-  styleID.gsub!('ą', 'a')
-  styleID.gsub!('č', 'c')
-  styleID.gsub!('ç', 'c')
-  styleID.gsub!('E', 'e')
-  styleID.gsub!('é', 'e')
-  styleID.gsub!('É', 'e')
-  styleID.gsub!('è', 'e')
-  styleID.gsub!('ê', 'e')
-  styleID.gsub!('ë', 'e')
-  styleID.gsub!('ę', 'e')
-  styleID.gsub!('í', 'i')
-  styleID.gsub!('ń', 'n')
-  styleID.gsub!('ñ', 'n')
-  styleID.gsub!('ó', 'o')
-  styleID.gsub!('ö', 'o')
-  styleID.gsub!('Ö', 'o')
-  styleID.gsub!('ß', 'ss')
-  styleID.gsub!('ü', 'u')
-  styleID.gsub!('Ü', 'u')
+  styleID.gsub!(/á/i, 'a')
+  styleID.gsub!(/à/i, 'a')
+  styleID.gsub!(/ä/i, 'a')
+  styleID.gsub!(/ã/i, 'a')
+  styleID.gsub!(/ą/i, 'a')
+  styleID.gsub!(/č/i, 'c')
+  styleID.gsub!(/ç/i, 'c')
+  styleID.gsub!(/é/i, 'e')
+  styleID.gsub!(/è/i, 'e')
+  styleID.gsub!(/ê/i, 'e')
+  styleID.gsub!(/ë/i, 'e')
+  styleID.gsub!(/ę/i, 'e')
+  styleID.gsub!(/í/i, 'i')
+  styleID.gsub!(/ń/i, 'n')
+  styleID.gsub!(/ñ/i, 'n')
+  styleID.gsub!(/ó/i, 'o')
+  styleID.gsub!(/ö/i, 'o')
+  styleID.gsub!(/ß/i, 'ss')
+  styleID.gsub!(/ü/i, 'u')
   
   return styleID
 end
