@@ -137,6 +137,7 @@ current-biology
 developmental-cell
 immunity
 molecular-cell
+molecular-plant
 neuron
 stem-cell-reports
 structure
