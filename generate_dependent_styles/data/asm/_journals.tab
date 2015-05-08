@@ -1,14 +1,14 @@
-TITLE	ISSN	EISSN	DOCUMENTATION
-Antimicrobial Agents and Chemotherapy	0066-4804	1098-6596	http://aac.asm.org/
-Applied and Environmental Microbiology	0099-2240	1098-5336	http://aem.asm.org/
-Clinical and Vaccine Immunology	1556-6811	1556-679X	http://cvi.asm.org/
-Clinical Microbiology Reviews	0893-8512	1098-6618	http://cmr.asm.org/
-Eukaryotic Cell	1535-9778	1535-9786	http://ec.asm.org/
-Genome Announcements	x	2169-8287	http://genomea.asm.org/
-Infection and Immunity	0019-9567	1098-5522	http://iai.asm.org/
-Journal of Bacteriology	0021-9193	1098-5530	http://jb.asm.org/
-Journal of Clinical Microbiology	0095-1137	1098-660X	http://jcm.asm.org/
-Journal of Virology	0022-538X	1098-5514	http://jvi.asm.org/
-mBio	x	2150-7511	http://mbio.asm.org/
-Microbiology and Molecular Biology Reviews	1092-2172	1098-5557	http://mmbr.asm.org/
-Molecular and Cellular Biology	0270-7306	1098-5549	http://mcb.asm.org/
+Title	TitleShort	ISSN	eISSN	Documentation
+Antimicrobial Agents and Chemotherapy	AAC	0066-4804	1098-6596	http://aac.asm.org/site/misc/ifora.xhtml
+Applied and Environmental Microbiology	AEM	0099-2240	1098-5336	http://aem.asm.org/site/misc/ifora.xhtml
+Clinical and Vaccine Immunology	CVI	1556-6811	1556-679X	http://cvi.asm.org/site/misc/ifora.xhtml
+Clinical Microbiology Reviews	CMR	0893-8512	1098-6618	http://cmr.asm.org/site/misc/ifora.xhtml
+Eukaryotic Cell	EC	1535-9778	1535-9786	http://ec.asm.org/site/misc/ifora.xhtml
+Genome Announcements	x	x	2169-8287	http://genomea.asm.org/site/misc/ifora.xhtml
+Infection and Immunity	IAI	0019-9567	1098-5522	http://iai.asm.org/site/misc/ifora.xhtml
+Journal of Bacteriology	JB	0021-9193	1098-5530	http://jb.asm.org/site/misc/ifora.xhtml
+Journal of Clinical Microbiology	JCM	0095-1137	1098-660X	http://jcm.asm.org/site/misc/ifora.xhtml
+Journal of Virology	JVI	0022-538X	1098-5514	http://jvi.asm.org/site/misc/ifora.xhtml
+mBio	x	x	2150-7511	http://mbio.asm.org/site/misc/ifora.xhtml
+Microbiology and Molecular Biology Reviews	MMBR	1092-2172	1098-5557	http://mmbr.asm.org/site/misc/ifora.xhtml
+Molecular and Cellular Biology	MCB	0270-7306	1098-5549	http://mcb.asm.org/site/misc/ifora.xhtml

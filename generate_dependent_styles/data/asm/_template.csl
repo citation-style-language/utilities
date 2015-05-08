@@ -3,6 +3,7 @@
   <!-- #XML-COMMENT# -->
   <info>
     <title>#TITLE#</title>
+    <title-short>#TITLESHORT#</title-short>
     <id>http://www.zotero.org/styles/#IDENTIFIER#</id>
     <link href="http://www.zotero.org/styles/#IDENTIFIER#" rel="self"/>
     <link href="http://www.zotero.org/styles/american-society-for-microbiology" rel="independent-parent"/>
@@ -11,7 +12,7 @@
     <category field="biology"/>
     <issn>#ISSN#</issn>
     <eissn>#EISSN#</eissn>
-    <updated>2014-04-29T12:00:00+00:00</updated>
+    <updated>2015-05-08T17:36:22+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 </style>
