@@ -6,6 +6,7 @@ journal-of-infection-and-chemotherapy
 
 # journals that have a parent inconsistent with the list obtained from Springer (verified via style guide)
 acta-neuropathologica
+neurosurgical-review
 
 # Springer Vancouver?
 journal-of-assisted-reproduction-and-genetics

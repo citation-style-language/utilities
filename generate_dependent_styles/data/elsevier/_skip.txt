@@ -107,6 +107,7 @@ journal-of-transport-geography
 pain
 psychiatry-research
 surface-science
+soil-biology-and-biochemistry
 
 #Dependents of elsevier-harvard2
 drug-and-alcohol-dependence
