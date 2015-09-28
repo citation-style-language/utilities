@@ -77,6 +77,9 @@ class Style():
         """ Returns the summary of the style. """
         return self._getInfoFieldText("summary")
 
+    def issn(self):
+        return self._getInfoFieldText("issn")
+
     def author(self):
         """ Returns the author of the stlye. """
         author = self._getInfoElement("author")
