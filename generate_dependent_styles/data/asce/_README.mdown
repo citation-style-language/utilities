@@ -1,0 +1,7 @@
+## 2015-12-08 Initial commit
+
+The journal list was obtained by following
+manually all the links from the list of journals
+from ASCE:
+
+http://ascelibrary.org/journals/all_journal_titles
