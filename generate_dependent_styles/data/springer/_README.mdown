@@ -1,10 +1,18 @@
+## 2015-04-23
+
+Springer gave us a new list of its journals and the used citation style (obtained from a database query).
+We enriched this list with some data and prepared that for updateing the Springer styles here in the CSL repo.
+See
+https://github.com/citation-style-language/styles/pull/1526 and
+https://github.com/citation-style-language/styles/issues/1122
+
 ## 2015-04-17
 
 Add overwriting data to \_extra.tab for:
 
-Analytical and Bioanalytical Chemistry: https://github.com/citation-style-language/styles/commit/2fd0897e82ec721dcb68e306cef509b347a1b1d4
-Basic Research in Cardiology: https://github.com/citation-style-language/styles/pull/1075
-Plant Ecology: https://github.com/citation-style-language/utilities/issues/19
+- Analytical and Bioanalytical Chemistry: https://github.com/citation-style-language/styles/commit/2fd0897e82ec721dcb68e306cef509b347a1b1d4
+- Basic Research in Cardiology: https://github.com/citation-style-language/styles/pull/1075
+- Plant Ecology: https://github.com/citation-style-language/utilities/issues/19
 
 ## 2013-02-07
 
