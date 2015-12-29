@@ -84,37 +84,22 @@ end
 
 parser.parse!
 
-# where are we?
+# Print current directory
 This_script_dir = File.dirname(File.expand_path(__FILE__))
 $stderr.puts "Script:\t#{This_script_dir}"
 
-# the 'data' directory contains info for each group of journals
-# for instance:
-#   data/bmc
-#   data/bmc/_template.csl  --> template for those journals
-#   data/bmc/_journals.tab  --> tab-delimited list of journals + info
-#   data/bmc/_skip.txt      --> journals to skip
-#   data/bmc/_rename.tab    --> journal identifiers to rename
-#   data/bmc/_extra.tab     --> as _journals.tab; add or overwrite journals
-Data_dir_path = "#{This_script_dir}/data"
-$stderr.puts "Input:\t#{Data_dir_path}"
-if not File.exist? Data_dir_path
-  $stderr.puts "WARNING: no 'data' directory found at '#{Data_dir_path}'"
-  abort "Failed"
-end
-
-# determine directories to parse
+# Determine directories to parse
 data_subdir_paths = []
 if options[:directory] != nil
-    if File.directory? "#{Data_dir_path}/#{options[:directory]}"
+    if File.directory? "#{This_script_dir}/#{options[:directory]}"
       data_subdir_paths.push("#{options[:directory]}")
     else
       $stderr.puts "WARNING: subdirectory '#{options[:directory]}' does not exist"
       abort "Failed"
     end
 else
-  Dir.foreach(Data_dir_path) do |data_subdir|
-    if File.directory? "#{Data_dir_path}/#{data_subdir}"
+  Dir.foreach(This_script_dir) do |data_subdir|
+    if File.file? "#{This_script_dir}/#{data_subdir}/_template.csl"
       data_subdir_paths.push(data_subdir)
     end
   end
@@ -168,7 +153,7 @@ data_subdir_paths.each do |data_subdir|
 
   # skip invalid entries
   next if data_subdir =~ /^\./
-  data_subdir_path = "#{Data_dir_path}/#{data_subdir}"
+  data_subdir_path = "#{This_script_dir}/#{data_subdir}"
   template_path = "#{data_subdir_path}/_template.csl"
   journals_path = "#{data_subdir_path}/_journals.tab"
   skip_path     = "#{data_subdir_path}/_skip.txt"
