@@ -1,12 +1,12 @@
 # Generate Dependent Styles
-The script  `generate_styles_from_data.rb` can be used to automatically generate dependent CSL styles for publishers that use the same citation format(s) across multiple journals. All that is needed is a collection of journal metadata (journal title, ISSN, eISSN, citation format, etc.).
+The script  `generate_styles.rb` can be used to automatically generate dependent CSL styles for publishers that use the same citation format(s) across multiple journals. All that is needed is a collection of journal metadata (journal title, ISSN, eISSN, citation format, etc.).
 
 ## Preparing journal metadata
 Each publisher gets its own metadata directory in the `generate_dependent_styles/data` subdirectory of this repository (e.g. `data/asm` for the American Society for Microbiology). The file [data/publishers.json](https://github.com/citation-style-language/utilities/blob/master/generate_dependent_styles/data/publishers.json) matches directories to publisher names.
 
 ### Required files
 
-#### _journals.tab
+#### \_journals.tab
 `_journals.tab` must be a tab-delimited file. Following the header row, each subsequent row should contain the metadata of a single journal. Metadata fields are identified by the column header. For example, the first few rows could look like:
 
     TITLE                                  ISSN       EISSN      DOCUMENTATION
@@ -30,7 +30,7 @@ When preparing `_journals.tab`, keep the following in mind:
 - there is no upper limit on the number of metadata fields.
 - some journals may not have a value for each metadata field. For example, online-only journals typically don't have a print ISSN. In this case, just leave the field empty, or fill it with a single character, such as "x". 
 
-#### _template.csl
+#### \_template.csl
 
 `_template.csl` must contain the XML template for the dependent CSL styles. An example is shown below:
 
@@ -62,15 +62,15 @@ If the metadata field for a journal is empty or contains only a single character
 
 ### Optional files
 
-#### _README.mdown
+#### \_README.mdown
 
 It is always a good idea to document your work in `_README.mdown`. Do we have contacts at the publisher? Where exactly does the metadata come from? Who reorganized the metadata into our own format?
 
-#### _skip.txt
+#### \_skip.txt
 
 `_skip.txt` can be used to list journals that should be skipped during style generation. Journals can be specified by their title or identifier, one per line.
 
-#### _rename.tab
+#### \_rename.tab
 
 `_rename.tab` can be used to change the file name and style identifier in generated styles. Each line in this tab-delimited file should list the original style identifier, followed by the new identifier.
 
@@ -79,19 +79,19 @@ An example of `_rename.tab` is shown below:
     acm-computing-surveys           computing-surveys
     acm-transactions-on-algorithms  transactions-on-algorithms
 
-#### _extra.tab
+#### \_extra.tab
 
 `_extra.tab` can be used to add additional journals, or to overwrite the metadata for journals stored in `_journals.tab`. For example, you might wish to keep the metadata as provided by the publisher untouched in `_journals.tab`, while keeping track of any manual corrections in `_extra.tab`.
 
-`_extra.tab`  must be a tab-delimited file, with the same header and column order as "_journals.tab". If entries in `_journals.tab` and `_extra.tab` share the same style ID, the entry in "_extra.tab" completely replaces the entry in `_journals.tab`. Journals defined in `_extra.tab` are treated identically as those defined in `_journals.tab` when it comes to skipping (through `_skip.txt`) and renaming (through `_rename.tab`).
+`_extra.tab`  must be a tab-delimited file, with the same header and column order as `_journals.tab`. If entries in `_journals.tab` and `_extra.tab` share the same style ID, the entry in `_extra.tab` completely replaces the entry in `_journals.tab`. Journals defined in `_extra.tab` are treated identically as those defined in `_journals.tab` when it comes to skipping (through `_skip.txt`) and renaming (through `_rename.tab`).
 
-## Running generate_styles_from_data.rb
+## Running generate_styles.rb
 
-The Ruby `generate_styles_from_data.rb` script can be run without arguments. In this case, the script will generate styles for each directory within `data`, and place the generated styles in matching subdirectories at `generate_dependent_styles/generated_styles`.
+The Ruby `generate_styles.rb` script can be run without arguments. In this case, the script will generate styles for each directory within `data`, and place the generated styles in matching subdirectories at `generate_dependent_styles/generated_styles`.
 
 The `generated_styles` directory and its subdirectories will be created if they do not yet exist. Otherwise the entire contents of `generated_styles` will be replaced. (the `generated_styles` directory is listed in `.gitignore`, so you won't accidentally commit it)
 
-Running the script with the `--dir` (or `-d`) option allows you to limit style generation to a single `data` subdirectory (e.g., `ruby generate_styles_from_data.rb -d asm`).
+Running the script with the `--dir` (or `-d`) option allows you to limit style generation to a single `data` subdirectory (e.g., `ruby generate_styles.rb -d asm`).
 
 Running the script with the `--replace` (or `-r`) option will delete any dependent styles from the `styles` directory that have a matching XML comment ("Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**"), and copy over the newly generated styles. This only works if the `styles` and `utilities` repositories are checked out to the same root directory.
 

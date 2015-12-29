@@ -65,7 +65,7 @@ end
 options = {:directory => nil, :replace => false}
 
 parser = OptionParser.new do|opts|
-  opts.banner = "Usage: generate_styles_from_data.rb [options]"
+  opts.banner = "Usage: generate_styles.rb [options]"
   opts.on('-d', '--dir directory', 'Limit script to specified data subdirectory (e.g., "asm")') do |directory|
     options[:directory] = directory;
   end
