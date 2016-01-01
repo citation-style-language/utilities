@@ -76,6 +76,10 @@ parser = OptionParser.new do|opts|
     options[:replace_type] = replace_type || ''
   end
 
+  opts.on('-f', '--force', 'Force replace (by default, styles that only differ in their timestamp are not replaced)') do |force_replace|
+    options[:force_replace] = true
+  end
+
   opts.on('-h', '--help', 'Show help') do
     puts opts
     exit
@@ -129,6 +133,11 @@ if (options[:replace] == true)
       do_additions = true
       do_deletions = true
       do_modifications = true
+    end
+    
+    do_force_replace = false
+    if (options[:force_replace] == true)
+      do_force_replace = true
     end
     
     deleted_styles = 0
@@ -343,7 +352,23 @@ data_subdir_paths.each do |data_subdir|
       if (do_additions and !old_identifiers.include?(new_identifier))
         write = true
       elsif (do_modifications and old_identifiers.include?(new_identifier))
-        write = true
+        if (do_force_replace == true)
+          write = true
+        else  
+          # read old and new style
+          old_style_path = "#{Dependent_dir_path}/#{new_identifier}.csl"
+          old_style = File.read(old_style_path)
+          new_style = File.read(generated_style)
+        
+          # remove timestamp
+          new_style = new_style.gsub!(/<updated>(.)+<\/updated>/,'<updated/>')
+          old_style = old_style.gsub!(/<updated>(.)+<\/updated>/,'<updated/>')
+        
+          # compare modified old and new style, only overwrite if styles still differ
+          if !new_style.eql? old_style
+            write = true
+          end
+        end
       end
       
       if (write)
