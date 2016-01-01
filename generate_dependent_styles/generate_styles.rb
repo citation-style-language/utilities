@@ -361,8 +361,9 @@ data_subdir_paths.each do |data_subdir|
           new_style = File.read(generated_style)
         
           # remove timestamp
-          new_style = new_style.gsub!(/<updated>(.)+<\/updated>/,'<updated/>')
-          old_style = old_style.gsub!(/<updated>(.)+<\/updated>/,'<updated/>')
+          timestamp_regex = Regexp.new("/<updated>(.)+<\/updated>/")
+          new_style = new_style.gsub!(timestamp_regex,'<updated/>')
+          old_style = old_style.gsub!(timestamp_regex,'<updated/>')
         
           # compare modified old and new style, only overwrite if styles still differ
           if !new_style.eql? old_style
