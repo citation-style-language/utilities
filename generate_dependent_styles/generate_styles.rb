@@ -9,35 +9,35 @@ require 'optparse'
 # converts style title to style ID
 def title_to_styleID(title)
   styleID = title.downcase
-  
+
   # remove content between last set of parentheses
   styleID = styleID.reverse.sub(/\).*?\( /, '').reverse
-  
+
   # remove content between last set of square brackets
   styleID = styleID.reverse.sub(/\].*?\[ /, '').reverse
 
   # punctuation to eliminate
-  styleID.gsub!('?', '')
-  styleID.gsub!('’', '')
-  styleID.gsub!('(', '')
-  styleID.gsub!(')', '')
-  styleID.gsub!('\'', '')
-  
+  styleID.delete!('?')
+  styleID.delete!('’')
+  styleID.delete!('(')
+  styleID.delete!(')')
+  styleID.delete!('\'')
+
   # punctuation to replace
-  styleID.gsub!(' ', '-')
-  styleID.gsub!('–', '-')
-  styleID.gsub!(',', '-')
-  styleID.gsub!(':', '-')
-  styleID.gsub!('.', '-')
-  styleID.gsub!('/', '-')
+  styleID.tr!(' ', '-')
+  styleID.tr!('–', '-')
+  styleID.tr!(',', '-')
+  styleID.tr!(':', '-')
+  styleID.tr!('.', '-')
+  styleID.tr!('/', '-')
   styleID.gsub!('&', '-and-')
-  styleID.gsub!('+', '-')
+  styleID.tr!('+', '-')
   styleID.gsub!(/-{2,}/, '-')
-  
+
   # remove hyphens at ends
   styleID.gsub!(/^-/, '')
   styleID.gsub!(/-$/, '')
-  
+
   # remove diacritics
   styleID.gsub!(/á/i, 'a')
   styleID.gsub!(/à/i, 'a')
@@ -58,25 +58,25 @@ def title_to_styleID(title)
   styleID.gsub!(/ö/i, 'o')
   styleID.gsub!(/ß/i, 'ss')
   styleID.gsub!(/ü/i, 'u')
-  
-  return styleID
+
+  styleID
 end
 
-options = {:directory => nil, :replace => false}
+options = { directory: nil, replace: false }
 
 parser = OptionParser.new do|opts|
-  opts.banner = "Usage: generate_styles.rb [options]"
+  opts.banner = 'Usage: generate_styles.rb [options]'
   opts.on('-d', '--dir directory', 'Limit script to specified data subdirectory (e.g., "asm")') do |directory|
-    options[:directory] = directory;
+    options[:directory] = directory
   end
 
-  opts.on('-r', '--replace [LIMITED_TO]', ["additions", "deletions", "modifications"],
+  opts.on('-r', '--replace [LIMITED_TO]', %w(additions deletions modifications),
           'Replace styles in "styles" repo, optionally limited to: "[a]dditions", "[d]eletions", "[m]odifications"') do |replace_type|
     options[:replace] = true
     options[:replace_type] = replace_type || ''
   end
 
-  opts.on('-f', '--force', 'Force replace (by default, styles that only differ in their timestamp are not replaced)') do |force_replace|
+  opts.on('-f', '--force', 'Force replace (by default, styles that only differ in their timestamp are not replaced)') do |_force_replace|
     options[:force_replace] = true
   end
 
@@ -94,13 +94,13 @@ $stderr.puts "Script:\t#{This_script_dir}"
 
 # Determine directories to parse
 data_subdir_paths = []
-if options[:directory] != nil
-    if File.directory? "#{This_script_dir}/#{options[:directory]}"
-      data_subdir_paths.push("#{options[:directory]}")
-    else
-      $stderr.puts "WARNING: subdirectory '#{options[:directory]}' does not exist"
-      abort "Failed"
-    end
+if !options[:directory].nil?
+  if File.directory? "#{This_script_dir}/#{options[:directory]}"
+    data_subdir_paths.push("#{options[:directory]}")
+  else
+    $stderr.puts "WARNING: subdirectory '#{options[:directory]}' does not exist"
+    abort 'Failed'
+  end
 else
   Dir.foreach(This_script_dir) do |data_subdir|
     if File.file? "#{This_script_dir}/#{data_subdir}/_template.csl"
@@ -111,40 +111,38 @@ end
 
 # determine whether styles can be replaced
 replace_styles = false
-if (options[:replace] == true)
-  
+if options[:replace] == true
+
   # check presence style dependents folder
-  Dependent_dir_path = File.expand_path("../../styles/dependent", This_script_dir)
+  Dependent_dir_path = File.expand_path('../../styles/dependent', This_script_dir)
   if File.exist? Dependent_dir_path
     replace_styles = true
-    
+
     do_additions = false
     do_deletions = false
     do_modifications = false
-    
+
     case options[:replace_type]
-    when "additions"
+    when 'additions'
       do_additions = true
-    when "deletions"
+    when 'deletions'
       do_deletions = true
-    when "modifications"
+    when 'modifications'
       do_modifications = true
     else
       do_additions = true
       do_deletions = true
       do_modifications = true
     end
-    
+
     do_force_replace = false
-    if (options[:force_replace] == true)
-      do_force_replace = true
-    end
-    
+    do_force_replace = true if options[:force_replace] == true
+
     deleted_styles = 0
     copied_styles = 0
   else
     $stderr.puts "WARNING: Can't replace styles. Target directory not found at '#{Dependent_dir_path}'"
-    abort "Failed"
+    abort 'Failed'
   end
 end
 
@@ -153,13 +151,12 @@ generated_style_dir_path = "#{This_script_dir}/dependent"
 `rm -R '#{generated_style_dir_path}'` if File.exist? generated_style_dir_path
 $stderr.puts "Output:\t#{generated_style_dir_path}"
 $stderr.puts "\n"
-$stderr.puts "Generating styles..."
+$stderr.puts 'Generating styles...'
 FileUtils.mkdir_p generated_style_dir_path
 
 # we can now iterate over each of the data subdirs
 total_count_created_styles = 0
 data_subdir_paths.each do |data_subdir|
-
   # skip invalid entries
   next if data_subdir =~ /^\./
   data_subdir_path = "#{This_script_dir}/#{data_subdir}"
@@ -183,55 +180,52 @@ data_subdir_paths.each do |data_subdir|
   FileUtils.mkdir_p "#{generated_style_dir_path}/#{data_subdir}"
 
   # hashes of hashes that will contain all the styles to generate
-  styles = { }
+  styles = {}
 
   # load data into strings
   template = File.read(template_path)
   journals = File.read(journals_path).split(/\n/)
-  skipped_journals = [ ]
+  skipped_journals = []
   skipped_journals = File.read(skip_path).split(/\n/) if File.exist? skip_path
-  renamed_journals = [ ]
+  renamed_journals = []
   renamed_journals = File.read(rename_path).split(/\n/) if File.exist? rename_path
-  extra_journals = [ ]
+  extra_journals = []
   extra_journals = File.read(extra_path).split(/\n/) if File.exist? extra_path
 
   # combine journals and extra_journals, and remove header row from latter
   journals.concat(extra_journals.drop(1))
 
   # parse renamed_journals file
-  old_and_new_names = Hash.new
+  old_and_new_names = {}
   renamed_journals.each do |renamed_journals_line|
     fields = renamed_journals_line.split(/\t/)
-    if (fields.length == 2)
-      old_and_new_names[fields[0]]=fields[1]
-    end
+    old_and_new_names[fields[0]] = fields[1] if fields.length == 2
   end
 
   xml_comment = "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/#{data_subdir}"
 
   # iterate over each journal
-  header_info = [ ]
+  header_info = []
 
   # load all the info from the tab-delimited info file
   count_created_styles = 0
   count_skipped_styles = 0
   count_overwritten_styles = 0
-  
-  # keep track of file names
-  identifiers = [ ]
-  overwritten_styles = [ ]
-  
-  journals.each do |journal_line|
 
+  # keep track of file names
+  identifiers = []
+  overwritten_styles = []
+
+  journals.each do |journal_line|
     # each line contains tab-delimited fields
     fields = journal_line.split(/\t/)
     count_fields = fields.length
-    
+
     # trim fields
-    fields.each { |field| field.strip! }
+    fields.each(&:strip!)
 
     # first line = the header
-    if (header_info.length == 0)
+    if header_info.length == 0
       header_info = fields
       next
     end
@@ -243,21 +237,21 @@ data_subdir_paths.each do |data_subdir|
     end
 
     # create hash from the field values
-    field_values = { }
-    (0..count_fields-1).each do |field_index|
+    field_values = {}
+    (0..count_fields - 1).each do |field_index|
       field_name = header_info[field_index].upcase
       field_values[field_name] = fields[field_index]
     end
 
     # more sanity check
-    mandatory_fields = [ 'TITLE' ]
+    mandatory_fields = ['TITLE']
     fields_all_good = true
     mandatory_fields.each do |field_name_to_check|
-      next if (field_values.has_key? field_name_to_check and field_values[field_name_to_check].length > 1)
+      next if field_values.key? field_name_to_check and field_values[field_name_to_check].length > 1
       fields_all_good = false
       $stderr.puts "WARNING: journal info is missing field '#{field_name_to_check}': (#{fields.join(', ')})"
     end
-    next if not fields_all_good
+    next unless fields_all_good
 
     # keep track of initial value of title to compare to the skip list
     initial_title = field_values['TITLE']
@@ -269,14 +263,14 @@ data_subdir_paths.each do |data_subdir|
     field_values['TITLE'] = field_values['TITLE'].reverse.sub(/\).*?\( /, '').reverse
 
     # replace en-dashes in title by hyphens
-    field_values['TITLE'] = field_values['TITLE'].gsub('–', '-')
-    
-    # convert square brackets to parentheses in title
-    field_values['TITLE'] = field_values['TITLE'].gsub('[', '(')
-    field_values['TITLE'] = field_values['TITLE'].gsub(']', ')')
+    field_values['TITLE'] = field_values['TITLE'].tr('–', '-')
 
-    ['TITLE', 'TITLESHORT', 'DOCUMENTATION'].each do |key|
-      if field_values.has_key?(key)
+    # convert square brackets to parentheses in title
+    field_values['TITLE'] = field_values['TITLE'].tr('[', '(')
+    field_values['TITLE'] = field_values['TITLE'].tr(']', ')')
+
+    %w(TITLE TITLESHORT DOCUMENTATION).each do |key|
+      if field_values.key?(key)
         field_values[key] = field_values[key].gsub('&', '&amp;') # XML escape
       end
     end
@@ -284,26 +278,26 @@ data_subdir_paths.each do |data_subdir|
     field_values['XML-COMMENT'] = xml_comment
 
     # replace identifier if in renamed_journals file
-    if (old_and_new_names.has_key?(identifier))
+    if old_and_new_names.key?(identifier)
       identifier = old_and_new_names[identifier]
     end
 
     field_values['IDENTIFIER'] = identifier
 
     # excluded journal?
-    if (skipped_journals.include?(initial_title) or skipped_journals.include?(identifier))
-      #$stderr.puts "excluded journal: #{title}"
-      count_skipped_styles = count_skipped_styles + 1
+    if skipped_journals.include?(initial_title) or skipped_journals.include?(identifier)
+      # $stderr.puts "excluded journal: #{title}"
+      count_skipped_styles += 1
       next
     end
 
     # count identifier if unique in dataset
-    if (identifiers.include?(identifier))
-      count_overwritten_styles = count_overwritten_styles + 1
+    if identifiers.include?(identifier)
+      count_overwritten_styles += 1
       overwritten_styles.push(identifier)
     else
       identifiers.push(identifier)
-      count_created_styles = count_created_styles + 1
+      count_created_styles += 1
     end
 
     # create style xml by replacing fields in the template
@@ -322,71 +316,68 @@ data_subdir_paths.each do |data_subdir|
     # save file
     style_path = "#{generated_style_dir_path}/#{data_subdir}/#{identifier}.csl"
     File.open(style_path, 'w') { |fileio| fileio.write style_xml }
-
   end
 
-  if (replace_styles == true)
-    old_identifiers = [ ]
-    
+  if replace_styles == true
+    old_identifiers = []
+
     dependents_path = "#{Dependent_dir_path}/*.csl"
     # check each dependent style for XML comment (field_values['XML-COMMENT'])
     Dir.glob(dependents_path) do |dependent|
       # delete dependent style if generated from current data subdirectory
       if File.readlines(dependent).grep(/<!-- #{xml_comment} -->/).size > 0
-        old_identifier = File.basename(dependent, ".csl")
-        old_identifiers.push(old_identifier) 
-        
-        if (do_deletions and !identifiers.include?(old_identifier))
+        old_identifier = File.basename(dependent, '.csl')
+        old_identifiers.push(old_identifier)
+
+        if do_deletions and !identifiers.include?(old_identifier)
           File.delete(dependent)
-          deleted_styles = deleted_styles + 1
+          deleted_styles += 1
         end
       end
     end
-    
+
     # copy generated styles into dependents folder
     generated_styles_path = "#{generated_style_dir_path}/#{data_subdir}/*.csl"
     Dir.glob(generated_styles_path) do |generated_style|
-      new_identifier = File.basename(generated_style, ".csl")
-      
+      new_identifier = File.basename(generated_style, '.csl')
+
       write = false
-      if (do_additions and !old_identifiers.include?(new_identifier))
+      if do_additions and !old_identifiers.include?(new_identifier)
         write = true
-      elsif (do_modifications and old_identifiers.include?(new_identifier))
-        if (do_force_replace == true)
+      elsif do_modifications and old_identifiers.include?(new_identifier)
+        if do_force_replace == true
           write = true
-        else  
+        else
           # read old and new style
           old_style_path = "#{Dependent_dir_path}/#{new_identifier}.csl"
           old_style = File.read(old_style_path)
           new_style = File.read(generated_style)
-        
+
           # remove timestamp
           timestamp_regex = Regexp.new("/<updated>(.)+<\/updated>/")
-          new_style = new_style.gsub!(timestamp_regex,'<updated/>')
-          old_style = old_style.gsub!(timestamp_regex,'<updated/>')
-        
+          new_style = new_style.gsub!(timestamp_regex, '<updated/>')
+          old_style = old_style.gsub!(timestamp_regex, '<updated/>')
+
           # compare modified old and new style, only overwrite if styles still differ
-          if !new_style.eql? old_style
-            write = true
-          end
+          write = true unless new_style.eql? old_style
         end
       end
-      
-      if (write)
-        FileUtils.cp_r(generated_style, "#{Dependent_dir_path}", :remove_destination => true)
-        copied_styles = copied_styles + 1
-      end  
+
+      if write
+        FileUtils.cp_r(generated_style, "#{Dependent_dir_path}", remove_destination: true)
+        copied_styles += 1
+      end
     end
-  
+
   end
 
   print "Generated #{count_created_styles}\t"
-  if (count_skipped_styles == 0)
+  if count_skipped_styles == 0
     print "\t\t"
   else
     print "Skipped #{count_skipped_styles}\t"
   end
-  if (count_overwritten_styles == 0)
+  if count_overwritten_styles == 0
     print "\t\t"
   else
     print "Overwrote #{count_overwritten_styles}\t"
@@ -398,11 +389,10 @@ data_subdir_paths.each do |data_subdir|
     $stderr.puts "Overwrote: #{overwritten_style}"
   end
 
-  total_count_created_styles = total_count_created_styles + count_created_styles
-
+  total_count_created_styles += count_created_styles
 end
 
-if (replace_styles == true)
+if replace_styles == true
   $stderr.puts "Deleted #{deleted_styles} styles from #{Dependent_dir_path}"
   $stderr.puts "Copied #{copied_styles} styles to #{Dependent_dir_path}"
 end
