@@ -154,6 +154,9 @@ $stderr.puts "\n"
 $stderr.puts 'Generating styles...'
 FileUtils.mkdir_p generated_style_dir_path
 
+# keep track of all generated styles
+identifiers_master_list = []
+
 # we can now iterate over each of the data subdirs
 total_count_created_styles = 0
 data_subdir_paths.each do |data_subdir|
@@ -175,9 +178,6 @@ data_subdir_paths.each do |data_subdir|
     $stderr.puts "WARNING for '#{data_subdir}': cannot generate styles from directory"
     next
   end
-
-  # create subdir for the generated styles
-  FileUtils.mkdir_p "#{generated_style_dir_path}/#{data_subdir}"
 
   # hashes of hashes that will contain all the styles to generate
   styles = {}
@@ -313,10 +313,17 @@ data_subdir_paths.each do |data_subdir|
       end
     end
 
-    # save file
-    style_path = "#{generated_style_dir_path}/#{data_subdir}/#{identifier}.csl"
-    File.open(style_path, 'w') { |fileio| fileio.write style_xml }
+    # check if identifier have been generated in previous datasets
+    if !identifiers_master_list.include?(identifier)
+      # save file
+      style_path = "#{generated_style_dir_path}/#{identifier}.csl"
+      File.open(style_path, 'w') { |fileio| fileio.write style_xml }
+    else
+      $stderr.puts "Warning: skipped \"#{identifier}\" in #{data_subdir} (not unique)"
+    end
   end
+
+  identifiers_master_list += identifiers
 
   if replace_styles == true
     old_identifiers = []
@@ -337,9 +344,8 @@ data_subdir_paths.each do |data_subdir|
     end
 
     # copy generated styles into dependents folder
-    generated_styles_path = "#{generated_style_dir_path}/#{data_subdir}/*.csl"
-    Dir.glob(generated_styles_path) do |generated_style|
-      new_identifier = File.basename(generated_style, '.csl')
+    identifiers.each do |new_identifier|
+      new_style_path = "#{generated_style_dir_path}/#{new_identifier}.csl"
 
       write = false
       if do_additions and !old_identifiers.include?(new_identifier)
@@ -351,7 +357,7 @@ data_subdir_paths.each do |data_subdir|
           # read old and new style
           old_style_path = "#{Dependent_dir_path}/#{new_identifier}.csl"
           old_style = File.read(old_style_path)
-          new_style = File.read(generated_style)
+          new_style = File.read(new_style_path)
 
           # remove timestamp
           timestamp_regex = Regexp.new("/<updated>(.)+<\/updated>/")
@@ -364,7 +370,7 @@ data_subdir_paths.each do |data_subdir|
       end
 
       if write
-        FileUtils.cp_r(generated_style, "#{Dependent_dir_path}", remove_destination: true)
+        FileUtils.cp_r(new_style_path, "#{Dependent_dir_path}", remove_destination: true)
         copied_styles += 1
       end
     end
