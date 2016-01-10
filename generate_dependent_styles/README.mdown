@@ -2,7 +2,7 @@
 The script  `generate_styles.rb` can be used to automatically generate dependent CSL styles for publishers that use the same citation format(s) across multiple journals. All that is needed is a collection of journal metadata (journal title, ISSN, eISSN, citation format, etc.).
 
 ## Preparing journal metadata
-Each publisher gets its own metadata directory in the `generate_dependent_styles/data` subdirectory of this repository (e.g. `data/asm` for the American Society for Microbiology). The file [data/publishers.json](https://github.com/citation-style-language/utilities/blob/master/generate_dependent_styles/data/publishers.json) matches directories to publisher names.
+Each publisher gets its own metadata directory in the `generate_dependent_styles` subdirectory of this repository (e.g. `asm` for the American Society for Microbiology). The file [publishers.json](https://github.com/citation-style-language/utilities/blob/master/generate_dependent_styles/publishers.json) matches directories to publisher names.
 
 ### Required files
 
@@ -26,6 +26,7 @@ When preparing `_journals.tab`, keep the following in mind:
   - "FIELD": field (e.g. "medicine")
   - "ISSN": print ISSN
   - "EISSN": electronic ISSN
+  - "LOCALE": locale code for [localization of citations and bibliographies](https://github.com/citation-style-language/locales/wiki)
 - capitalization of column headers is not important. The script uses a case-insensitive match, so "TITLE" is the same as "title" or "Title".
 - there is no upper limit on the number of metadata fields.
 - some journals may not have a value for each metadata field. For example, online-only journals typically don't have a print ISSN. In this case, just leave the field empty, or fill it with a single character, such as "x". 
@@ -35,7 +36,7 @@ When preparing `_journals.tab`, keep the following in mind:
 `_template.csl` must contain the XML template for the dependent CSL styles. An example is shown below:
 
     <?xml version="1.0" encoding="utf-8"?>
-    <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" default-locale="en-US">
+    <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" default-locale="#LOCALE#">
       <!-- #XML-COMMENT# -->
       <info>
         <title>#TITLE#</title>
@@ -87,12 +88,16 @@ An example of `_rename.tab` is shown below:
 
 ## Running generate_styles.rb
 
+### Generating styles of all publishers
+
 The Ruby `generate_styles.rb` script can be run without arguments. In this case, the script will generate styles for each directory within `data`, and place the generated styles in matching subdirectories at `generate_dependent_styles/generated_styles`.
+
+### Generating styles of a specific publisher
 
 The `generated_styles` directory and its subdirectories will be created if they do not yet exist. Otherwise the entire contents of `generated_styles` will be replaced. (the `generated_styles` directory is listed in `.gitignore`, so you won't accidentally commit it)
 
 Running the script with the `--dir` (or `-d`) option allows you to limit style generation to a single `data` subdirectory (e.g., `ruby generate_styles.rb -d asm`).
 
-Running the script with the `--replace` (or `-r`) option will delete any dependent styles from the `styles` directory that have a matching XML comment ("Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**"), and copy over the newly generated styles. This only works if the `styles` and `utilities` repositories are checked out to the same root directory.
+Running the script with the `--replace` (or `-r`) option will delete any dependent styles from the `styles` directory that have a matching XML comment ("Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/**subdirectory**"), and copy over the newly generated styles. This only works if the `styles` and `utilities` repositories are checked out to the same root directory.
 
 The `--dir` and `--replace` options can be used separately and in combination. 
