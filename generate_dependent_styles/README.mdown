@@ -98,6 +98,6 @@ The `generated_styles` directory and its subdirectories will be created if they 
 
 Running the script with the `--dir` (or `-d`) option allows you to limit style generation to a single `data` subdirectory (e.g., `ruby generate_styles.rb -d asm`).
 
-Running the script with the `--replace` (or `-r`) option will delete any dependent styles from the `styles` directory that have a matching XML comment ("Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/**subdirectory**"), and copy over the newly generated styles. This only works if the `styles` and `utilities` repositories are checked out to the same root directory.
+Running the script with the `--replace` (or `-r`) option will delete any dependent styles from the `styles` directory that have a matching XML comment ("Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**"), and copy over the newly generated styles. This only works if the `styles` and `utilities` repositories are checked out to the same root directory.
 
 The `--dir` and `--replace` options can be used separately and in combination. 
