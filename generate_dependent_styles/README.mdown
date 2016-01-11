@@ -90,14 +90,31 @@ An example of `_rename.tab` is shown below:
 
 ### Generating styles of all publishers
 
-The Ruby `generate_styles.rb` script can be run without arguments. In this case, the script will generate styles for each directory within `data`, and place the generated styles in matching subdirectories at `generate_dependent_styles/generated_styles`.
+The Ruby `generate_styles.rb` script can be run without arguments. In this case, the script will generate styles for each directory (publisher), and place the generated styles in the corresponding subdirectory (same name) at the directory `dependent`, e.g. the generated styles for the `acm` will be in the directory `generate_dependent_styles/dependent/acm`.
 
 ### Generating styles of a specific publisher
 
-The `generated_styles` directory and its subdirectories will be created if they do not yet exist. Otherwise the entire contents of `generated_styles` will be replaced. (the `generated_styles` directory is listed in `.gitignore`, so you won't accidentally commit it)
+Running the script with the `--dir` (or `-d`) option allows you to limit style generation to a single subdirectory (publisher). All the generated styles are collected in the directory `dependent`. The `dependent` directory and its subdirectories will be created if they do not yet exist. Otherwise the entire contents of `dependent` will be replaced. (the `dependent` directory is listed in `.gitignore`, so you won't accidentally commit it)
 
-Running the script with the `--dir` (or `-d`) option allows you to limit style generation to a single `data` subdirectory (e.g., `ruby generate_styles.rb -d asm`).
+Example:
+```
+ruby generate_styles.rb -d asm
+```
+
+### Replacing and Forcing Option
 
 Running the script with the `--replace` (or `-r`) option will delete any dependent styles from the `styles` directory that have a matching XML comment ("Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**"), and copy over the newly generated styles. This only works if the `styles` and `utilities` repositories are checked out to the same root directory.
 
 The `--dir` and `--replace` options can be used separately and in combination. 
+
+
+## Encoding problems
+
+Running the ruby script in a windows environment may cause an encoding error as:
+```
+generate_styles.rb:21:in `delete!': incompatible character encodings: CP850 and                 UTF-8 (Encoding::CompatibilityError)
+```
+If this is the matter, then just try to use the `-E UTF-8` option with ruby, i.e.
+```
+$ ruby -E UTF-8 generate_styles.rb  ...
+```
