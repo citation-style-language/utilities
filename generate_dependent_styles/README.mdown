@@ -1,5 +1,5 @@
 # Generate Dependent Styles
-The script  `generate_styles.rb` can be used to automatically generate dependent CSL styles for publishers that use the same citation format(s) across multiple journals. All that is needed is a collection of journal metadata (journal title, ISSN, eISSN, citation format, etc.).
+The script `generate_styles.rb` can be used to automatically generate dependent CSL styles for publishers that use the same citation format(s) across multiple journals. All that is needed is a collection of journal metadata (journal title, ISSN, eISSN, citation format, etc.).
 
 ## Preparing journal metadata
 Each publisher gets its own metadata directory in the `generate_dependent_styles` subdirectory of this repository (e.g. `asm` for the American Society for Microbiology). The file [publishers.json](https://github.com/citation-style-language/utilities/blob/master/generate_dependent_styles/publishers.json) matches directories to publisher names.
@@ -16,12 +16,12 @@ Each publisher gets its own metadata directory in the `generate_dependent_styles
 
 When preparing `_journals.tab`, keep the following in mind:
 
-- `_journals.tab` should ideally only contain metadata that differs between journals. If, for example, all journals have the same documentation URL, this URL should be added directly to the style template.
+- `_journals.tab` should ideally only contain metadata that differs between journals. If, for example, all journals have the same documentation URL, this URL should be added directly to the shared style template.
 - the only required metadata field is "TITLE", providing the style title. The field names "IDENTIFIER" and "XML-COMMENT" are reserved and may not be used within `_journals.tab`. There are no other restrictions on the naming of column headers.
 - for consistency, we recommend the following names for common metadata fields:
   - "TITLESHORT": abbreviated journal title
   - "PARENT": independent parent style
-  - "DOCUMENTATION": documentation URL (with "DOCUMENTATION", ampersands are automatically escaped)
+  - "DOCUMENTATION": documentation URL (ampersands in URLs are automatically escaped)
   - "FORMAT": citation format (e.g. "numeric")
   - "FIELD": field (e.g. "medicine")
   - "ISSN": print ISSN
@@ -53,11 +53,11 @@ When preparing `_journals.tab`, keep the following in mind:
       </info>
     </style>
 
-Placeholders in the template indicate where metadata fields should be substituted in during style generation. They must match the metadata field names from `_journals.tab`, be in all-caps and enclosed in pound signs.
+Placeholders in the template indicate where metadata fields should be substituted in during style generation. They must match the metadata field names from `_journals.tab`, be in all-caps and enclosed in pound signs ("#").
 
-The style file name is automatically generated from its title, by, among others, removing diacritics and punctuation, and replacing spaces by hyphens. The style identifier (the file name without ".csl" extension) is substituted through the "#IDENTIFIER#" placeholder, which must be used to generate the style ID and "self"-link.
+Style file names are automatically generated based on the style titles, by, among others, removing diacritics and punctuation, and replacing spaces by hyphens. The style identifier (the file name without ".csl" extension) is substituted through the "#IDENTIFIER#" placeholder, which must be used to generate the style ID and "self"-link.
 
-The placeholder "#XML-COMMENT#" must be used in all templates, and is replaced by the string "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**", with "subdirectory" matching the name of the subdirectory being processed.
+The placeholder "#XML-COMMENT#" must be used in all templates, and is replaced by the string "Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**", with "**subdirectory**" matching the name of the subdirectory being processed.
 
 If the metadata field for a journal is empty or contains only a single character, the entire line with the matching placeholder is deleted in the generated style.
 
@@ -65,15 +65,15 @@ If the metadata field for a journal is empty or contains only a single character
 
 #### \_README.mdown
 
-It is always a good idea to document your work in `_README.mdown`. Do we have contacts at the publisher? Where exactly does the metadata come from? Who reorganized the metadata into our own format?
+It's always a good idea to document your work in a `_README.mdown` file. Who were your contacts at the publisher? Where exactly does the metadata come from? Who reorganized the metadata into our own format?
 
 #### \_skip.txt
 
-`_skip.txt` can be used to list journals that should be skipped during style generation. Journals can be specified by their title or identifier, one per line.
+`_skip.txt` may be used to list journals that should be skipped during style generation. Journals can be specified by their title or identifier, one per line.
 
 #### \_rename.tab
 
-`_rename.tab` can be used to change the file name and style identifier in generated styles. Each line in this tab-delimited file should list the original style identifier, followed by the new identifier.
+`_rename.tab` may be used to change the file name and style identifier in generated styles. Each line in this tab-delimited file should list the original style identifier, followed by the new identifier.
 
 An example of `_rename.tab` is shown below:
 
@@ -82,39 +82,50 @@ An example of `_rename.tab` is shown below:
 
 #### \_extra.tab
 
-`_extra.tab` can be used to add additional journals, or to overwrite the metadata for journals stored in `_journals.tab`. For example, you might wish to keep the metadata as provided by the publisher untouched in `_journals.tab`, while keeping track of any manual corrections in `_extra.tab`.
+`_extra.tab` may be used to add additional journals, or to overwrite the metadata for journals already stored in `_journals.tab`. For example, you might wish to keep the metadata as provided by the publisher untouched in `_journals.tab`, while keeping track of any manual corrections in `_extra.tab`.
 
-`_extra.tab`  must be a tab-delimited file, with the same header and column order as `_journals.tab`. If entries in `_journals.tab` and `_extra.tab` share the same style ID, the entry in `_extra.tab` completely replaces the entry in `_journals.tab`. Journals defined in `_extra.tab` are treated identically as those defined in `_journals.tab` when it comes to skipping (through `_skip.txt`) and renaming (through `_rename.tab`).
+`_extra.tab` must be a tab-delimited file, with the exact same header and column order as `_journals.tab`. If entries in `_journals.tab` and `_extra.tab` share the same style ID, the entry in `_extra.tab` completely replaces the entry in `_journals.tab`. Journals defined in `_extra.tab` are also subject to skipping (through `_skip.txt`) and renaming (through `_rename.tab`).
 
 ## Running generate_styles.rb
 
 ### Generating styles of all publishers
 
-The Ruby `generate_styles.rb` script can be run without arguments. In this case, the script will generate styles for each directory (publisher), and place the generated styles in the corresponding subdirectory (same name) at the directory `dependent`, e.g. the generated styles for the `acm` will be in the directory `generate_dependent_styles/dependent/acm`.
+The `generate_styles.rb` Ruby script can be run without arguments. In this case, the script will generate styles for each directory (publisher) containing a `_template.csl` file. Generated styles are placed in the directory `dependent`. This directory will be created if it does not yet exist, and its contents is replaced for each run of the script (the `dependent` directory is listed in `.gitignore`, so you won't accidentally commit any of the generated styles to the `utilities` repository). 
 
 ### Generating styles of a specific publisher
 
-Running the script with the `--dir` (or `-d`) option allows you to limit style generation to a single subdirectory (publisher). All the generated styles are collected in the directory `dependent`. The `dependent` directory and its subdirectories will be created if they do not yet exist. Otherwise the entire contents of `dependent` will be replaced. (the `dependent` directory is listed in `.gitignore`, so you won't accidentally commit it)
+Running the script with the `--dir` (or `-d`) option allows you to limit style generation to a single directory (publisher). Specify the name of the directory directly after the option. For example:
 
-Example:
 ```
 ruby generate_styles.rb -d asm
 ```
 
-### Replacing and Forcing Option
+### Replace options
 
 Running the script with the `--replace` (or `-r`) option will delete any dependent styles from the `styles` directory that have a matching XML comment ("Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**"), and copy over the newly generated styles. This only works if the `styles` and `utilities` repositories are checked out to the same root directory.
 
+The `--replace` may be following by a qualifier to limit which styles are replaced. The options are "additions", "deletions", and "modifications" (typing the first letter suffices). With "additions", only new styles are copied to the `styles` directory. With "deletions", only old styles from the same publisher that aren't present in the newly generated set are deleted from the `styles` directory. With "modifications", only styles that already exist in the `styles` directory are overwritten by their newly generated versions. For example:
+
+```
+ruby generate_styles.rb -d asm -r a
+```
+
 The `--dir` and `--replace` options can be used separately and in combination. 
 
+#### Forcing replacements
+
+By default, styles in the `styles` repository are not replaced if styles are identical, or if just the timestamp (stored in `<updated/>`) has changed. Using `--replace` in combination with `--force` (or `-f`) will force the replacement of all styles with a matching XML comment.
 
 ## Encoding problems
 
 Running the ruby script in a windows environment may cause an encoding error as:
+
 ```
-generate_styles.rb:21:in `delete!': incompatible character encodings: CP850 and                 UTF-8 (Encoding::CompatibilityError)
+generate_styles.rb:21:in `delete!': incompatible character encodings: CP850 and UTF-8 (Encoding::CompatibilityError)
 ```
+
 If this is the matter, then just try to use the `-E UTF-8` option with ruby, i.e.
+
 ```
 $ ruby -E UTF-8 generate_styles.rb  ...
 ```
