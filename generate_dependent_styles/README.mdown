@@ -104,13 +104,13 @@ ruby generate_styles.rb -d asm
 
 Running the script with the `--replace` (or `-r`) option will delete any dependent styles from the `styles` directory that have a matching XML comment ("Generated with https://github.com/citation-style-language/utilities/tree/master/generate_dependent_styles/data/**subdirectory**"), and copy over the newly generated styles. This only works if the `styles` and `utilities` repositories are checked out to the same root directory.
 
-The `--replace` may be followed by a qualifier to limit which styles are replaced. The options are "additions", "deletions", and "modifications" (typing the first letter suffices). With "additions", only new styles are copied to the `styles` directory. With "deletions", only old styles from the same publisher that aren't present in the newly generated set are deleted from the `styles` directory. With "modifications", only styles that already exist in the `styles` directory are overwritten by their newly generated versions. For example:
+The `--replace` may be followed by a qualifier to limit which styles are replaced. The options are "additions", "deletions", and "modifications" (typing the first letter suffices). With "additions", only new styles are copied to the `styles` directory. With "deletions", only old styles from the same publisher that aren't present in the newly generated set are deleted from the `styles` directory. With "modifications", only styles that already exist in the `styles` directory are overwritten by their newly generated versions. The `--dir` and `--replace` options can be used separately and in combination. For example:
 
 ```
 ruby generate_styles.rb -d asm -r a
 ```
 
-The `--dir` and `--replace` options can be used separately and in combination. 
+<i>Application:</i> Git sometimes gets confused when we both delete and add new styles (and then thinks we renamed the styles), and with these options you can just create three separate commits, one for style additions, one for deletions, and one for modifications of existing styles. 
 
 #### Forcing replacements
 
