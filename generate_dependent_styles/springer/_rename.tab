@@ -1,11 +1,11 @@
 # English and French name are listed as its title 
 canadian-journal-of-anesthesia-journal-canadien-danesthesie	canadian-journal-of-anesthesia
 
-# name conflict with Elsevier style
-decision	decision-indian-institute-of-management-calcutta
-
-# name conflict with IOP style
-journal-of-optics	journal-of-optics-official-publication-of-the-optical-society-of-india
+# English and German name are listed as its title
+journal-of-orofacial-orthopedics-fortschritte-der-kieferorthopadie	journal-of-orofacial-orthopedics
 
 # Ignore subtitle
 food-digestion-research-and-current-opinion	food-digestion
+
+# Write the `&` out in German
+padiatrie-and-padologie	padiatrie-und-padologie

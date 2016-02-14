@@ -1,6 +1,9 @@
 # Moved to Medknow Publications
 the-journal-of-indian-prosthodontic-society
 
+# Moved to Elsevier
+journal-of-orthopaedic-science
+
 # currently exist as independent styles (checked)
 acta-neurochirurgica
 ambio
@@ -19,3 +22,9 @@ pravention-und-gesundheitsforderung
 
 # discontinued
 journal-of-mathematical-modelling-and-algorithms-in-operations-research
+
+# name conflict with Elsevier style (will be added again with new name in extra)
+decision
+
+# name conflict with IOP style (will be added again with new name in extra)
+journal-of-optics
