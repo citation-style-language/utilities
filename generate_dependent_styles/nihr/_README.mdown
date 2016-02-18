@@ -1,0 +1,3 @@
+## 2016-02-18
+
+Copied metadata by hand from http://www.journalslibrary.nihr.ac.uk/. See also https://github.com/citation-style-language/styles/pull/1889.
