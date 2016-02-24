@@ -1,3 +1,19 @@
+## 2016-01
+
+ * Received new list from Springer containing the journals and the used citation style.
+ * Enrich this list with various other data sources: https://docs.google.com/spreadsheets/d/1NJjCrjv42X5nWcPGYXnC7_Dtg96mwuw5EdVDDGleDi0/edit?usp=sharing
+    * from the current journal price list from Springer we take the primary language (and can perform some data sanity tests)
+	* from the current _journals.tab list we take the short title and field if present
+	* a mapping from the words spring is using and the CSL styles as well as the locales is needed
+	* with some formulas based on mainly on VLOOKUP functions we can take all these information from different data sources together (here it is important to check that the ranges are adjusted to new length of tables and that the ranges are not changing in different rows)
+	* filter out the rows whith bibliography empty, AsInManuscript or citation style Alphanumeric, Nonstandard
+ * Export relevant part as tab delimited text file (maybe save it first in Excel)
+ * Check that file encoding is UTF-8 w/o BOM
+ * start the script first time:
+    `ruby -E UTF-8 generate_styles.rb -d springer`
+	
+
+
 ## 2015-04-23
 
 Springer gave us a new list of its journals and the used citation style (obtained from a database query).

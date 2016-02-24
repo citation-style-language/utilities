@@ -22,6 +22,7 @@ def title_to_styleID(title)
   styleID.delete!('(')
   styleID.delete!(')')
   styleID.delete!('\'')
+  styleID.delete!('|')
 
   # punctuation to replace
   styleID.tr!(' ', '-')
