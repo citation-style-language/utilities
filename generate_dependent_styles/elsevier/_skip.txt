@@ -19,3 +19,6 @@ pain
 cell
 journal-of-investigative-dermatology
 medical-journal-of-australia
+
+# Moved to Springer
+journal-of-ultrasound
