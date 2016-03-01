@@ -8,16 +8,16 @@ import os, glob, re, inspect
 from lxml import etree
 
 # http://stackoverflow.com/questions/50499
-folderPath =  os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+folderPath = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 
-parentFolderPath = os.path.dirname (folderPath)
-path =  os.path.join(parentFolderPath, 'styles')
+parentFolderPath = os.path.dirname(folderPath)
+path = os.path.join(parentFolderPath, 'styles')
 
 styles = []
 
-for stylepath in glob.glob( os.path.join(path, '*.csl') ):
+for stylepath in glob.glob(os.path.join(path, '*.csl')):
     styles.append(os.path.join(stylepath))
-for stylepath in glob.glob( os.path.join(path, 'dependent', '*.csl') ):
+for stylepath in glob.glob(os.path.join(path, 'dependent', '*.csl')):
     styles.append(os.path.join(stylepath))
 
 # for comments in the middle, keep them with preceding element
@@ -62,37 +62,38 @@ for style in styles:
         # check if node is an element
         if isinstance(infoNode.tag, basestring):
             # get rid of namespace
-            infoElement = infoNode.tag.replace("{http://purl.org/net/xbiblio/csl}","")
-            if(infoElement == "link"):
+            infoElement = infoNode.tag.replace("{http://purl.org/net/xbiblio/csl}", "")
+            if (infoElement == "link"):
                 infoElement += "[@" + infoNode.get("rel") + "]"
-            if((infoElement == "category") & (infoNode.get("citation-format") is not None)):
+            if ((infoElement == "category") & (infoNode.get("citation-format") is not None)):
                 infoElement += "[@citation-format]"
-            if((infoElement == "category") & (infoNode.get("field") is not None)):
+            if ((infoElement == "category") & (infoNode.get("field") is not None)):
                 infoElement += "[@field]"
             try:
                 counter.append(desiredOrder.index(infoElement))
             except:
                 print("Unknown element: " + infoElement)
         # check if node is a comment
-        elif (etree.tostring(infoNode, encoding='UTF-8', xml_declaration=False) == ("<!--" + infoNode.text.encode("utf-8") + "-->")):
+        elif (etree.tostring(infoNode, encoding='UTF-8', xml_declaration=False) == (
+                        "<!--" + infoNode.text.encode("utf-8") + "-->")):
             # keep comments that precede any element at the top
-            if(sum(counter) == 0):
+            if (sum(counter) == 0):
                 counter.append(desiredOrder.index("preceding-comment"))
             # keep a comment at the end at the end
-            elif(len(counter) == (len(csInfo) - 1)):
+            elif (len(counter) == (len(csInfo) - 1)):
                 counter.append(desiredOrder.index("end-comment"))
             # keep other comments with preceding element
             else:
                 counter.append(counter[-1])
 
-            # Possible improvements:
-            # * exceptions for recognizable comments (issn, category)
+        # Possible improvements:
+        # * exceptions for recognizable comments (issn, category)
         else:
             print(infoNode)
 
     # make sure if length counter is identical to length csInfo
     # http://scienceoss.com/sort-one-list-by-another-list/
-    if(len(counter) == len(csInfo)):
+    if (len(counter) == len(csInfo)):
         for index in range(len(counter)):
             # use float() to avoid integer division
             counter[index] += (index / (float(len(counter))))
@@ -106,15 +107,15 @@ for style in styles:
 
     # Trim whitespace from cs:summary text contents
     try:
-    	summary = styleElement.find(".//{http://purl.org/net/xbiblio/csl}summary")
-    	summary.text = summary.text.strip()
+        summary = styleElement.find(".//{http://purl.org/net/xbiblio/csl}summary")
+        summary.text = summary.text.strip()
     except:
         pass
 
     # Trim whitespace from cs:title text contents
     try:
-    	title = styleElement.find(".//{http://purl.org/net/xbiblio/csl}title")
-    	title.text = title.text.strip()
+        title = styleElement.find(".//{http://purl.org/net/xbiblio/csl}title")
+        title.text = title.text.strip()
     except:
         pass
 
@@ -124,11 +125,11 @@ for style in styles:
         for link in links:
             rel = link.get("rel")
             del link.attrib["rel"]
-            link.set("rel",rel)
+            link.set("rel", rel)
     except:
         pass
 
-    #Add citation-number sort for non-sorting numeric styles
+    # Add citation-number sort for non-sorting numeric styles
     try:
         citation = styleElement.find(".//{http://purl.org/net/xbiblio/csl}citation")
 
@@ -136,7 +137,7 @@ for style in styles:
         # make sure style is numeric
         # if style doesn't sort, add sort (cs:sort, cs:key) for citation-number
         citationFormat = styleElement.find(".//{http://purl.org/net/xbiblio/csl}category[@citation-format]")
-        if(citationFormat.attrib.get("citation-format") == "numeric"):
+        if (citationFormat.attrib.get("citation-format") == "numeric"):
             if citation[0].tag != "{http://purl.org/net/xbiblio/csl}sort":
                 numberSort = etree.fromstring('<sort><key variable="citation-number"/></sort>')
                 citation.insert(0, numberSort)
@@ -146,14 +147,14 @@ for style in styles:
     try:
         parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
         parsedStyle = parsedStyle.replace("'", '"', 4)
-        parsedStyle = parsedStyle.replace(" ", "&#160;")#no-break space
+        parsedStyle = parsedStyle.replace(" ", "&#160;")  # no-break space
         parsedStyle = parsedStyle.replace("ᵉ", "&#7497;")
-        parsedStyle = parsedStyle.replace("‑", "&#8209;")#non-breaking hyphen
-        parsedStyle = parsedStyle.replace("–", "&#8211;")#en dash
-        parsedStyle = parsedStyle.replace("—", "&#8212;")#em dash
-        parsedStyle = parsedStyle.replace(" ", "&#8239;")#narrow no-break space
+        parsedStyle = parsedStyle.replace("‑", "&#8209;")  # non-breaking hyphen
+        parsedStyle = parsedStyle.replace("–", "&#8211;")  # en dash
+        parsedStyle = parsedStyle.replace("—", "&#8212;")  # em dash
+        parsedStyle = parsedStyle.replace(" ", "&#8239;")  # narrow no-break space
         f = open(style, 'w')
-        f.write ( parsedStyle )
+        f.write(parsedStyle)
         f.close()
     except:
         pass
