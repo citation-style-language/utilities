@@ -149,6 +149,7 @@ for style in styles:
         parsedStyle = parsedStyle.replace("'", '"', 4)
         parsedStyle = parsedStyle.replace(" ", "&#160;")  # no-break space
         parsedStyle = parsedStyle.replace("ᵉ", "&#7497;")
+        parsedStyle = parsedStyle.replace(" ", "&#8201;")  # thin space
         parsedStyle = parsedStyle.replace("‑", "&#8209;")  # non-breaking hyphen
         parsedStyle = parsedStyle.replace("–", "&#8211;")  # en dash
         parsedStyle = parsedStyle.replace("—", "&#8212;")  # em dash
