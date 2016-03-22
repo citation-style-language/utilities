@@ -1,6 +1,0 @@
-## 02-08-2013
-
-Added more metadata, this time for ASA. Prepared the list from
-http://www.asanet.org/journals/journals.cfm. "Contexts" is the odd
-one, since it apparently doesn't want authors to use any citation
-style. We currently have it in the repo, but I'll delete it.
