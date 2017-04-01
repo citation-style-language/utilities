@@ -146,9 +146,11 @@ for style in styles:
 
     try:
         parsedStyle = etree.tostring(parsedStyle, pretty_print=True, xml_declaration=True, encoding="utf-8")
-        parsedStyle = parsedStyle.replace("'", '"', 4)
+        parsedStyle = parsedStyle.replace("'", '"', 4) # replace quotes on XML declaration
+        parsedStyle = re.sub(r"https?://(dx\.)?doi.org", "https://doi.org", parsedStyle) # standardize on latest recommended DOI format
         parsedStyle = parsedStyle.replace(" ", "&#160;")  # no-break space
         parsedStyle = parsedStyle.replace("ᵉ", "&#7497;")
+        parsedStyle = parsedStyle.replace(" ", "&#8195;")  # em space
         parsedStyle = parsedStyle.replace(" ", "&#8201;")  # thin space
         parsedStyle = parsedStyle.replace("‑", "&#8209;")  # non-breaking hyphen
         parsedStyle = parsedStyle.replace("–", "&#8211;")  # en dash
