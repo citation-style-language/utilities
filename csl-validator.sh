@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+schema_url="https://raw.githubusercontent.com/citation-style-language/schema/v1.0.1/csl.rnc https://raw.githubusercontent.com/citation-style-language/schema/602ad40976b7b455a3ce0b79f5534e8e75f088e9/csl.sch"
+validator_url="https://validator.w3.org/nu/"
+
 for command in "jq" "curl"; do
   if ! which "$command" > /dev/null; then
     echo "The utility $command appears not to be installed, please see:"
@@ -9,25 +12,44 @@ for command in "jq" "curl"; do
   fi
 done
 
-if [[ $# != 1 ]]; then
-  echo "USAGE: $0 file.csl"
-  echo "  validate file.csl using the validation"
+usage() {
+  echo "USAGE: $0 [-d] [file.csl]"
+  echo "  validate citation style language XML using the validation"
   echo "  service from w3.org and the official schema from CSL github."
   echo "  Adapted from:"
   echo "  https://github.com/citation-style-language/csl-validator/blob/gh-pages/libraries/csl-validator.js"
   echo "  Arguments:"
-  echo "    file.csl   -> the file to validate (required)"
-  exit 2
-fi
+  echo "    -d       -> print out debug messages (default: off)"
+  echo "    file.csl -> file to validate (optional, when absent will read stdin)"
+}
 
-file="$1"
+DEBUG="False"
+while getopts "d?" opt; do
+  case $opt in
+    d) DEBUG="True"
+    ;;
+    ?) usage
+       exit 0
+    ;;
+    *) echo "Failed to parse command line options."
+       usage
+       exit 2
+    ;;
+  esac
+done
+shift $((OPTIND-1))
 
-echo "Will now attempt to validate document $file"
+file="${1:-/dev/stdin}"
 
-schema_url="https://raw.githubusercontent.com/citation-style-language/schema/v1.0.1/csl.rnc https://raw.githubusercontent.com/citation-style-language/schema/602ad40976b7b455a3ce0b79f5534e8e75f088e9/csl.sch"
-validator_url="https://validator.w3.org/nu/"
+debug() {
+  if [[ "$DEBUG" == "True" ]]; then
+    echo "$@"
+  fi
+}
 
-echo "Attempting validation on validator $validator_url"
+debug "Will now attempt to validate document $file"
+
+debug "Attempting validation on validator $validator_url"
 
 # The line -F "file=@$file" instructs curl to send data from file $file
 # From the manual:
@@ -58,17 +80,22 @@ if ! server_response="$(curl --silent \
   -F "file=@$file" \
   "$validator_url")"
 then
-  echo "curl returned failure code $?, see output below:"
-  echo "$messages"
+  debug "curl returned failure code $?, see output below:"
+  debug "$messages"
   exit 20
 fi
-echo "curl command completed successfully."
+debug "curl command completed successfully."
 
 messages="$(echo "$server_response" | jq .messages)"
 if [[ "$messages" == '[]' ]]; then
-  echo "✅ $file is valid CSL!"
+  debug "✅ $file is valid CSL!"
   exit 0
 fi
-echo " ❌ $file contains errors, see below:"
-echo "$messages"
+debug " ❌ $file contains errors, see below:"
+echo "$messages" | jq -c '.[]' | while read -r error_json; do
+  line="$(echo "$error_json" | jq .firstLine)"
+  column="$(echo "$error_json" | jq .firstColumn)"
+  message="$(echo "$error_json" | jq .message)"
+  echo "M=$message L=$line C=$column"
+done
 exit 10
